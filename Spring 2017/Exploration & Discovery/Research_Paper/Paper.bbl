@@ -1,0 +1,304 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{APA}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Alfheim}{A.}%
+     {Ingrid}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wikstr\"om}{W.}%
+     {Lennart}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{AIWL1}
+  \strng{fullhash}{AIWL1}
+  \field{sortinit}{A}
+  \field{title}{Air Pollution from aluminum smelting plants}
+  \field{journaltitle}{Toxicological \& Environmental Chemistry}
+  \field{year}{1984}
+\endentry
+
+\entry{CBP}{report}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bloodworth}{B.}%
+     {Gina}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {White}{W.}%
+     {James}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BGWJ1}
+  \strng{fullhash}{BGWJ1}
+  \field{sortinit}{B}
+  \field{title}{The Columbia Basin Project: Seventy-Five Years Later}
+  \list{institution}{1}{%
+    {Association of Pacific Coast Geographers}%
+  }
+  \field{year}{2008}
+\endentry
+
+\entry{TRM}{manual}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Committee}{C.}%
+     {Joint~Transportation}{J.~T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CJT1}
+  \strng{fullhash}{CJT1}
+  \field{sortinit}{C}
+  \field{subtitle}{Washington State}
+  \field{title}{Transportation Resource Manual}
+  \field{year}{2013}
+\endentry
+
+\entry{OAI}{report}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Conway}{C.}%
+     {Richard}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CR1}
+  \strng{fullhash}{CR1}
+  \field{sortinit}{C}
+  \field{title}{The Oregon State Aluminum Industry Economic Impact Study}
+  \list{institution}{1}{%
+    {The Pacific Northwest Aluminum Industry}%
+  }
+  \field{year}{2000}
+\endentry
+
+\entry{OAH}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Dodds}{D.}%
+     {Gordon}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Norton \& Company}%
+  }
+  \strng{namehash}{DG1}
+  \strng{fullhash}{DG1}
+  \field{sortinit}{D}
+  \field{title}{Oregon: A Bicentennial History}
+  \field{year}{1977}
+\endentry
+
+\entry{MOTA}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Downs}{D.}%
+     {Vaughn}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ASCE Press}%
+  }
+  \strng{namehash}{DV1}
+  \strng{fullhash}{DV1}
+  \field{sortinit}{D}
+  \field{title}{The Mightiest of Them All: Memories of Grand Coulee Dam}
+  \field{year}{1986}
+\endentry
+
+\entry{O_POP}{report}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Forstall}{F.}%
+     {Richard}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{FR1}
+  \strng{fullhash}{FR1}
+  \field{sortinit}{F}
+  \field{title}{Population of States and Counties of the United States:
+  1790-1990}
+  \list{institution}{1}{%
+    {U.S. Department of Commerce, Bureau of the Census}%
+  }
+  \field{year}{1996}
+\endentry
+
+\entry{USDA_GRAIN}{report}{}
+  \field{sortinit}{G}
+  \field{title}{Grains Inspected and/or weighed for export by region and port
+  area}
+  \list{institution}{1}{%
+    {USDA}%
+  }
+  \field{year}{2017}
+\endentry
+
+\entry{SS}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Harrison}{H.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HJ1}
+  \strng{fullhash}{HJ1}
+  \field{sortinit}{H}
+  \field{title}{Dams:Impacts on Salmon and Steelhead}
+  \field{journaltitle}{The Northwest Power and Conservation Council}
+  \field{year}{2008}
+\endentry
+
+\entry{GCD}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Harrison}{H.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HJ1}
+  \strng{fullhash}{HJ1}
+  \field{sortinit}{H}
+  \field{title}{Grand Coulee Dam: History and Purpose}
+  \field{journaltitle}{The Northwest Power and Conservation Council}
+  \field{year}{2008}
+\endentry
+
+\entry{NWC_IRR}{report}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Harrison}{H.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HJ1}
+  \strng{fullhash}{HJ1}
+  \field{sortinit}{H}
+  \field{title}{Irrigation}
+  \list{institution}{2}{%
+    {Northwest Power}%
+    {Conservation Council}%
+  }
+  \field{year}{2008}
+\endentry
+
+\entry{GCD_CBP}{report}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Ortolano}{O.}%
+     {Leonard}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cushing}{C.}%
+     {Katherine~Kao}{K.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{OLCKK1}
+  \strng{fullhash}{OLCKK1}
+  \field{sortinit}{O}
+  \field{title}{Grand Coulee Dam and Columbia Basin Project}
+  \list{institution}{1}{%
+    {World Commission on Dams Secretariat}%
+  }
+  \field{year}{1999}
+\endentry
+
+\entry{GC}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Pitzer}{P.}%
+     {Paul}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Washington State University Press}%
+  }
+  \strng{namehash}{PP1}
+  \strng{fullhash}{PP1}
+  \field{sortinit}{P}
+  \field{title}{Grand Coulee: Harnessing a Dream}
+  \field{year}{1994}
+\endentry
+
+\entry{PCP}{thesis}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Pitzer}{P.}%
+     {Paul}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PP1}
+  \strng{fullhash}{PP1}
+  \field{sortinit}{P}
+  \field{title}{Visions, Plans, and Realitities: A History of the Columbia
+  Basin Project}
+  \list{institution}{1}{%
+    {University of Oregon}%
+  }
+  \field{type}{phdthesis}
+  \field{year}{1990}
+\endentry
+
+\entry{WGC}{article}{}
+  \field{sortinit}{S}
+  \field{title}{Snake River Dams-Facts}
+  \verb{url}
+  \verb http://www.wagrains.org/snake-river-dam-facts/
+  \endverb
+  \field{journaltitle}{Washington Grain Commission}
+  \field{year}{2015}
+\endentry
+
+\entry{ST}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {wozniacka}{w.}%
+     {Gosia}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{wG1}
+  \strng{fullhash}{wG1}
+  \field{sortinit}{W}
+  \field{title}{Columbia River tribes displaced by dams live in squalor, seek
+  help}
+  \field{journaltitle}{The Seattle Times}
+  \field{year}{2014}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

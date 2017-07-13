@@ -1,0 +1,48 @@
+\documentclass{subfiles}
+
+\begin{document}
+\section{Chapter 14}
+\subsection{Simple Harmonic Motion}
+
+\begin{align}
+	F_{x} &= ma_{x} = -kx \label{14:shm:1}\\
+	x \left( t \right) &= A cos \left[ \omega t + \delta \right] \label{14:shm:2}\\
+	\omega_{spring} &= \sqrt{\frac{k}{m}} \label{14:shm:3}\\
+	\omega_{pendulum} &= \sqrt{\frac{g}{l}} \label{14:shm:4}\\
+	E &= K + U \label{14:shm:5}\\ 
+	&= \frac{1}{2}kA^{2} \label{14:shm:6}\\
+	\omega &= 2\pi f \label{14:shm:7}\\
+	&= \frac{2\pi }{T} \label{14:shm:8}
+\end{align}
+
+\begin{enumerate}
+	\item[\eqref{14:shm:1}] The equation for the linear restoring force, where $k$ is the spring constant.
+	\item[\eqref{14:shm:2}] The basic position equation, where $x$ is the positions, $A$ is the amplitude, $\omega$ is the angular frequency, $t$ is the time, and $\delta$ is the phase offset.
+	\item[\eqref{14:shm:3}] The $\omega$ for a spring, where $k$ is the spring constant, and $m$ is the mass at the end of the spring.
+	\item[\eqref{14:shm:4}] The $\omega$ for a simple pendulum, where $g$ is gravity, and $l$ is the length of the pendulum.
+	\item[\eqref{14:shm:5}] The mechanical energy equaiton for a wave, where $E$ is total energy, $K$ is the kinetic energy, and $U$ is the potential energy.
+	\item[\eqref{14:shm:6}] The mechanical energy equaiton for a wave, where $k$ is the spring constant, and $A$ is the amplitude.
+	\item[\eqref{14:shm:7}] The angular frequency equation, where $\omega$ is the angular frequency, and $f$ is the frequency.
+	\item[\eqref{14:shm:8}] The angular frequency equaiton, where $T$ is the period.
+\end{enumerate}
+
+\subsection{Damped Harmonic Motion}
+
+\begin{align}
+	A &=A_{0}e^{\frac{t}{2\tau}} \label{14:dhm:1}\\
+	E &= E_{0}e^{\frac{-t}{\tau}} \label{14:dhm:2}\\
+	\tau &= \frac{m}{b} \label{14:dhm:3}\\
+	Q &= \omega_{0}\tau \label{14:dhm:4}\\
+	\omega ' &= \omega_{0}\sqrt{1-\frac{1}{4Q^{2}}} \label{14:dhm:5}\\
+	Q &= \frac{1\pi}{\left( \frac{\left| \Delta E \right|}{E} \right)_{cycle}}\quad When\ \left(\frac{\left| \Delta E \right|}{E}\right)_{cycle} \ll 1 \label{14:dhm:6}
+\end{align}
+
+\begin{enumerate}
+	\item[\eqref{14:dhm:1}] Amplitude equation, where $A_{0}$ is the initial amplitude, $t$ is the time, and $\tau$ is the decay time.
+	\item[\eqref{14:dhm:2}] Energy equation, where $E_{0}$ is the initial energy, $t$ is the time, and $\tau$ is the decay time.
+	\item[\eqref{14:dhm:3}] Decay time equation, where $\tau$ is the decay time, $m$ is the mass, and $b$ is the damping constant.
+	\item[\eqref{14:dhm:4}] Q factor definition, where $Q$ is the Q factor, $\omega_{0}$ is the initial angular frequency, and $\tau$ is the decay time.
+	\item[\eqref{14:dhm:5}] Frequency for a damped oscillation, where $\omega '$ is the angular frequency, $\omega_{0}$ is the initial angular frequency, and $Q$ is the Q factor.
+	\item[\eqref{14:dhm:6}] Q factor of weak dampining, where $Q$ is the Q factor, and $\left( \frac{\left| \Delta E \right|}{E} \right)_{cycle}$ is the percentage change of energy per cycle.
+\end{enumerate}
+\end{document}

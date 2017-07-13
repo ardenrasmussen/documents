@@ -1,0 +1,296 @@
+\documentclass{article}
+
+\usepackage{multicol}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\graphicspath{ {graphs/} }
+\pgfplotsset{width=10cm,compat=1.9}
+
+\title{CALCULUS III REVIEW}
+\date{10-12-2016}
+\author{Arden Rasmussen}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\section{Geometry}
+\subsection{Cartesian Coordinates}
+Commonly sketching an equation and explaining it in words. Try to sketch out the graph, checking several point. Then attempt to classify the shape.
+\subsection{Vector Algebra}
+Things that appear commonly with vector algebra questions.
+\begin{itemize}
+\item Sketching
+
+Simply drawing the vector from base point.
+\item Transformation to vector from $u,v$
+
+Given $\vec{a}$ and $\vec{b}$.
+\begin{gather*}
+\left(\begin{array}{ccc}
+x \\ y \\ z
+\end{array}\right) = 
+\left(\begin{array}{ccc}
+x_{0} \\ y_{0} \\ z_{0}
+\end{array}\right) + u
+\left<\begin{array}{ccc}
+\vec{a_{x}} \\ \vec{a_{y}} \\ \vec{a_{z}}
+\end{array}\right> + v
+\left<\begin{array}{ccc}
+\vec{b_{x}} \\ \vec{b_{y}} \\ \vec{b_{z}}
+\end{array}\right> \\
+T(u,v) = \left\{\begin{array}{ccc}
+x = x_{0} + u \vec{a_{x}} + v \vec{b_{x}} \\
+y = y_{0} + u \vec{a_{y}} + v \vec{b_{y}} \\
+z = z_{0} + u \vec{a_{z}} + v \vec{b_{z}}
+\end{array}
+\right.
+\end{gather*}
+\item Dot Product ($\cdot$)
+\begin{gather*}
+a_x b_x + a_y b_y + a_z b_z = 
+\Vert\vec{a}\Vert \cdot \Vert\vec{b}\Vert \cdot \cos (\gamma)
+\end{gather*}
+\item Cross product
+\begin{gather*}
+\vec{a}\times\vec{b} = \left|\begin{array}{ccc}
+\vec{i} & \vec{j} & \vec{k} \\
+a_x & a_y & a_z \\
+b_x & b_y & b_z
+\end{array}\right|
+\end{gather*}
+\item Length of a vector
+\begin{gather*}
+L = \sqrt{\vec{a} \cdot \vec{b}}
+\end{gather*}
+\item Area of parallelogram
+\begin{gather*}
+A^2 = \det \left|\begin{array}{cc}
+\vec{a} \cdot \vec{a} & \vec{a} \cdot \vec{b} \\
+\vec{a} \cdot \vec{b} & \vec{b} \cdot \vec{b} 
+\end{array}\right|
+\end{gather*}
+\item Volume of parallelotope
+\begin{gather*}
+V^2 = \det \left|\begin{array}{ccc}
+\vec{a} \cdot \vec{a} & \vec{a} \cdot \vec{b} & \vec{a} \cdot \vec{c} \\
+\vec{a} \cdot \vec{b} & \vec{b} \cdot \vec{b} & \vec{b} \cdot \vec{c} \\ 
+\vec{a} \cdot \vec{c} & \vec{b} \cdot \vec{c} & \vec{c} \cdot \vec{c}
+\end{array}\right|
+\end{gather*}
+\end{itemize}
+\subsection{Curvilinear Coordinates}
+Determining transformations, and parameterization of equations, computing $\partial_u$ and $\partial_v$, computing area element($dA$), and normal vector field($\vec{N}$).
+\begin{gather*}
+Parameterization:T(u,v)
+\end{gather*}
+\begin{itemize}
+\item $\partial_u$ / $\partial_v$
+\begin{gather*}
+\partial_u = \left<\begin{array}{cc}
+\frac{\partial_x}{\partial_u} & \frac{\partial_y}{\partial_u}
+\end{array}\right>\\
+\partial_v = \left<\begin{array}{cc}
+\frac{\partial_x}{\partial_v} & \frac{\partial_y}{\partial_v}
+\end{array}\right>
+\end{gather*}
+\item Area element($dA$)
+\begin{gather*}
+dA = \sqrt{\det \left|\begin{array}{cc}
+\partial_u \cdot \partial_u & \partial_u \cdot \partial_v \\
+\partial_u \cdot \partial_v & \partial_v \cdot \partial_v 
+\end{array}\right|}
+\end{gather*}
+\item Normal Vector Field($\vec{N}$)
+\begin{gather*}
+\vec{N} = \partial_u \times \partial_v
+\end{gather*}
+\end{itemize}
+\subsubsection{Polar Coordinates}
+\begin{gather*}
+x=r\cos(\theta)\\
+y=r\sin(\theta)\\
+(r, \theta)\\
+dA = r dr d\theta
+\end{gather*}
+\subsubsection{Cylindrical Coordinates}
+
+\begin{gather*}
+x=r\cos(\theta) \\
+y=r\sin(\theta) \\
+z=z \\
+(r, \theta, z) \\
+dA = r dr d\theta dz
+\end{gather*}
+\subsubsection{Spherical Coordinates}
+\begin{gather*}
+x = r\sin(\phi)\cos(\theta) \\
+y = r\sin(\phi)\sin(\theta) \\
+z = r\cos(\phi) \\
+(r, \theta, \phi) \\
+dA = r^2\sin(\phi) dr d\theta d\phi
+\end{gather*}
+\section{Multi-Variable Integration}
+Setting up integrals and evaluating them.
+\subsection{1 Dimensional}
+\begin{gather*}
+\int \rho\ dS \\
+\int \rho(u)\ du
+\end{gather*}
+\subsection{2 Dimensional}
+\begin{gather*}
+\iint \rho\ dA \\
+\iint \rho(u,v)\cdot Stretch\ dudv
+\end{gather*}
+\subsection{3 Dimensional}
+\begin{gather*}
+\iiint \rho\ dV \\
+\iiint \rho(u,v,w)\cdot Stretch\ dudvdw
+\end{gather*}
+\section{Differential Calculus}
+\subsection{Linearizion/Taylor Approximation}
+\begin{gather*}
+Jacobian: \\
+DT = \left[\begin{matrix}
+\partial u_1 & \partial v_1 \\
+\partial u_2 & \partial v_2
+\end{matrix}\right] \\
+Linearization: \\
+\left(\begin{matrix}
+x \\ y
+\end{matrix}\right) \approx f(x_0, y_0) + 
+\left[\begin{matrix}
+\frac{dx}{du}|_{(x_0,y_0)} & \frac{dx}{dv}|_{(x_0,y_0)} \\
+\frac{dy}{du}|_{(x_0,y_0)} & \frac{dy}{dv}|_{(x_0,y_0)}
+\end{matrix}\right] \cdot \left[\begin{matrix}
+\Delta u \\ \Delta v
+\end{matrix}\right]\\
+x \approx x_0 + \left[\begin{matrix}
+\frac{dx}{du}|_{(x_0,y_0)} & \frac{dx}{dv}|_{(x_0,y_0)}
+\end{matrix}\right] \cdot \left[\begin{matrix}
+\Delta u \\ \Delta v
+\end{matrix}\right]\\
+y \approx y_0 + \left[\begin{matrix}
+\frac{dy}{du}|_{(x_0,y_0)} & \frac{dy}{dv}|_{(x_0,y_0)}
+\end{matrix}\right] \cdot \left[\begin{matrix}
+\Delta u \\ \Delta v
+\end{matrix}\right]\\
+\\
+Quadratic Approximation:
+\end{gather*}
+\begin{multline*}
+\left(\begin{matrix}
+x \\ y
+\end{matrix}\right) \approx f(x_0, y_0) + 
+\left[\begin{matrix}
+\frac{dx}{du}|_{(x_0,y_0)} & \frac{dx}{dv}|_{(x_0,y_0)} \\
+\frac{dy}{du}|_{(x_0,y_0)} & \frac{dy}{dv}|_{(x_0,y_0)}
+\end{matrix}\right] \cdot \left[\begin{matrix}
+\Delta u \\ \Delta v
+\end{matrix}\right]\\ + \frac{1}{2} \cdot
+\left[\begin{matrix}
+\Delta x & \Delta y
+\end{matrix}\right] \cdot 
+\left[\begin{matrix}
+\frac{d^2x}{du^2}|_{(x_0,y_0)} & \frac{d^2x}{dudv}|_{(x_0,y_0)} \\
+\frac{d^2y}{dudv}|_{(x_0,y_0)} & \frac{d^2y}{dv^2}|_{(x_0,y_0)}
+\end{matrix}\right] \cdot
+\left[\begin{matrix}
+\Delta x \\ \Delta y
+\end{matrix}\right]
+\end{multline*}
+\subsection{Optimization(With or Without Constraints}
+Determine when the $Jacobian$ is $0$. That is a critical point, then using $Hessian$ and quadratic approximation to determine shape($Bowl$, $Saddle$, $etc.$).
+HELP!
+\subsection{Chain Rule}
+Derivative of outside evaluated at $(x_0,y_0)$ of the inside times the derivative of the inside evaluated at the base point.
+\begin{gather*}
+(x,y)=T_1(u, v)\\
+(z,w)=T_2(x, y)\\
+DT_1 = Jacobian\ for\ T_1\\DT_2 = Jacobian\ for\ T_2\\
+D(T_2 \circ T_1) = DT_2|_{(x_0,y_0)} \cdot DT_1|_{(u_0, v_0)}\\
+DT_2(T_1(u,v))\cdot DT_1(u,v)\\
+\left[\begin{matrix}
+\frac{dz}{du} & \frac{dz}{dv} \\ \frac{dw}{du} & \frac{dw}{dv}
+\end{matrix}\right] = \left[\begin{matrix}
+\frac{dz}{dx} & \frac{dz}{dy} \\ \frac{dw}{dx} & \frac{dw}{dy}
+\end{matrix}\right] \cdot \left[\begin{matrix}
+\frac{dx}{du} & \frac{dx}{dv} \\ \frac{dy}{du} & \frac{dy}{dv}
+\end{matrix}\right]
+\end{gather*}
+\section{Vector Calculus}
+\subsection{What are (div/curl/grad/potential)}
+\subsubsection{Divergence}
+\begin{enumerate}
+\item Extent that a vector field exits a bound area.
+\item Extent that a vector field goes away from a point.
+\end{enumerate}
+\begin{gather*}
+div(\vec{V}) = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}
+\end{gather*}
+\subsubsection{Circulation}
+\begin{enumerate}
+\item Extent that a vector field follows the boundary of a bound area.
+\item Extent that a vector field goes around a point.
+\end{enumerate}
+\begin{gather*}
+\overrightarrow{curl}(\vec{V}) = \left<\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}, \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}, \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right>
+\end{gather*}
+\subsubsection{Gradient}
+$grad$ is the rate of change in $f(x,y)$ as $x$ and $y$ change.
+\begin{gather*}
+\overrightarrow{grad}(f) = \left<\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right>
+\end{gather*}
+\subsubsection{Potential}
+HELP!
+\begin{enumerate}
+\item Create a system of equations equaling $\overrightarrow{grad}(f)$ to $\vec{V}$.
+\item Solve the first equation for $f$ through integration, resulting with $C$ in terms of the other variables.
+\item Derive $f$ in terms of $y$ and $z$ with a $\frac{\partial C}{\partial y}$ and a $\frac{\partial C}{\partial z}$.
+\item Equal the other equations to the just derived values for $\frac{\partial f}{\partial y}$ and $\frac{\partial f}{\partial z}$.
+\item Solve the second equation for $C$ through integration, resulting with a $D$ in terms of the final variable.
+\item Derive $C$ in terms of the final variable with a $\frac{\partial D}{\partial z}$.
+\item Equal the final equation to the just derived value for $\frac{\partial C}{\partial z}$.
+\item Solve the final equation for $D$ through integration, resulting with an $E$ that is just a number.
+\item Combine all solved functions into one final $f$.
+\end{enumerate}
+\begin{gather*}
+\left\{\begin{matrix}
+\frac{\partial f}{\partial x} = \vec{V}_x \\
+\frac{\partial f}{\partial y} = \vec{V}_y \\
+\frac{\partial f}{\partial z} = \vec{V}_z
+\end{matrix}\right. \\
+\Downarrow \\
+f = f(x,y,z) + C(y,z) + D(z) + E
+\end{gather*}
+\subsection{State the Fundamental Theorems}
+HELP!
+\begin{itemize}
+\item Gradient Theorem:
+\begin{gather*}
+\int_{a}^{b} \overrightarrow{grad}(f) = f(b) - f(a)
+\end{gather*}
+\item Stokes' Theorem:
+\begin{gather*}
+\iint_S \overrightarrow{curl}(\vec{V})\cdot\vec{N}dA = \int_C \vec{V} \cdot \vec{T} ds
+\end{gather*}
+\item Divergence Theorem:
+\begin{gather*}
+\iiint_\Omega div(\vec{V})dA = \iint_S \vec{V} \cdot \vec{N} ds
+\end{gather*}
+\item Green's Theorem(Circulation):
+\begin{gather*}
+\iint_S curl(\vec{V})dA = \int_C \vec{V} \cdot \vec{T} ds
+\end{gather*}
+\item Green's Theorem(Divergence):
+\begin{gather*}
+\iint_S div(\vec{V})dA = \int_C \vec{V} \cdot \vec{N} ds
+\end{gather*}
+\end{itemize}
+\subsection{Compute Using Fundamental Theorems}
+Enter in equation, and use theorems when possible.
+\end{document}
