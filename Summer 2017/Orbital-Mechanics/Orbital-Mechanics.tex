@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+
+\title{Orbital Mechanics}
+\date{\today}
+\author{Arden Rasmussen}
+
+\begin{document}
+\maketitle
+\newpage
+\begin{abstract}
+  Orbital mechanics or astrodynamics is the applicaiton of pallistics and celestial mechanics to the practicale problems concerning the motion of rockets and other spacecraft. The motion of these objects is usually calculated from Newton's laws of motion and Newton's law of universal gravitation. It is a core disciplin within space mission design and control. Celestial mechanics trats more broadly the orbital dynamics of systems under the influence of gravity, including both spacecraft and natural astronomical bodies such as star systems, planets, moons, and comets. Orbital mechanics focuses on spacecraft trajectories, including orbital maneuvers, orbit plane changes, and interplanetary transfers, and is used by mission planners to predict the result of propulsive maneuvers. General relativity is a more exact theory than Newton's laws for calculating orbits, and is sometimes necessary for greater accuracy or in high-gravity situations (such as orbits close to the Sun).
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+\section{Laws of astrodynamics}
+The fundamental laws of astrodynamics are Newton's law of universal gravitation and Newton's laws of motion, while the fundamental mathematical tool is his differential calculus.
+
+Every orbit and trajectory outside atmospheres is in principle reversible, i.e., in the space-time function the time is reversed. The velocities are reversed and the accelerations are the same, including those due to rocket bursts. Thus if a rocket burst is in the direction of the velocity, in the reversed case it is opposite to the velocity. Of course in the case of rocket bursts there is no full reversal of events, both ways the same delta-v is used and the same mass ratio applies.
+
+Standard assumptions in astrodynamics include non-interference form outside bodies, negligible mass for one of the bodies, and negligible other forces (such as from the solar wind, atmospheric drag, etc.). More accurate calculations can be made without these simplifing assumptions, but they are more complicated. The increased accuracy often does not make enough of a difference in the calculation to be worthwhile.
+
+Kepler's laws of planetary motion may be derived from Newton's laws, when it is assumed that the orbiting body is subject only to the gravitational force of the central attractor. When an engine thrust or propulsive force is present, Newton's laws still apply, but Kepler's laws are invalidated. When the thrust stops, the resulting orbit will be different but will one again be described by Kepler's laws. The three laws are:
+
+\begin{enumerate}
+\item The orbit of every planet is an ellipse with the sun at one of the foci.
+\item A line joining a planet and the sun sweeps out equal areas durring equal intervals of time.
+\item The squares of the orbital periods of planets are directly proportional to the cubes of the semi-major axis of the orbits.
+\end{enumerate}
+\subsection{Escape velocity}
+The formula for an escape velocity is easily derived as follows. The specific energy (energy per unit mass) of any space vehicle is composed of two components, the specific potential energy and the specific kinetic energy. The specific potential energy associatied with a planet of mass \(M\) is given by
+
+\[\epsilon_{p}=-\frac{GM}{r}\]
+
+while the specific kinetic energy of an object is given by
+
+\[\epsilon_{k}=\frac{v^{2}}{2}\]
+
+Since energy is conserved,
+
+\[\epsilon=\frac{v^{2}}{2}-\frac{GM}{r}\]
+
+does not depend on the distance, \(r\), from the center of the central body to the space vehicle in question. Therefor, the object can reach infinite \(r\) only if this quantity is nonnegative, which implies
+
+\[v\geq\sqrt{\frac{2GM}{r}}\]
+
+The escape velocity from Earth's surface is about \(11\frac{km}{s}\), but that is insufficient to send the body an infinite distance because of the gravitational pull of the Sun. To escape the Solar System from a location at a distance from the Sun equal to the distance Sun-Earth, but not close to the Earth, requires around \(42\frac{km}{s}\) velocity, but there will be "part credit" for the Earth's orbital velocity for spacecraft launced from Earth, if their further acceleration (due to the propulsion system) carries them in the same direction as Earth travels in its orbit.
+
+\subsection{Formulae for free orbits}
+Orbits are conic sections, so the formula for the distance of a body for a given angle corresponds to the formula for that curve in polar corrdinates, which is:
+
+\begin{align*}
+  r = \frac{p}{1+e\cos\theta} \\
+  \mu = G(m_1+m_2) \\
+  p=\frac{h^2}{\mu}
+\end{align*}
+
+\(\mu\) is called the gravitational parameter. \(m_1\) and \(m_2\) are the masses of objects 1 and 2, and \(h\) is the specific angular momentum of object 2 with respect to object 1. The parameter \(\theta\) is known as the true anomaly, \(p\) is the smi-latus rectum, while \(e\) is the orbital eccentricity, all obtainable form the various forms of the six independent orbital elements.
+
+\subsection{Circular orbits}
+
+All bound orbits where the gravity of a central body dominates are elliptical in nature. A special case of this is the circular orbit, which is an ellipse of zero eccentricity. The formula for the velocity of a body in a circular orbit at distance \(r\) from the center of gravity of mass \(M\) can be derived as follows -
+
+Centribetal acceleration matches the acceleration due to gravity. So,
+
+\[\frac{v^{2}}{r}=\frac{GM}{r^{2}}\]
+
+Therefore,
+
+\[v=\sqrt{\frac{GM}{r}}\]
+
+where \(G\) is the gravitational constant, equal to 
+
+\[6.67384x10^{-11}\frac{m^{3}}{kg\cdot s^2}\]
+
+To properly use this formula, the units must be consistent; for example \(M\) must be in kilograms, and \(r\) must be in meters. The answer will be in meters per second.
+
+The quantity \(GM\) is often termed the standard gravitational parameter, which has a different value for every planet or moon in the solar system.
+
+Once the circular orbital velocity is known, the escape velocity is easily found by multiplying by the square root of 2:
+
+\[v=\sqrt{2}\sqrt{\frac{GM}{r}}=\sqrt{\frac{2GM}{r}}\]
+
+To escape from gravity, the kinetic energy must at least match the negative potential energy. So,
+
+\[\frac{1}{2}mv^{2}=\frac{GMm}{r}\]
+
+and therefore,
+
+\[v=\sqrt{\frac{2GM}{r}}\]
+
+\subsection{Elliptical orbits}
+
+\end{document}
