@@ -1,0 +1,153 @@
+\documentclass{article}
+\usepackage{multicol}
+\title{Mathematic Formulation of the Double-Precision Orbit Determination
+Program}
+\author{Arden Rasmussen}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\maketitle
+
+\newpage
+
+\pagenumbering{roman}
+
+\begin{abstract}
+  This documents the complete mathematical model for the Double-Precision Orbit
+  Determination Program (DPODP), a third-generation program which has recently
+  been completed at the Jet Propulsion Laboratory. The DPODP processes
+  earth-based doppler, range, and angular observable of the spacecraft to
+  determine values of the parameters that specify the spacecraft trajectory for
+  lunar and planetary missions.
+\end{abstract}
+
+\newpage
+
+%\newpage
+
+\tableofcontents
+
+%\newpage
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Introduction}
+\label{sec:introduction}
+
+\begin{multicols}{2}
+  This report documents the mathematical model for the Double-Precision Orbit
+  DeteDetermination Program (DPODP). The DPODP will be used to determine values
+  of the parameters that specify the spacecraft trajectory for lunar and
+  planetaryplanetary missions; it will be used for both real-time and post-flight
+  reduction of tracking data. The DPODP differentally corrects \textit{a priori}
+  estimaes of injection parameters, physical constants, maneuver parameters, and
+  station locations to minimize the sum of weighted squares of residual errors
+  betbetween observed and computed quantities.
+  
+  The basic limitations on the \textit{accuracy of computed observables} are the
+  inaccuracies in the troposphere and ionosphere corrections. Before these
+  corrections are added, the computed values of the doppler and range observales
+  have accuracies of \(10^{-5}m/s\) and \(0.1m\), respectivly. The parameters
+  whose values may be estimated by the DPODP are:
+  
+  \begin{enumerate}
+    \item Injection parameters. Rectangular components of the spacecraft position
+      and velocity vectors at the injection epoch.
+    \item Reference parameters. Parameters that affect the relative position and
+      velocity of the sun, palents, and the moon:
+      \begin{enumerate}
+        \item[\(A_E\)] The number of kilometers per astronomical unit (AU). This
+          parameter converts the precomputed eliocentric ephemrides of eight
+          planeplanets and the earth-moon barycenter from astronomical units to
+          kilometers.
+        \item[\(R_E\)] Scaling factor for lunar ephemeris, km/fictitious earth
+          radius. This factor converts the precomputed geopcentric lunar
+          ephemeris from fictitious earth radii to kilometers.
+        \item[\(E\)] Osculation orbital elements for the precomputed ephemeris of
+          a planet, earth-moon barycenter, or the moon, The estimated correction
+          \(\Delta E\) is used to differentially correct position and velocity
+          obtobtained from the precomputed ephemeris.
+        \item[\(\mu_E,\mu_M\)] Gravitational constants for the earth and moon,
+          \(km^3/s^2\). These parameters affect the location of the earth-moon
+          barycenter.
+      \end{enumerate}
+    \item Gravitational constats. The constant \(\mu_i\) is the gravitational
+      constant for body \(i\), such as the sun, a planet, or the moon. (Note
+      thathat \(\mu_E\) and \(\mu_M\) are also listed under reference
+      parametersparameters.)
+    \item Harmonic coefficient. The harmonic coefficients \(j_n\), \(C_{nm}\),
+      \(S_{nm}\), along with the gravitational constant \(\mu\), describe the
+      gravitational field of a planet or moon.
+    \item Parameters affecting the acceleration of the spacecraft due to solar
+      radiation pressure.
+    \item Coefficient of quadratic for small acceleration acting along each
+      spacecraft axis. These quadratics are used to represent gas leaks and
+      small forces arising from operation of the attitude control system.
+    \item Parameters affecting spacecraft motor burns.
+    \item Parameters affecting the transformation from universal time to
+      ephemeris time.
+    \item Coefficient of quadratics which represent the departure of atomic
+      time at each tracking station from broadcast UTC time.
+    \item Station parameters.
+      \begin{enumerate}
+        \item Radius
+        \item Latitude
+        \item Longitude
+      \end{enumerate}
+      or
+      \begin{enumerate}
+        \item  Distance from spin axis
+        \item Height above equator
+        \item Longitude for each tracking station and a land spacecraft on a
+          plaplanet or the moon.
+      \end{enumerate}
+      For a tracking ship:
+      \begin{enumerate}
+        \item Spherical coordinates at an epoch
+        \item velocity
+        \item azimuth
+      \end{enumerate}
+    \item Speed of light. And adopted constant which defines the light-second
+      as the basic length unit; it is not normally included in the solution
+      vector.
+    \item Constant bias for range observables.
+    \item Spacecraft transmitter frequency for one-way doppler.
+    \item Biases affecting observed angles.
+    \item Relativity parameter \(\gamma\). This parameter will be added to the
+      program. It is equal to \((1+\omega)/(2+\omega)\) where \(\omega\) is the
+      coupling constant of the scalar field, a free parameter of the Brans-Dike
+      theory of gravitation.
+  \end{enumerate}
+
+  Given the \textit{a priori} estimate of the parameter vector \(q\), the program
+  integrates the spacecraft acceleration using the second-sum numerical
+  integration method to give position and velocity at any desired time. Using
+  the spacecraft ephemeris along with the precomputed ephemerides for the other
+  bodies within the solar system, and the parameter vector \(q\), the program
+  computes values for each observed quantity (normally doppler, range, or
+  angles) and forms the \textit{observed} minus \textit{computed} (O-C)
+  residuals.
+
+  In addition to integrating the acceleration of the spacecraft to obtaini the
+  spacecraft ephemeris, the program integrates the partial derivative fo the
+  spaspacecraft acceleration with respect to (wrt) the parameter vector \(q\)
+  using the second-sum numerical integration procedure to give the partial
+  derivderivative of the spacecraft state vector \(X\) (position and velocity
+  components) wrt the parameter vector \(q\), \(\partial X/\partial q\). Using
+  \(\partial X/\partial q\), thee program computes the partial derivative of
+  each computed observalbe quantity \(z\) wrt \(q\), \(\partial z/\partial q\).
+  Given the O -- C residuals, \(\partial z/\partial q\), and the weights
+  applied to each residual along with the \textit{a priori} parameter vector
+  andand its convariance matrix, the program computes the differential
+  correction \(\Delta q\) to the parameter vector. Starting with \(q + \Delta
+  q\), the program computess a new spacecraft ephemeris, residuals, and the
+  partpartial derivatives and obtains a second differential correction \(\Delta
+  q\). This process is repeated until convergence is obtained and the sum of
+  weighted squares of residual errors between observed and computed quantities
+  is minimized.
+
+\end{multicols}
+\end{document}
