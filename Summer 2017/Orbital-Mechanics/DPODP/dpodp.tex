@@ -149,5 +149,34 @@ Program}
   weighted squares of residual errors between observed and computed quantities
   is minimized.
 
+  The DPODP formulation was heavily influenced by the general theory of
+  relativity. \ref{sec:relativistic_terms_of_dpodp_formulation} gives the equations from general relativity, which are
+  the basis of the DPODP formulation, and also the principle relativistic
+  equaitons containd in the formulation.
+
+  The time transformations used throught the program and formulation for
+  computing thre relative position, velocity, acceleration, and jerk for any
+  two celestial bodies are described in \ref{sec}.
 \end{multicols}
+
+\section{Relativistic Terms of DPODP Formulation}
+\label{sec:relativistic_terms_of_dpodp_formulation}
+
+\begin{multicols}{2}
+  In the general theory of relativity is basically a geometrical theory. The
+  geometry is embodied in the components of the symmetrical metrict tensor
+  \(g_{pq}\): 
+  \begin{equation}
+  g_{pq}=\left[\begin{array}{cccc}
+    g_{11} & g_{12} & g_{13} & g_{14}\\
+    g_{21} & g_{22} & g_{23} & g_{24}\\
+    g_{31} & g_{32} & g_{33} & g_{34}\\
+    g_{41} & g_{42} & g_{43} & g_{44}\\
+  \end{array}\right]
+  \end{equation}
+  The subscripts \(1\), \(2\), \(3\), and \(4\) correspond to the space-time
+  coordinates \(x^1\), \(x^2\), \(x^3\), and \(x^4\), which are associated with
+  a particular space-time frame of reference.
+\end{multicols}
+
 \end{document}
