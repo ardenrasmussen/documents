@@ -1,0 +1,79 @@
+\documentclass{report}
+
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+
+\title{Discrete Mathematics}
+\author{Arden Rasmussen}
+\date{\today}
+
+\begin{document}
+
+\chapter{Counting Sheep, Among Other Things}
+\label{cha:counting_sheep_among_other_things}
+
+\section{Learning to Count}
+\label{sec:learning_to_count}
+
+\begin{description}
+  \item[The Addition Principle] \hfill \\
+    Suppose there is a task, $T$, to be completed and there are numerous
+    different methods, $M_1, M_2, \dots,M_k$ which can be used to complete
+    $T$. If method $M_1$ can be accomplished in $a_1$ ways, method $M_2$ in
+    $a_2$ ways,‥, and method $M_k$ in $a_k$ ways, and $M_1, M_2,\dots,M_k$
+    are mutually exclusive, then $T$ can be compleated in $a_1+a_2+\dots+a_k$
+    ways.
+
+  \item[The Multiplication Principle] \hfill \\
+    Suppose there is a task, $T$,  to be completed, but now the task can be
+    completed in stages. That is, $T$ can be broken down into subtasks,
+    $t_1,t_2,\dots,t_m$ so that $T$ is accomplished only after all of the sub
+    tasks have been completed. If $t_1$ can be done $b_1$ ways, $t_2$ in $b_2$
+    ways, ‥, and $t)m$ in $b)m$ ways. Then $T$ can be completed in $b_1 \cdot
+    b_2 \cdot \dots \cdot b_m$ ways.
+\end{description}
+
+\section{Permutations}
+\label{sec:permutations}
+
+\begin{definition}
+  The notation $n!$, which we read as \textit{n factorial}, is defined as $n! =
+  n\cdot(n-1)\cdot(n-2)\cdot \dots \cdot 3 \cdot 1 \cdot 1$.
+\end{definition}
+
+\begin{definition}
+  An arrangment of $n$ objects is called a \textit{permutation} of the objects.
+\end{definition}
+
+\begin{definition}
+   An arrangement of $r$ distinct objects out of a collection of $n$ distinct
+   objects is called an \textit{r-permutation} of the $n$ objects.
+\end{definition}
+
+\begin{theorem}
+  The number of r-permutations of $n$ objects is $\frac{n!}{(n-r)!}$. This is
+  often denoted $P(n,r)$ or $\prescript{}{n}{P}_r$.
+\end{theorem}
+
+\section{Combinations}
+\label{sec:combinations}
+
+\begin{definition}
+   A collection of $r$ objects chosen from $n$ distinct objects without regard
+   to the order of the objects is called an \textit{r-combination} of the $n$
+   objects.
+\end{definition}
+
+\begin{theorem}
+  The number of r-combinations of $n$ objects is $\frac{n!}{(n-r)!\cdot r!}$.
+  This number is denoted $C(n,r)$ or $\prescript{}{n}{C}_r$ or
+  $\left(\begin{array}{c}
+    n \\
+    r \\
+  \end{array}\right)$.
+\end{theorem}
+
+\end{document}
