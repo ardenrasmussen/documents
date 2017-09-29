@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+
+\title{Differential Equations (Exam \#1)}
+\author{Arden Rasmussen}
+\date{1 October 2017}
+\linespread{1}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{Summary}\label{sec:summary}
+
+\begin{itemize}
+  \item Mixing Problems
+    \begin{itemize}
+      \item Setup
+      \item Analyze
+    \end{itemize}
+  \item Find equilibrium solutions and preform qualitative analysis.
+  \item Find solution using analytic methods
+  \item Fundamental Theorem
+    \begin{itemize}
+      \item Solution curves don't cross unless RHS turns \textit{ugly} on you.
+    \end{itemize}
+  \item Euler method
+    \begin{itemize}
+      \item Within reason
+    \end{itemize}
+  \item Slope field
+    \begin{itemize}
+      \item Not much of number crunching
+    \end{itemize}
+  \item Some discussion about a parameter
+\end{itemize}
+\newpage
+
+\section{Reading \& Writing Differential Equations}\label{sec:reading_writing_differential_equations}
+
+The form of a differential equation must be the rate equals some equaiton that
+incorperates the equation.
+
+\begin{align}
+  \frac{dy}{dt} &= f(t,y(t))
+\end{align}
+
+Where $f(t,y(t))$ is some function that involves $y(t)$ and optional invlovles
+$t$.
+
+\subsection{Exponential Model}\label{sub:exponential_model}
+
+\textbf{Idea:} Relative growth rate is some constant: $k$.
+
+\begin{align}
+  \frac{dy}{dt} &= k \cdot y(t)
+\end{align}
+
+\subsection{Logistic Model}\label{sub:logistic_model}
+
+\textbf{Idea:} The relative growth rate may not be constat, and may depend on
+cercumstances. It may depend on $y(t)$ itself. Where $M$ is the maximum limit
+for $y(t)$.
+
+\begin{align}
+  \frac{dy}{dt} &= ky(t)\left(1-\frac{y(t)}{M}\right)
+\end{align}
+
+\section{Qualitative Analysis}\label{sec:qualitative_analysis}
+
+\textbf{Basic Idea:} Do careful acounting of slopes and connect the points.
+
+\section{Analytic Methods}\label{sec:analytic_methods}
+
+\subsection{Stream Plots/Slope Fields}\label{sub:stream_plots_slope_fields}
+
+
+
+\section{Numeric Methods}\label{sec:numeric_methods}
+
+
+
+\end{document}
