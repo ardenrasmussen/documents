@@ -2,6 +2,7 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
+\usepackage{csquotes}
 
 \title{Differential Equations (Exam \#1)}
 \author{Arden Rasmussen}
@@ -44,14 +45,14 @@
 
 \section{Reading \& Writing Differential Equations}\label{sec:reading_writing_differential_equations}
 
-The form of a differential equation must be the rate equals some equaiton that
-incorperates the equation.
+The form of a differential equation must be the rate equals some equation that
+incorporates the equation.
 
 \begin{align}
   \frac{dy}{dt} &= f(t,y(t))
 \end{align}
 
-Where $f(t,y(t))$ is some function that involves $y(t)$ and optional invlovles
+Where $f(t,y(t))$ is some function that involves $y(t)$ and optional involves
 $t$.
 
 \subsection{Exponential Model}\label{sub:exponential_model}
@@ -64,26 +65,165 @@ $t$.
 
 \subsection{Logistic Model}\label{sub:logistic_model}
 
-\textbf{Idea:} The relative growth rate may not be constat, and may depend on
-cercumstances. It may depend on $y(t)$ itself. Where $M$ is the maximum limit
+\textbf{Idea:} The relative growth rate may not be constant, and may depend on
+circumstances. It may depend on $y(t)$ itself. Where $M$ is the maximum limit
 for $y(t)$.
 
 \begin{align}
   \frac{dy}{dt} &= ky(t)\left(1-\frac{y(t)}{M}\right)
 \end{align}
 
-\section{Qualitative Analysis}\label{sec:qualitative_analysis}
+\section{The Fundamental Theorem of ODE'S}\label{sec:the_fundamental_theorem_of_ode_s}
 
-\textbf{Basic Idea:} Do careful acounting of slopes and connect the points.
+Given a differential equation of the form:
+
+\begin{align}
+  \frac{dy}{dt} &= f(t,y)
+\end{align}
+
+There are many solutions to a single differential equation. The solution is
+pinned to a single equation when the initial condition $y_0$ is set to a value.
+
+\subsection{Initial Value Problems}\label{sub:initial_value_problems}
+
+Initial value problems (IVP) come in the form:
+
+\begin{align}
+  \left\{ \begin{array}{l}
+      y\left(0\right) = y_0\\
+      \frac{dy}{dt} = f(t,y)
+    \end{array}\right.
+\end{align}
+
+\textit{Expect} to have exactly one solution. Suppose $f(t,y)$ is a function
+which:
+
+\begin{itemize}
+  \item Is continuous in a neighborhood of  $(t_0,y_0)$.
+  \item Has continuous $\frac{\partial f}{\partial y}$ in a neighborhood of
+    $(t_0,y_0)$
+\end{itemize}
+
+Then the IVP as exactly one solution. If either of these conditions are not
+met, then the fundamental theorem of ODE'S tells us nothing about the solution
+to the IVP.\@ A General rule of thumb is:
+
+\begin{displayquote}
+  If $f(t,y)$ is nice then there is exactly one solution, if solution is messy,
+  then $f(t,y)$ is not nice.
+\end{displayquote}
+
+\textbf{Note} that this is only in the neighborhood of $(t_0,y_0)$, so this
+says nothing about the long term existence or uniqueness. This only shows
+short term existence and uniqueness.
+
+\subsection{Method of Barriers}\label{sub:method_of_barriers}
+
+If the solutions for $f(t,y)$ are always nice, then no solution curves can
+cross or intersect, so any solution is stuck between other solution curves.
+Using equilibrium solutions (\ref{sub:equilibrium_solutions}) causes solutions to be sandwiched between these
+easer to find solutions.
 
 \section{Analytic Methods}\label{sec:analytic_methods}
 
-\subsection{Stream Plots/Slope Fields}\label{sub:stream_plots_slope_fields}
+Analytic methods are used to find the exact equation for the differential
+equation.
 
+\subsection{Separable Equations}\label{sub:separable_equations}
 
+Separable equations works by separating the terms for $y$ and $t$ in the
+differential equation to different sides of the equation. Given an equation of
+the form:
+
+\begin{align}
+  \frac{dy}{dt} &= A(y) \cdot B(t)
+\end{align}
+
+This method can be applied in the following format.
+
+\begin{align}
+  \frac{1}{A(y)}\cdot\frac{dy}{dt} &= B(t)\label{eq:a:se:1}\\
+  \int^{s=t}_{s=t_0} \frac{1}{A(y)} \cdot \frac{dy}{ds}ds &=
+  \int^{s=t}_{s=t_0}B(s)ds\\
+  \int^{y=y(t)}_{y=y_0} \frac{1}{A(y)} dy &= \int^{s=t}_{s=t_0} B(s)ds\\
+  f\left(y(t), y_0\right) &= g\left(t, t_0\right)\\
+  y(t) &= g\left(t, t_0, y_0\right)
+\end{align}
+
+\textbf{Note} that due to [\ref{eq:a:se:1}] the case when $A(y) = 0$ must be
+checked to see if it is a solution. And $f$ and $g$ are arbitrary functions
+that are the results of the integration, they merely are involving int
+parameters.
+
+\subsection{Propagators}\label{sub:propagators}
+
+Propagators uses the method of propagating the initial value, and any
+additional values added. This method works when given an equation of the form:
+
+\begin{align}
+  \frac{dy}{dt} &= r(t)s(t) + f(t)
+\end{align}
+
+The first step is to identify the propagator function.
+
+\begin{align}
+  P(t, t_0) &= \exp\left(\int^{s=t}_{s=t_0}r(s)ds\right)
+\end{align}
+
+Using the propagator, the solution for $y(t)$ is of the form:
+
+\begin{align}
+  y(t) &= P(t,t_0) \cdot y_0 + \int^{s=t}_{s=t_0} P(t, s) \cdot f(s) ds
+\end{align}
+
+\paragraph{Some notes on the Propagator}\label{par:some_notes_on_the_propagator}
+
+\begin{align}
+  P(a, b) \cdot P(b,a) &= 1\\
+  P(a, b) \cdot P(b, c) &= P(a,c)
+\end{align}
 
 \section{Numeric Methods}\label{sec:numeric_methods}
 
+Numeric methods are focused on getting approximate numeric values, without
+actually solving for the equation like analytic methods.
 
+\subsection{Euler's Method}\label{sub:euler_s_method}
+
+Euler's method uses crating a table to approximate the value of $y(t)$ for
+different values of $t$. By using a step size of $\Delta t$, and calculating
+the slope for each step, the solution can be approximated through the following
+equations.
+
+\begin{align}
+y_{n+1} &= y_n + \Delta t \cdot \left.\frac{dy}{dt}\right\vert_{(t_n, y_n)}
+\end{align}
+
+\paragraph{Some notes on Euler's Method}\label{par:some_notes_on_euler_s_method}
+
+Because this is a method of approximation, it becomes more accurate with the
+smaller the value for $\Delta t$. With a value that is too large, the
+approximation could miss asymptotes, or could cross equilibrium solutions that
+cannot be crossed. (\ref{sub:method_of_barriers})
+
+\section{Qualitative Analysis}\label{sec:qualitative_analysis}
+
+Qualitative analysis is viewing the general trends of the solution of the
+differential equation, without finding values at all.
+
+\subsection{Stream Plots/Slope Fields}\label{sub:stream_plots_slope_fields}
+
+\textbf{Basic Idea:} Do careful accounting of slopes and connect the points.
+Creating a stream plot from a slope field (vector field).
+
+Create a slope field, utilizing the Fundamental Theorem of ODE'S
+(\ref{sec:the_fundamental_theorem_of_ode_s}). Then connect the points of the
+slope field, creating an approximation of the solution plots.
+
+\subsection{Equilibrium Solutions}\label{sub:equilibrium_solutions}
+
+Equilibrium solutions are solutions that are easy to estimate, are are where
+$y(t) \equiv C$, where $C$ is some constant. This can also be viewed as when
+$\frac{dy}{dt} = 0$.
 
 \end{document}
