@@ -1,22 +1,3 @@
-<!-- vim-markdown-toc GFM -->
-
-* [Chapter 1](#chapter-1)
-  * [A First Problem: Stable Matching](#a-first-problem-stable-matching)
-    * [The Problem](#the-problem)
-      * [Formulating the Problem](#formulating-the-problem)
-    * [Design the Algorithm](#design-the-algorithm)
-    * [Analyzing the Algorithm](#analyzing-the-algorithm)
-    * [Extensions](#extensions)
-      * [All Executions Yield the Same Matching](#all-executions-yield-the-same-matching)
-  * [Five Representative Problems](#five-representative-problems)
-    * [Interval Scheduling](#interval-scheduling)
-    * [Weighted Interval Scheduling](#weighted-interval-scheduling)
-    * [Bipartite Matching](#bipartite-matching)
-    * [Independent Set](#independent-set)
-    * [Competitive Facility Location](#competitive-facility-location)
-
-<!-- vim-markdown-toc -->
-
 # Chapter 1
 
 This chapter is an introduction to algorithms as a whole. It begins with an
