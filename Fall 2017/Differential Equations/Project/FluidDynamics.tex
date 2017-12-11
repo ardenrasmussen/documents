@@ -1,0 +1,366 @@
+\documentclass[10pt]{article}
+\usepackage{multicol,caption}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{nameref}
+\usepackage[rightcaption]{sidecap}
+\usepackage[margin=1in]{geometry}
+\renewcommand\thesection{}
+\renewcommand\thesubsection{}
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+\newcommand{\der}[2]{\frac{\partial{} #1}{\partial{} #2}}
+\newcommand{\sder}[3]{\frac{\partial{}^{2} #1}{\partial{} #2 \partial{} #3}}
+\title{A Tiny Bit of Fluid Dynamics}
+\author{Arden Rasmussen}
+\begin{document}
+\maketitle
+\begin{abstract}
+  We consider the vector field $\vec{U}\left(\mathrm{y}\right)$, where
+  $\mathrm{y}=\left(x,y,z\right)$. From the fundamental theorem of ODE'S for each given
+  initial condition $\mathrm{x}=\left(a,b,c\right)$ there is a unique solution of the
+  IVP
+  \begin{align*}
+    \left\{ \begin{array}{l}
+        \frac{\partial \mathrm{y}}{\partial t}=\vec{U}\left(\mathrm{y}\left(t\right)\right)\\
+        \mathrm{y}\left(0\right)=\mathrm{x}
+    \end{array} \right.
+  \end{align*}
+\end{abstract}
+
+\begin{multicols}{2}
+
+  \section{Problem 1}\label{sec:problem_1_}
+
+  We first consider the fluid modeled by the velocity vector field
+  \begin{align*}
+    \vec{U}\left(\mathrm{y}\right) &=  -2x \vec{\imath}+\left(-2y+z\right)\vec{\jmath}+\left(y-2z\right)\vec{k}
+  \end{align*}
+  From this equation we aim to determine the trajectory of a molecule located at
+  an arbitrary initial location.
+
+  First we convert the equation for $\vec{U}$ into a matrix form.
+  \begin{align*}
+    \vec{U} &= \begin{pmatrix}
+      -2x \\ -2y+z \\ y-2z
+    \end{pmatrix}\\
+    \vec{U} &= \begin{pmatrix}
+      -2 & 0 & 0 \\
+      0 & -2 & 1 \\
+      0 & 1 & -2
+      \end{pmatrix} \cdot \begin{pmatrix}
+      x \\ y \\ z
+    \end{pmatrix}
+  \end{align*}
+
+  Using the matrix representation of $U$, we can now attempt to find a general solution to the
+  equation. We do this by first determining the eigenvalues of the matrix.
+  \begin{align*}
+    \det\begin{pmatrix}
+      -2-\lambda & 0 & 0\\
+      0 & -2-\lambda & 1\\
+      0 & 1 & -2-\lambda
+    \end{pmatrix} &= 0
+  \end{align*}
+
+  Solving the equation we find that the eigenvalues are as follows.
+  \begin{align*}
+    \lambda_1 = -1 \quad \lambda_2 = -2 \quad \lambda_3 = -3
+  \end{align*}
+  Using the eigenvalues and the original matrix representation of $U$, we can find the eigenvectors
+  using $U\cdot V = \lambda \cdot V$. Thus we can obtain the respective eigenvectors for each
+  eigenvalue.
+  \begin{align*}
+    V_1 = \begin{pmatrix}0\\1\\1\end{pmatrix}
+    V_2 = \begin{pmatrix}1\\0\\0\end{pmatrix}
+    V_3 = \begin{pmatrix}0\\1\\-1\end{pmatrix}
+  \end{align*}
+
+  Using these eigenvalues and eigenvectors, we can determine a general formula
+  for $\mathrm{y}$ to be:
+  \begin{align*}
+    \mathrm{y}\left(t\right) &= C_{1}e^{-t}\begin{pmatrix}0\\1\\1\end{pmatrix} +
+    C_{2}e^{-2t}\begin{pmatrix}1\\0\\0\end{pmatrix} +
+    C_{3}e^{-3t}\begin{pmatrix}0\\1\\-1\end{pmatrix}
+  \end{align*}
+
+  Using the initial condition of $\mathrm{y}\left(0\right) = \mathrm{x}$, we can
+  solve for the values of $C_1,\ C_2,\ C_3$.
+
+  \begin{align*}
+    \mathrm{y}\left(0\right) &= \begin{pmatrix}a\\b\\c\end{pmatrix}\\
+                             &= C_1\begin{pmatrix}0\\1\\1\end{pmatrix} +
+    C_2 \begin{pmatrix}1\\0\\0\end{pmatrix} +
+    C_3 \begin{pmatrix}0\\1\\-1\end{pmatrix}\\
+    \begin{pmatrix}
+      a\\b\\c
+      \end{pmatrix} &= \begin{pmatrix}
+      0 & 1 & 0\\1 & 0 & 1\\1 & 0 & -1
+      \end{pmatrix} \cdot \begin{pmatrix}
+      C_1 \\ C_2 \\ C_3
+    \end{pmatrix}\\
+    \begin{pmatrix}
+      C_1 \\ C_2 \\ C_3
+      \end{pmatrix} &= \begin{pmatrix}
+      0 & \frac{1}{2} & \frac{1}{2}\\
+      1 & 0 & 0\\
+      0 & \frac{1}{2} & -\frac{1}{2}
+      \end{pmatrix} \cdot \begin{pmatrix}
+      a \\ b \\ c
+    \end{pmatrix}
+  \end{align*}
+
+  Using the values of $C_1,\ C_2,\ C_3$ we can determine the equation for
+  $\mathrm{y}$ based off of the initial conditions $(a, b, c)$.
+  \begin{align*}
+    \mathrm{y}\left(t\right) &=
+    \left(\frac{b}{2}+\frac{c}{2}\right)e^{-t}\begin{pmatrix}0\\1\\1\end{pmatrix}\\
+    &+ \left(a\right)e^{-2t}\begin{pmatrix}1\\0\\0\end{pmatrix}\\
+    &+\left(\frac{b}{2}-\frac{c}{2}\right)e^{-3t}\begin{pmatrix}0\\1\\-1\end{pmatrix}
+  \end{align*}
+
+  We plot this equation using matplotlib, to demonstrate that the phase portrait diagram for the
+  equation consists of a three dimensional sink, where all lines converge to the origin.
+
+  \begin{Figure}
+    \centering
+    \def\svgwidth{\columnwidth}
+    \input{p1.pdf_tex}
+    \captionof{figure}{This image represents the phase portrait diagram for the
+    equation, with a set of different initial conditions.}\label{fig:p1_1}
+  \end{Figure}
+
+  \section{Problem 2}\label{sec:problem_2_}
+
+  First we find the formula for $F_t:\mathrm{x}\mapsto \mathrm{y}\left(t\right)$
+
+  \begin{align*}
+    F_t\left(a,b,c\right) =\begin{pmatrix}ae^{-2t}\\
+      \left(\frac{b}{2}+\frac{c}{2}\right)e^{-t} +
+      \left(\frac{b}{2}-\frac{c}{2}\right)e^{-3t}\\
+      \left(\frac{b}{2}+\frac{c}{2}\right)e^{-t}-\left(\frac{b}{2}-\frac{c}{2}\right)e^{-3t}
+    \end{pmatrix}
+  \end{align*}
+
+  Using this equation we find the Jacobi matrix $DF_t$.
+
+  \begin{align*}
+    DF_t &= \begin{pmatrix}
+      \frac{\partial x}{\partial a} & \frac{\partial x}{\partial b} & \frac{\partial x}{\partial c} \\
+      \frac{\partial y}{\partial a} & \frac{\partial y}{\partial b} & \frac{\partial y}{\partial c} \\
+      \frac{\partial z}{\partial a} & \frac{\partial z}{\partial b} & \der{z}{c}
+    \end{pmatrix} \\
+    DF_t &= \begin{pmatrix}
+      e^{-2t} & 0 & 0 \\
+      0 & \frac{1}{2}e^{-t} + \frac{1}{2}e^{-3t} & \frac{1}{2}e^{-t} - \frac{1}{2}e^{-3t}\\
+      0 & \frac{1}{2}e^{-t} - \frac{1}{2}e^{-3t} & \frac{1}{2}e^{-t} + \frac{1}{2}e^{-3t}\\
+    \end{pmatrix} \\
+    \det \left(DF_t\right) &= e^{-6t}\\
+    S\left( t \right) &= e^{-6t}
+  \end{align*}
+  This result demonstrates that as $t \rightarrow \infty$ then $S(t) \rightarrow 0$. This shows that
+  as time goes on, the solution curve compresses closer and closer to zero.
+  \begin{Figure}
+    \centering
+    \def\svgwidth{\columnwidth}
+    \input{p2.pdf_tex}
+    \captionof{figure}{This image shows the plot of the stretch factor $S(t)$. It can be seen that as
+      $t$ grows, the value of $S(t)$ nears zero, indicating the compression of the solution curves at
+    larger times.}\label{fig:p2_1}
+  \end{Figure}
+
+  \section{Problem $e$}\label{sec:problem_e_}
+
+  Using a simplified generalization of the matrix for $S(t)$ we assume that
+  $\mathrm{x} \mapsto \mathrm{y}$ is only two dimensional, so $(a, b) \mapsto
+  (x,y)$. Thus the Jacobian matrix becomes a $2 \times 2$ matrix instead of a
+  $3 \times 3$ matrix.
+  \begin{align*}
+    DF_t &= \begin{pmatrix}
+      \der{x}{a} & \der{x}{b} \\
+      \der{y}{a} & \der{y}{b}
+    \end{pmatrix}
+  \end{align*}
+
+  Now we utilize this generalized matrix to determine a general formula for
+  $S(t)$.
+
+  \begin{align*}
+    S(t) = \der{x}{a}\cdot\der{y}{b}-\der{y}{a}\cdot\der{x}{b}
+  \end{align*}
+
+  Now we can determine the derivative of $S$ in terms of $t$ like so.
+
+  \begin{align*}
+    \der{S}{t} = \sder{x}{a}{t} \cdot \der{y}{b} + \sder{y}{b}{t} \cdot
+    \der{x}{a} - \sder{y}{a}{t} \cdot \der{x}{b} - \sder{y}{b}{t} \cdot \der{y}{a}
+  \end{align*}
+
+  We note that $\der{x}{t}$ appears in this equation, and thus we can use the
+  equation from a velocity vector $U$ like so.
+
+  \begin{align*}
+    \der{x}{t} &= U_1\left(x\left(t\right), y\left(t\right)\right)\\
+    \der{y}{t} &= U_2\left(x\left(t\right), y\left(t\right)\right)\\
+  \end{align*}
+
+  Using these equations we can apply chain rule to the equation for
+  $\der{S}{t}$.
+
+  \begin{align*}
+    \der{S}{t} &=
+    \left(\der{U_1}{x}\cdot\der{x}{a} + \der{U_1}{y}\cdot\der{y}{a}\right)\cdot\der{y}{b}\\
+    &+\left(\der{U_2}{x}\cdot\der{x}{b} + \der{U_2}{y}\cdot\der{y}{b}\right)\cdot\der{x}{a}\\
+    &-\left(\der{U_2}{x}\cdot\der{x}{a} + \der{U_2}{y}\cdot\der{y}{a}\right)\cdot\der{x}{b}\\
+    &-\left(\der{U_1}{x}\cdot\der{x}{b} + \der{U_1}{y}\cdot\der{y}{b}\right)\cdot\der{y}{a}
+  \end{align*}
+
+  After simplification we find
+
+  \begin{align*}
+    \der{S}{t} &=
+    \der{U_1}{x}\cdot\left(\der{x}{a}\cdot\der{y}{b}-\der{x}{b}\cdot\der{y}{a}\right)\\
+    &+ \der{U_2}{y}\cdot\left(\der{y}{b}\cdot\der{x}{a}-\der{y}{a}\cdot\der{x}{b}\right)
+  \end{align*}
+
+  We can notice that the value of $S(t)$ appears, and so we can then factor it
+  out.
+
+  \begin{align*}
+    \der{S}{t} = S(t)\cdot\left(\der{U_1}{x}+\der{U_2}{y}\right)
+  \end{align*}
+
+  We note that this represents the divergence of the vector $U$.
+
+  \section{Problem 3}\label{sec:problem_3_}
+
+  Using our solutions for \nameref{sec:problem_2_} and
+  \nameref{sec:problem_e_}, we can verify our results, as the solution to
+  \nameref{sec:problem_2_} should satisfy the differential equation found in
+  \nameref{sec:problem_e_}.
+
+  \begin{align*}
+    \der{S}{t} &= \left(\der{U_1}{x} + \der{U_2}{y} + \der{U_3}{z}\right)\cdot
+    e^{-6t}\\
+    \der{U_1}{x} &= -2 \quad \der{U_2}{y} = -2\quad \der{U_3}{z} = -2\\
+    \der{S}{t} &= -6\cdot e^{-6t}
+  \end{align*}
+
+  This verifies the solution that we expect.
+
+  \section{Problem $\pi$}\label{sec:problem_pi_}
+
+  Now we consider a \textit{incompressible fluid} which is modeled by the
+  velocity vector field of the form
+  \begin{align*}
+    \vec{U}(\mathrm{y}) = \alpha x \vec{\imath} +
+    (-2y+z)\vec{\jmath}+(y-2z)\vec{k}
+  \end{align*}
+  We first must determine the value of $\alpha$ such that the fluid this
+  equation models is incompressible. To do so, we use the solution in
+  \nameref{sec:problem_e_}. As the value of $S$ is the \textit{stretch factor}
+  of the fluid, and if the fluid needs to be incompressible, then this value
+  must be constant. Thus we can determine that $\der{S}{t} = 0$. Using this
+  knowledge we are able to find the value of $\alpha$.
+  \begin{align*}
+    0 &= (\alpha + (-2) + (-2))\cdot S\\
+    0 &= (\alpha - 4)\\
+    \alpha &= 4
+  \end{align*}
+  Using this value of $\alpha$ we can see that the equation that models an
+  incompressible fluid is
+  \begin{align*}
+    \vec{U}(\mathrm{y}) = 4x\vec{\imath} +
+    (-2y+z)\vec{\jmath}+(y-2z)\vec{k}
+  \end{align*}
+
+  \subsection{Problem $\pi$.1}\label{sub:problem_pi_1}
+
+  Using the same methods that we utilized in \nameref{sec:problem_1_} we solve
+  for and equation for $\textrm{y}(t)$.
+
+  \begin{align*}
+    \vec{U} &= \begin{pmatrix}
+      4 & 0 & 0\\
+      0 & -2 & 1\\
+      0 & 1 & -2
+    \end{pmatrix} \\
+    &\det\begin{pmatrix}
+    4-\lambda & 0 & 0\\
+    0 & -2-\lambda & 1\\
+    0 & 1 & -2-\lambda
+  \end{pmatrix}
+\end{align*}
+Solving this for $\lambda$'s we find:
+\begin{align*}
+  \lambda_1 = 4 \quad \lambda_2 = -3 \quad \lambda_3 = -1
+\end{align*}
+Using these $\lambda$'s we find the corresponding eigenvectors to be.
+\begin{align*}
+  V_1 = \begin{pmatrix}1\\0\\0\end{pmatrix}
+  V_2 = \begin{pmatrix}0\\1\\-1\end{pmatrix}
+  V_3 = \begin{pmatrix}0\\1\\1\end{pmatrix}
+\end{align*}
+
+Using these eigenvalues and eigenvectors we are able to create an equation
+for $\mathrm{y}$ for the incompressible fluid:
+\begin{align*}
+  \mathrm{y}\left(t\right) &= C_{1}e^{4t}\begin{pmatrix}1\\0\\0\end{pmatrix} +
+  C_{2}e^{-3t}\begin{pmatrix}0\\1\\-1\end{pmatrix} +
+  C_{3}e^{-t}\begin{pmatrix}0\\1\\1\end{pmatrix}
+\end{align*}
+Using the same methods from \nameref{sec:problem_1_} we can solve for the
+values of $C_1,C_2,C_3$. We find these to be
+\begin{align*}
+  C_1 = a \quad
+  C_2 = \frac{b}{2}-\frac{c}{2} \quad
+  C_3 = \frac{b}{2}+\frac{c}{2}
+\end{align*}
+Thus our equation for $\mathrm{y}$ becomes
+\begin{align*}
+  \mathrm{y}\left(t\right) &=
+  ae^{4t}\begin{pmatrix}1\\0\\0\end{pmatrix}\\
+  &+\left(\frac{b}{2}-\frac{c}{2}\right)e^{-3t}\begin{pmatrix}0\\1\\-1\end{pmatrix}\\
+  &+\left(\frac{b}{2}+\frac{c}{2}\right)e^{-t}\begin{pmatrix}0\\1\\1\end{pmatrix}
+\end{align*}
+
+Using matplotlib with the equation for the incompressible fluid equation, we
+can generate a phase portrait for the fluid. Note the saddle shape, as either
+a sink or source would indicate that the fluid is being compressed (or
+\textit{negatively compressed}). The 
+
+\begin{Figure}
+  \centering
+  \def\svgwidth{\columnwidth}
+  \input{ppi1.pdf_tex}
+  \captionof{figure}{This image represents the phase portrait for the
+    incompressible fluid, showing that there is a 3D saddle shape present in
+  the space.}\label{fig:p1_1}
+\end{Figure}
+
+\subsection{Problem $\pi$.2}\label{sub:problem_pi_2}
+
+Now we determine the stretch factor for the incompressible fluid. As mentioned
+previously the stretch factor should be constant. First is to find the Jacobi
+matrix $DF_t$ for the equation we found in \nameref{sub:problem_pi_1}.
+\begin{align*}
+    DF_t &= \begin{pmatrix}
+      e^{4t} & 0 & 0 \\
+      0 & \frac{1}{2}e^{-t} + \frac{1}{2}e^{-3t} & \frac{1}{2}e^{-t} - \frac{1}{2}e^{-3t}\\
+      0 & \frac{1}{2}e^{-t} - \frac{1}{2}e^{-3t} & \frac{1}{2}e^{-t} + \frac{1}{2}e^{-3t}\\
+    \end{pmatrix} \\
+\end{align*}
+Thus finding the $\det DF_t$ we can find the equation for $S(t)$.
+
+\begin{align*}
+  \det \left(DF_t\right) = 1
+\end{align*}
+
+This mirrors our initial predictions that the stretch factor would be constant,
+and shows that the fluid is not being stretched at all, as that would
+contradict the incompressibility of it.
+
+\end{multicols}
+
+\end{document}

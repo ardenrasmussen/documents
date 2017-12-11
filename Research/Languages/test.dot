@@ -1,0 +1,9 @@
+// The Round Table
+digraph {
+  A [label="King Author"]
+  B [label="Sir A"]
+  C [label="Sir B"]
+  A -> B
+  A -> C
+  B -> C
+}

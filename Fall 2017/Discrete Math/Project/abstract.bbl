@@ -1,0 +1,148 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{nty/global/}
+  \entry{EPMIFC1}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AK}{%
+         family={Appel},
+         familyi={A\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=HW}{%
+         family={Haken},
+         familyi={H\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AKHW1}
+    \strng{fullhash}{AKHW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Every Planar Map is Four Colorable Part I: Discharging}
+    \field{year}{1976}
+  \endentry
+
+  \entry{EPMIFC2}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AK}{%
+         family={Appel},
+         familyi={A\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=HW}{%
+         family={Haken},
+         familyi={H\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AKHW1}
+    \strng{fullhash}{AKHW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Every Planar Map is Four Colorable Part II: Reducibility}
+    \field{year}{1976}
+  \endentry
+
+  \entry{FPTFCT}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GG}{%
+         family={Gonthier},
+         familyi={G\bibinitperiod},
+         given={Georges},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GG1}
+    \strng{fullhash}{GG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{Formal Proof -- The Four-Color Theorem}
+    \field{year}{2008}
+  \endentry
+
+  \entry{ANPOTFCT}{article}{}
+    \name{author}{4}{}{%
+      {{hash=RN}{%
+         family={Robertson},
+         familyi={R\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Sanders},
+         familyi={S\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Seymour},
+         familyi={S\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Thomas},
+         familyi={T\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RN+1}
+    \strng{fullhash}{RNSDSPTR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{A New Proof Of The Four Color Theorem}
+    \field{volume}{2}
+    \field{journaltitle}{Electronic Research Announcements of the American
+  Mathematical Society}
+    \field{year}{1996}
+  \endentry
+
+  \entry{FCS}{book}{}
+    \name{author}{1}{}{%
+      {{hash=WR}{%
+         family={Wilson},
+         familyi={W\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WR1}
+    \strng{fullhash}{WR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{Four Colors Suffice}
+    \field{year}{2017}
+  \endentry
+\endsortlist
+\endinput
