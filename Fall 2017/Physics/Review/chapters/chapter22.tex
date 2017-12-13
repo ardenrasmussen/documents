@@ -1,0 +1,105 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Chapter 22: The Electric Field II:\@ Continuous Charge Distributions}\label{sec:chapter_22}
+
+\subsection{Electric Field for Continuous Charge Distribution}\label{sub:electric_field_for_countinuous_charge_distriution}
+
+\begin{equation}
+  \vec{E} = \int{d\vec{E}} = \int{\frac{k\hat{r}}{r^2}dq} \quad \text{(Coulomb's law)}
+\end{equation}
+where \(dq=\rho dV\) for a charge distributed throughout a volume, \(dq =
+\sigma dA\) for a charge distributed on a surface, and \(dq = \lambda dL\) for
+a charge distributed along a line.
+
+\subsection{Electric Flux}\label{sub:electric_flux}
+
+\begin{equation}
+  \phi = \lim_{\Delta A_i \to 0}\sum_{i}\vec{E}_i\cdot\hat{n}_i\Delta A_i =
+  \int_S\vec{E}\cdot\hat{n}dA
+\end{equation}
+
+\subsection{Gauss's Law}\label{sub:gauss_s_law}
+
+\begin{equation}
+  \phi_{\text{net}} = \oint_{S}\vec{E}\cdot\hat{n}dA = \oint_{S}E_{n}dA =
+  \frac{Q_{\text{inside}}}{\epsilon_{0}}
+\end{equation}
+The net outward electric flux through a closed surface equals the net charge
+within the surface divided by \(\epsilon_0\).
+
+\subsection{Coulomb Constant $k$ and Electric Constant (Permittivity of Free
+Space) $\epsilon_0$}\label{sub:coulomb_constant_k_and_electric_constant_permittivity_of_free_space_epsilon_0_}
+
+\begin{align}
+  k &= \frac{1}{4\pi\epsilon_0} = 8.99\times 10^9N\cdot m^2/C^2\\
+  \epsilon_0 &= \frac{1}{4\pi k} = 8.85\times 10^{-12}C^2/(N\cdot m^2)
+\end{align}
+
+\subsection{Coulomb's Law and Gauss's Law}
+\label{sub:coulomb_s_law_and_gauss_s_law}
+
+\begin{align}
+  \vec{E} &= \frac{1}{4\pi \epsilon_0}\frac{q}{r^2}\hat{r}\\
+  \phi_{\text{net}} &= \oint_{S}E_{n}dA = \frac{Q_{\text{inside}}}{\epsilon_0}
+\end{align}
+
+\subsection{Discontinuity of $E_n$}
+\label{sub:discontinuity_of_e_n_}
+
+At a surface having a surface charge density of $\sigma$, the component of the
+electric field normal to the surface is discontinuous by $\sigma/\epsilon_0$.
+
+\begin{align}
+  E_{n+} - E_{n-} = \frac{\sigma}{\epsilon_0}
+\end{align}
+
+\subsection{Charge on a Conductor}
+\label{sub:charge_on_a_conductor}
+
+In electrostatic equilibrium, the charge density is zero throughout the
+material of the conductor. All excess or deficit charge resides on the surfaces
+of the conductor.
+
+\subsection{$\vec{E}$ Just Outside a Conductor}
+\label{sub:_e_just_outside_a_conductor}
+
+The resultant electric field just outside the surface of a conductor is normal
+to the surface and has the magnitude $\sigma/\epsilon_0$, where $\sigma$ is the
+local surface charge density on the conductor:
+\begin{align}
+  E_n = \frac{\sigma}{\epsilon}
+\end{align}
+
+\subsection{Electric Fields for Selected Uniform Charge Distributions}
+\label{sub:electric_fields_for_selected_uniform_charge_distributions}
+
+\begin{description}
+  \item[Of a line charge of infinite length]
+    \begin{align}
+      E_R = 2k\frac{\lambda}{R} = \frac{1}{2\pi\epsilon_0}\frac{\lambda}{R}
+    \end{align}
+  \item[On the axis of a chrged ring]
+    \begin{align}
+      E_z = \frac{kQz}{{\left(z^2+a^2\right)}^{3/2}}
+    \end{align}
+  \item[On the axis of a charged disk]
+    \begin{align}
+      E_z = \text{sign}(z) \cdot \frac{\sigma}{2\epsilon_0} 
+      \left[1-{\left(1+\frac{R^2}{z^2}\right)}^{-1}\right]
+    \end{align}
+  \item[Of a charged infinite plane]
+    \begin{align}
+      E_z = \text{sign}(z)\cdot\frac{\sigma}{2\epsilon_0}
+    \end{align}
+  \item[Of a charged thin spherical shell]
+    \begin{align}
+      E_r &= \frac{1}{4\pi\epsilon_0}\frac{Q}{r^2}\quad r > R\\
+      E_r &= 0\quad r < R
+    \end{align}
+\end{description}
+
+
+
+\end{document}

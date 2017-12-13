@@ -1,0 +1,125 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Chapter 21: The Electric Field I:\@ Discrete Charge Distributions}\label{chapter-21}
+
+\subsection{Charge}\label{charge}
+
+There are two kinds of charge, positive and negative. Charges of like
+sign repel, those of opposite sign attract.
+\begin{description}
+  \item[Quantization] \hfill \\ Charge is quantized --- it always occurs in integer
+    multiples of the fundamental charge unit \(e\). The charge of the electron is
+    \(-e\) and that of the proton is \(+e\).
+  \item[Magnitude] \hfill \\
+    \begin{equation}
+      e=1.60\times10^{-19}C
+    \end{equation}
+  \item[Conservation] \hfill \\ Charge is conserved. When charged particles are created
+    or annihilated, the total amount of charge carried by the created or
+    annihilated particles is zero.
+\end{description}
+
+\subsection{Conductors and Insulators}\label{conductors-and-insulators}
+
+In metals, about one electron per atom is delocalized (free to move
+about the entire material). In insulators, all the electrons are bound
+to nearby atoms.
+\begin{description}
+  \item[Ground] \hfill \\ A very large conductor (such as Earth) that can
+    supply or absorb a virtually unlimited amount of charge is called a ground.
+\end{description}
+
+\subsection{Charge by Induction}\label{charge-by-induction}
+
+To charge a conductor buy induction: connect a ground to the conductor,
+hold an external charge near the conductor (to attract or repel the
+conduction electrons), then disconnect the conductor from the ground,
+and finally move the external charge away from the conductor.
+
+\subsection{Coulomb's Law}\label{coulombs-law}
+
+The force exerted by point charge \(q_1\) on point charge \(q_2\) a
+distance \(r_{12}\) away is given by
+
+\begin{equation}
+  \vec{F}_{12} = \frac{kq_1q_2}{r_{12}^{2}}\hat{r}_{12}
+\end{equation}
+
+where unit vector \(\hat{r}_{12}\) points from \(q_1\) towards \(q_2\).
+\begin{description}
+  \item[Coulomb constant] \hfill \\
+    \begin{equation}
+      k = 8.99 \times10^9N\cdot m^2/C^2
+    \end{equation}
+\end{description}
+
+\subsection{Electric Field}\label{electric-field}
+
+The electric field due to a system of charges at a point is defined as
+the net force \(\vec{F}\), exerted by those charges on a very small
+positive test charge \(q_0\), divided by \(q_0\):
+
+\begin{equation}
+  \vec{E} = \frac{\vec{F}}{q_0}
+\end{equation}
+
+\begin{description}
+  \item[Due to a point charge] \hfill \\
+    \begin{equation}
+      \vec{E}_{iP} = \frac{kq_i}{r_{iP}^{2}}\hat{r}_{iP}
+    \end{equation}
+  \item[Due to a system of point charges] \hfill \\
+    The Electric field at \(P\) due to several charges is the vector sum of
+    the fields at \(P\) due to the individual charges:
+    \begin{equation}
+      \vec{E}_P = \sum_{i}\vec{E}_{iP}
+    \end{equation}
+\end{description}
+
+\subsection{Electric Field Lines}\label{sub:electric_field_lines}
+
+The electric field can be represented by electric field lines that emanate from
+positive charges and terminate on negative charges. The strength of the
+electric field is indicated by the density of the electric field lines.
+
+\subsection{Dipole}\label{sub:dipole}
+
+A dipole is a system of two equal but opposite charges separated by a small
+distance.
+
+\begin{description}
+  \item[Dipole moment] \hfill \\ 
+    \begin{equation}
+      \vec{p} = q\vec{L}
+    \end{equation}
+    where \(\vec{L}\) is the position of the positive charge relative to the
+    negative charge.
+  \item[Field due to dipole] \hfill \\ The electric field strength far from a
+    dipole is proportional to the magnitude of the dipole moment and decreased
+    with the cube of the distance.
+  \item[Torque on a dipole] \hfill \\ In a uniform electric field, the net
+    force on a dipole is zero, but there is a torque that tends to align the
+    dipole in the direction of the field.
+    \begin{equation}
+      \vec{\tau} = \vec{p}\times\vec{E}
+    \end{equation}
+  \item[Potential energy of a dipole] \hfill \\
+    \begin{equation}
+      U = -\vec{p}\cdot\vec{E}+U_0
+    \end{equation}
+    Where \(U_0\) is usually taken to be zero.
+\end{description}
+
+\subsection{Polar and Nonpolar Molecules}\label{sub:polar_and_nonpolar_molecules}
+
+Polar molecules, such as \(H_2O\) and \(HCL\), have permanent dipole moments
+because their centers of positive and negative charge do not coincide. They
+behave like simple dipoles in an electric field. Nonpolar molecules do not have
+permanent dipole moments, but they acquire induced dipole moments in the
+presence of an electric field.
+
+
+
+\end{document}

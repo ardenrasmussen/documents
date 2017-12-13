@@ -1,0 +1,190 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\section{Chapter 25: Electric Current and Direct-Current Circuits}
+\label{sec:chapter_25_electric_current_and_direct_current_circuits}
+
+\subsection{Electric Current}
+\label{sub:electric_current}
+
+Electric current is the rate of flow of electric charge through a
+cross-sectional area.
+\begin{align}
+  I = \frac{\Delta Q}{\Delta t}
+\end{align}
+in the limit that $\Delta t$ approaches zero.
+
+\begin{description}
+  \item[Drift velocity] \hfill \\
+    In a conducting wire, electric current is the result of the slow drift of
+    negatively charged electrons that are accelerated by an electric field in
+    the wire and then collide with the lattice ions. Typical drift speeds of
+    electrons in wires are of the order of a few millimeters per second. For
+    mobile charges moving in the positive direction,
+    \begin{align}
+       I = qnAv_d
+    \end{align}
+    where $q = -e$, $n$ is the number density of free electrons, $A$ is the
+    cross-sectional area, and $v_d$ is the drift speed.
+  \item[Current density] \hfill \\
+    The current density $\vec{\jmath}$ is related to the drift velocity by
+    \begin{align}
+      \vec{\jmath} = qn\vec{v_d}
+    \end{align}
+    The current $I$ through a cross-sectional surface is the flux of the
+    current density through the surface.
+\end{description}
+
+\subsection{Resistance}
+\label{sub:resistance}
+
+\begin{description}
+  \item[Definition of resistance]
+    \begin{align}
+      R= \frac{V}{I}
+    \end{align}
+  \item[Resistivity, $\rho$]
+    \begin{align}
+      R = \rho\frac{L}{A}
+    \end{align}
+  \item[Temperature coefficient of resistivity, $\alpha$]
+    \begin{align}
+      \alpha = \frac{\frac{\rho - \rho_0}{\rho_0}}{T-T_0}
+    \end{align}
+\end{description}
+
+\subsection{Ohm's Law}
+\label{sub:ohm_s_law}
+
+For ohmic materials, the resistance does not depend on either the current or
+the potential drop:
+\begin{align}
+  V = IR,\quad R \text{ constant}
+\end{align}
+
+\subsection{Power}
+\label{sub:power}
+
+\begin{description}
+  \item[Supplied to a device or segment]
+    \begin{align}
+       P = IV
+    \end{align}
+  \item[Delivered to a resistor]
+    \begin{align}
+      P = IV - I^2R=\frac{V^2}{R}
+    \end{align}
+\end{description}
+
+\subsection{Emf}
+\label{sub:emf}
+
+\begin{description}
+  \item[Source of emf] \hfill \\
+    A device that supplies electric energy to a circuit.
+  \item[Power supplied by an ideal emf source]
+    \begin{align}
+      P = I\mathcal{E}
+    \end{align}
+\end{description}
+
+\subsection{Battery}
+\label{sub:battery}
+
+\begin{description}
+  \item[Ideal] \hfill \\
+    An ideal battery is a source of emf that maintains a constant potential
+    difference between its two terminals, independent of the current through
+    the battery.
+  \item[Real] \hfill \\
+    A real battery can be considered as an ideal battery in series with a small
+    resistance, called its internal resistance.
+  \item[Terminal voltage]
+    \begin{align}
+      V_a - V_b = \mathcal{E} - Ir
+    \end{align}
+    where in the battery the positive direction is the direction of increasing
+    potential.
+  \item[Total energy stored]
+    \begin{align}
+      E_{\text{stored}} = Q\mathcal{E}
+    \end{align}
+\end{description}
+
+\subsection{Equivalent Resistance}
+\label{sub:equivalent_resistance}
+
+\begin{description}
+  \item[Resistors in series]
+    \begin{align}
+      R_{\text{eq}} = R_1 + R_2 + \cdots
+    \end{align}
+  \item[Resistors in parallel]
+    \begin{align}
+      \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \cdots
+    \end{align}
+\end{description}
+
+\subsection{Kirchhoff's Rules}
+\label{sub:kirchhoff_s_rules}
+
+\begin{enumerate}
+  \item When any closed loop is traversed, the algebraic sum of the changes in
+    potential around the loop must equal zero.
+  \item At any junction (branch point)  in a circuit where the current can
+    divide, the sum of the current into the junction must equal the sum of the
+    currents out of the junction.
+\end{enumerate}
+
+\subsection{Measuring Devices}
+\label{sub:measuring_devices}
+
+\begin{description}
+  \item[Ammeter] \hfill \\
+    An ammeter is a very low resistance device that is placed in series with a
+    circuit element to measure the current in the element.
+  \item[Voltmeter] \hfill \\
+    A voltmeter is a very high resistance device that is placed in parallel
+    with a circuit element to measure the potential difference across the
+    element.
+  \item[Ohmmeter] \hfill \\
+    An ohmmeter is a device containing a battery connected in series with a
+    galvanometer and resistor that is used to measure the resistance of a
+    circuit element placed across its terminals.
+\end{description}
+
+\subsection{Discharging a Capacitor}
+\label{sub:discharging_a_capacitor}
+
+\begin{description}
+  \item[Charge on the capacitor]
+    \begin{align}
+      Q(t) = Q_0e^{-\frac{t}{RC}} = Q_0e^{-\frac{t}{\tau}}
+    \end{align}
+  \item[Current in the circuit]
+    \begin{align}
+      I = -\frac{dQ}{dt} = \frac{V_0}{R} e^{-\frac{t}{RC}} =
+      I_0e^{-\frac{t}{\tau}}
+    \end{align}
+  \item[Time constant]
+    \begin{align}
+       \tau = RC
+    \end{align}
+\end{description}
+
+\subsection{Charging a Capacitor}
+\label{sub:charging_a_capacitor}
+
+\begin{description}
+  \item[Charge on the capacitor]
+    \begin{align}
+      Q = C\mathcal{E}\left[1-e^{-\frac{t}{RC}}\right] =
+      Q_f\left(1-e^{-\frac{t}{\tau}}\right)
+    \end{align}
+  \item[Current in the cirucit]
+    \begin{align}
+      I = \frac{\mathcal{E}}{R}e^{-\frac{t}{RC}} = I_0e^{-\frac{t}{\tau}}
+    \end{align}
+\end{description}
+
+\end{document}

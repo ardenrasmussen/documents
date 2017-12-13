@@ -1,0 +1,105 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\section{Chapter 24: Capacitance}
+\label{sec:chapter_24_capacitance}
+
+\subsection{Capacitor}
+\label{sub:capacitor}
+
+A capacitor is a device for storing charge and energy. It consists of two
+conductors that are insulated from each other and carry equal and opposite
+charges.
+
+\subsection{Capacitance}
+\label{sub:capacitance}
+
+Definition of capacitance
+\begin{align}
+  C = \frac{Q}{V}
+\end{align}
+
+\begin{description}
+  \item[Single conductor] \hfill \\
+    $Q$ is the conductor's total charge, $V$ is the conductor's potential
+    relative to its surroundings.
+  \item[Capacitor] \hfill \\
+    $Q$ is the magnitude of the charge on either conductor, $V$ is the
+    magnitude of the potential difference between the conductors.
+  \item[Of an isolated spherical conductor]
+    \begin{align}
+       C = 4\pi\epsilon_0R
+    \end{align}
+  \item[Of a parallel-plate capacitor]
+    \begin{align}
+      C= \frac{\epsilon_0A}{d}
+    \end{align}
+  \item[Of a cylindrical capacitor]
+    \begin{align}
+      C = \frac{2\pi\epsilon_0L}{\ln\left(\frac{R_2}{R_1}\right)}
+    \end{align}
+  \item[Energy stored in a capacitor]
+    \begin{align}
+      U = \frac{1}{2}QV = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}CV^2
+    \end{align}
+  \item[Energy density of an electric field]
+    \begin{align}
+      u_e = \frac{1}{2}\epsilon_0E^2
+    \end{align}
+\end{description}
+
+\subsection{Equivalent Capacitance}
+\label{sub:equivalent_capacitance}
+
+\begin{description}
+  \item[Parallel capacitors] \hfill \\
+    When devices are connected in parallel, the voltage drop is the same across
+    each.
+    \begin{align}
+      C_{\text{eq}} = C_1 + C_2 + \cdots
+    \end{align}
+  \item[Series capacitors] \hfill \\
+    When capacitors are in series, the voltage drop add. If the total charge on
+    each connected pair of plates is zero, then:
+    \begin{align}
+      \frac{1}{C_{\text{eq}}} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots
+    \end{align}
+\end{description}
+
+\subsection{Dielectrics}
+\label{sub:dielectrics}
+
+\begin{description}
+  \item[Macroscopic behavior] \hfill \\
+    A nonconducting material is called a dielectric. When a dielectric is
+    inserted between the plates of a charged, electrically isolated capacitor,
+    the electric field between the plates is weakened and the capacitance is
+    thereby increased by the factor $\kappa$, which is the dielectric
+    constant.
+  \item[Microscopic view] \hfill \\
+    The electric field in the dielectric of a capacitor is weakened because the
+    molecular dipole moments (either preexisting or induced) tend to align with
+    the applied field and thereby produce a second electric field inside the
+    dielectric that opposes the applied field. The aligned dipole moment of the
+    dielectric is proportional to the applied field.
+  \item[Electric field inside]
+    \begin{align}
+      E = \frac{E_0}{\kappa}
+    \end{align}
+  \item[Effect on capacitance]
+    \begin{align}
+       C = \kappa C_0
+    \end{align}
+  \item[Permittivity $\epsilon$]
+    \begin{align}
+       \epsilon = \kappa \epsilon_0
+    \end{align}
+  \item[Uses of a dielectric]
+    \begin{enumerate}
+      \item Increases capacitance
+      \item Increases dielectric strength
+      \item Physically separates conductors
+    \end{enumerate}
+\end{description}
+
+\end{document}

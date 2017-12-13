@@ -1,0 +1,115 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Chapter 28: Magnetic Induction}
+\label{sec:chapter_28_magnetic_induction}
+
+\subsection{Magnetic Flux $\phi_m$}
+\label{sub:magnetic_flux_phi_m_}
+
+\begin{description}
+  \item[General definition]
+    \begin{align}
+      \phi_m = \int_s\vec{B} \cdot \hat{n} dA
+    \end{align}
+  \item[Uniform field, flat surface bounded by coil of $N$ turns]
+    \begin{align}
+      \phi_m = NBA\cos\theta
+    \end{align}
+    where $A$ is the area of the flat surface bound by a single turn.
+  \item[Units]
+    \begin{align}
+      1Wb = 1T\cdot m^2
+    \end{align}
+  \item[Due to current in a circuit]
+    \begin{align}
+      \phi_m = LI
+    \end{align}
+  \item[Due to current in two circuits]
+    \begin{align}
+      \phi_{m1} = L_1I_1+MI_2\\
+      \phi_{m2}=:_2I_2+MI_1
+    \end{align}
+\end{description}
+
+\subsection{EMF}
+\label{sub:emf}
+
+\begin{description}
+  \item[Faraday's law (includes both induction and motion emf)]
+    \begin{align}
+      \mathcal{E} = -\frac{d\phi_m}{dt}
+    \end{align}
+  \item[Induction (time-varying magnetic field, $C$ stationary)]
+    \begin{align}
+      \mathcal{E} = \oint_C\vec{E}\cdot d\vec{l}
+    \end{align}
+  \item[Rod moving perpendicular to both its length and $\vec{B}$]
+    \begin{align}
+      |\mathcal{E}| = vBl
+    \end{align}
+  \item[Self-induced (back emf)]
+    \begin{align}
+    \mathcal{E} = -L\frac{dI}{dt}
+  \end{align}
+\end{description}
+
+\subsection{Faraday's Law}
+\label{sub:faraday_s_law}
+
+\begin{align}
+  \mathcal{E} = -\frac{d\phi_m}{dt}
+\end{align}
+
+\subsection{Lenz's Law}
+\label{sub:lenz_s_law}
+
+The induced emf and induced current are in such a direction as to oppose, or
+tend to oppose, the change that produces them.
+
+\begin{description}
+  \item[Alternative statement] \hfill \\
+    When a magnetic flux through a surface changes, the magnetic field due to
+    any induced current produces a flux of its own --- through the same surface
+    and opposite sign to the change in flux.
+\end{description}
+
+\subsection{Inductance}
+\label{sub:inductance}
+
+\begin{description}
+  \item[Self-inductance]
+    \begin{align}
+      L = \frac{\phi_m}{I}
+    \end{align}
+  \item[Self-inductance of a solenoid]
+    \begin{align}
+      L = \mu_0n^2Al
+    \end{align}
+  \item[Mutual inductance]
+    \begin{align}
+      M = \frac{\phi_{m21}}{I_1}=\frac{\phi_{m12}}{I_2}
+    \end{align}
+  \item[Units and constants]
+    \begin{align}
+      1H = 1Wb/A = 1T\cdot m^2/A\\
+      \mu_0 = 4\pi\times10^{-7}H/m
+    \end{align}
+\end{description}
+
+\subsection{Magnetic Energy}
+\label{sub:magnetic_energy}
+
+\begin{description}
+  \item[Energy stored in an inductor]
+    \begin{align}
+      U_m = \frac{1}{2}LI^2
+    \end{align}
+  \item[Energy density in a magnetic field]
+    \begin{align}
+      u_m = \frac{B^2}{2\mu_0}
+    \end{align}
+\end{description}
+
+\end{document}

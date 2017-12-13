@@ -11,6 +11,9 @@ max_v = 2
 min_v = -2
 max_void = 0
 min_void = 0
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
 #  ax.set_xlim(-2, 2)
 #  ax.set_ylim(-2, 2)
 #  ax.set_zlim(-2, 2)
@@ -53,8 +56,8 @@ for a in a_range:
                         v_new.append(v[i])
                         w_new.append(w[i])
             #  ax.plot(x_new, y_new, z_new)
-            ax.quiver(x, y, z, u, v, w)
-            #  ax.plot(x, y, z)
+            #  ax.quiver(x, y, z, u, v, w)
+            ax.plot(x, y, z)
             #  ax.quiver(x_new, y_new, z_new, u_new, v_new, w_new)
 #  ax.legend()
 plt.show()

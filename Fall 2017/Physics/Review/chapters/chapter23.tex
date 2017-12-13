@@ -1,0 +1,179 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Chapter 23: Electric Potential}
+\label{sec:chapter_23_electric_potential}
+
+\subsection{Potential Difference}
+\label{sub:potential_difference}
+
+The potential different $V_b - V_a$ is defined as the negative of the work per
+unit charge done by the electric field on a test charge as it moves from point
+$a$ to point $b$.
+\begin{align}
+  \Delta V = V_b - V_a = \frac{\Delta U}{q_0} = -\int_a^b\vec{E}\cdot\vec{dl}
+\end{align}
+
+\begin{description}
+  \item[Potential difference for infinitesminal displacements]
+    \begin{align}
+      dV = -\vec{E} \cdot \vec{dl}
+    \end{align}
+\end{description}
+
+\subsection{Electric Potential}
+\label{sub:electric_potential}
+
+\begin{description}
+  \item[Potential due to a point charge]
+    \begin{align}
+      V = \frac{kq}{r}-\frac{kq}{r_{\text{ref}}}\quad (V = 0
+      \text{ if }r=r_{\text{ref}})
+    \end{align}
+  \item[Coulomb potential]
+    \begin{align}
+      V = \frac{kq}{r}\quad(V = 0 \text{ if  } r = \inf)
+    \end{align}
+  \item[Potential due to a system of point charges]
+    \begin{align}
+      V = \sum_i\frac{kq_i}{r_i}\quad(V=0 \text{ if } r_i = \inf, i=1,2,\ldots)
+    \end{align}
+  \item[Potential due to continuous charge distribution]
+    \begin{align}
+      V = \int{\frac{kdq}{r}}\quad(V=0\text{ if }r=\inf)
+    \end{align}
+    Where $dq$ is an increment of charge and $r$ is the distance from the
+    increment to the field point. This expression can be used only if the
+    charge distribution is contained in an finite volume so that the potential
+    can be chosen to be zero at infinity.
+  \item[Continuity of electric potential] \hfill \\
+    The potential function $V$ is continuous everywhere in space.
+\end{description}
+
+\subsection{Computing the Electric Field from the Potential}
+\label{sub:computing_the_electric_field_from_the_potential}
+
+The electric field points in the direction of the most rapid decrease in the
+potential. The charge in potential when a test charge undergoes a displacement
+$\vec{dl}$ is given by
+\begin{align}
+  E_{\text{tan}} = -\frac{dV}{dl}
+\end{align}
+
+\begin{description}
+  \item[Gradient] \hfill \\
+    A vector that points in the direction of the greatest rate of change in a
+    scalar function and that has a magnitude equal to the derivative of that
+    function, with respect to the distance in that direction, is called the
+    gradient of the function. $\vec{E}$ is the negative gradient of $V$.
+  \item[Potential a function of $x$ alone]
+    \begin{align}
+      E_X = -\frac{dV(x)}{dx}
+    \end{align}
+  \item[Potential a function of $r$ alone]
+    \begin{align}
+      E_r = -\frac{dV(r)}{dr}
+    \end{align}
+\end{description}
+
+\subsection{Units}
+\label{sub:units}
+
+\begin{description}
+  \item[$V$ and $\Delta V$] \hfill \\
+    The SI unit of potential and potential difference is the volt ($V$):
+    \begin{align}
+      1V = 1J/C
+    \end{align}
+  \item[Electric field]
+    \begin{align}
+       1N/C = 1V/m
+    \end{align}
+  \item[Electron volt] \hfill \\
+    The electron volt ($eV$) is the charge in potential energy of a particle of
+    charge $e$ as it moves from $a$ to $b$ where $V_b - V_a = 1$ volt:
+    \begin{align}
+      1eV = 1.6\times10^{-19}C\cdot V=1.6\times10^{-19}J
+    \end{align}
+\end{description}
+
+\subsection{Potential Energy of Two Point Charges}
+\label{sub:potential_energy_of_two_point_charges}
+
+\begin{align}
+  U = q_0V=\frac{kq_0q}{r}\quad(U=0\text{ if }r=\inf)
+\end{align}
+
+\subsection{Potential Functions}
+\label{sub:potential_functions}
+
+\begin{description}
+  \item[On the axis of a uniformly charged ring]
+    \begin{align}
+      V=\frac{kQ}{\sqrt{z^2+a^2}}\quad(V=0\text{ if }|z|=\inf)
+    \end{align}
+  \item[On the axis of a uniformly charged disk]
+    \begin{align}
+      V=2\pi k\sigma|z|\left(\sqrt{1+\frac{R^2}{z^2}} - 1\right)\quad(V=0\text{ if }|z|=\inf)
+    \end{align}
+  \item[For an infinite plane of charge]
+    \begin{align}
+      V = V_0 -2\pi k \sigma |x|\quad(V=V_0\text{ if }x=0)
+    \end{align}
+  \item[For a spherical shell of charge]
+    \begin{align}
+      V=\left\{\begin{array}{ll}\frac{kQ}{r} & r\geq R\\\frac{kQ}{R} & r \leq
+      R\end{array}\right.\quad (V=0\text{ if }r=\inf)
+    \end{align}
+  \item[For an infinite line charge]
+    \begin{align}
+      V=2k\lambda\ln\frac{R_{\text{ref}}}{R}\quad(V=0\text{ if }r=R_{\text{ref}})
+    \end{align}
+\end{description}
+
+\subsection{Charge on a Nonspherical Conductor}
+\label{sub:charge_on_a_nonspherical_conductor}
+
+On a conductor of arbitrary shape, the surface charge density $\sigma$ is
+greatest at points where the radius of curvature is smallest.
+
+\subsection{Dielectric Breakdown}
+\label{sub:dielectric_breakdown}
+
+The amount of charge that can be placed on a conductor is limited by the fact
+that molecules of the surrounding medium undergo dielectric breakdown at very
+high electric fields, causing the medium to become a conductor.
+
+\begin{description}
+  \item[Dielectric strength] \hfill \\
+    The dielectric strength is the magnitude of the electric field at which
+    dielectric breakdown occurs. The dielectric strength of dry air is
+    \begin{align}
+      E_{\text{max}} \approx 3\times10^6V/m = 3MV/m
+    \end{align}
+\end{description}
+
+\subsection{Electrostatic Potential Energy}
+\label{sub:electrostatic_potential_energy}
+
+The electrostatic potential energy of a system of point charges is the work
+needed to bring the charges from a infinite separation to their final
+positions.
+
+\begin{description}
+  \item[Of point charges]
+    \begin{align}
+      U = \frac{1}{2}\sum_{i=1}^{n}q_iV_i
+    \end{align}
+  \item[Of a conductor with charge $Q$ at potential $V$]
+    \begin{align}
+      U = \frac{1}{2}QV
+    \end{align}
+  \item[Of a system of conductors]
+    \begin{align}
+      U = \frac{1}{2}\sum_{i=1}^{n}Q_iV_i
+    \end{align}
+\end{description}
+
+\end{document}

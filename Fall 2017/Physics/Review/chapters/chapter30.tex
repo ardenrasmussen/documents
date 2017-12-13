@@ -1,0 +1,55 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\section{Chapter 30: Maxwell's Equations and Electromagneteic Waves}
+\label{sec:chapter_30_maxwell_s_equations_and_electromagneteic_waves}
+
+\subsection{Maxwell's Displacement Current}
+\label{sub:maxwell_s_displacement_current}
+
+Amp\`ere's law can be generalized to apply to currents that are not steady (and
+not continuous) if the current $I$ is replaced by $I + I_d$, where $I_d$ is
+Maxwell's displacement current:
+\begin{align}
+  I_d = \epsilon_0\frac{d\phi_e}{dt}
+\end{align}
+
+\begin{description}
+  \item[Generalized form of Amp\`ere's law]
+    \begin{align}
+      \oint_C\vec{B}\cdot d\vec{l} =
+      \mu_0\left(I+I_d\right)=\mu_0I+\mu_0\epsilon_0\frac{d\phi_e}{dt}
+    \end{align}
+\end{description}
+
+\subsection{Maxwell's Equations}
+\label{sub:maxwell_s_equations}
+
+The laws of electricity and magnetism are summariezed by Maxwell's equations.
+
+\begin{description}
+  \item[Gauss's law]
+    \begin{align}
+      \oint_SE_ndA=\frac{1}{\epsilon_0}Q_\text{inside}
+    \end{align}
+  \item[Gauss's law for magnetism]
+    \begin{align}
+      \oint_SB_ndA = 0
+    \end{align}
+  \item[Faraday's law]
+    \begin{align}
+      \oint_C\vec{E}\cdot d\vec{l} =
+      -\frac{d}{dt}\int_SB_ndA=-\int_S\frac{\partial B_n}{\partial t}dA
+    \end{align}
+  \item[Amp\`ere's law modified]
+    \begin{align}
+      \oint_C\vec{B}\cdot d\vec{l} =
+      \mu_0\left(I+I_d\right)=\mu_0I+\mu_0\epsilon_0\int_S\frac{\partial
+      E_n}{\partial t} dA
+    \end{align}
+\end{description}
+
+
+
+
+\end{document}
