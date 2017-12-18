@@ -1,0 +1,65 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Counting}
+\label{sec:counting}
+
+\begin{description}
+  \item[The addition principle] $M_1+M_2+M_3=\# ways$, where $M_i$ are
+    different methods for the same task.
+  \item[The multiplication principle] $t_1\cdot t_2\cdot t_3 = \# ways$, where
+    $t_i$ are different tasks to be completed.
+  \item[Indirect Method] Count the total number of ways, and subtract the
+    unwanted ways that were counted.
+  \item[Combinations] A collection of $k$ objects chosen from $n$ distinct
+    objects \textit{without regard to the order}.
+    \begin{align}
+      C(n, k) = \begin{pmatrix}n\\k\end{pmatrix} = \frac{n!}{k!\left(n-k\right)!}
+    \end{align}
+  \item[Permutations] An \textit{arrangement} of $k$ objects out of a
+    collection of $n$ distinct objects \textit{where order matters}.
+\end{description}
+
+\section{Basic Logic}
+\label{sec:basic_logic}
+
+\begin{description}
+  \item[Negation] $\neg P$, not $P$.
+  \item[Conjunction] $P\wedge Q$, $P$ and $Q$.
+  \item[Disjunction] $P\vee Q$, $P$ or $Q$.
+  \item[Conditional] $P\to Q$, if $P$ then $Q$.
+  \item[Biconditional] $P\leftrightarrow Q$, $P$ if and only if $Q$.
+  \item[Logically Equivalent] $P\iff Q$.
+  \item[Implies] $P\implies Q$.
+\end{description}
+
+\textbf{Note} that the \textit{Conditional} and \textit{Implies} are often mixed,
+as well as the \textit{Biconditional} and \textit{logically equivalent}.
+
+\begin{description}
+  \item[Distributive Laws]
+    \begin{align}
+      P\vee\left(Q\wedge R\right) &\iff \left(P\vee Q\right)\wedge\left(P\vee
+      R\right)\\
+      P\wedge\left(Q\vee R\right) &\iff \left(P\wedge Q\right)\vee\left(P\wedge
+      R\right)
+    \end{align}
+  \item[Conditional]
+    \begin{align}
+       P \to Q \iff \neg P \vee Q
+    \end{align}
+  \item[De Morgan's Laws]
+    \begin{align}
+      \neg\left(P\wedge Q\right) &\iff \neg P \vee \neg Q\\
+      \neg\left(P\vee Q\right) &\iff \neg P \wedge \neg Q
+    \end{align}
+  \item[Parenthesies]
+    \begin{align}
+      \left(P \vee Q\right)\vee R &\iff P\vee Q\vee R\\
+      P\wedge \left(Q\wedge R\right) &\iff P\wedge Q\wedge R
+    \end{align}
+  \item[Converse] $P\to Q : Q\to P$.
+  \item[Inverse] $P\to Q : \neg P \to \neg Q$.
+  \item[Contrapositive] $P\to Q : \neg Q \to \neg P$.
+\end{description}
+
+\end{document}

@@ -1,0 +1,118 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\section{Direct and Indirect Proofs in Number Theory}
+\label{sec:direct_and_indirect_proofs_in_number_theory}
+
+\begin{description}
+  \item[Contrapositive] of $P\to Q$ is $\neg Q \to \neg P$ (Switch order and
+    negate both).
+  \item[Definition of divides] If there is an integer $q$ such that $n=kq$,
+    then $k|n$.
+  \item[Division Algorithm] For $m,n\in\mathbb{Z} $ there is a unique pair
+    $r,q\in\mathbb{Z}$ such that $n=mq+r$ where $m>0$ and $0 \leq r < m$.
+  \item[Odd and Even] Odd if there is a $q\in\mathbb{Z}$ such that $n=2q+1$, it
+    is odd. Event if there is a $q\in\mathbb{Z}$ such that $2q=n$, it is even.
+  \item[Prime and Ireducible] $p$ is prime if got $a,b\in\mathbb{Z}$, $p|ab\to
+    p|a \text { or } p|b$. $p$ is irreducible if $p=ab\to a=1\text{ or }b=1$.If
+    $p$ is prime,it is irreducible.
+\end{description}   
+
+\section{Induction}
+\label{sec:induction}
+
+Use induction when dealing with natural numbers, often in a series or
+repetitive numerical situation. Always include \textit{Base case},
+\textit{Inductive hypothesis} (for $k\geq BC\#$), \textit{Inductive Step} (use
+IH to prove $k+1$). Start with claim $P(n)$. No backward proofs.
+
+\section{Greatest Common Divisors}
+\label{sec:greatest_common_divisors}
+
+\begin{description}
+  \item[Definition] Let $m,k\in\mathbb{Z}$. $d$ is the $GCD(m,k)$ if
+    \begin{enumerate}[(i)]
+      \item $d|m$
+      \item $d|k$
+      \item if $a\in\mathbb{Z}$ and $a|m$ and $a|k$, then $a \leq d$.
+    \end{enumerate}
+  \item[Euclidean Algorithm] Use \textit{Division algorithm} until you get
+    $r=0$. Go backwards to express $GCD$ s linear combination of the two
+    numbers.
+  \item[GCD pre-hammer] Given $a,b\in\mathbb{Z}$, $\exists x,y\in\mathbb{Z}\to
+    GCD(a,b)=xa+yb$.
+  \item[GCD hammer] $a$ and $b$ are relatively prime if and only if $\exists
+    x,y\in\mathbb{Z}$ such that $xa+yb=1$.
+  \item If $d|ab$ and $GCD(a,d)=1$ then $d|b$.
+\end{description}
+
+\section{The Fundamental Theorem of Arithmetic}
+\label{sec:the_fundamental_theorem_of_arithmetic}
+
+Let $n>1$, $n\in\mathbb{Z}$. Then $n$ has a prime factorization, $n=p_1\cdot
+p_2\cdots p_k$ where each $p_i$ is prime. This factorization is \textit{unique
+up to reordering the factors}. The $LCM = \frac{ab}{GCD}$ where $a,b$ are two
+integers we are concerned with.
+
+\section{Set Theory Basics}
+\label{sec:set_theory_basics}
+
+\begin{description}
+  \item[Set] A set is a collection of elements $\{a, b, c\}$.
+  \item[Union] $A\cup B$, the combination of all the elements from both $A$ and
+    $B$, without repeating elements.
+  \item[Intersection] $A\cap B$, The set of elements that both $A$ and $B$ have
+    in common.
+  \item[Cardinality] $|A|$ or $card(A)$, The number of elements in a set.
+  \item[Empty Set] The set with no elements is the empty set $\emptyset$ or
+    $\{\}$.
+  \item[Power Set] $\mathcal{P}(S)$, The set of all possible subsets of $S$.
+  \item[Compliment] The set of elements in the universe $U$ that are not
+    elements of the original set.
+\end{description}
+
+\section{Equivalence Relations}
+\label{sec:equivalence_relations}
+
+\begin{description}
+  \item[Relation] Given sets $A$ and $B$, a relation is a subset of $A\times B$.
+  \item[Equivalence Relation] A relation is an equivalence relation if it is
+    \begin{description}
+      \item[Reflexive] $\forall a\in A, aRa$.
+      \item[Symmetric] $aRb \to bRa$.
+      \item[Transitive] $aRb \text{ and } bRc \to aRc$.
+    \end{description}
+  \item[Partition] Let $A$ be a nonempty set. Define $P=\{A_1, A_2, \ldots,
+    A_n\}$ where
+    \begin{enumerate}[(i)]
+      \item For $i$ from $i=1,2,\ldots,n$ $A_i\subseteq A$.
+      \item For $i=1,2,\ldots,n$, $A_i\neq\emptyset$.
+      \item For pairs $i,j$ with $i\neq j$, $A_i\cap A_j = \emptyset$ (Each
+        subset is unique).
+      \item $A_1\cup A_2\cup \cdots\cup A_n=A$.
+    \end{enumerate}
+    Such a $P$ is a partition. $A_1,A_2,\ldots,A_n$ are the partition elements.
+    Each is an equivalence class ${\left[a\right]}_R$ under a relation $R$.
+    Each partition gives an equivalence relation.
+\end{description}
+
+\section{Functions}
+\label{sec:functions}
+
+\begin{description}
+  \item[Function] A function $f$ is a relation from $A\mapsto B$ for which each
+    element of $A$ appears once and only once in the first coordinates of an
+    ordered pair in $f$.
+  \item[Injective] $f$ is injective (one-to-one) if $\forall x_1, x_2\in A,
+    f\left(x_1\right)=f\left(x_2\right)\implies x_1 = x_2$. If every element in
+    the domain maps to a unique value in the co domain.
+  \item[Surjective] $f$ is surjective (onto) if $\forall y\in B, \exists x\in
+    A, f(x) = y$. If every element in co domain is mapped to by at least one
+    element in the domain.
+  \item[Bijection] A function is a bijection is it is both injective and
+    surjective.
+  \item[Composition] Let $f,g$ be functions, the composition of these function
+    is defined as $f\circ g \equiv g\left(f\left(x\right)\right)$.
+\end{description}
+
+\end{document}

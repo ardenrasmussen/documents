@@ -1,0 +1,85 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{The Pigeonhole Principle}
+\label{sec:the_pigeonhole_principle}
+
+Suppose $|A|=n$ and $|B|=m$ and $n>m$. Then the function $f:A\mapsto B$ cannot
+be injective. There are too many ``pigeons'' and not enough ``holes''.
+
+\section{The Inclusion/Exclusion Principle}
+\label{sec:the_inclusion_exclusion_principle}
+
+If $S_1,S_2,\ldots,S_n$ are all finite sets and $n\geq 2$, then
+\begin{align}
+  \left|S_1\cup S_2 \cup \cdots \cup S_n\right| &=
+  |S_1|+|S_2|+\ldots+|S_n|\\
+  &-|S_1\cap S_2| - |S_1\cap S_3| -\ldots -|S_{n-1}\cap S_n|\\
+  &+\bullet \bullet \bullet\\
+  &+{\left(-1\right)}^{n-1}\left|S_1\cup S_2\cup \cdots \cup S_n\right|
+\end{align}
+\begin{align}
+  \left|\bigcup_{k=1}^{n}S_k\right|=\sum_{k=1}^{n}\left|S_k\right| - \sum_{1\leq k
+  < j \leq n}^{n}\left|S_i \cap S_j\right| + \ldots +
+  {\left(-1\right)}^{n-1}\left|\bigcap_{k=1}^{n} S_k\right|
+\end{align}
+
+\section{Graph Theory}
+\label{sec:graph_theory}
+
+\begin{description}
+  \item[Graph] A graph is a set $V$ of objects along with a set $E$ of
+    unordered two element subsets of $V$. Elements of $V$ are
+    \textit{vertices} and elements of $E$ are \textit{edges}.
+  \item[Degree] The degree of a vertex is the number of elements in $E$ that
+    contain that vertex. The sum of degrees must always be even, as each edge
+    connects exactly two vertexes.
+  \item[Degree Sequence] The degree sequence of a graph is the list of degrees
+    of vertexes of a graph in increasing order.
+  \item[Walk] Walks are routes through a graph that connect two vertices and can repeat
+    edges and vertexes.
+  \item[Trail] Trails are walks that cannot repeat edges.
+  \item[Path] Paths are walks that cannot repeat edges or vertexes.
+  \item[Circuit] A circuit is a closed trail, (one which ends at the beginning
+    vertex).
+  \item[Connected] A graph is connected if any 2 vertices have a path in
+    between them.
+  \item[Component] A component of a graph is the largest connected piece of a
+    graph where you include all connected vertices.
+  \item[Tree] A tree is a connected graph with no circuit's.
+  \item[Forest] A forest is a disconnected graph with no circuit's, or a group
+    of disconnected trees.
+  \item[Bridge] A bridge is an edge that connects two otherwise disconnected
+    components of a graph. If a graph $G$ has a circuit, then there is an edge
+    in $G$ that is not a bridge. If you remove an edge from a connected graph,
+    you split it into at most two components.
+  \item[Equivilant Definition for Finite Tree] If $T$ is a graph with $n$
+    vertices, then the following are equivalent:
+    \begin{enumerate}[(1)]
+      \item $T$ is a tree.
+      \item $T$ has no circuits and $n-1$ edges.
+      \item $T$ is connected and has $n-1$ edges.
+      \item $T$ is connected and removal of an edge disconnects $T$.
+      \item There exists a unique path between any vertices in $T$.
+      \item $T$ has no circuits, and adding any edge creates one.
+    \end{enumerate}
+  \item[Minimal Spanning Tree] A minimal spanning tree, is a tree that connects
+    a graph using as minimal weight as possible. To create a minimal spanning
+    tree
+    \begin{enumerate}
+      \item Chose the edge with minimum weight.
+      \item Look at the remaining edges. Chose edge with minimum weight that does
+        not create a circuit.
+      \item Stop when you have $n-1$ edges.
+    \end{enumerate}
+  \item[Planar] A graph is planar if a diagram can be drawn of it where no
+    edges cross.
+    \begin{itemize}
+      \item To prove a graph is planar, can produce a planar drawing of it.
+      \item Hard to prove it isn't, best to argue by contradiction with
+        \textit{Euler characteristic}.
+    \end{itemize}
+
+  \item[Euler Characteristic] $v-e+f=2$ for a connected planar graph.
+\end{description}
+
+\end{document}
