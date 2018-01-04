@@ -1,0 +1,81 @@
+\documentclass[10pt]{article}
+\usepackage{subfiles}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{nameref}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{minted}
+\usepackage{fancyhdr}
+\usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usetikzlibrary{snakes,arrows,shapes}
+\usepackage[rightcaption]{sidecap}
+
+\graphicspath{ {languages/} }
+
+\pagestyle{fancy}
+
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+
+% \newcommand{\svg}[2][1]{\ifthenelse{\equal{#1}{}}{A}{\ifthenelse{\equal{#1}{1}}{B}{C}}}
+\newcommand{\svg}[2][\textwidth]{%
+  \def\svgwidth{#1}%
+  \input{#2}%
+}
+
+\newcommand{\usec}[1]{%
+\section{#1}%
+\noindent\rule{\textwidth}{2pt}%
+\vspace{10pt}%
+}
+\newcommand{\cd}[1]{\texttt{#1}}
+\newcommand{\nr}[1]{\nameref{#1}}
+
+\title{Computer Languages}
+\author{Arden Rasmussen}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+
+\begin{abstract}\label{abstract}
+   This document aims at compairing a large number of the posible different
+   programming languages that are currently avalible, for both their
+   efficiency, code size, support, readability and many other features. This
+   document does not aim to single out a single language as the best or worst,
+   but to mearly show the variations between the languages, and to provide some
+   introduction to the languages.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\subfile{languages/ada}
+\subfile{languages/bash}
+\subfile{languages/c}
+\subfile{languages/cpp}
+\subfile{languages/csharp}
+\subfile{languages/go}
+\subfile{languages/java}
+\subfile{languages/javascript}
+\subfile{languages/lisp}
+\subfile{languages/lua}
+\subfile{languages/perl}
+\subfile{languages/python2}
+\subfile{languages/python3}
+\subfile{languages/r}
+\subfile{languages/ruby}
+\subfile{languages/rust}
+\subfile{languages/scala}
+
+\end{document}

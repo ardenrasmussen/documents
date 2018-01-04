@@ -1,0 +1,10 @@
+digraph Lisp {
+  node [shape="box"]
+  "Fortran I" -> "Algol 58"
+  "Algol 58" -> "Algol 60"
+  "Algol 60" -> "Scheme"
+  "Lisp" -> "Scheme"
+  "Scheme" -> "Scheme MIT"
+  "Scheme MIT" -> "Common Lisp"
+  "Lisp" -> "Common Lisp"
+}

@@ -1,0 +1,70 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'languages/c.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{145.50000466bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,3.27147766)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{languages/c.pdf}}%
+    \put(0.51890034,3.09484528){\makebox(0,0)[b]{\smash{Fortran I}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{languages/c.pdf}}%
+    \put(0.51890034,2.59999992){\makebox(0,0)[b]{\smash{Algol 58}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{languages/c.pdf}}%
+    \put(0.51890034,2.10515456){\makebox(0,0)[b]{\smash{Algol 60}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{languages/c.pdf}}%
+    \put(0.25085911,1.11546394){\makebox(0,0)[b]{\smash{Algol 68}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{languages/c.pdf}}%
+    \put(0.74570447,1.6103093){\makebox(0,0)[b]{\smash{CPL}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{languages/c.pdf}}%
+    \put(0.53264605,0.1257732){\makebox(0,0)[b]{\smash{C}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{languages/c.pdf}}%
+    \put(0.78694158,1.11546394){\makebox(0,0)[b]{\smash{BCPL}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{languages/c.pdf}}%
+    \put(0.74570447,0.62061858){\makebox(0,0)[b]{\smash{B}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{languages/c.pdf}}%
+  \end{picture}%
+\endgroup%

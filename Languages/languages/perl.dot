@@ -1,0 +1,18 @@
+digraph Perl {
+  node [shape="box"]
+  "sh" -> "Perl"
+  "sed" -> "Perl"
+  "Fortran I" -> "Algol 58"
+  "Algol 58" -> "Algol 60"
+  "Algol 60" -> "Algol 68"
+  "Algol 68" -> "C"
+  "Algol 60" -> "CPL"
+  "CPL" -> "BCPL"
+  "BCPL" -> "B"
+  "B" -> "C"
+  "C" -> "awk"
+  "Snobol" -> "Snobol4"
+  "Snobol4" -> "awk"
+  "awk" -> "nawk"
+  "nawk" -> "Perl"
+}
