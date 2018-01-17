@@ -21,10 +21,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
@@ -60,6 +56,14 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/unicode-data/UnicodeData.txt
 INPUT /usr/share/texlive/texmf-dist/tex/generic/unicode-data/CaseFolding.txt
 INPUT /usr/share/texlive/texmf-dist/tex/generic/unicode-data/SpecialCasing.txt
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
@@ -156,6 +160,7 @@ INPUT ./resume.out
 OUTPUT resume.out
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmss10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmsso10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmsso10.tfm
 INPUT /usr/share/texmf/tex/latex/lm/ot1lmr.fd
 INPUT /usr/share/texmf/tex/latex/lm/ot1lmr.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr10.tfm
@@ -192,9 +197,8 @@ INPUT /usr/share/texmf/fonts/tfm/public/lm/lmsy8.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmsy6.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmsso10.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmsso10.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmss12.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmss12.tfm
 INPUT resume.aux
 INPUT ./resume.out
 INPUT ./resume.out

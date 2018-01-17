@@ -1,0 +1,124 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.75]{geometry}
+\name{Arden}{Rasmussen}
+\address{975 Lovers Leap Rd}{95701 Alta, CA}
+\phone[mobile]{+1~(775)~846~6599}
+\email{ardenisthebest@gmail.com}
+\homepage{https://github.com/LuxAtrumStudio}
+
+\begin{document}
+\makecvtitle{}
+
+\section{Education}
+\cventry{2012--2016}{High school}{Earl Wooster}{Reno, NV}{}{Graduated with
+International Baccalaureate degree with focus in Math, Chemistry, and Physics.}
+\cventry{2016--2020}{BS}{Lewis \& Clark}{Portland, OR}{}{Majoring in Computer
+Science \& Mathematics and Physics. GPA: 3.45}
+
+\section{Experience}
+\cventry{2016--2016}{IT}{Lewis \& Clark}{Portland, OR}{}{Working at the
+resource lab with Adobe suit, and assisting students and professors with
+computers.}
+
+\section{Programming Languages}
+\cvitemwithcomment{C++}{Expert}{9 years}
+\cvitemwithcomment{C}{Expert}{2 years}
+\cvitemwithcomment{Python}{Intermediate}{2 years}
+\cvitemwithcomment{Vim Script}{Beginner}{1 year}
+\cvitemwithcomment{Java Script}{Beginner}{1 year}
+
+\section{Programming Tools}
+\cvitem{Documentation}{Skilled at creating documentation for source code.}
+\cvitem{Unit Testing}{Experienced at creating unit tests}
+
+\section{Skills}
+\cvitem{Curious}{I will work hard until I can understand the task at hand to
+the best of my ability.}
+\cvitem{Initiative}{I take action to find solutions to problems}
+\cvitem{Focused}{I am extremely focused on the task at hand until it is
+completed.}
+\cvitem{Adaptable}{I can quickly adapt to working in new teams}
+
+\section{References}
+\begin{cvcolumns}
+  \cvcolumn{Name}{
+    \begin{itemize}
+      \item Tom Hertwick
+      \item Bruce Campbell
+    \end{itemize}
+  }
+  \cvcolumn{Email}{
+    \begin{itemize}
+      \item[] thertweck@unr.edu
+      \item[] RBCampbell@washoeschools.net
+    \end{itemize}
+  }
+\end{cvcolumns}
+\newpage
+\subsection{1}
+I was first exposed to computer science nine or ten years ago, from by older
+brother, who began programming around them. Ever since then I have developed my
+skills, through personal challenges. I have pushed myself through the use of
+setting personal goals, or projects that I have a desire to create. My own
+hunger for knowledge has pushed me to teach myself new programming languages
+when different circumstances arise, then my curiosity pushes me to develop
+equivalent solutions in several different methods, to determine the best solution
+of a set of problems. For tasks that I was not able to determine on my own, I
+sought out assistance from my piers, so that I would be able to comprehend the
+best solution in the future.
+
+\subsection{2}
+The languages that I know best is C++. I have been using C++ for the past nine
+years, where I have taught myself everything that I know. I have significant
+skill in optimizing C++ code, for the fastest optimum methods. Some of the
+significant projects that I have embarked on are as follows. I have created a
+program that used varius methods for the Traveling Salesman problem, and
+compaired the theoretical time complexities, aswell as their actual time
+complexities. I then have also created a fully functional 2D graphics engine
+utilizing the OpenGL libraries. I also have an indepth knowledge of much of the
+standard library, and the formatting of the functions and classes. I use my
+knowledge of the standard libarary to improve the efficiency of my classes, and
+algorithms. I have also begun the development of a basic laguage parser in C++,
+to better understand the process which laguages are compiled to machine code.
+All of my code follows the Google C++ style guide, to improve readablitiy, and
+much of it uses Doxygen for comments and documentation generation.
+
+\subsection{3}
+My background for computer science is all of my own creation. Everything that I
+have learned was done through trial and error. Unlike learning from classes, I
+know why i use everything that I do, because it took many hours before i came to
+the eventual solutions that I do, I am not given the correct method to work to.
+Everything that I know came from some project that needed some new solutions,
+and I had to determin those solutions on my own, without a cruch that I could
+use when things got to difficult. Because of this I have great perserverinc,
+and will not give up on an issue until every posible solution has been
+exahusted.
+
+\subsection{4}
+\begin{itemize}
+  \item I am current enroled in:
+    \begin{itemize}
+      \item Computer Graphics
+      \item Differential Equations
+      \item Discrete Mathematics
+      \item Physics III: Electricity \& Magnetism
+    \end{itemize}
+  \item I plan on enroling in:
+    \begin{itemize}
+      \item Advanced Computer Graphics
+      \item Calculus 4
+      \item Complex Variables
+      \item Physics IV: Thermodynamics and Statistical Mechanics
+    \end{itemize}
+\end{itemize}
+\newpage
+\subsection{5}
+I am a part of the following clubs:
+\begin{itemize}
+  \item Math club
+  \item Physics club
+\end{itemize}
+\end{document}

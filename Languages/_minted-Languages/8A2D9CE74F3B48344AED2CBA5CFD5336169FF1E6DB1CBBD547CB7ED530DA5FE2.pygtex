@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+\PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}Hello, world!\PYGZbs{}n\PYGZdq{}}
+\end{Verbatim}

@@ -1,0 +1,47 @@
+\contentsline {section}{\numberline {1}Ada}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Influence}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Hello World}{2}{subsection.1.2}
+\contentsline {section}{\numberline {2}Bash}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Influence}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Hello World}{4}{subsection.2.2}
+\contentsline {section}{\numberline {3}C}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Influence}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Hello World}{6}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Syntax}{6}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Basic Syntax}{6}{subsubsection.3.3.1}
+\contentsline {paragraph}{Semicolons}{7}{section*.2}
+\contentsline {paragraph}{Comments}{7}{section*.3}
+\contentsline {paragraph}{Identifiers}{7}{section*.4}
+\contentsline {subsubsection}{\numberline {3.3.2}Data Types}{7}{subsubsection.3.3.2}
+\contentsline {paragraph}{Basic Types}{7}{section*.5}
+\contentsline {subparagraph}{Integer Types}{7}{section*.6}
+\contentsline {section}{\numberline {4}C++}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Influence}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Hello World}{9}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Syntax}{9}{subsection.4.3}
+\contentsline {section}{\numberline {5}C\#}{10}{section.5}
+\contentsline {subsection}{\numberline {5.1}Influence}{10}{subsection.5.1}
+\contentsline {section}{\numberline {6}Go}{11}{section.6}
+\contentsline {subsection}{\numberline {6.1}Influence}{11}{subsection.6.1}
+\contentsline {section}{\numberline {7}Java}{12}{section.7}
+\contentsline {subsection}{\numberline {7.1}Influence}{13}{subsection.7.1}
+\contentsline {section}{\numberline {8}JavaScript}{14}{section.8}
+\contentsline {subsection}{\numberline {8.1}Influence}{15}{subsection.8.1}
+\contentsline {section}{\numberline {9}Lisp}{16}{section.9}
+\contentsline {subsection}{\numberline {9.1}Influence}{17}{subsection.9.1}
+\contentsline {section}{\numberline {10}Lua}{18}{section.10}
+\contentsline {subsection}{\numberline {10.1}Influence}{18}{subsection.10.1}
+\contentsline {section}{\numberline {11}Perl}{19}{section.11}
+\contentsline {subsection}{\numberline {11.1}Influence}{20}{subsection.11.1}
+\contentsline {section}{\numberline {12}Python 2}{21}{section.12}
+\contentsline {subsection}{\numberline {12.1}Influence}{21}{subsection.12.1}
+\contentsline {section}{\numberline {13}Python 3}{22}{section.13}
+\contentsline {subsection}{\numberline {13.1}Influence}{22}{subsection.13.1}
+\contentsline {section}{\numberline {14}R}{23}{section.14}
+\contentsline {subsection}{\numberline {14.1}Influence}{23}{subsection.14.1}
+\contentsline {section}{\numberline {15}Ruby}{24}{section.15}
+\contentsline {subsection}{\numberline {15.1}Influence}{24}{subsection.15.1}
+\contentsline {section}{\numberline {16}Rust}{25}{section.16}
+\contentsline {subsection}{\numberline {16.1}Influence}{25}{subsection.16.1}
+\contentsline {section}{\numberline {17}Scala}{26}{section.17}
+\contentsline {subsection}{\numberline {17.1}Influence}{27}{subsection.17.1}

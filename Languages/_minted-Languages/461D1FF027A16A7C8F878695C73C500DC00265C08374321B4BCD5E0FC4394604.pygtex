@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Hello, world!}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{with} \PYG{n+nn}{Ada.Text\PYGZus{}IO}\PYG{p}{;} \PYG{k+kn}{use} \PYG{n+nn}{Ada.Text\PYGZus{}IO}\PYG{p}{;}
+\PYG{k+kd}{procedure} \PYG{n+nf}{Hello} \PYG{k+kr}{is}
+\PYG{k+kr}{begin}
+  \PYG{n}{Put\PYGZus{}Line} \PYG{p}{(}\PYG{l+s}{\PYGZdq{}Hello, world!\PYGZdq{}}\PYG{p}{);}
+\PYG{k+kr}{end} \PYG{n+nf}{Hello}\PYG{p}{;}
+\end{Verbatim}
