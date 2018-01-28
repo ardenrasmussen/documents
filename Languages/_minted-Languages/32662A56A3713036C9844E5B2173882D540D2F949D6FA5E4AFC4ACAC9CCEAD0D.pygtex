@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{Hello}\PYG{p}{\PYGZob{}}
+  \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{Main}\PYG{p}{()\PYGZob{}}
+    \PYG{n}{System}\PYG{p}{.}\PYG{n}{Console}\PYG{p}{.}\PYG{n}{Write}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Hello, World!\PYGZbs{}n\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

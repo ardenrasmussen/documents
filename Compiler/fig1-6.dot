@@ -1,0 +1,24 @@
+digraph fig{
+  node [shape=plaintext];
+  a [label="statements"];
+  b [label="expressions"];
+  c [label=";"];
+  d [label="term"];
+  e [label="expression'"];
+  f [label="factor"];
+  g [label="term'"];
+  h [label="+"];
+  i [label="term"];
+  j [label="expression'"];
+  k [label="1"];
+  l [label="ε"];
+  m [label="factor"];
+  n [label="ε"];
+  o [label="2"];
+  a -> b -> d -> f -> k;
+  a -> c;
+  b -> e -> h;
+  d -> g -> l;
+  e -> i -> m -> o;
+  e -> j -> n;
+}

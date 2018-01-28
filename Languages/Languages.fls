@@ -87,8 +87,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
 INPUT /dev/null
-INPUT Languages.w18
-INPUT Languages.w18
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
@@ -261,8 +259,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrarys
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/latex/sidecap/sidecap.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/sidecap/sidecap.sty
-INPUT Languages.aex
-INPUT Languages.aex
 INPUT Languages.aux
 INPUT Languages.aux
 OUTPUT Languages.aux
@@ -386,6 +382,12 @@ INPUT languages/csharp.tex
 INPUT languages/csharp.png
 INPUT ./languages/csharp.png
 INPUT ./languages/csharp.png
+OUTPUT Languages.pyg
+INPUT ./Languages.pyg
+INPUT _minted-Languages/32662A56A3713036C9844E5B2173882D540D2F949D6FA5E4AFC4ACAC9CCEAD0D.pygtex
+INPUT _minted-Languages/32662A56A3713036C9844E5B2173882D540D2F949D6FA5E4AFC4ACAC9CCEAD0D.pygtex
+INPUT _minted-Languages/32662A56A3713036C9844E5B2173882D540D2F949D6FA5E4AFC4ACAC9CCEAD0D.pygtex
+INPUT _minted-Languages/32662A56A3713036C9844E5B2173882D540D2F949D6FA5E4AFC4ACAC9CCEAD0D.pygtex
 INPUT languages/go.tex
 INPUT languages/go.tex
 INPUT languages/go.png

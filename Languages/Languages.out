@@ -16,27 +16,28 @@
 \BOOKMARK [2][-]{subsection.4.3}{Syntax}{section.4}% 16
 \BOOKMARK [1][-]{section.5}{C\043}{}% 17
 \BOOKMARK [2][-]{subsection.5.1}{Influence}{section.5}% 18
-\BOOKMARK [1][-]{section.6}{Go}{}% 19
-\BOOKMARK [2][-]{subsection.6.1}{Influence}{section.6}% 20
-\BOOKMARK [1][-]{section.7}{Java}{}% 21
-\BOOKMARK [2][-]{subsection.7.1}{Influence}{section.7}% 22
-\BOOKMARK [1][-]{section.8}{JavaScript}{}% 23
-\BOOKMARK [2][-]{subsection.8.1}{Influence}{section.8}% 24
-\BOOKMARK [1][-]{section.9}{Lisp}{}% 25
-\BOOKMARK [2][-]{subsection.9.1}{Influence}{section.9}% 26
-\BOOKMARK [1][-]{section.10}{Lua}{}% 27
-\BOOKMARK [2][-]{subsection.10.1}{Influence}{section.10}% 28
-\BOOKMARK [1][-]{section.11}{Perl}{}% 29
-\BOOKMARK [2][-]{subsection.11.1}{Influence}{section.11}% 30
-\BOOKMARK [1][-]{section.12}{Python 2}{}% 31
-\BOOKMARK [2][-]{subsection.12.1}{Influence}{section.12}% 32
-\BOOKMARK [1][-]{section.13}{Python 3}{}% 33
-\BOOKMARK [2][-]{subsection.13.1}{Influence}{section.13}% 34
-\BOOKMARK [1][-]{section.14}{R}{}% 35
-\BOOKMARK [2][-]{subsection.14.1}{Influence}{section.14}% 36
-\BOOKMARK [1][-]{section.15}{Ruby}{}% 37
-\BOOKMARK [2][-]{subsection.15.1}{Influence}{section.15}% 38
-\BOOKMARK [1][-]{section.16}{Rust}{}% 39
-\BOOKMARK [2][-]{subsection.16.1}{Influence}{section.16}% 40
-\BOOKMARK [1][-]{section.17}{Scala}{}% 41
-\BOOKMARK [2][-]{subsection.17.1}{Influence}{section.17}% 42
+\BOOKMARK [2][-]{subsection.5.2}{Hello World}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{Go}{}% 20
+\BOOKMARK [2][-]{subsection.6.1}{Influence}{section.6}% 21
+\BOOKMARK [1][-]{section.7}{Java}{}% 22
+\BOOKMARK [2][-]{subsection.7.1}{Influence}{section.7}% 23
+\BOOKMARK [1][-]{section.8}{JavaScript}{}% 24
+\BOOKMARK [2][-]{subsection.8.1}{Influence}{section.8}% 25
+\BOOKMARK [1][-]{section.9}{Lisp}{}% 26
+\BOOKMARK [2][-]{subsection.9.1}{Influence}{section.9}% 27
+\BOOKMARK [1][-]{section.10}{Lua}{}% 28
+\BOOKMARK [2][-]{subsection.10.1}{Influence}{section.10}% 29
+\BOOKMARK [1][-]{section.11}{Perl}{}% 30
+\BOOKMARK [2][-]{subsection.11.1}{Influence}{section.11}% 31
+\BOOKMARK [1][-]{section.12}{Python 2}{}% 32
+\BOOKMARK [2][-]{subsection.12.1}{Influence}{section.12}% 33
+\BOOKMARK [1][-]{section.13}{Python 3}{}% 34
+\BOOKMARK [2][-]{subsection.13.1}{Influence}{section.13}% 35
+\BOOKMARK [1][-]{section.14}{R}{}% 36
+\BOOKMARK [2][-]{subsection.14.1}{Influence}{section.14}% 37
+\BOOKMARK [1][-]{section.15}{Ruby}{}% 38
+\BOOKMARK [2][-]{subsection.15.1}{Influence}{section.15}% 39
+\BOOKMARK [1][-]{section.16}{Rust}{}% 40
+\BOOKMARK [2][-]{subsection.16.1}{Influence}{section.16}% 41
+\BOOKMARK [1][-]{section.17}{Scala}{}% 42
+\BOOKMARK [2][-]{subsection.17.1}{Influence}{section.17}% 43
