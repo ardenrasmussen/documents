@@ -137,7 +137,7 @@ the phrase "is defined as".
 
 Each rule is called a _production_. This grammar is a
 [Context-free](https://en.wikipedia.org/wiki/Formal_grammar) grammar. All
-symbols that are *italicized* are nonterminal symbols and the symbols in
+symbols that are _italicized_ are nonterminal symbols and the symbols in
 **boldface** are terminal symbols.
 
 A parse tree is the tree of replacements from the grammar. Using the parse
@@ -149,17 +149,16 @@ are always interior nodes.
 This table represents a grammar that recognizes a list of one or more
 statements, each of which is an arithmetic expression followed by a semicolon.
 
-
-|              |   |                                 |
-|--------------|---|---------------------------------|
-| *statements* | → | *expression* **;**              |
-|              |   | *expression* **;** *statements* |
-| *expression* | → | *expression* **+** *term*       |
-|              |   | *term*                          |
-| *term*       | → | *term* **\*** *factor*          |
-|              |   | *factor*                        |
-| *factor*     | → | **number**                      |
-|              |   | **(** *expression* **)**        |
+|              |     |                                 |
+| ------------ | --- | ------------------------------- |
+| _statements_ | →   | _expression_ **;**              |
+|              |     | _expression_ **;** _statements_ |
+| _expression_ | →   | _expression_ **+** _term_       |
+|              |     | _term_                          |
+| _term_       | →   | _term_ **\*** _factor_          |
+|              |     | _factor_                        |
+| _factor_     | →   | **number**                      |
+|              |     | **(** _expression_ **)**        |
 
 Since the grammar is recursive, it stands to reason that recursion can be used
 to parse the grammar. The recursion is also important from a structural
@@ -170,31 +169,80 @@ There is a major problem in the grammar. The leftmost symbol on the right-hand
 side of several of the productions is the same symbol that appears on the
 left-hand side. This could cause a parser to loop forever, repetitively
 replacing the left most symbol in the right-hand side with the entire
-right-hand side. This happens in the production; *expression* → *expression* **+**
-*term*.
+right-hand side. This happens in the production; _expression_ → _expression_ **+**
+_term_.
 
 The parser must also be able to choose between one of several right-hand sides
 by looking at the next input symbol. It cannot make this decision in production
 5 and 6, because both of the latter productions can start with the same set of
-terminal symbols. This is called a *conflict*, and one of the most difficult
+terminal symbols. This is called a _conflict_, and one of the most difficult
 tasks of a compiler design is creating a grammar that has no conflicts in it.
-The next input symbol is called the *lookahead symbol* because the parser looks
+The next input symbol is called the _lookahead symbol_ because the parser looks
 ahead at it to resolve a conflict.
 
 Below is a corrected grammar that resolves these issues, although at the loss
 of readability, and understanding.
 
-|               |   |                                 |
-|---------------|---|---------------------------------|
-| *statements*  | → | **⊥**                           |
-|               |   | *expression* **;** *statements* |
-| *expression*  | → | *term* *expression'*            |
-| *expression'* | → | **+** *term* *expression'*      |
-|               |   | ε                               |
-| *term*        | → | *factor* *term'*                |
-| *term'*       | → | **\*** *factor* *term'*         |
-|               |   | ε                               |
-| *factor*      | → | **number**                      |
-|               |   | **(** *expression* **)**        |
+|               |     |                                 |
+| ------------- | --- | ------------------------------- |
+| _statements_  | →   | **⊥**                           |
+|               |     | _expression_ **;** _statements_ |
+| _expression_  | →   | _term_ _expression'_            |
+| _expression'_ | →   | **+** _term_ _expression'_      |
+|               |     | ε                               |
+| _term_        | →   | _factor_ _term'_                |
+| _term'_       | →   | **\*** _factor_ _term'_         |
+|               |     | ε                               |
+| _factor_      | →   | **number**                      |
+|               |     | **(** _expression_ **)**        |
 
 The ⊥ symbol is an end-of-input marker.
+
+### Syntax Diagrams
+
+Syntax diagrams are useful in writing recursive-descent compilers because they
+translate directly into flow charts. They can also be used as a map that
+describes the structure of the parser.
+
+In the syntax diagram, passing through a circled symbol removes a terminal from
+the input stream, and passing through a box represents a subroutine call that
+evaluates a nonterminal.
+
+## A Recursive-Descent Expression Compiler
+
+* * *
+
+Now we know enough to build a small compiler. Our goal is to take simple
+arithmetic expressions as input and generate code that evaluates those
+expressions at run time.
+
+### The Lexical Analyzer
+
+The first order of business is defining a token set. With the exception of
+numbers and identifiers, all the lexmes are single characters. A **NUM_OR_ID**
+token is used both for numbers and identifiers; so, they are made up of a
+series of contiguous characters in the range `0-9`,`a-z`, or `A-Z`. The lexical
+analyzer translates a semicolon into a **SEMI** token, a series of digits into
+a **NUM_OR_ID** token, and so on. The lexical analyzer uses three external
+variables to pass information to the parser. `Text` points to the current
+lexeme; `Leng` is the number of characters in the lexeme; and `LineNum` is the
+current input line number.
+
+This lexical analyzer uses a simple, buffered, input system, getting characters
+a line at a time from standard input, and then isolating tokens, one at a time,
+form the line. Another input line is fetched only when the entire line is
+exhausted. There are two main advantages to a buffered system. These are speed
+and speed. It is faster to read data in larger chunks. The second issue has to
+do with *lookahead* and *push back*. Lexical analyzers often must look ahead to
+determine the lexeme, and then push back the unnecessary characters. This is
+easer done with a buffer, then the unbuffered input stream.
+
+The first step is to loop through and skip all blank lines, and get to the
+first non white character. Next is the actual tokenization. Single-character
+lexemes are recognized in a switch case statement, and multiple-character
+`NUM_OR_ID` token is handled otherwise. When the function terminates `Text`
+points at the first character of the lexeme, and `Leng` holds its length.
+
+The next time the function is called, it will advance the current pointer past
+the previous lexeme, and if the input buffer has been exhausted, it will get a
+new line.

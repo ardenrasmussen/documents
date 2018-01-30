@@ -1,0 +1,477 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{empheq}
+
+\title{152 HW 02}
+
+\newcommand{\boxeq}[1]{%
+  \begin{center}%
+    \boxed{#1}%
+  \end{center}%
+}
+
+\begin{document}
+\section*{Problem 1}
+\label{sec:problem_1}
+
+An oscillator consists of a block of mas $m=0.40kg$ attacked to a spring. When
+set into oscillation with amplitude $A=6.50cm$, the oscillator repeats its
+motion every $0.40s$. Find the (a) period, (b) frequency, (c) angular
+frequency, (d) spring constant, (e) maximum speed, and (f) magnitude of the
+maximum force on the block from the spring.
+
+\paragraph{a)}
+\label{par:a_}
+
+By definition, the period is the time it take for the motion to repeat
+itself.
+
+\boxeq{T=0.40s}
+
+\paragraph{b)}
+\label{par:b_}
+
+The frequency (\# of cycles per second) is simply the inverse of the period
+
+\boxeq{f=\frac{1}{T}=\frac{1}{0.40s}=2.5Hz}
+
+\paragraph{c)}
+\label{par:c_}
+
+The angular frequency is how many radians per second the oscillators go through,
+and there are are $2\pi$ radians per cycles, so
+
+\boxeq{\omega=2\pi f=\frac{2\pi}{T} = 15.7\frac{rad}{sec}}
+
+\paragraph{d)}
+\label{par:d_}
+
+For a simple harmonic oscillator consisting of a mass on a spring,
+
+\begin{align*}
+  \omega=\sqrt{\frac{k}{m}} \Rightarrow k=m\omega^2
+\end{align*}
+
+so
+
+\boxeq{k=(0.4kg)(15.7)^2=98.7\frac{N}{m}}
+
+\paragraph{e)}
+\label{par:e_}
+
+There are a few ways to approach this...
+
+\subparagraph{I)}
+Use $x(t) = Acos(\omega t)$ to get $v(t)=-A\omega sin(\omega t)$ then say
+$v_{max} = A\omega$.
+
+\subparagraph{II)}
+\begin{align*}
+  E_{oscillator} = \frac{1}{2}kA^2=\frac{1}{2}mv^2_{max}\\
+  V^2_{max}=\frac{k}{m}A^2\\
+  V_{max}=\sqrt{\frac{k}{m}}A=A\omega
+\end{align*}
+
+All give the same answer
+
+\boxeq{V_{max}=A\omega =(0.065m)(15.7\frac{1}{sec})\approx1.0\frac{m}{2}}
+
+\paragraph{f)}
+\label{par:f_}
+
+Similarly to \nameref{par:e_} there is more than one way to approach this.
+
+\subparagraph{I)}
+Use $x(t)=Acos(\omega t)$ to get $a(t)=-A\omega^2cos(\omega t)$ so
+$a_{max}=A\omega^2$.
+
+\subparagraph{II)}
+Or
+\begin{align*}
+  F(x) = m\cdot a =-kx\\
+  x_{max/min} = \pm A\\
+  a = -\frac{kx}{m}\\
+  a_{max} = \frac{k}{m}A\\
+  a_{max} = \omega^2A
+\end{align*}
+
+\boxeq{a_{max}=\omega^2A=\left(15.7\frac{1}{sec}\right)^2(0.065m)=16\frac{m}{s^2}}
+
+\section*{Problem 2}
+\label{sec:problem_2}
+
+Two execute simple harmonic motion of the same amplitude and frequency along
+close parallel lines. They pass each other moving in opposite directions when
+their displacement is half the amplitude of the motion what is the phase
+difference between the two oscillators?
+
+Let's imagine the two oscillators like this. Same m's and k's so
+$\omega=\sqrt{\frac{k}{m}}$ is the same.
+
+Each oscillator's position can be written as.
+
+\begin{align*}
+  x_1(t)=Acos(\omega t+\delta_1)\\
+  x_2(t)=Acos(\omega t+\delta_2)
+\end{align*}
+
+Lets say $\delta_1 = 0$ (pick time origin arbitrarily). So
+
+\begin{align*}
+  x_1(t) = Acos(\omega t)\\
+  x_2(t) = Acos(\omega t + \delta_2)
+\end{align*}
+
+At the instant in time shown in the picture above,
+
+\begin{align*}
+  x_1=x_2=\frac{A}{2}
+\end{align*}
+
+So, at that particular $t$,
+\begin{align*}
+  Acos(\omega t) = Acos(\omega t+\delta_2)=\frac{A}{2}
+\end{align*}
+so,
+\begin{align*}
+  cos(\omega t) = cos(\omega t + \delta_2)=\frac{1}{2}
+\end{align*}
+
+but we also know that $v_1=-v_2$
+
+\begin{align*}
+  v_1(t) = -A\omega sin(\omega t)\\
+  v_2(t) = -A\omega sin(\omega t + \delta_2)
+\end{align*}
+
+so at the particular $t$ for the picture,
+
+\begin{align*}
+  A\omega sin(\omega t) = -A\omega sin(\omega t+\delta_2)\\
+  sin(\omega t) = -sin(\omega t+\delta_2)
+\end{align*}
+
+Remembering the relation of the unit circle to the trig functions:
+so if $\omega t = \frac{\pi}{3}$ and $\omega t+\delta_2 = -\frac{\pi}{3}$ all
+our trig relations work, so
+
+\boxeq{\delta_2=-\frac{2\pi}{3}}
+
+\section*{Problem 3}
+\label{sec:problem_3}
+
+A piston moves up and down in harmonic motion with period $T=1.0s$. A block is
+place don top of the piston at the bottom of the up-down motion. (a) What is
+the minimum amplitude for the piston's harmonic motion such that the block and
+piston lose contact? (b) If the amplitude of the piston's harmonic motion is
+now $A=0.75m$ and the period is still $T=1.0s$, at what displacement do the
+block and piston lose contact?
+
+$T=1.0s \rightarrow
+\omega=\frac{2\pi}{T}=2\pi\frac{rad}{sec}=6.28\frac{rad}{sec}$
+
+\paragraph{a)}
+\label{par:a_}
+
+For what minimum amplitude of oscillation will the block lose contact with the
+piston?
+
+Well, for the block to lose contact with the piston, it must be in free-fall, so
+its acceleration must be $-g$, so the piston must also have an acceleration
+down of at least $g$.
+
+Position of piston as a function of time is
+
+\begin{align*}
+  x(t) = Acos(\omega t)\\
+  v(t) = \frac{dx}{dt} = -A\omega sin(\omega t)\
+  a(t) = \frac{dv}{dt} = -A\omega^2cos(\omega t)
+\end{align*}
+so, for $a(t) = -g = -A\omega^2cos(\omega t)$ the minimum
+
+\boxeq{A_{min}=\frac{g}{\omega^2}=\frac{9.8\frac{m}{s^2}}{\left(6.28\frac{rad}{sec}\right)^2}=0.25m}
+
+\paragraph{b)}
+\label{par:b_}
+
+Now, the amplitude of oscillation has increased to $A=0.75m$. At what
+displacement (i.e. position) does the block lose contact from the piston?
+
+By graphing it would appear that the position of the piston at which $a(t)=-g$
+is also $0.25m$. Actually for any amplitude, we can do the following:
+
+\begin{align*}
+  a(t) = -g = -A\omega^2cos(\omega t)\\
+  cos(\omega t) = \frac{g}{A\omega^2} \Rightarrow \omega
+  t=cos^{-1}\left[\frac{g}{a\omega^2}\right]
+\end{align*}
+
+Plug into $x(t)$ (position)
+
+\begin{align*}
+  x(t) &= Acos(\omega t)\\
+       &= Acos\left[cos^{-1}\left[\frac{g}{A\omega^2}\right]\right]
+\end{align*}
+
+\boxeq{x(t)=\frac{g}{\omega^2}=0.25m}
+
+\section*{Problem 4}
+\label{sec:problem_4}
+
+A grandfather clock utilizes a pendulum made with a brass rod of length
+$l_{rod}=1m$ and mass $m_{rod}=0.25kg$ attacked to the center of a brass disk
+with mass $m_{disk}=3.5kg$ and radius $r_{disk}=10cm$. The clock counts 2
+seconds for each full cycle of the pendulum. (a) Treat the pendulum as a simple
+pendulum of length $l_{rod}$ making small oscillations, and calculate how far
+off the grandfather clock's time would be from the ``correct'' time after 24
+hours (counted in the correct time), be sure to include the sign (i.e. is the
+grandfather clock fast or slow). (b) Treat the pendulum as a physical pendulum
+making small oscillations, and do the same calculation. (c) Calculate how far
+up or down on the rod the disk should be moved to have the grandfather clock
+keep ``correct'' time.
+
+Clock counts 2 seconds for each full swing of pendulum.
+
+\paragraph{a)}
+\label{par:a_}
+
+Treat pendulum as a simple pendulum of length $l=1m$.
+
+\begin{align*}
+  \omega_0=\sqrt{\frac{g}{l}}=\sqrt{\frac{9.81}{1.0}} = 3.13 \frac{rad}{s}\\
+  T = \frac{2\pi}{\omega_0}=\frac{2\pi}{3.13}=2.007 s
+\end{align*}
+
+So the grandfather clock is slow by $7ms=7x10^{-3}s$ for each oscillation. Or
+put another way for each ``true'' second that elapses, the grandfather clock is
+slow by $3.5ms$.
+
+How many seconds are in $24hours$?
+
+\begin{align*}
+  24hrs\frac{60min}{hr}\frac{60sec}{min}=8.64\times 10^4s
+\end{align*}
+So the total amount the grandfather clock is slow by is
+
+\begin{align*}
+   3.5ms*8.64\times 10^4s
+\end{align*}
+
+\boxeq{\approx 300\ seconds = 5\ minutes\ slow}
+
+So if we consider the pendulum as a simple pendulum it predicts that the clock
+would lose by 5 minutes every day.
+
+\paragraph{b)}
+\label{par:b_}
+
+Now, we know that the rod/disk system is not a simple pendulum, but rather, it
+is a physics pendulum, so lets consider that.
+
+We know that for a physical pendulum, $\omega_0=\sqrt{\frac{MgD}{I}}$.
+
+\begin{align*}
+  M&=m_{rod}+m_{disk}\\
+  D&=x_{c.o.m.}=\frac{m_{rod}\frac{l}{2}+m_{disk}l}{M}\\
+  I&=\frac{1}{3}m_{rod}l^2+\frac{1}{2}m_{disk}r_{disk}^2+m_{disk}l^2\\
+  \\
+  \omega_0 &=
+           \sqrt{\frac{Mg\frac{m_{rod}\frac{l}{2}+m_{disk}l}{M}}{\frac{1}{3}m_{rod}l^2+\frac{1}{2}m_{disk}r_{disk}^2+m_{disk}l^2}}\\
+           &= \sqrt{\frac{9.81*\left(0.25\frac{1}{2}+3.5\right)}{\frac{1}{3}(0.25)+\frac{1}{2}(3.5)(1.0)^2+3.5}}\\
+           &= 3.141\frac{rad}{sec} \Rightarrow T=2.0004s
+\end{align*}
+
+So, looking at the physical pendulum result, we would predict that the
+grandfather clock would be slow by $0.2ms$ for every ``true'' second that
+elapses.
+
+Adding this up over the course of an entire day...
+
+\boxeq{\approx 17\ seconds\ slow}
+
+\paragraph{c)}
+\label{par:c_}
+
+OK, we are pretty close to getting a grandfather clock that keep accurate time,
+but we can do better. We are going to move the disk to adjust the frequency of
+the pendulum as that one period of the pendulum is exactly 2 seconds. So
+
+\begin{align*}
+  T = \frac{2\pi}{\omega_0}=2\pi\sqrt{\frac{I}{MgD}} = 2s
+\end{align*}
+
+now because we move the disk we change $D$ and $I$ so
+\begin{align*}
+  s\pi\sqrt{\frac{\frac{1}{3}m_{rod}l^2+\frac{1}{2}m_{disk}r^2+m_{disk}x^2}{g\left(m_{rod}\frac{l}{2}+m_{disk}x\right)}}=
+  2 s
+\end{align*}
+
+where $x$ is the new position of the disk that adjusts the clock to keep
+perfect time.
+
+We could square it all out and solve for $x$ but... By Mathematica...
+
+\begin{align*}
+  x_{disk} = 0.9996m
+\end{align*}
+
+So we want to move the disk up the rod by 
+
+\boxeq{\Delta x=-0.4mm}
+
+If one uses $g=9.81\frac{m}{s^2}$ the answers are:
+\boxeq{262s\approx4.5\ minutes\ slow}
+\boxeq{27\ seconds\ fast}
+\boxeq{\Delta x = +0.65mm}
+
+\section*{Problem 5}
+\label{sec:problem_5}
+
+Recently a large meteor broke up in the night sky over Michigan, leading to some
+dramatic videos and meteorite finding on the ground. The explosion of the
+meteor in the sky registered a 2.0 on the USGS seismic monitors. Let's
+consider something more dramatic...
+
+Let's consider a meteor traveling at $|v|=1.5\times 10^5\frac{m}{s}$, with mass
+$m_{meteor}=1\times 10^6 kg$. Assume that when this meteor hits the Earth, all
+the kinetic energy is converted into oscillations of the earth in the radial
+direction. Use the following quantities, effective spring constant
+$k_{eff}=7.5\times 10^{17}\frac{N}{m}$, period $T=54min$, and quality factor
+$Q=400$ to calculate: (a) the initial amplitude of the oscillation, (b) the
+amplitude of oscillation after 10 cycles, (c) the number of oscillations before
+the amplitude of oscillation is less than 1 mm.
+
+\paragraph{a)}
+\label{par:a_}
+
+\begin{align*}
+  E_{oscillator}=\frac{1}{2}kA^2&=E_{meteor}=\frac{1}{2}m_{meteor}v_{meteor}^2\\
+  A&=\sqrt{\frac{m_{meteor}}{k_{Earth}}}v_{meteor}\\
+   &=\sqrt{\frac{1\times 10^8}{7.5\times 10^{17}}}1.5\times 10^5\\
+\end{align*}
+
+\boxeq{A=0.17m=17cm}
+
+\paragraph{b)}
+\label{par:b_}
+
+OK, now we want to know what the amplitude of oscillation will be after 10
+cycles.
+
+We start with the equation for the amplitude
+
+\begin{align*}
+  A(t) = A_0e^{-\frac{t}{2\tau}}
+\end{align*}
+
+First, after 10 oscillations, $t=10T$, and $Q=400$. but $Q\equiv \omega_o
+\tau$, and $\omega_0=\frac{2\pi}{T}$ so $\tau = \frac{QT}{2\pi}$. Putting it all
+back into $A(t)$.
+
+\boxeq{A_{10}=15.7cm}
+
+\paragraph{c)}
+\label{par:c_}
+
+Now, how long does it take to gut the amplitude down to 1mm?
+
+\begin{align*}
+  A(t) = 1\times 10^{-3}=(0.17m)e^{-\frac{t}{2\pi}}\\
+  1\times 10^{-3}=0.17e^{-\frac{t\pi}{QT}}\\
+  -\frac{t\pi}{QT}=ln\left[\frac{1\times10^{-3}}{0.17}\right]=-5.1\\
+  t=\frac{5.1QT}{\pi}
+\end{align*}
+\boxeq{t=3.5\times 10^4min}
+
+\section*{Problem 6}
+\label{sec:problem_6}
+
+A car of mass $m_{car}=1000kg$ with 4 passengers (each with mass
+$m_{pass}=82kg$) is driving down a road with bumps spaced at a distance $d=4m$
+apart. The car bounces with maximum amplitude on the suspension springs when
+the speed of the car is $|v|=16km/h$. (a) When the car stops and all four
+passengers get out of the car, how much does the car rise? One of the
+passengers installs dampening on the suspension springs to smooth the ride out.
+She designed the damping so the amplitude of the oscillation at $|v|=5km/h$ is
+$1/2$ the maximum oscillation amplitude (same road, same passengers). (b) What
+is the value of the damping constant $b$ that she chose to make this happen?
+(c) At what speed $|v|>16km/h$ does the car's oscillation amplitude equal half
+the maximum oscillation amplitude?
+
+\paragraph{a)}
+\label{par:a_}
+
+\begin{align*}
+  |v| &= 16km/h=4.44\frac{m}{s}\\
+  T&=\frac{4m}{4.44\frac{m}{s}} = 0.9s\\
+  \omega &= \omega_0=\frac{2\pi}{T}=7\frac{rad}{s}\\
+  \omega_0&=\sqrt{\frac{k}{m}} = 7\frac{rad}{s}\\
+          &=\sqrt{k}{1328kg} = 7\\
+  k &= 6.5\times 10^4 \frac{N}{m}\\
+  \Delta x &= |x_1-x_2|=\frac{Mg-mg}{k}\\
+\end{align*}
+
+\boxeq{\Delta x = 5cm}
+
+\paragraph{b)}
+\label{par:b_}
+
+\begin{align*}
+  A(5)=\frac{1}{2}A(16)\\
+  5\rightarrow \omega = \frac{2\pi}{T}=\frac{2\pi}{4m}1.4=2.2\frac{rad}{s}\\
+  A(2.2)=\frac{1}{2}A(7)\\
+  A(\omega)=\frac{F_0}{\sqrt{m^2\left(\omega_0^2-\omega^2\right)+b^2\omega^2}}\\
+  \frac{\sqrt{m^2\left(\omega_0^2-\omega^2_0\right)+b^2\omega_0^2}}{\sqrt{m^2\left(\omega_0^2-\omega^2\right)+b^2\omega^2}}
+  = \frac{1}{2}\\
+  \frac{b\omega_0}{\sqrt{1328^2(49-4.84)^2+b^2)4.84)}} = \frac{1}{2}\\
+  196b^2=1328^244^2+b^24.84\\
+  191b^2=3.4\times 10^9
+\end{align*}
+
+\boxeq{b=4.2\times 10^3\frac{kg}{s}}
+
+\paragraph{c)}
+\label{par:c_}
+
+If
+\begin{align*}
+  \left(\omega_0^2-\omega^2\right) = 49-4.84=44\frac{rad^2}{s^2}
+\end{align*}
+gives $\frac{A}{2}$, the nearly symmetric behavior of $A(\omega)$ would give
+approximately
+\begin{align*}
+  A(\omega) = \frac{A_{max}}{w}\\
+  \omega^2=(49+44)\frac{rad^2}{s^2}\\
+  \omega=9.6\frac{rad}{sec}
+\end{align*}
+
+This corresponds to $T=\frac{2\pi}{\omega}=0.65sec$. So every $0.65$ seconds.
+the car hits a bump. So this means the speed $|v|$ is given by
+\begin{align*}
+  |v| = \frac{4}{0.65}=6\frac{m}{s}
+\end{align*}
+
+and converting to $\frac{km}{h}$
+\boxeq{|v| = 22\frac{km}{h}}
+
+Let's check to make sure that our assumption of an approximately symmetric
+$A(\omega)$ was correct, so does
+
+\begin{align*}
+  \frac{b\omega_0}{\sqrt{m^2\left(\omega_0^2-\omega62\right)+b^2\omega^2}}
+  \approx \frac{1}{2}\\
+  \frac{2.3\times 10^37}{\sqrt{1328^244+4.2^29.6^2}}=0.42
+\end{align*}
+Not quite!.
+
+It's only a a quadratic, but I'll still use Mathematica to solve exactly
+\begin{align*}
+  \omega = 9.1\frac{rad}{s}
+\end{align*}
+
+\boxeq{|v|=5.8\frac{m}{s}=20.9\frac{km}{h}}
+
+\end{document}
