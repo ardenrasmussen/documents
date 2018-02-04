@@ -233,7 +233,7 @@ a line at a time from standard input, and then isolating tokens, one at a time,
 form the line. Another input line is fetched only when the entire line is
 exhausted. There are two main advantages to a buffered system. These are speed
 and speed. It is faster to read data in larger chunks. The second issue has to
-do with *lookahead* and *push back*. Lexical analyzers often must look ahead to
+do with _lookahead_ and _push back_. Lexical analyzers often must look ahead to
 determine the lexeme, and then push back the unnecessary characters. This is
 easer done with a buffer, then the unbuffered input stream.
 
