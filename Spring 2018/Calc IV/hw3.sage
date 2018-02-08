@@ -1,0 +1,7 @@
+var('x')
+p = plot(sin(3.14/10*x), xmin=0, xmax=10)
+p += plot(sin(2*3.14/10*x), xmin=0, xmax=10)
+p += plot(sin(3*3.14/10*x), xmin=0, xmax=10)
+p += plot(sin(4*3.14/10*x), xmin=0, xmax=10)
+p += plot(sin(5*3.14/10*x), xmin=0, xmax=10)
+p.save('hw3_plot.png')
