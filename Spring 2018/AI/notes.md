@@ -50,7 +50,10 @@
     * `s[::-1]` returns a reversed version of `s`
 * `len(s)`
 * `s.split(separator)`
-    *
+  *  Result is a list
+  *  Whitespace if no separator is specified
+* `separator.join(list)`
+    
 
 # Py Filling: Lists, Tuples, Dictionaries, and Sets #
 
@@ -98,6 +101,15 @@
 * `>=` super set
 
 # Turing Test #
+
+## Alan Turing 1912-1954 ##
+
+* Important theory of computation
+  * Mathematical model of cumputer (Turing machine)
+    * Any "Turing-complete" computer can simulate time and memory), so they're all equivalent
+  * Some problems are unsolvable
+    * Halting problem
+* Durring WWII, developed machine to break German codes Knighted (OBE), 1946
 
 # Py Crust: Code Structures #
 
