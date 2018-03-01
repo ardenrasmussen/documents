@@ -1,9 +1,29 @@
 \contentsline {section}{\numberline {1}Complex Plane}{1}
-\contentsline {subsection}{\numberline {1.1}How do we represent complex number geometrically?}{1}
-\contentsline {subsection}{\numberline {1.2}What is meant under the following terms?}{1}
-\contentsline {subsection}{\numberline {1.3}Properties of modulus and conjugate}{1}
-\contentsline {section}{\numberline {2}Basic Elementary Functions}{1}
-\contentsline {section}{\numberline {3}Visualization of Functions}{1}
-\contentsline {section}{\numberline {4}Riemann surfaces and branches of multivalued functions}{1}
-\contentsline {section}{\numberline {5}Functions of complex variable defined through series}{1}
-\contentsline {section}{\numberline {6}Holomorphic functions and Cauchy-Riemann equations}{1}
+\contentsline {subsection}{\numberline {1.1}Conjugate}{1}
+\contentsline {paragraph}{Definitions}{1}
+\contentsline {paragraph}{Properties}{1}
+\contentsline {subsection}{\numberline {1.2}Modulus}{1}
+\contentsline {paragraph}{Definition}{1}
+\contentsline {paragraph}{Properties}{1}
+\contentsline {subsection}{\numberline {1.3}Triangle Inequality}{1}
+\contentsline {subsection}{\numberline {1.4}Exponential Form}{1}
+\contentsline {paragraph}{product}{1}
+\contentsline {paragraph}{Quotient}{1}
+\contentsline {paragraph}{n-th power}{1}
+\contentsline {section}{\numberline {2}Basic Elementary Functions}{2}
+\contentsline {subsection}{\numberline {2.1}Exponential Function}{2}
+\contentsline {subsection}{\numberline {2.2}Logarithmic Function}{2}
+\contentsline {subsection}{\numberline {2.3}Power Function}{2}
+\contentsline {subsection}{\numberline {2.4}Trigonometic Functions}{2}
+\contentsline {paragraph}{sin}{2}
+\contentsline {paragraph}{cos}{2}
+\contentsline {paragraph}{sinh}{2}
+\contentsline {paragraph}{cosh}{3}
+\contentsline {section}{\numberline {3}Holomorphic functions and Cauchy-Riemann equations}{3}
+\contentsline {subsection}{\numberline {3.1}Terminology}{3}
+\contentsline {paragraph}{Differentiable}{3}
+\contentsline {paragraph}{Holomorphic}{3}
+\contentsline {paragraph}{Analytic}{3}
+\contentsline {subsection}{\numberline {3.2}Jacobian}{3}
+\contentsline {subsection}{\numberline {3.3}Cauchy-Riemann Equations}{3}
+\contentsline {paragraph}{Derivation}{4}

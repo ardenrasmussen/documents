@@ -17,56 +17,231 @@
 \newpage
 \pagenumbering{arabic}
 
+
 \section{Complex Plane}%
 \label{sec:complex_plane}
 
-\subsection{How do we represent complex number geometrically?}%
-\label{sub:how_do_we_represent_complex_number_geometrically_}
+\subsection{Conjugate}%
+\label{sub:conjugate}
 
-Complex numbers are represented as two dimensional coordinates in a plane, with
-the $x$ axis as the real part of the complex number and the $y$ is the
-imaginary part of the complex number.
+\paragraph{Definitions}%
+\label{par:definitions}
 
-\subsection{What is meant under the following terms?}%
-\label{sub:what_is_meant_under_the_following_terms_}
+\begin{align*}
+  \bar{z} = \overline{a+ib}=a-ib
+\end{align*}
 
-\begin{itemize}
-  \item[$Re(z)$] This represents only the real portion of the complex number.
-    For example if $z = x + iy$ then $Re(z) = x$.
-  \item[$Im(z)$] This represents only the imaginary portion of the complex
-    number.  For example if $z = x + iy$ then $Im(z) = y$.
-  \item[$|z|$] This is the \textbf{modulus} of $z$, or the length. It is
-    calculated as follows: if $z = x+iy$, then $|z| = \sqrt{x^2+y^2}$.
-  \item[$\bar{z}$] This is the \textbf{conjugate} of $z$. It is found by
-    flipping the sign of the imaginary part of $z$. So if $z=x+iy$, then
-    $\bar{z} = x - iy$.
-  \item[arg($z$)] This is the \textbf{argument} of $z$. It is the set of all
-    angles that represent the position of the complex variable. Since every
-    multiple of $2\pi$ is equal, then this is the set of all angles offset by
-    some multiple of $2\pi$.
-  \item[Arg($z$)] This is the \textbf{principle value} of the argument of $z$.
-    It is a single value in the range $-\pi$ to $\pi$ which represents the
-    angle that the complex number is at in polar coordinates.
-\end{itemize}
+\paragraph{Properties}%
+\label{par:properties}
 
-\subsection{Properties of modulus and conjugate}%
-\label{sub:properties_of_modulus_and_conjugate}
+\begin{align*}
+  \overline{z_1 + z_2}&=\bar{z_1} + \bar{z_2}\\
+  \overline{z_1 \cdot z_2}&-\bar{z_1} \cdot \bar{z_2}
+\end{align*}
 
+\subsection{Modulus}%
+\label{sub:modulus}
 
+\paragraph{Definition}%
+\label{par:definition}
+
+\begin{align*}
+  |z| &= \sqrt{x^2+y^2}\\
+  |z| &= \sqrt{z\cdot \bar{z}}
+\end{align*}
+
+\paragraph{Properties}%
+\label{par:properties}
+
+\begin{align*}
+  |z_1 \cdot z_2| &= |z_1| \cdot |z_2|
+\end{align*}
+
+\subsection{Triangle Inequality}%
+\label{sub:triangle_inequality}
+
+\begin{align*}
+  |z_1+z_2|\leq |z_1|+|z_2|
+\end{align*}
+
+\subsection{Exponential Form}%
+\label{sub:exponential_form}
+
+\begin{align*}
+  z &= x+iy\\
+  z &= |z|e^{i\text{Arg}(z)}
+\end{align*}
+
+\paragraph{product}%
+\label{par:product}
+
+\begin{align*}
+  r_1e^{i\theta_1} \cdot r_2e^{i\theta_2} &= \left(r_1 \cdot
+    r_2\right)e^{i\left(\theta_1 + \theta_2\right)}
+\end{align*}
+
+\paragraph{Quotient}%
+\label{par:quotient}
+
+\begin{align*}
+  \frac{r_1e^{i\theta_1}}{r_2e^{i\theta_2}} &= 
+  \left(\frac{r_1}{r_2}\right)e^{i\left(\theta_1 - \theta_2\right)}
+\end{align}
+
+\paragraph{n-th power}%
+\label{par:n_th_power}
+
+\begin{align*}
+  {\left(re^{i\theta}\right)}^n
+\end{align*}
 
 \section{Basic Elementary Functions}%
 \label{sec:basic_elementary_functions}
 
-\section{Visualization of Functions}%
-\label{sec:visualization_of_functions}
+\subsection{Exponential Function}%
+\label{sub:exponential_function}
 
-\section{Riemann surfaces and branches of multivalued functions}%
-\label{sec:riemann_surfaces_and_branches_of_multivalued_functions}
+\begin{align*}
+  \exp(z) &= \sum_{n=0}^{\infty}\frac{z^n}{n!}\\
+  \exp(x+iy) &= e^x\cos y + ie^x \sin y
+\end{align*}
 
-\section{Functions of complex variable defined through series}%
-\label{sec:functions_of_complex_variable_defined_through_series}
+\subsection{Logarithmic Function}%
+\label{sub:logarithmic_function}
+
+\begin{align*}
+  \log(z) &= \ln(|z|)+i\text{arg}(z)\quad\text{Multi-valued}\\
+  \text{Log}(z) &= \ln(|z|)+i\text{Arg}(z)\quad\text{Single-Valued}
+\end{align*}
+
+\subsection{Power Function}%
+\label{sub:power_function}
+
+\begin{align*}
+  z^w&=\exp(w\log(z))\quad\text{Multi-valued}\\
+  P.V.z^w&=\exp(w\text{Log}(z))\quad\text{Single-valued}
+\end{align*}
+
+\subsection{Trigonometic Functions}%
+\label{sub:trigonometic_functions}
+
+\paragraph{sin}%
+\label{par:sin}
+
+\begin{align*}
+  \sin(z) &= \frac{\exp(iz)-\exp(-iz)}{2i}\\
+  \sin(z) &= z - \frac{z^3}{6}+\frac{z^5}{120}-\cdots\\
+  \sin(z) &= \sin(x)\cosh(y)+i\cos(x)\sinh(y)\\
+  \sin(z) &= -i\sinh(iz)
+\end{align*}
+
+\paragraph{cos}%
+\label{par:cos}
+
+\begin{align*}
+  \cos(z) &= \frac{\exp(iz)+\exp(-iz)}{2i}\\
+  \cos(z) &= 1 - \frac{z^2}{2}+\frac{z^4}{24}-\cdots\\
+  \cos(z) &= \cos(x)\cosh(y)-i\sin(x)\sinh(y)\\
+  \cos(z) &- \cosh(iz)
+\end{align*}
+
+\paragraph{sinh}%
+\label{par:sinh}
+
+\begin{align*}
+  \sinh(z) &= \frac{\exp(z)-\exp(-z)}{2}\\
+  \sinh(z) &= z + \frac{z^3}{6}+\frac{z^5}{120}+\cdots\\
+  i\sinh(z)&= \sin(iz)
+\end{align*}
+
+\paragraph{cosh}%
+\label{par:cosh}
+
+\begin{align*}
+  \cosh(s) &= \frac{\exp(z)+\exp(-z)}{2}\\
+  \cosh(z) &= 1 + \frac{z^2}{2}+\frac{z^4}{24}+\cdots\\
+  \cosh(z) &= \cos(iz)
+\end{align*}
 
 \section{Holomorphic functions and Cauchy-Riemann equations}%
 \label{sec:holomorphic_functions_and_cauchy_riemann_equations}
+
+\subsection{Terminology}%
+\label{sub:terminology}
+
+\paragraph{Differentiable}%
+\label{par:differentiable}
+
+If a function is differentiable, then the Jacobi matrix exists.
+
+\paragraph{Holomorphic}%
+\label{par:holomorphic}
+
+A function $f(z)$ is holomorphic if
+\begin{align*}
+  \lim_{h \rightarrow 0}\frac{f(z+h)-f(z)}{h}
+\end{align*}
+
+exists.
+
+If a function is holomorphic, it implies that it is differentiable and the
+Cauchy-Remann equations hold for it.
+
+\paragraph{Analytic}%
+\label{par:analytic}
+
+A function is analytic if it is expressable as a sum of power series.
+
+\begin{align*}
+  \sum a_n{\left(z-z_0\right)}^n
+\end{align*}
+
+If a function is analytic then it is also holomorphic.
+
+\subsection{Jacobian}%
+\label{sub:jacobian}
+
+\begin{align*}
+  Df = \begin{pmatrix}
+    \frac{\partial u}{\partial x} & \frac{\partial y}{\partial{y}}\\
+    \frac{\partial v}{\partial x} & \frac{\partial v}{\partial{y}}\\
+  \end{pmatrix}
+\end{align*}
+
+\subsection{Cauchy-Riemann Equations}%
+\label{sub:cauchy_riemann_equations}
+
+$f(z)$ is differentiable exactly when
+
+\begin{align*}
+  \frac{\partial u}{\partial x}&=\frac{\partial v}{\partial y}\\
+  \frac{\partial v}{\partial x}&=-\frac{\partial u}{\partial y}\\
+\end{align*}
+
+\paragraph{Derivation}%
+\label{par:derivation}
+
+\begin{align*}
+   z &= x+iy\\
+   f(z) &= u(x,y)+iv(x,y)\\
+   &= \lim_{h\rightarrow0}\frac{f(z+h)-f(z)}{h}\\
+   f'(z) &= \lim_{a+ib\rightarrow0}\left[\frac{y(x+a, y+b)+iv(x+a,y+b)-u(x,y)-iv(x,y)}{a+ib}\right]\\
+         &= \lim_{a\rightarrow0}\left[\lim_{b\rightarrow0}\left[\frac{y(x+a,
+   y+b)+iv(x+a,y+b)-u(x,y)-iv(x,y)}{a+ib}\right]\right]\\
+   &=
+   \lim_{a\rightarrow0}\left[\frac{u(x+a,y)-u(x,y)}{a}+i\frac{v(x+a,y)-v(x,y)}{a}\right]\\
+   &= \boxed{\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}}\\
+         &= \lim_{b\rightarrow0}\left[\lim_{a\rightarrow0}\left[\frac{y(x+a,
+   y+b)+iv(x+a,y+b)-u(x,y)-iv(x,y)}{a+ib}\right]\right]\\
+   &=
+   \lim_{b\rightarrow0}\left[\frac{u(x,y+b)-u(x,y)}{ib}+i\frac{v(x,y+b)-v(x,y)}{ib}\right]\\
+   &= \boxed{-i\frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}}\\
+   \frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x} &=
+   -i\frac{\partial u}{\partial y} + \frac{\partial v}{\partial y}\\
+   &=\begin{cases}
+     \frac{\partial y}{\partial x} = \frac{\partial v}{\partial y}\\
+     \frac{\partial v}{\partial x} = -\frac{\partial u}{\partial y}
+   \end{cases}
+\end{align*}
 
 \end{document}
