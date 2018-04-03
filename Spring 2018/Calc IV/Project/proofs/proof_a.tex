@@ -1,0 +1,124 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{epstopdf}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+
+\usepackage[draft]{todonotes}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\LP}{L^2(\mathbb{R})}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\nref}[1]{\nameref{#1}}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[thm]
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{case}{Case}
+\usepackage{etoolbox}
+\AtEndEnvironment{proof}{\setcounter{case}{0}}
+
+\begin{document}
+
+\begin{proof}\label{proof:1}
+  $j_1 \neq j_2$, and $k = k_1 = k_2$. To show orthogonality, we must show that
+  the value of the inner product of the two different functions is zero.
+  \begin{align}
+    &\left<2^{\frac{j_1}{2}}\Psi\left(2^{j_1}x-k\right),2^{\frac{j_2}{2}}\Psi\left(2^{j_2}x-k\right)\right>\\
+    &=
+    2^{\frac{j_1+j_2}{2}}\int_{-\infty}^{\infty}\Psi\left(2^{j_1}x-k\right)\Psi\left(2^{j_2}x-k\right)dx
+  \end{align}
+  Because the only parts of the $\Psi$ function that will effect the integral
+  is when the inputs are between zero and one. Thus we will want to change our
+  bounds of integration to match these bounds. In order to determine these new
+  bounds, we will want to solve $2^{j}x-k$ equal to $0$, $\frac{1}{2}$, and
+  $1$. We want to solve for the $\frac{1}{2}$ value, because that is the
+  discontinuity in the $\Psi$ function, and will become important. We will
+  solve these values for both $j_1$ and $j_2$.
+  \begin{align}
+    0 = 2^jx-k &\Rightarrow x = \frac{k}{2^j} = \frac{1}{2^j}\cdot (k)\\
+    \frac{1}{2} = 2^jx-k &\Rightarrow x =
+    \frac{1}{2\cdot 2^j}+\frac{k}{2^j} =
+    \frac{1}{2^j}\left(\frac{1}{2}+k\right)\\
+    1 = 2^jx-k &\Rightarrow x = \frac{1}{2^j}+\frac{k}{2^j} = \frac{1}{2^j}(1+k)
+  \end{align}
+  We can now use these values, by plugging in $j_1$, and $j_2$ for the bounds
+  of integration for each of the $\Psi$ functions. However, this also will
+  create some cases for the proof.
+  \begin{case}\label{case:1.1}
+    $j_1 > j_2$, $k\in\Z^+\cup\{0\}$. We can then write an expression for $j_1$
+    in terms of $j_2$, $j_1 = \alpha \cdot j_2$, where $\alpha \geq 1$. Taking
+    the upper bound for $j_1$, we can say
+    \begin{align}
+     \frac{1}{2^\alpha\cdot2^{j_2}}(1+k)\\
+     \frac{1}{2^{j_2}}\left(\frac{1}{2^\alpha}+\frac{k}{2^\alpha}\right)
+    \end{align}
+    We can ignore the $\frac{1}{2^{j_2}}$ as that appears in all of our
+    bounds, and so we are able to ignore it for all cases. Now we are able to
+    compare our statement to the bounds of the other function with $j_2$. We
+    can see that there are two cases when comparing the bounds.
+    \begin{align}
+      \begin{cases}
+        \frac{1}{2^\alpha} \leq \frac{1}{2} &\quad k =0\\
+        \frac{1}{2^\alpha}(1+k) \leq k &\quad k >0
+      \end{cases}
+    \end{align} 
+    The first case when $k=0$ states that the upper bound of $\Psi_1$ is
+    always less then or equal to the middle bound of $\Psi_2$. Thus the
+    integral will just be from $0$ to $\frac{1}{2^\alpha}$, and since $\Phi_2$
+    is $1$ for the entire integral, then it is just an integral of $\Psi_1$,
+    when results in zero.
+    \begin{align}
+     \int_{0}^{\frac{1}{2^{j_1}}}\Psi(x)dx = 0
+    \end{align}
+    The second case when $k>0$ states that the upper bound of $\Psi_1$ is
+    always less then or equal to the lower bound of $\Psi_2$. Since $\Psi$ is
+    defined as zero outsize of their bounds, then there is no overlap of the
+    functions and the resulting integral will become zero.
+  \end{case}
+  \begin{case}\label{case:1.2}
+    $j_1>j_2$, $k\in Z^-$. We can make use of the expression we found in
+    case \ref{case:1.1}. However, now instead of analyzing the upper bound of
+    $\Psi_1$ we will analize the lower bound of $\Psi_1$.
+    \begin{align}
+      \frac{1}{2^\alpha\cdot 2^{j_2}}(k)
+    \end{align}
+    Once again we will ignore the $\frac{1}{2^{j_2}}$. Again two cases will
+    appear when comparing the bounds.
+    \begin{align}
+       \begin{cases}
+         -\frac{1}{2^\alpha} \geq -\frac{1}{2} &\quad k=-1\\
+         \frac{k}{2^\alpha} \geq (1+k) &\quad k<-1
+       \end{cases}
+    \end{align}
+    In the first case when $k=-1$, it is a mirrored representation of the
+    first case in case \ref{case:1.1}, and will also results in zero. The
+    second case when $k<-1$, states that the lower bound of $\Psi_1$ is always
+    greater then or equal to the upper bound of $\Psi_2$, thus there is once
+    again no overlap between the function, and the integral will be zero.
+  \end{case}
+  \begin{case}\label{case:1.3}
+    $j_2>j_1$, $k\in \Z^+ \cup \{0\}$. Without loss of generality we can apply
+    the same process as in case \ref{case:1.1}, because the multiplication of
+    two functions is commutative.
+  \end{case}
+  \begin{case}\label{case:1.4}
+    $j_2>j_1$, $k\in \Z^-$. Without loss of generality we can apply
+    the same process as in case \ref{case:1.2}, because the multiplication of
+    two functions is commutative.
+  \end{case}
+
+  Thus we are able to conclude that for any case where $j_1 \neq j_2$ and
+  $k_1=k_2$ that the two wavelet functions will be orthogonal.
+\end{proof}
+
+\end{document}

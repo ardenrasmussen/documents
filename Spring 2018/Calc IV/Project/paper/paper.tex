@@ -1,0 +1,142 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{epstopdf}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{pgfplots}
+
+\usepackage[draft]{todonotes}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\LP}{L^2(\mathbb{R})}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[thm]
+\newtheorem{lemma}[thm]{Lemma}
+
+\title{Wavelets}
+\author{Grant Mohn \and Arden Rasmussen}
+\date{\today}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\pagenumbering{arabic}
+
+\section{Introduction}%
+\label{sec:introduction}
+
+Wavelets are a method for the representation of any function in
+$\LP$. Similarly to how the Fourier series is used to represent
+the same functions utilizing trigonometric functions, Wavelets are the same,
+except instead of utilizing trigonometric functions, it is posible to use any
+number of wavelets.
+
+\section{Haar Wavelets}%
+\label{sec:haar_wavelets}
+
+\todo{Are there an infinite number of wavelets?}
+It is posible to create a basis for $\LP$ using many different
+wavelets.  However, for the scope of this paper, we will only focus on the
+wavelet basis formed by the wavelets of the Haar function. The Haar function is
+defined by
+
+\begin{align}
+  \Psi &= \begin{cases} 
+    1  & 0\leq x < \frac{1}{2} \\
+    -1 & \frac{1}{2} \leq x < 1 \\
+    0  & \text{otherwise}
+  \end{cases}\label{eq:haar}
+\end{align}
+
+\begin{figure}[htpb]
+\begin{center}
+\begin{tikzpicture}[scale=1, transform shape]
+  \begin{axis}[
+    axis lines = middle,
+    xlabel = $x$,
+    ylabel = {$f(x)$}]
+  \addplot[domain=-.5:0, samples=100, line width=2pt]{0};
+  \addplot[domain=0:.5, samples=100, line width=4pt]{1};
+  \addplot[domain=.5:1, samples=100, line width=4pt]{-1};
+  \addplot[domain=1:1.5, samples=100, line width=2pt]{0};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Haar Function}
+\label{fig:haar_function}
+\end{figure}
+
+A proposed basis for $\LP$ is
+
+\begin{align}
+  \left\{2^{\frac{j}{2}}\Psi\left(2^jx-k\right)\right\}_{j\in\Z,\ k\in\Z}
+\end{align}
+
+We can show that this basis is an orthonormal basis, by first proving that this
+is an orthogonal set of functions, and that all the functions are unit length
+functions.
+
+\subsection{Orthogonality}%
+\label{sub:orthogonality}
+
+\subsection{Unit}%
+\label{sub:unit}
+
+To show that these functions are unit ``length'' functions, we must show that
+
+\begin{align}
+  \norm{2^\frac{j}{2}\Psi\left(2^jx-k\right)}_{L^2} &= 1
+\end{align}
+
+In order to show this we can show that
+
+\begin{align}
+  {\left<2^\frac{j}{2}\Psi\left(2^jx-k\right),\ 2^\frac{j}{2}\Psi\left(2^jx-k\right)\right>}_{L^2} &= 1
+\end{align}
+
+We know that inner product in $\LP$ is the integral of the product of the
+functions, we can write this as
+
+\begin{align}
+  {\left<2^\frac{j}{2}\Psi\left(2^jx-k\right),\
+  2^\frac{j}{2}\Psi\left(2^jx-k\right)\right>}_{L^2} &=
+  \int_{-\infty}^{\infty} \abs{2^\frac{j}{2}\Psi\left(2^jx-k\right)}^2dx
+\end{align}
+
+Now we solve the integral for any arbitrary $j$ and $k$ in $\Z$.
+
+\begin{align}
+  &\int_{-\infty}^{\infty} \abs{2^\frac{j}{2}\Psi\left(2^jx-k\right)}^2dx\\
+  =\abs{2^j} &\int_{-\infty}^{\infty} \abs{\Psi\left(2^jx-k\right)}dx
+\end{align}
+
+Since the Haar Function \eqref{eq:haar} is $0$ everywhere except for when $0\leq
+x < 1$, then the only part of the integral that will not be zero is when the
+values passed to the Haar function are between $0$ and $1$. We can calculate
+these occurrences for this situation.
+
+Here is the process of computing the value of X that will cause the input to
+the Haar function to be zero.
+\begin{align}
+  2^jx-k=0\\
+  x=\frac{k}{2^j}
+\end{align}
+
+Using this process for values of $0$, $\frac{1}{2}$, and $1$, we find that
+
+\begin{align}
+  0\quad&x=\frac{k}{2^j}\\
+  \frac{1}{2}\quad&x=\frac{1}{2\cdot2^j}+\frac{k}{2^j}\\
+  1\quad&x=\frac{1}{2^j}+\frac{k}{2^j}
+\end{align}
+
+\end{document}
