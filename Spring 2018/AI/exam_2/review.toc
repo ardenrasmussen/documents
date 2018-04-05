@@ -1,0 +1,42 @@
+\contentsline {section}{\numberline {1}The Machine Learning Landscape}{1}
+\contentsline {subsection}{\numberline {1.1}The Machine Learning Landscape}{1}
+\contentsline {subsection}{\numberline {1.2}Training Mode}{1}
+\contentsline {subsection}{\numberline {1.3}Type of Model}{1}
+\contentsline {subsection}{\numberline {1.4}Challenges of ML}{1}
+\contentsline {section}{\numberline {2}End to End Machine Learning Project}{2}
+\contentsline {subsection}{\numberline {2.1}Look at the big picture}{2}
+\contentsline {subsection}{\numberline {2.2}Get the Data}{2}
+\contentsline {subsection}{\numberline {2.3}Discover and visualize the data to gain insights}{3}
+\contentsline {subsection}{\numberline {2.4}Prepare the data for Machine Learning algorithms}{3}
+\contentsline {subsection}{\numberline {2.5}Select a model and train it }{3}
+\contentsline {subsection}{\numberline {2.6}Fine-tune your model}{3}
+\contentsline {section}{\numberline {3}Classification}{3}
+\contentsline {subsection}{\numberline {3.1}Performance Measures}{3}
+\contentsline {subsection}{\numberline {3.2}Multi class Classifier}{4}
+\contentsline {subsection}{\numberline {3.3}Error Analysis}{4}
+\contentsline {subsection}{\numberline {3.4}Multi label Classification}{4}
+\contentsline {subsection}{\numberline {3.5}Multi output Classification}{4}
+\contentsline {section}{\numberline {4}Training Models}{5}
+\contentsline {subsection}{\numberline {4.1}Linear Regression}{5}
+\contentsline {paragraph}{Gradient decent}{5}
+\contentsline {paragraph}{Batch Gradient Descent}{6}
+\contentsline {paragraph}{Stochastic Gradient Descent}{6}
+\contentsline {paragraph}{Mini-Batch Gradient Descent}{6}
+\contentsline {subsection}{\numberline {4.2}Polynomial Regression}{6}
+\contentsline {subsection}{\numberline {4.3}Learning Curves}{7}
+\contentsline {subsection}{\numberline {4.4}Bias/Variance Trade off}{7}
+\contentsline {subsection}{\numberline {4.5}Regularized Linear Model}{7}
+\contentsline {subsection}{\numberline {4.6}Logistic Regression}{8}
+\contentsline {paragraph}{Softmax Regression}{8}
+\contentsline {section}{\numberline {5}Decision Trees}{8}
+\contentsline {subsection}{\numberline {5.1}Making Predictions}{8}
+\contentsline {subsection}{\numberline {5.2}Estimating Class Probabilities}{9}
+\contentsline {subsection}{\numberline {5.3}CART Training Algorithm}{9}
+\contentsline {subsection}{\numberline {5.4}Computational Complexity}{9}
+\contentsline {subsection}{\numberline {5.5}Gini Impurity or Entropy}{9}
+\contentsline {subsection}{\numberline {5.6}When to Stop?}{9}
+\contentsline {subsection}{\numberline {5.7}Limitations of Decision and Regression Trees}{9}
+\contentsline {section}{\numberline {6}Ensemble Learning and Random Forests}{10}
+\contentsline {section}{\numberline {7}Perceptions, Networks, and Activation Functions}{10}
+\contentsline {section}{\numberline {8}YouTube, The Great Radicalize}{10}
+\contentsline {section}{\numberline {9}Asking the Right Questions about AI}{10}
