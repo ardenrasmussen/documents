@@ -1,0 +1,394 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{epstopdf}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+
+\pgfplotsset{compat=1.14}
+
+\usepackage[draft]{todonotes}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\LP}{L^2(\mathbb{R})}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[thm]
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{case}{Case}
+\usepackage{etoolbox}
+\AtEndEnvironment{proof}{\setcounter{case}{0}}
+
+\title{Wavelets}
+\author{Grant Mohn \and Arden Rasmussen}
+\date{\today}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\pagenumbering{arabic}
+
+\section{Introduction}%
+\label{sec:introduction}
+
+Wavelets are a method for the representation of any function in
+$\LP$. Similarly to how the Fourier series is used to represent
+the same functions utilizing trigonometric functions, Wavelets are the same,
+except instead of utilizing trigonometric functions, it is possible to use any
+number of wavelets.
+
+\section{Haar Wavelets}%
+\label{sec:haar_wavelets}
+
+It is possible to create a basis for $\LP$ using many different
+wavelets.  However, for the scope of this paper, we will only focus on the
+wavelet basis formed by the wavelets of the Haar function. The Haar function is
+defined by
+
+\begin{align}
+  \Psi &= \begin{cases} 
+    1  & 0\leq x < \frac{1}{2} \\
+    -1 & \frac{1}{2} \leq x < 1 \\
+    0  & \text{otherwise}
+  \end{cases}\label{eq:haar}
+\end{align}
+
+\begin{figure}[htpb]
+\begin{center}
+\begin{tikzpicture}[scale=1, transform shape]
+  \begin{axis}[
+    axis lines = middle,
+    xlabel = $x$,
+    ylabel = {$f(x)$}]
+  \addplot[domain=-.5:0, samples=100, line width=2pt]{0};
+  \addplot[domain=0:.5, samples=100, line width=4pt]{1};
+  \addplot[domain=.5:1, samples=100, line width=4pt]{-1};
+  \addplot[domain=1:1.5, samples=100, line width=2pt]{0};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Haar Function}
+\label{fig:haar_function}
+\end{figure}
+
+A graph of the Haar function is shown in Figure~\ref{fig:haar_function}. A proposed basis for $\LP$ is
+
+\begin{align}
+  \Psi_{j,k} = \left\{2^{\frac{j}{2}}\Psi\left(2^jx-k\right)\right\}_{j\in\Z,\ k\in\Z}
+\end{align}
+
+This basis is the collection of Haar functions that are shifted by the $k$'s and stretched/compressed by the $j$'s. These two properties are demonstrated in Figure~\ref{fig:jk_diff}. Values of $k$ shift the graph of the function (left for negative values, and right for positive ones). Values of $j$ scale the function, positive values cause the function to be compressed along the $x$ axis, and stretched along the $y$ axis, and negative values cause the function to be stretched along the $x$ axis and compressed along the $y$ axis. This trade off between the stretching and compression of the axis, is to make the basis normal, and thus having unit ``length''.
+
+\begin{figure}
+\input{j_diff.tex}
+\input{k_diff.tex}
+\caption{\label{fig:jk_diff}These two graphs shows the effects of $j$ and $k$ on the basis function.}
+\end{figure}
+
+We can show that this basis is an orthonormal basis, by first proving that this
+is an orthogonal set of functions, and then proving that each of the functions are unit "length" functions.
+
+\subsection{Orthogonality}%
+\label{sub:orthogonality}
+ For the proposed basis for $\LP$ to be pair orthogonal the following must be true for $j_1\in\Z$, $j_2\in\Z$, $k_1\in\Z$, and $k_2\in\Z$.
+ 
+ \begin{align}
+  {\left<2^\frac{j_1}{2}\Psi\left(2^{j_1}x-k_1\right),\ 2^\frac{j_2}{2}\Psi\left(2^{j_2}x-k_2\right)\right>}_{L^2} &= 0
+\end{align}
+
+From this we will have to prove for three different cases. 
+\begin{enumerate}
+\item Case 1: $j_1$ = $j_2$, $k_1$ $\neq$ $k_2$
+\item Case 2: $j_1$ $\neq$ $j_2$, $k_1$ = $k_2$
+\item Case 3: $j_1$ $\neq$ $j_2$, $k_1$ $\neq$ $k_2$
+\end{enumerate}
+
+There is another case when $j$'s and $k$'s will be equal for each function but this does not interest us as they will be the same function. 
+
+In the first case, the two functions will always overlap as they will be shifted by the same amount. In the second case, they will never overlap because they will be shifted by different amounts. Lastly, in the third case, there will be some combinations that will create overlap and some that avoid overlap. 
+
+\begin{proof}\label{proof:1}
+  $j_1 \neq j_2$, and $k = k_1 = k_2$. To show orthogonality, we must show that
+  the value of the inner product of the two different functions is zero.
+  \begin{align}
+    &\left<2^{\frac{j_1}{2}}\Psi\left(2^{j_1}x-k\right),2^{\frac{j_2}{2}}\Psi\left(2^{j_2}x-k\right)\right>\\
+    &=
+    2^{\frac{j_1+j_2}{2}}\int_{-\infty}^{\infty}\Psi\left(2^{j_1}x-k\right)\Psi\left(2^{j_2}x-k\right)dx
+  \end{align}
+  Because the only parts of the $\Psi$ function that will effect the integral
+  is when the inputs are between zero and one. Thus we will want to change our
+  bounds of integration to match these bounds. In order to determine these new
+  bounds, we will want to solve $2^{j}x-k$ equal to $0$, $\frac{1}{2}$, and
+  $1$. We want to solve for the $\frac{1}{2}$ value, because that is the
+  discontinuity in the $\Psi$ function, and will become important. We will
+  solve these values for both $j_1$ and $j_2$.
+  \begin{align}
+    0 = 2^jx-k &\Rightarrow x = \frac{k}{2^j} = \frac{1}{2^j}\cdot (k)\\
+    \frac{1}{2} = 2^jx-k &\Rightarrow x =
+    \frac{1}{2\cdot 2^j}+\frac{k}{2^j} =
+    \frac{1}{2^j}\left(\frac{1}{2}+k\right)\\
+    1 = 2^jx-k &\Rightarrow x = \frac{1}{2^j}+\frac{k}{2^j} = \frac{1}{2^j}(1+k)
+  \end{align}
+  We can now use these values, by plugging in $j_1$, and $j_2$ for the bounds
+  of integration for each of the $\Psi$ functions. However, this also will
+  create some cases for the proof.
+  \begin{case}\label{case:1.1}
+    $j_1 > j_2$, $k\in\Z^+\cup\{0\}$. We can then write an expression for $j_1$
+    in terms of $j_2$, $j_1 = \alpha \cdot j_2$, where $\alpha \geq 1$. Taking
+    the upper bound for $j_1$, we can say
+    \begin{align}
+     \frac{1}{2^\alpha\cdot2^{j_2}}(1+k)\\
+     \frac{1}{2^{j_2}}\left(\frac{1}{2^\alpha}+\frac{k}{2^\alpha}\right)
+    \end{align}
+    We can ignore the $\frac{1}{2^{j_2}}$ as that appears in all of our
+    bounds, and so we are able to ignore it for all cases. Now we are able to
+    compare our statement to the bounds of the other function with $j_2$. We
+    can see that there are two cases when comparing the bounds.
+    \begin{align}
+      \begin{cases}
+        \frac{1}{2^\alpha} \leq \frac{1}{2} &\quad k =0\\
+        \frac{1}{2^\alpha}(1+k) \leq k &\quad k >0
+      \end{cases}
+    \end{align} 
+    The first case when $k=0$ states that the upper bound of $\Psi_1$ is
+    always less then or equal to the middle bound of $\Psi_2$. Thus the
+    integral will just be from $0$ to $\frac{1}{2^\alpha}$, and since $\Phi_2$
+    is $1$ for the entire integral, then it is just an integral of $\Psi_1$,
+    when results in zero.
+    \begin{align}
+     \int_{0}^{\frac{1}{2^{j_1}}}\Psi(x)dx = 0
+    \end{align}
+    The second case when $k>0$ states that the upper bound of $\Psi_1$ is
+    always less then or equal to the lower bound of $\Psi_2$. Since $\Psi$ is
+    defined as zero outsize of their bounds, then there is no overlap of the
+    functions and the resulting integral will become zero.
+  \end{case}
+  \begin{case}\label{case:1.2}
+    $j_1>j_2$, $k\in Z^-$. We can make use of the expression we found in
+    case \ref{case:1.1}. However, now instead of analyzing the upper bound of
+    $\Psi_1$ we will analize the lower bound of $\Psi_1$.
+    \begin{align}
+      \frac{1}{2^\alpha\cdot 2^{j_2}}(k)
+    \end{align}
+    Once again we will ignore the $\frac{1}{2^{j_2}}$. Again two cases will
+    appear when comparing the bounds.
+    \begin{align}
+       \begin{cases}
+         -\frac{1}{2^\alpha} \geq -\frac{1}{2} &\quad k=-1\\
+         \frac{k}{2^\alpha} \geq (1+k) &\quad k<-1
+       \end{cases}
+    \end{align}
+    In the first case when $k=-1$, it is a mirrored representation of the
+    first case in case \ref{case:1.1}, and will also results in zero. The
+    second case when $k<-1$, states that the lower bound of $\Psi_1$ is always
+    greater then or equal to the upper bound of $\Psi_2$, thus there is once
+    again no overlap between the function, and the integral will be zero.
+  \end{case}
+  \begin{case}\label{case:1.3}
+    $j_2>j_1$, $k\in \Z^+ \cup \{0\}$. Without loss of generality we can apply
+    the same process as in case \ref{case:1.1}, because the multiplication of
+    two functions is commutative.
+  \end{case}
+  \begin{case}\label{case:1.4}
+    $j_2>j_1$, $k\in \Z^-$. Without loss of generality we can apply
+    the same process as in case \ref{case:1.2}, because the multiplication of
+    two functions is commutative.
+  \end{case}
+
+  Thus we are able to conclude that for any case where $j_1 \neq j_2$ and
+  $k_1=k_2$ that the two wavelet functions will be orthogonal.
+\end{proof}
+
+\begin{proof}\label{proof:2}
+  $j=j_1=j_2$, and $k_1 \neq k_2$. To show orthogonality, we must show that the
+  value of the inner product of the two different functions is zero.
+  \begin{align}
+    &\left<2^{\frac{j}{2}}\Psi\left(2^jx-k_1\right),
+    2^{\frac{j}{2}}\Psi\left(2^jx-k_2\right)\right>\\
+    &=2^j\int_{-\infty}^{\infty}\Psi\left(2^jx-k_1\right)\Psi\left(2^jx-k_2\right)dx
+  \end{align}
+  Similarly to proof \ref{proof:1}, we want to change the bounds of
+  integration. We can use much of the work from proof \ref{proof:1}.
+  \begin{case}\label{case:2.1}
+    $k_1>k_2$. We can then write an expression for $k_1$ in terms of $k_2$.
+    $k_1 = \alpha + k_2$, where $\alpha \geq 1$. Taking the lower bound for
+    $\Psi_1$, we can say
+    \begin{align}
+      \frac{1}{2^j}(\alpha+k_2)
+    \end{align}
+    Once again we are able to ignore the $\frac{1}{2^j}$, Now we can notice
+    \begin{align}
+      1+k_2 \leq \alpha + k_2
+    \end{align}
+    Thus for any values of $j$, and $k_1$, and $k_2$, then there will be no
+    overlap between the functions, and so the integral will always be zero.
+  \end{case}
+  \begin{case}\label{case:2.2}
+    $k_2>k_1$. Without loss of generality we can apply the same process as in
+    case \ref{case:2.1}, because the multiplication of two functions is
+    commutative.
+  \end{case}
+  Thus we are able to conclude that for any case where $k_1 \neq k_2$ and $j_1
+  =j_2$ that the two wavelets will not overlap, and thus they will be
+  orthogonal.
+\end{proof}
+
+\subsection{Unit}%
+\label{sub:unit}
+
+To show that these functions are unit ``length'' functions, we must show that
+
+\begin{align}
+  \norm{2^\frac{j}{2}\Psi\left(2^jx-k\right)}_{L^2} &= 1
+\end{align}
+
+In order to show this we can show that
+
+\begin{align}
+  {\left<2^\frac{j}{2}\Psi\left(2^jx-k\right),\ 2^\frac{j}{2}\Psi\left(2^jx-k\right)\right>}_{L^2} &= 1
+\end{align}
+
+We know that inner product in $\LP$ is the integral of the product, we can write this as
+
+
+\begin{align}
+  {\left<2^\frac{j}{2}\Psi\left(2^jx-k\right),\
+  2^\frac{j}{2}\Psi\left(2^jx-k\right)\right>}_{L^2} &=
+  \int_{-\infty}^{\infty} {\left(2^\frac{j}{2}\Psi\left(2^jx-k\right)\right)}^2dx
+\end{align}
+
+Now we solve the integral for any arbitrary $j$ and $k$ in $\Z$.
+
+\begin{align}
+  &\int_{-\infty}^{\infty} {\left(2^\frac{j}{2}\Psi\left(2^jx-k\right)\right)}^2dx\\
+  =2^j &\int_{-\infty}^{\infty} {\left(\Psi\left(2^jx-k\right)\right)}^2dx
+t\end{align}
+
+Since the Haar Function \eqref{eq:haar} is $0$ everywhere except for when $0\leq
+x < 1$, then the only part of the integral that will not be zero is when the
+values passed to the Haar function are between $0$ and $1$. We can calculate
+these occurrences for this situation.
+
+Here is the process of computing the value of $x$ that will cause the input to
+the Haar function to be zero.
+\begin{align}
+  2^jx-k=0\\
+  x=\frac{k}{2^j}
+\end{align}
+
+Using this process for values of $0$, $\frac{1}{2}$, and $1$, we find that
+
+\begin{align}
+  0\quad&x=\frac{k}{2^j}\\
+  \frac{1}{2}\quad&x=\frac{1}{2\cdot2^j}+\frac{k}{2^j}\\
+  1\quad&x=\frac{1}{2^j}+\frac{k}{2^j}
+\end{align}
+
+Thus we are able to use these as the new bounds of integration.
+
+\begin{align}
+  2^j\int_{\frac{k}{2^j}}^{\frac{1}{2^j}+\frac{k}{2^j}}{\left(\Psi\left(2^jx-l\right)\right)}^2dx
+\end{align}
+
+Since we have determined that for these values that we are integrating over, the Haar function will either be -1 or 1, and we are squaring this answer, then we can rewrite the integral like so
+
+\begin{align}
+  &2^j\int_{\frac{k}{2^j}}^{\frac{1}{2^j}+\frac{k}{2^j}}dx\\
+  &=2^j\left[\frac{1}{2^j}+\frac{k}{2^j} - \frac{k}{2^j}\right]\\
+  &= 1
+\end{align}
+
+Thus we see that this is an unit ``length'' function, for any arbitrary $j$ and $k$.
+
+\section{Wavelets Vs. Fourier}%
+\label{sec:wavelets_vs_fourier}
+
+\subsection{Fourier Analysis}%
+\label{sub:fourier_analysis}
+
+We will use Fourier analysis to approximate a common function to then compare to a wavelet solution. Let's take $x^2$ as our common function. First we must find the Fourier Coefficients.
+
+\begin{align}
+  c_k = \frac{1}{2L}\int_{-L}^{L}x^2\cdot e^{-i\frac{k\pi}{L}x}dx = \begin{cases} 
+    \frac{(-1)^{k}2L^{2}}{k^{2}\pi ^{2}}  & k \neq 0 \\
+    \frac{L^{2}}{3} & k=0 \\
+  \end{cases}
+\end{align}
+
+Now we can write our Fourier Series as 
+
+\begin{align}
+   u(x) = \frac{L^{2}}{3} + \sum_{k \neq 0}^{} \frac{(-1)^{k}2L^{2}}{k^{2}\pi ^{2}}e^{i\frac{k\pi}{L}x}
+\end{align}
+
+This can be re-written as,
+
+\begin{align}
+   u(x) = \frac{L^{2}}{3} + \sum_{k =1}^{\infty} \frac{(-1)^{k}4L^{2}}{k^{2}\pi ^{2}}
+   \cos{\frac{k\pi}{L}x}
+\end{align}
+
+The resulting graph with $L=\pi$ is shown in Figure~\ref{fig:fourier_approx}. We can see that it is a fairly accurate approximation of the function, with only some deviation at the origin, and endpoints.
+
+\begin{figure}
+\centering
+\input{fouier.tex}
+\caption{\label{fig:fourier_approx}Fourier Series approximation of $x^2$.}
+\end{figure}
+
+\subsection{Wavelet Analysis}%
+\label{sub:wavelet_analysis}
+
+Now we will use Wavelet analysis to approximate the function of $x^2$. For this approximation we will be using the Haar Wavelet basis that we have focused on for this paper. Once again the first step is to find the wavelet coefficients.
+
+\begin{align}
+	a_k&=\frac{\left<x^2,2^\frac{j}{2}\Psi\left(2^jx-k\right)\right>}{{\Vert 2^\frac{j}{2}\Psi\left(2^jx-k\right)\Vert}^2}
+\end{align}
+
+Since the basis is normal as we proved earlier, we just need to solve the inner product
+
+\begin{align}
+	\left<x^2,2^\frac{j}{2}\Psi\left(2^jx-k\right)\right> &= \int_{-L}^{L}x^2\cdot 2^\frac{j}{2}\Psi\left(2^jx-k\right)dx\\
+	&=2^\frac{j}{2}\left[\int_{\frac{k}{2^j}}^{\frac{1}{2^j}\left(\frac{1}{2}+k\right)}x^2dx+\int_{\frac{1}{2^j}\left(\frac{1}{2}+k\right)}^{\frac{1}{2^j}\left(1+k\right)}-x^2dx\right]\\
+	&= 2^\frac{j}{2}\left[\frac{k^3}{3\cdot 2^{3j}}-\frac{\left(\frac{1}{2}+k\right)^3}{3\cdot 2^{3j}}-\frac{\left(\frac{1}{2}+k\right)^3}{3\cdot 2^{3j}}+\frac{\left(1+k\right)^3}{3\cdot 2^{3j}}\right]\\
+	&=\frac{1}{3}2^{-\frac{5j}{2}}\left(\frac{3k}{2}+\frac{3}{4}\right)
+\end{align}
+\todo{Not quite right, needs a fudge factor determined by j's lowest index, and should be negative. I will redo the math.}
+We can now use this function to create the Haar series representation of $x^2$ which is written like so
+
+\begin{align}
+	u(x)=\sum_{k=-\infty}^{\infty}\sum_{j=-\infty}^{\infty}\frac{1}{3}2^{-\frac{5j}{2}}\left(\frac{3k}{2}+\frac{3}{4}\right)2^\frac{j}{2}\Psi\left(2^jx-k\right)
+\end{align}
+
+Once again the resulting graph of the approximation is shown in Figure~\ref{fig:haar_approx}. We can see that it is not as accurate as the Fourier series approximation, but looking beyond the bounds, the Haar series continues to approximate the function, while the Fourier series begins periodic motion.
+
+\begin{figure}
+\centering
+\input{haar.tex}
+\caption{\label{fig:haar_approx}Haar Wavelet approximation of $x^2$.}
+\end{figure}
+
+\subsection{Comparison}%
+\label{sub:comparision}
+
+In the case of $x^2$ both methods taken to an appropriate number of iterations approximate the function well, however, there are some reasons one might use each method of analysis. For example, if we look at the approximation using the Fourier series method, it approximates it very well, but only within the bounds. Outside of the bounds the Fourier series approximation will repeat. It is in this way that the two methods differ. The wavelet method will follow a very good approximation of the signal indefinitely. 
+
+The major difference between wavelet analysis and Fourier analysis is the fact that wavelets are localized in frequency and time whereas, Fourier analysis is only localized in frequency. This can be understood in terms of the Heisenberg Uncertainty Principle. The Fourier method can give you the precise understanding of the frequencies that make up a signal but, this means you are unable to know when in the signal each frequency term takes place. Wavelets forfeit a certain amount of knowledge about the frequencies to be able to include information about when and where each frequency takes place within the signal. This is especially useful when analyzing signals in the forms of music and images, or in the case of recreating a signal.
+
+\begin{figure}
+\centering
+\input{extended.tex}
+\caption{\label{fig:extended}It can be seen that the Fourier series curves away after the bounds, while the Haar series continues to approximate the function.}
+\end{figure}
+
+\end{document}
