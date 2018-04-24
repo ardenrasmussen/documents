@@ -60,12 +60,27 @@ def x2(x):
 # plot(x2, -5, 5, color='black', label=r'$x^2$')
 # plot(wavelet, -5, 5, label=r'$Haar$')
 # plot(fouier, -5, 5, label=r'$Fourier$')
+
+# plot(func(0, -2), label=r'$\Psi_{0,-2}$')
+# plot(func(0, -1), label=r'$\Psi_{0,-1}$')
+# plot(func(0, 0), label=r'$\Psi_{0,0}$')
+
+# plot(func(0, 0), label=r'$\Psi_{0,0}$')
+# plot(func(2, 0), label=r'$\Psi_{2,0}$')
+
+# plot(func(0, 1), label=r'$\Psi_{0,1}$')
+# plot(func(2, 1), label=r'$\Psi_{2,1}$')
+
+# plot(func(0, -1), label=r'$\Psi_{0,-1}$')
+# plot(func(2, -1), label=r'$\Psi_{2,-1}$')
+
 plot(func(0, -2), label=r'$\Psi_{0,-2}$')
-plot(func(0, -1), label=r'$\Psi_{0,-1}$')
-plot(func(0, 0), label=r'$\Psi_{0,0}$')
-plot(func(0, 1), label=r'$\Psi_{0,1}$')
-plot(func(0, 2), label=r'$\Psi_{0,2}$')
+plot(func(2, -2), label=r'$\Psi_{2,-2}$')
+
+# plot(func(0, 0), label=r'$\Psi_{0,0}$')
+# plot(func(0, 2), label=r'$\Psi_{0,2}$')
+
 plt.legend()
 # labelLines(plt.gca().get_lines())
-tikz_save('k_diff.tex')
+tikz_save('proof_1_2_b.tex')
 plt.show()
