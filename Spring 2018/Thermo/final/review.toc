@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}3D-Ideal Gas Law}{1}
+\contentsline {subsection}{\numberline {1.1}Equipartition Theorem}{1}
+\contentsline {section}{\numberline {2}1-st Law}{1}
+\contentsline {subsection}{\numberline {2.1}Cycles}{1}
+\contentsline {section}{\numberline {3}Gas Expansion}{2}
+\contentsline {section}{\numberline {4}Multiplicity}{2}
+\contentsline {section}{\numberline {5}Thermo-Dynamic Potentials}{2}
+\contentsline {section}{\numberline {6}Boltzman Statistics}{3}
+\contentsline {subsection}{\numberline {6.1}Partition Function}{3}
+\contentsline {subsection}{\numberline {6.2}Boltzmann Distribution}{3}
