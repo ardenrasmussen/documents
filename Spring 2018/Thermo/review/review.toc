@@ -5,15 +5,15 @@
 \contentsline {subsection}{\numberline {1.4}Large Systems}{1}
 \contentsline {paragraph}{Stirling's Approximation}{1}
 \contentsline {paragraph}{Multiplicity of a Large Einstein Solid}{1}
-\contentsline {paragraph}{Sharpness of the Multiplicity Function}{2}
-\contentsline {subsection}{\numberline {1.5}The Ideal Gas}{2}
-\contentsline {paragraph}{Multiplicity of a Monatomic Ideal Gas}{2}
+\contentsline {paragraph}{Sharpness of the Multiplicity Function}{1}
+\contentsline {subsection}{\numberline {1.5}The Ideal Gas}{1}
+\contentsline {paragraph}{Multiplicity of a Monatomic Ideal Gas}{1}
 \contentsline {subsection}{\numberline {1.6}Entropy}{2}
 \contentsline {paragraph}{Entropy of an Ideal Gas}{2}
 \contentsline {paragraph}{Entropy of Mixing}{2}
-\contentsline {section}{\numberline {2}Interactions and Implications}{3}
-\contentsline {subsection}{\numberline {2.1}Temperature}{3}
-\contentsline {subsection}{\numberline {2.2}Entropy and Heat}{3}
-\contentsline {paragraph}{Predicting Heat Capacities}{3}
-\contentsline {paragraph}{Measuring Entropies}{3}
-\contentsline {subsection}{\numberline {2.3}Paramagnetism}{4}
+\contentsline {section}{\numberline {2}Interactions and Implications}{2}
+\contentsline {subsection}{\numberline {2.1}Temperature}{2}
+\contentsline {subsection}{\numberline {2.2}Entropy and Heat}{2}
+\contentsline {paragraph}{Predicting Heat Capacities}{2}
+\contentsline {paragraph}{Measuring Entropies}{2}
+\contentsline {subsection}{\numberline {2.3}Paramagnetism}{3}

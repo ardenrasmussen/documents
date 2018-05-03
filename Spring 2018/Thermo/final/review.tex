@@ -43,7 +43,7 @@ given by quadratic functions
 
 \begin{align}
   y&=nf\frac{1}{2}kT\\
-  f&=3\quad\text{Monoatomic}\\
+  f&=3\quad\text{Monatomic}\\
   f&=5\quad\text{Diatomic}
 \end{align}
 
@@ -89,7 +89,7 @@ system.
   \caption{Left is Heat engine cycle. Right is Refrigerator cycle.}
 \end{figure}
 
-Efficciency is given by benifit divided by cost. Maximum efficiency is only
+Efficiency is given by benefit divided by cost. Maximum efficiency is only
 found in the Caront Cycle.
 
 \begin{align}
@@ -124,6 +124,35 @@ found in the Caront Cycle.
     $$\Omega=\frac{\V^N}{N!h^{3N}}\left[\frac{2\pi^{\frac{3N}{2}}}{\left(\frac{3N}{2}-1\right)!}\cdot\left(2mU\right)^{\frac{3N-1}{2}}\right]$$
 \end{description}
 
+\section{Entropy and Heat}%
+\label{sec:entropy_and_heat}
+
+\paragraph{Heat Capacities}%
+\label{par:heat_capacities}
+
+\begin{align}
+  C_V\equiv\left(\frac{\partial U}{\partial T}\right)_{N,V}\\
+\end{align}
+For an Einstein solid with $q \gg N$
+\begin{align}
+  C_V=\frac{\partial}{\partial T}\left(NkT\right)=Nk
+\end{align}
+For a monatomic ideal gas
+\begin{align}
+  C_V=\frac{\partial}{\partial T}\left(\frac{3}{2}NkT\right)=\frac{3}{2}Nk
+\end{align}
+
+\paragraph{Measuring Entropies}%
+\label{par:measuring_entropies}
+
+\begin{align}
+  dS =\frac{dU}{T}=\frac{Q}{T}\\
+  dS=\frac{C_VdT}{T}\\
+  \Delta S=S_f-S_i=\int_{T_i}^{T_f}\frac{C_V}{T}dT\\
+  C_V\rightarrow0\quad\text{as}\quad T\rightarrow0
+\end{align}
+
+
 \section{Thermo-Dynamic Potentials}%
 \label{sec:thermo_dynamic_potentials}
 
@@ -144,7 +173,7 @@ found in the Caront Cycle.
   \item[Gibbs Gree Energy] $G\equiv U-TS+P\V$
 \end{description}
 
-\section{Boltzman Statistics}%
+\section{Boltzmann Statistics}%
 \label{sec:boltzman_statistics}
 
 \subsection{Partition Function}%
