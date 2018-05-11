@@ -1,0 +1,46 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.2.25)  12 APR 2018 21:57
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**extended.tex
+(./extended.tex
+LaTeX2e <2017-04-15>
+Babel <3.12> and hyphenation patterns for 3 language(s) loaded.
+
+! LaTeX Error: Environment tikzpicture undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 \begin{tikzpicture}
+                       
+? 
+! Interruption.
+\GenericError  ...                                
+                                                  \endgroup 
+l.2 \begin{tikzpicture}
+                       
+? lte^^?^^?^^?^^?pf^^?dfkd^^?^^?^^?^^?d
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+H for help, X to quit.
+? 
+! Emergency stop.
+\GenericError  ...                                
+                                                  \endgroup 
+l.2 \begin{tikzpicture}
+                       
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 6 strings out of 494931
+ 149 string characters out of 6180851
+ 45736 words of memory out of 5000000
+ 3414 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 5i,0n,4p,66b,16s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

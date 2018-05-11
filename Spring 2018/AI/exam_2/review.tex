@@ -1,0 +1,557 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{multirow}
+
+\title{AI Exam II Review}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{The Machine Learning Landscape}%
+\label{sec:the_machine_learning_landscape}
+
+\subsection{The Machine Learning Landscape}%
+\label{sub:the_machine_learning_landscape}
+
+\begin{description}
+  \item[Supervised Learning] Correct outputs given for training examples.
+    \begin{description}
+      \item[Input] Examples and features
+      \item[Output Labels] Classification vs Regression
+      \item[Regression] Given a set of features, used to predict a target numeric
+        value.
+    \end{description}
+  \item[Unsupervised Learning] Training data unlabeled. Examples: clustering
+  \item[Semi-Supervised Learning] Partial labeled training data.
+  \item[Reinforcement] Rewards/penalties for guesses given.
+\end{description}
+
+\subsection{Training Mode}%
+\label{sub:training_mode}
+
+\begin{description}
+  \item[Online] Incremental, not necessarily live, learning rate matters: how
+    fast they should adapt to changing data.
+  \item[Batch] Uses all available data done offline, to replace: train from
+    scratch with all available data then replace old one.
+\end{description}
+
+\subsection{Type of Model}%
+\label{sub:type_of_model}
+
+\begin{description}
+  \item[Instance Based] System learns the examples by heart, then generalizes
+    to new cases using a similarity measure.
+  \item[Model Based] Cost function can be adjusted to minimize some measure of
+    error/cost.
+\end{description}
+
+\subsection{Challenges of ML}%
+\label{sub:challenges_of_ml}
+
+\begin{description}
+  \item[] Insufficient quantity of training data
+  \item[Non representative data] This is why domain knowledge is important!.
+  \item[Poor-quality data] Outliers, missing features.
+  \item[Irrelevant features] Choosing the right features can make a learning
+    task much easier.
+  \item[Overfitting] Essentially memorizing the training data (including
+    noise), which does not generalize well. Solutions include using simpler
+    model, fewer degrees of freedom, regularize, get more data.
+  \item[Underfitting] Model not complex enough. Solution include using more
+    complex model (more degrees of freedom), better features.
+  \item[Testing and Validating]
+    It is important to separate testing, training, and validating data.
+    \begin{description}
+      \item[Training set and Test set]
+        Split the data set into training and testing sets.
+        \begin{description}
+          \item[Generaliation Error] How well does it do on the test set?
+          \item[Rule of thumb] $80\%$ of data for training, $20\%$ for testing.
+        \end{description}
+      \item[Problem: You can't look at the test set untill the end!] If you do
+        (while you are trying different models), you might be subconsciously
+        fitting the testing data; this is ``data snooping''. Solution is to have
+        a third validation set.
+    \end{description}
+  \item[No Free Lunch Theorem] David Wolpert demonstrated that if you make
+    absolutely no assumptions about the data, then there is no reason to prefer
+    one model over any other.
+\end{description}
+
+\section{End to End Machine Learning Project}%
+\label{sec:end_to_end_machine_learning_project}
+
+\subsection{Look at the big picture}%
+\label{sub:look_at_the_big_picture}
+
+\begin{itemize}
+  \item Frame the Problem
+  \item Select a performance measure
+    \begin{description}
+      \item[Root Mean Squared Error] Euclidean norm, measures the standard
+        deviation of the errors the system makes in its predictions
+        \[RMSE(X,h)=\sqrt{\frac{1}{m}\sum_{i=1}^{m}\left(h\left(x^i\right)-y^i\right)^2}\]
+      \item[Mean Absolute Error] Manhattan norm, less sensitive to outliers.
+        \[MAE(X, h)=\frac{1}{m}\sum_{i=1}^{m}\left|h\left(x^i\right)-y^i\right|\]
+    \end{description}
+  \item Check assumptions
+\end{itemize}
+
+\subsection{Get the Data}%
+\label{sub:get_the_data}
+
+\begin{itemize}
+  \item Work through the process of cloning from Github to PyCharm
+  \item Take a quick look at the data structure
+  \item Create a test set
+\end{itemize}
+
+\subsection{Discover and visualize the data to gain insights}%
+\label{sub:discover_and_visualize_the_data_to_gain_insights}
+
+\begin{itemize}
+  \item Consider creating new features
+  \item Look for correlations
+\end{itemize}
+
+\subsection{Prepare the data for Machine Learning algorithms}%
+\label{sub:prepare_the_data_for_machine_learning_algorithms}
+
+\begin{description}
+  \item[Data Cleaning] Dealing with missing features
+  \item[Convert text and categorical attributes] One-hot encoding
+  \item[Feature Scaling]
+    Tweak the datasets to prepare for machine learning.
+    \begin{description}
+      \item[Min-Max] Values are shifted and rescaled so that they end up
+        ranging from 0 to 1.
+      \item[Standardization] Does not bound values to a specific range(mean
+        zero, variance 1).
+    \end{description}
+\end{description}
+
+\subsection{Select a model and train it }%
+\label{sub:select_a_model_and_train_it_}
+
+Cross-validation
+
+\subsection{Fine-tune your model}%
+\label{sub:fine_tune_your_model}
+
+\begin{description}
+  \item[Grid Search] Exploring relatively few combinations
+  \item[Randomized search] Evaluates a given number of random combinations by
+    selecting value form each hyper parameter at every iteration.
+  \item[Test] Evaluate system on test set.
+\end{description}
+
+\section{Classification}%
+\label{sec:classification}
+
+\subsection{Performance Measures}%
+\label{sub:preformance_measures}
+
+\begin{description}
+  \item[Accuracy]
+    \begin{itemize}
+      \item Cross-validation.
+      \item Compare to dumb constant classifier.
+      \item Not the best measure for highly skewed data.
+    \end{itemize}
+  \item[Confusion Matrix]
+    Matrix to determine performance of model.
+    \begin{itemize}
+      \item Rows are actual
+      \item Columns are predicted
+    \end{itemize}
+    \begin{tabular}{|c|cc|}
+      \hline
+      & \multicolumn{2}{|c|}{Predicted}\\ \hline
+      \multirow{2}{*}{Actual} & True Negative (TN) & False Positive (FP) \\
+                              &False Negative (FN) & True Positive (TP)\\ \hline
+    \end{tabular}
+  \item[Accuracy=\(\frac{TP+TN}{TP+FP+TN+FN}\)] Like many of these measures, ranges form 0  to 1.
+  \item[Precision=\(\frac{TP}{TP+FP}\)] When you predict yes, how often were
+    you right> IF set a very high stander for predicting yes, you can get
+    precision 1.
+  \item[Recall =\(\frac{TP}{TP+FN}\)] When the answer was yes, how often were
+    you right? Ration of positive instance that are correctly detected by the
+    classifier. If you st a very low standard of predicting yes, you can get
+    recall 1.
+  \item[Precision/Recall Tradeoff]
+    precision and Recall are mutually exclusive, and there is a trade off between
+    the two.
+    \begin{itemize}
+      \item Decision function compared to threshold.
+      \item You can plot both as a function of threshold
+      \item Alternately, plot them against each other (PR curve)
+    \end{itemize}
+  \item[ROC Curve]
+    Receiver Operating Characteristic
+    \begin{itemize}
+      \item Plot \(\frac{FP}{FP_TN}\) vs \(\frac{TP}{TP+FN}\).
+      \item Random classifier produces diagonal line from $(0,0)$ to $(1,1)$.
+      \item Perfect classifier has same endpoints but hits upper left corner.
+      \item You can use area under this curve as a measure
+      \item Use PR curve ``whenever the positive class is rare or when you care
+        more about positives then the false negatives''
+    \end{itemize}
+\end{description}
+
+\subsection{Multi class Classifier}%
+\label{sub:multiclass_classifier}
+
+\begin{description}
+  \item[OvA] Train a detector for each class, then the one with the highest
+    score (one v all).
+  \item[OvO] Train a classifier for each pair, take the one that winds the most
+    ``duels'' (one v one).
+\end{description}
+
+OvA is usually faster because OvO requires training more classifiers.
+
+\subsection{Error Analysis}%
+\label{sub:error_analysis}
+
+Plot confusion matrix. If its brightest along diagonal, good! If you normalize
+each row (divide by total instances in row) and zero out diagonals, you can see
+what gets confused with what.
+
+\subsection{Multi label Classification}%
+\label{sub:multilabel_classification}
+
+May tag each example with more than one class
+
+\subsection{Multi output Classification}%
+\label{sub:multioutput_classification}
+
+Example: noise removal.
+
+\section{Training Models}%
+\label{sec:training_models}
+
+\subsection{Linear Regression}%
+\label{sub:linear_regression}
+
+\[\hat{y}=\theta_0+\theta_1x_1+\theta_2x_2+\cdots+\theta_nx_n\]
+\begin{itemize}
+  \item \(\hat{y}\) is the predicted value.
+  \item \(n\) is the number of features.
+  \item \(x_i\) is the \(i^{th}\) feature value.
+  \item \(\theta_j\) is the \(j^{th}\) model parameter (including the bias term
+    \(\theta_0\) and the feature weights).
+\end{itemize}
+
+\[\hat{y}=h_\theta(x)=\theta^T\cdot x=\sum_{i=0}^{n}\theta_ix_i\]
+
+Training means searching for parameters that minimize error (RMSE, or just
+MSE).
+\[MSE\left(x, h_\theta\right)=\frac{1}{m}\sum_{i=1}^{m}\left(\theta^T\cdot
+x^i-y^i\right)^2\]
+
+Normal equation;
+\[\hat{\theta}\left(X^T\cdot X)^{-1}\cdot X^T\cdot y\]
+
+  \begin{itemize}
+    \item \(\hat{\theta}\) is the value of \(\theta\) that minimizes the cost
+      function.
+    \item \(y\) is the vector of target values containing \(y^i\) to \(y^m\).
+  \end{itemize}
+
+  \paragraph{Gradient decent}%
+  \label{par:gradient_decent}
+
+  Tweak parameters iteratively in order to minimize a cost function.
+
+  \begin{description}
+    \item[Learning rate] Too small, many iterations and thus too long. Too large,
+      might make the algorithm diverge, failing to find a solution.
+    \item[Local minima] If the random initialization starts the algorithm on the
+      left, then it will converge to a local minimum, which is not as good as the
+      global minimum. If it starts on the right, then it will take a very long
+      time to cross the plateau, and if you stop too early you will never reach
+      the global minimum.
+  \end{description}
+
+  \paragraph{Batch Gradient Descent}%
+  \label{par:batch_gradient_descent}
+
+  Concept of the gradient
+
+  \begin{align}
+    \frac{\partial}{\partial \theta_j}MSE(\theta)
+    =\frac{2}{m}\sum_{i=1}^{m}\left(\theta^T\cdot x^i-y^i\right)x)j^i
+  \end{align}
+
+  Computes the partial derivative of the cost function with regards to parameter
+  \(\theta_j\).
+
+  \begin{align}
+    \nabla_\theta MSE(\theta)=\begin{pmatrix}
+      \frac{\partial}{\partial \theta_0}MSE(\theta)\\
+      \frac{\partial}{\partial \theta_1}MSE(\theta)\\
+      \vdots \\
+      \frac{\partial}{\partial \theta_n}MSE(\theta)\\
+    \end{pmatrix}=\frac{2}{m}X^T\cdot (X\cdot\theta-y)
+  \end{align}
+
+  To compute all gradients in one go.
+
+  At each step, move in the direction opposite the gradient. Stop when the
+  gradient gets too small. Batch mode is slow for large data sets. Want to limit
+  the number of iterations so that grid search can eliminate models that take too
+  long to converge.
+
+  \paragraph{Stochastic Gradient Descent}%
+  \label{par:stochastic_gradient_descent}
+
+  Picks a random instance in the training set at every step and computes the
+  gradients based only on that single instance. One instance at a time (in random
+  order). Doe to its stochastic (i.e. random) nature, this algorithm is much
+  less regular than Batch Gradient Descent: instead of gently decreasing until it
+  reaches the minimum, the cost function will bounce up and down, decreasing only
+  on average. Over time it will end up very close to the minimum, but once it
+  gets there it will continue to bounce around, never settling down. So once the
+  algorithm stops, the final parameter values are good, but not optimal. Don't
+  have to fit entire data set in memory at once. Bouncing good for escaping local
+  minimum, but bad for final optimization. A solution is to gradually reduce the
+  learning rate.
+
+  \paragraph{Mini-Batch Gradient Descent}%
+  \label{par:mini_batch_gradient_descent}
+
+  Computes the gradients on small random sets of instances called mini batches. The
+  main advantage is that you can get a performance boost from hardware
+  optimization of matrix operations, especially when using GPUs.
+
+  \subsection{Polynomial Regression}%
+  \label{sub:polynomial_regression}
+
+  Use a linear model to fit nonlinear data. A simple way to do this is to add
+  powers of each feature as new features, then train a linear model on this
+  extended set of features.
+  \begin{description}
+    \item[Degree too low] Underfitting
+    \item[Degree too high] Overfitting
+  \end{description}
+
+  \subsection{Learning Curves}%
+  \label{sub:learning_curves}
+
+  Plot of the model's performance on the training set and the validation set as a
+  function of the training set size. Compare curves for training vs validation
+  set.
+  \begin{itemize}
+    \item Training error stats low and increases to a plateau.
+    \item Validation error starts high and decreases to a plateau.
+    \item Training error is lower than validation error.
+    \item If both curves reach the same plateau, underfitting
+    \item If there is a big gap, overfitting.
+  \end{itemize}
+
+  \subsection{Bias/Variance Trade off}%
+  \label{sub:bias_variance_tradeoff}
+
+  \begin{description}
+    \item[Bias] This part of the generalization error is due to wrong
+      assumptions, such as assuming that the data is linear when it is actually
+      quadratic. A high-bias model is most likely to under fit the training data.
+    \item[Variance] This part is due to the model's excessive sensitivity to
+      small variations in the training data. A model with many degrees of freedom
+      is likely to have higher variance, and thus to over fit the training data.
+  \end{description}
+
+  \subsection{Regularized Linear Model}%
+  \label{sub:regularized_linear_model}
+
+  Reduce over fitting by construing the model, fewer degrees of freedom, limiting
+  how much the weights can vary.
+
+  \begin{description}
+    \item[Ridge Regression] Forces the learning algorithm to not only fit the
+      data but also keep the model weights as small as possible.
+      \begin{align}
+        J(\theta)=MSE(\theta)+\alpha\frac{1}{2}\sum_{i=1}^{n}\theta_i^2
+      \end{align}
+      Add a regularization term to cost function. Only do this during training,
+      not during validation/ testing. Hyper parameter $\alpha$ determine how much
+      regularization ($0$ none). The bias term is not regularized. The
+      regularization term is just the $l^2$ norm of the weight vector. For
+      gradient descent, just add $\alpha \cdot$weight vector to gradient vector.
+      It is important to scale the data so one feature isn't more heavily
+      regularized.
+    \item[Lasso Regression] Least absolute shrinkage and selection operator
+      regression (LASSO). It adds a regularization term to the cost function, but
+      it uses the $l^1$ norm of the weight vector instead of half the square of
+      the $l^2$ norm.
+      \begin{align}
+        J(\theta)=MSE(\theta)+\alpha\sum_{i=1}^{n}|\theta_i|
+      \end{align}
+      Tends to shrink ``unimportant'' weights to zero. Sum fudging is necessary
+      because this isn't differential everywhere.
+    \item[Elastic Net] A weighted average of ridge and lasso.
+      \begin{align}
+        J(\theta)=MSE(\theta)+r\alpha\sum_{i=1}^{n}|\theta_i|+\frac{1-r}{2}\alpha\sum_{i=1}^{n}\theta_i^2
+      \end{align}
+    \item[Early Stopping] After many epochs with a powerful model, training error
+      continues to slowly decrease but validation error starts to go back up. To
+      avoid over fitting, just stop at the lowest validation error.
+  \end{description}
+
+  \subsection{Logistic Regression}%
+  \label{sub:logistic_regression}
+
+  Computes a weights sum of the input features (plus a bias term), but instead
+  of outputting the result directly like the Linear Regression model does, it
+  outputs the logistic of this result
+  \begin{align}
+    \hat{p}&=h_\theta(X)=\sigma\left(\theta^T\cdot x\right)\quad\text{Vectorized
+    form}\\
+    \sigma(t)&=\frac{1}{1+e^{-t}}\quad\text{Logistic function}
+  \end{align}
+
+  Pass weighted sum to logistic function.
+  \begin{itemize}
+    \item $\sigma(large)\rightarrow 1$
+    \item $\sigma(0)\rightarrow 0.5$
+    \item $\sigma(-large)\rightarrow 0$
+  \end{itemize}
+
+  Decision boundaries.
+
+  \paragraph{Softmax Regression}%
+  \label{par:softmax_regression}
+
+  For multi class classification. Find a weighted sum for each class. Estimate
+  probabilities using softmax function.
+  \begin{align}
+    \hat{p_k}=\sigma(s(x))_k=\frac{e^{s_k(x)}}{\sum_{j=1}^{k}e^{s_j(x)}}
+  \end{align}
+  A differentiable approximation to max. Use actual argmax when classifying, but
+  softmax when training. Preferred cost function: cross entropy, for measuring
+  distance between two distributions, equivalent to logistic regression cost
+  function when there are two classes.
+
+  \section{Decision Trees}%
+  \label{sec:decision_trees}
+
+  \subsection{Making Predictions}%
+  \label{sub:making_predictions}
+
+  \begin{description}
+    \item[Samples] A node's samples attribute counts how many training instances it
+      applies to.
+    \item[Value] A node's value attribute tells you how many training instances
+      of each class this node applies to.
+    \item[Gini] A node's gini attribute measures its impurity: a node is
+      ``pure'' ($gini=0$) if all training instances it applies to belong to the
+      same class.
+      \begin{align}
+        G_i=1-\sum_{k=1}^{n}p_{i,k}^2
+      \end{align}
+  \end{description}
+
+  \subsection{Estimating Class Probabilities}%
+  \label{sub:estimating_class_probabilities}
+
+  A decision tree can also estimate the probability that an instance belongs to a
+  particular class $k$: first it traverses the tree to find the leaf node for
+  this instance, and then it returns the ratio of training instances of class $k$
+  in this node.
+
+  \subsection{CART Training Algorithm}%
+  \label{sub:cart_training_algorithm}
+
+  Classification and Regression Tree (CART).
+
+  The algorithm first splits the training set in two subsets using a single
+  features $k$ and a threshold $t_k$. It searches for the pair $(k, t_k)$ that
+  produces the purest subsets (weighted by their size). The cost function that
+  the algorithm tries to minimize is given by:
+  \begin{align}
+    J(k,t_k)=\frac{m_{left}}{m}G_{left}+\frac{m_{right}}{m}G_{right}
+  \end{align}
+
+  \subsection{Computational Complexity}%
+  \label{sub:computational_complexity}
+
+  \begin{align}
+    O(n\cdot m\log m)
+  \end{align}
+
+  \subsection{Gini Impurity or Entropy}%
+  \label{sub:gini_impurity_or_entropy}
+
+  A set's entropy is zero when it contains instances of only one class
+
+  \begin{align}
+    H_i=-\sum_{\substack{k=1 \\ p_{i,k}\neq 0}}^{n}p_{i,k}\log\left(p_{i,k}\right)
+  \end{align}
+
+  \subsection{When to Stop?}%
+  \label{sub:when_to_stop_}
+
+  Definitely stop when impurity cannot be reduced. Hyper parameters such as max
+  depth, min samples per leaf. Stop if improvement is not statistically
+  significant.
+
+  \subsection{Limitations of Decision and Regression Trees}%
+  \label{sub:limitations_of_decision_and_regression_trees}
+
+  Sensitive to individual training points. Not good at finding interactions between
+  features.
+
+  \section{Ensemble Learning and Random Forests}%
+  \label{sec:ensemble_learning_and_random_forests}
+
+  \begin{description}
+    \item[Ensemble Learning] Train several classifiers and have them vote.
+    \item[Voting Classifiers] Different methods for voting.
+      \begin{description}
+        \item[Hard voting] Aggregate the predictions of each classifier and
+          predict the class that gets the most votes
+        \item[Soft voting] Predict the class with the highest class probability,
+          averaged over all the individual classifiers. Often achieves higher
+          performance than hard voting because it gives more weight to highly
+          confident votes.
+      \end{description}
+    \item[Bagging and Pasting] Take several samples of the data, train a model on
+      each one, then vote. Bagging samples with replacement, pasting without.
+      This reduces both bias and variance. For validation, just use, for each
+      data point, the votes of those models not trained on that particular data
+      point.
+    \item[Random Subspaces] Instead, give each model a different subset of the
+      features.
+    \item[Random Patches] Take random subsets of both features and data points.
+    \item[Random Forest] An ensemble of bagged decision trees, with a random
+      subset of features considered at each node.
+    \item[Extra-Trees] Choose thresholds randomly, creates even more randomness, but
+      faster to train because choosing thresholds takes time.
+    \item[Feature Importance] Across the forest, at what depth does a feature
+      appear (Shallower is more important)
+  \end{description}
+
+  \section{Perceptions, Networks, and Activation Functions}%
+  \label{sec:perceptrons_networks_and_activation_functions}
+
+  \section{YouTube, The Great Radicalize}%
+  \label{sec:youtube_the_great_radicalizer}
+
+  YouTube's algorithm aims to keep you on the site, so it will often feed you
+  more extreme videos, to keep your attention. Politically, you will be drawn
+  more and more towards one side.
+
+  \section{Asking the Right Questions about AI}%
+  \label{sec:asking_the_right_questions_about_ai}
+
+
+
+  \end{document}

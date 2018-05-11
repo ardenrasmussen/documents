@@ -1,0 +1,169 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{enumitem}
+
+\title{Thermo Phyics Review}
+\author{Arden Rasmussen}
+\date{\today}
+
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{The Second Law}%
+\label{sec:the_second_law}
+
+\subsection{Two State System}%
+\label{sub:two_state_system}
+
+\begin{align}
+  \Omega(N,n) = \frac{N!}{n!\cdot(N-n)!}\equiv{N \choose n}\\
+  \Omega\left(N_{\uparrow}\right)={N\choose
+  N_{\uparrow}}=\frac{N!}{N_\uparrow!N_\downarrow!}
+\end{align}
+
+\subsection{Einstein Model of a Solid}%
+\label{sub:einstein_model_of_a_solid}
+
+\begin{align}
+  \Omega(N,q)={q+N-1 \choose q} = \frac{(q+N-1)!}{q!(N-1)!}
+\end{align}
+
+\subsection{Interacting Systems}%
+\label{sub:interacting_systems}
+
+The spontaneous flow of energy stops when a system is at, or very near, its
+most likely macro state, that is, the macro state with the greatest multiplicity.
+This ``low of increase of multiplicity'' is one version of the famous
+\textbf{second law of thermodynamics}.
+
+\subsection{Large Systems}%
+\label{sub:large_systems}
+
+\paragraph{Stirling's Approximation}%
+\label{par:stirling_s_approximation}
+
+\begin{align}
+  N!\approx N^Ne^{-N}\sqrt{2\pi N}
+\end{align}
+Often the $\sqrt{2\pi N}$ can be omitted.
+
+\paragraph{Multiplicity of a Large Einstein Solid}%
+\label{par:multiplicity_of_a_large_einstein_solid}
+
+\begin{align}
+  \Omega(N,q)=e^{N\log\left(\frac{q}{N}\right)}e^N=\left(\frac{eq}{N}\right)^N\quad\text{when
+  $q\gg N$}
+\end{align}
+
+\paragraph{Sharpness of the Multiplicity Function}%
+\label{par:sharpness_of_the_multiplicity_function}
+
+The Gaussian curve has a peak at $x=0$ and a sharp fall-off on either side. The
+multiplicity falls of to $\frac{1}{e}$ of its maximum value when
+\begin{align}
+  N\left(\frac{2x}{q}\right)^2=1\quad\text{or}\quad x=\frac{q}{2\sqrt{N}}
+\end{align}
+This is a very large number, but comparatively to the full scale it is very
+small. The width of the Gaussian is given by
+\begin{align}
+  \text{Width} = \frac{q}{\sqrt{N}}
+\end{align}
+
+\subsection{The Ideal Gas}%
+\label{sub:the_ideal_gas}
+
+\paragraph{Multiplicity of a Monatomic Ideal Gas}%
+\label{par:multiplicity_of_a_monatomic_ideal_gas}
+
+\begin{align}
+  \Omega_N\approx
+  \frac{1}{N!}\frac{V^N}{h^{3N}}\frac{\pi^{\frac{3N}{2}}}{\left(\frac{3N}{2}\right)!}\left(\sqrt{2mU}\right)^{3N}\\
+  \Omega(U,V,N)=f(N)V^NU^{\frac{3N}{2}}
+\end{align}
+
+\subsection{Entropy}%
+\label{sub:entropy}
+
+\begin{align}
+S\equiv k\log\Omega
+\end{align}
+
+\paragraph{Entropy of an Ideal Gas}%
+\label{par:entropy_of_an_ideal_gas}
+
+\begin{align}
+  S=Nk\left[\log\left(\frac{V}{N}\left(\frac{4\pi
+  mU}{3Nh^2}\right)^{\frac{3}{2}}\right)+\frac{5}{2}\right]
+\end{align}
+
+If volume changes then
+
+\begin{align}
+  \Delta S=Nk\log\frac{V_f}{V_i}\quad\text{U,N fixed}
+\end{align}
+
+\paragraph{Entropy of Mixing}%
+\label{par:entropy_of_mixing}
+
+\begin{align}
+  \Delta S_{total}=\Delta S_{A}+\Delta S_{B}
+\end{align}
+
+\section{Interactions and Implications}%
+\label{sec:interactions_and_implications}
+
+\subsection{Temperature}%
+\label{sub:temperature}
+
+\begin{align}
+  \frac{\partial S_A}{\partial U_A}=\frac{\partial S_B}{\partial U_B}\quad
+  \text{at equilibrium}\\
+  T\equiv \left(\frac{\partial S}{\partial U}\right)^{-1}\\
+  \frac{1}{T} \equiv\left(\frac{\partial S}{\partial U}\right)_{N,V}
+\end{align}
+
+\subsection{Entropy and Heat}%
+\label{sub:entropy_and_heat}
+
+\paragraph{Predicting Heat Capacities}%
+\label{par:predicting_heat_capacities}
+
+\begin{align}
+  C_V\equiv\left(\frac{\partial U}{\partial T}\right)_{N,V}\\
+\end{align}
+For an Einstein solid with $q \gg N$
+\begin{align}
+  C_V=\frac{\partial}{\partial T}\left(NkT\right)=Nk
+\end{align}
+For a monatomic ideal gas
+\begin{align}
+  C_V=\frac{\partial}{\partial T}\left(\frac{3}{2}NkT\right)=\frac{3}{2}Nk
+\end{align}
+
+\paragraph{Measuring Entropies}%
+\label{par:measuring_entropies}
+
+\begin{align}
+  dS =\frac{dU}{T}=\frac{Q}{T}\\
+  dS=\frac{C_VdT}{T}\\
+  \Delta S=S_f-S_i=\int_{T_i}^{T_f}\frac{C_V}{T}dT\\
+  C_V\rightarrow0\quad\text{as}\quad T\rightarrow0
+\end{align}
+
+\subsection{Paramagnetism}%
+\label{sub:paramagnetism}
+
+Weird, and can have negative temperature, as the state with greatest entropy is
+when half are up, and half are down, event though more energy is present with
+more down spins, it wants to move back to half way, thus it has negative
+temperature, but is hotter than high temperature.
+
+\end{document}

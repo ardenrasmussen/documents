@@ -1,0 +1,199 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{tikz}
+
+\title{Thermo Physics Review}
+\date{\today}
+\author{Arden Rasmussen}
+\fancyhf{}
+
+\newcommand{\V}{{\ooalign{\hfil$V$\hfil\cr\kern0.08em--\hfil\cr}}}
+\makeatletter
+\DeclareRobustCommand{\pder}[1]{%
+  \@ifnextchar\bgroup{\@pder{#1}}{\@pder{}{#1}}}
+\newcommand{\@pder}[2]{\frac{\partial#1}{\partial#2}}
+\makeatother
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{3D-Ideal Gas Law}%
+\label{sec:3d_ideal_gas_law}
+
+\begin{align}
+  P\V&=NkT\\
+  Nk&=nR
+\end{align}
+
+\subsection{Equipartition Theorem}%
+\label{sub:equipartition_theorem}
+
+Only true if $f$ is quadratic. E.g. If kinetic energy and potential energy are
+given by quadratic functions
+
+\begin{align}
+  y&=nf\frac{1}{2}kT\\
+  f&=3\quad\text{Monatomic}\\
+  f&=5\quad\text{Diatomic}
+\end{align}
+
+\section{1-st Law}%
+\label{sec:1_st_law}
+
+\begin{align}
+  U&=Q+W
+\end{align}
+
+Values are $(+)$ if work or heat is added or done \textit{on}  the system.
+Values are $(-)$ if work or heat is removed from or done \textit{by}  the
+system.
+
+\begin{align}
+  dW=-Pd\V\\
+  W=-\int_{\V_i}^{\V_f}Pd\V
+\end{align}
+
+\subsection{Cycles}%
+\label{sub:cycles}
+
+\begin{figure}[htpb]
+  \centering
+  \begin{minipage}{.4\linewidth}
+    \begin{tikzpicture}[scale=0.5]
+      \draw[<->] (6,0) node[below]{$\V$} -- (0,0) -- (0,6) node[left]{$P$};
+      \draw[->,line width=1.0pt] (2,2) -- (2,4);
+      \draw[->,line width=1.0pt] (2,4) -- (4,4);
+      \draw[->,line width=1.0pt] (4,4) -- (4,2);
+      \draw[->,line width=1.0pt] (4,2) -- (2,2);
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}{.4\linewidth}
+    \begin{tikzpicture}[scale=0.5]
+      \draw[<->] (6,0) node[below]{$\V$} -- (0,0) -- (0,6) node[left]{$P$};
+      \draw[<-,line width=1.0pt] (2,2) -- (2,4);
+      \draw[<-,line width=1.0pt] (2,4) -- (4,4);
+      \draw[<-,line width=1.0pt] (4,4) -- (4,2);
+      \draw[<-,line width=1.0pt] (4,2) -- (2,2);
+    \end{tikzpicture}
+  \end{minipage}
+  \caption{Left is Heat engine cycle. Right is Refrigerator cycle.}
+\end{figure}
+
+Efficiency is given by benefit divided by cost. Maximum efficiency is only
+found in the Caront Cycle.
+
+\begin{align}
+  Eff_{max}&=1-\frac{T_C}{T_H}
+\end{align}
+
+\section{Gas Expansion}%
+\label{sec:gas_expansion}
+
+\begin{description}
+  \item[Isothermal] Temperature is constant $T=\text{const}$.
+  \item[Abiabatic] No heat is transferred $Q=0$,
+    $P\V^{\frac{2+f}{f}}=\text{const}$, $\Delta S =0$.
+\end{description}
+
+\begin{align}
+  C_\V=\frac{\partial U}{\partial T}&\quad C_P=\frac{\partial U}{\partial
+    T}+P\left(\frac{\partial \V}{\partial T}\right)_P\\
+  C_\V=\frac{1}{2}fNK&\quad C_P=Nk\left(\frac{f+2}{2}\right)\quad\text{Only for
+  ideal gasses}
+\end{align}
+
+\section{Multiplicity}%
+\label{sec:multiplicity}
+
+\begin{description}
+  \item[Einstien Solid]
+    $$\Omega=\frac{\left(N+q-1\right)!}{q!\left(N-1\right)!}\approx\left(\frac{eq}{N}\right)^N$$
+  \item[Two Level System]
+    $$\Omega=\frac{N!}{N_\uparrow!N_\downarrow!}=\frac{N!}{N_\uparrow!\left(N-N_\uparrow\right)!}$$
+  \item[Ideal Gas]
+    $$\Omega=\frac{\V^N}{N!h^{3N}}\left[\frac{2\pi^{\frac{3N}{2}}}{\left(\frac{3N}{2}-1\right)!}\cdot\left(2mU\right)^{\frac{3N-1}{2}}\right]$$
+\end{description}
+
+\section{Entropy and Heat}%
+\label{sec:entropy_and_heat}
+
+\paragraph{Heat Capacities}%
+\label{par:heat_capacities}
+
+\begin{align}
+  C_V\equiv\left(\frac{\partial U}{\partial T}\right)_{N,V}\\
+\end{align}
+For an Einstein solid with $q \gg N$
+\begin{align}
+  C_V=\frac{\partial}{\partial T}\left(NkT\right)=Nk
+\end{align}
+For a monatomic ideal gas
+\begin{align}
+  C_V=\frac{\partial}{\partial T}\left(\frac{3}{2}NkT\right)=\frac{3}{2}Nk
+\end{align}
+
+\paragraph{Measuring Entropies}%
+\label{par:measuring_entropies}
+
+\begin{align}
+  dS =\frac{dU}{T}=\frac{Q}{T}\\
+  dS=\frac{C_VdT}{T}\\
+  \Delta S=S_f-S_i=\int_{T_i}^{T_f}\frac{C_V}{T}dT\\
+  C_V\rightarrow0\quad\text{as}\quad T\rightarrow0
+\end{align}
+
+
+\section{Thermo-Dynamic Potentials}%
+\label{sec:thermo_dynamic_potentials}
+
+\begin{align}
+  S&=S(N,\V,U)\\
+  dS&=\pder{S}{N}dN+\pder{S}{\V}d\V+\pder{S}{U}dU\\
+    &=-\frac{\mu}{T}dN+\frac{P}{T}d\V+\frac{1}{T}dU\\
+  dU&=TdS+\mu dN
+\end{align}
+
+\begin{align}
+  \pder{U}{S}=T\quad\pder{U}{N}=\mu\quad\pder{U}{\V}=-P
+\end{align}
+
+\begin{description}
+  \item[Enthalpy] $H\equiv U+P\V\quad T=0$
+  \item[Helmholts Free Energy] $F\equiv U-TS\quad P=0$
+  \item[Gibbs Gree Energy] $G\equiv U-TS+P\V$
+\end{description}
+
+\section{Boltzmann Statistics}%
+\label{sec:boltzman_statistics}
+
+\subsection{Partition Function}%
+\label{sub:partition_function}
+
+\begin{align}
+  \Aboxed{Z\equiv \sum_{s}e^{-\frac{E(s)}{kT}}}
+\end{align}
+
+Where $s$ are the possible states of a single particle. $Z$ cannot be measured
+but it contains all the information relevant to a system.
+
+\subsection{Boltzmann Distribution}%
+\label{sub:boltzmann_distribution}
+
+\begin{align}
+  \Aboxed{P(s)=\frac{e^{-\frac{E(s)}{kT}}}{Z}}
+\end{align}
+
+This gives the probability of a particle being in any given state $s$. Using
+this and the partition function, anything about a system can be derived.
+
+\end{document}
