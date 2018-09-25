@@ -61,7 +61,7 @@ def adaptive(input_func, a, b, h=0.001, delta=10e-4):
 def input_func(prompt):
     """Generates lambda from user input"""
     func_string = input(prompt)
-    return eval("lambda x: " + re.sub(r'(\d)(\w)', r'\1*\2', func_string.strip()))
+    return eval("lambda x: " + re.sub(r'(\d)(\w)', r'\1*\2', func_string.strip().replace('^', '**')))
 
 
 def main():

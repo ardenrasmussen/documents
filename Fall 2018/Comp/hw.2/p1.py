@@ -17,9 +17,9 @@ def simpson(func, a, b, n=1000):
 def p1():
     """5.4: The diffraction limit of a telescope"""
 
-    def J(m, x):
+    def J(m, x, n=1000):
         return (1 / pi) * simpson(lambda theta: cos(m * theta - x * sin(theta)),
-                                  0, pi)
+                                  0, pi, n)
 
     def a():
         plot(linspace(0, 20), [J(0, x) for x in linspace(0, 20)])
@@ -30,10 +30,10 @@ def p1():
     def b():
         print("This takes a little while to run...")
         max_r = 1e-6
-        resolution = 100
+        resolution = 50
         scale = max_r / resolution
         k = 2 * pi / (5e-7)
-        I = lambda r: pow(J(1, k * r) / (k * r), 2)
+        I = lambda r: pow(J(1, k * r, 100) / (k * r), 2) if r != 0 else pow(J(1, k * 1e-9, 100) / (k * 1e-9), 2)
         D = lambda x, y: sqrt(x**2 + y**2)
         data = [[
             I(D(x - resolution, y - resolution) * scale)
@@ -41,6 +41,7 @@ def p1():
         ]
                 for y in range(resolution * 2 + 1)]
         imshow(data, vmax=0.01)
+        # imshow(data)
         show()
 
     a()
