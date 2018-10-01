@@ -39,13 +39,11 @@ def RMI(T, T_max):
 
 def p3():
     T_max = T_plot[-1]
-
     def a():
         print(
             RMI(
                 float(input("T[{}-{}]: ".format(T_plot[0], T_plot[-1]))),
                 T_max))
-        # pprint([round(x, 5) for x in list(T)])
         plot(T_plot, [RMI(x, T_max)[0] for x in T_plot], label="RMI")
         xlabel('Temperature (K)')
         ylabel('RMI(T)')
