@@ -14,8 +14,12 @@ def trapazoidal(func, a, b, h=0.001):
 
 def simpson(func, a, b, h=0.001):
     """Approximates integral using simpson method"""
-    n = int(abs(b - a) / h)
-    n -= 1 if n % 2 == 1 else 0
+    # n = int(abs(b - a) / h)
+    # n -= 1 if n % 2 == 1 else 0
+    n = 100
+    h = (b-a)/n
+    print(sum([func(a + (k * h)) for k in range(1, n, 2)]))
+    print(sum([func(a + (k * h)) for k in range(2, n-1, 2)]))
     return (h / 3.0) * (
         func(a) + func(b) +
         (4.0 * sum([func(a + (k * h)) for k in range(1, n, 2)])) +
@@ -72,7 +76,8 @@ def main():
         inf if start == 'inf' else -inf)
     end = float(end) if end not in ('-inf',
                                     'inf') else (inf if end == 'inf' else -inf)
-    print(adaptive(func, start, end, 0.001))
+    # print(adaptive(func, start, end, 0.001))
+    print(simpson(func, start, end))
     # d = adaptive(lambda x: exp(-x**2), 0, inf, 0.001, 1e-12)
 
 
