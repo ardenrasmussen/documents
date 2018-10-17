@@ -18,8 +18,6 @@ def simpson(func, a, b, h=0.001):
     # n -= 1 if n % 2 == 1 else 0
     n = 100
     h = (b-a)/n
-    print(sum([func(a + (k * h)) for k in range(1, n, 2)]))
-    print(sum([func(a + (k * h)) for k in range(2, n-1, 2)]))
     return (h / 3.0) * (
         func(a) + func(b) +
         (4.0 * sum([func(a + (k * h)) for k in range(1, n, 2)])) +
