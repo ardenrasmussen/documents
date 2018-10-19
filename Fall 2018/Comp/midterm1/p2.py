@@ -20,22 +20,23 @@ def main():
     size_y, size_x = altitudes.shape
     for y in range(altitudes.shape[0] - 1):
         for x in range(altitudes.shape[1] - 1):
-            partial_x[y][x] = -(altitudes[y][x + 1] - altitudes[y][x]) / 30000
-            partial_y[y][x] = -(altitudes[y + 1][x] - altitudes[y][x]) / 30000
+            partial_x[y][x] = (altitudes[y][x + 1] - altitudes[y][x]) / 30000
+            partial_y[y][x] = (altitudes[y + 1][x] - altitudes[y][x]) / 30000
     for x in range(altitudes.shape[1] - 1):
-        partial_x[size_y - 1][x] = -(
+        partial_x[size_y - 1][x] = (
             altitudes[size_y - 1][x - 1] - altitudes[size_y - 1][x]) / 30000
-        partial_y[size_y - 1][x] = -(
+        partial_y[size_y - 1][x] = (
             altitudes[size_y - 1][x] - altitudes[size_y - 2][x]) / 30000
     for y in range(altitudes.shape[0] - 1):
-        partial_x[y][size_x - 1] = -(
+        partial_x[y][size_x - 1] = (
             altitudes[y][size_x - 1] - altitudes[y][size_x - 2]) / 30000
-        partial_y[y][size_x - 1] = -(
+        partial_y[y][size_x - 1] = (
             altitudes[y + 1][size_x - 1] - altitudes[y][size_x - 1]) / 30000
     intensity = np.zeros(altitudes.shape)
     for y in range(size_y):
         for x in range(size_x):
             intensity[y][x] = I(partial_x[y][x], partial_y[y][x], pi / 4)
+    pl.set_cmap('Greys')
     pl.imshow(intensity)
     pl.show()
     altitudes = pl.loadtxt('stm.txt')
@@ -44,17 +45,17 @@ def main():
     size_y, size_x = altitudes.shape
     for y in range(altitudes.shape[0] - 1):
         for x in range(altitudes.shape[1] - 1):
-            partial_x[y][x] = -(altitudes[y][x + 1] - altitudes[y][x]) / 2.50
-            partial_y[y][x] = -(altitudes[y + 1][x] - altitudes[y][x]) / 2.50
+            partial_x[y][x] = (altitudes[y][x + 1] - altitudes[y][x]) / 2.50
+            partial_y[y][x] = (altitudes[y + 1][x] - altitudes[y][x]) / 2.50
     for x in range(altitudes.shape[1] - 1):
-        partial_x[size_y - 1][x] = -(
+        partial_x[size_y - 1][x] = (
             altitudes[size_y - 1][x - 1] - altitudes[size_y - 1][x]) / 2.50
-        partial_y[size_y - 1][x] = -(
+        partial_y[size_y - 1][x] = (
             altitudes[size_y - 1][x] - altitudes[size_y - 2][x]) / 2.50
     for y in range(altitudes.shape[0] - 1):
-        partial_x[y][size_x - 1] = -(
+        partial_x[y][size_x - 1] = (
             altitudes[y][size_x - 1] - altitudes[y][size_x - 2]) / 2.50
-        partial_y[y][size_x - 1] = -(
+        partial_y[y][size_x - 1] = (
             altitudes[y + 1][size_x - 1] - altitudes[y][size_x - 1]) / 2.50
     intensity = np.zeros(altitudes.shape)
     for y in range(size_y):
