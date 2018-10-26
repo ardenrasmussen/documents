@@ -1,0 +1,216 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amscd}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{nameref}
+
+\title{Continuous Real-Valued Functions}
+\author{Arden Rasmussen}
+\date{\today}
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\newcommand{\sep}[1]{\noindent\rule{\textwidth}{#1pt}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\No}{\mathbb{N}_0}
+
+\begin{document}
+\maketitle
+\section{Basic Properties}%
+\label{sec:Basic Properties}
+
+Suppose that $f,g:\Omega\rightarrow\R$ are continuous. Show that the following
+functions are also continuous:
+
+\begin{enumerate}[label=(\alph*)]
+  \item $f+g$ and $f-g$
+  \item $f \cdot g$
+  \item $c \cdot f$, where $c$ is some constant
+  \item $f/g$, provided $g \neq 0$
+\end{enumerate}
+
+\sep{2}
+
+\subsection{}%
+\label{sub:1a}
+
+\begin{proof}
+  Let $\varepsilon>0$. We assume $f,g:\Omega\rightarrow\R$ are continuous.
+  Assmue that the sequence $x_n\rightarrow x_\ast$. Let $N_f,N_g\in\N$ such
+  that
+  \begin{align*}
+    n>N_f&\implies|f(x_n)-f(x_\ast)|<\frac{\varepsilon}{2}\\
+    n>N_g&\implies|g(x_n)-g(x_\ast)|<\frac{\varepsilon}{2}
+  \end{align*}
+  Take $N=max({N_f,N_g})$. Thus when $n>N$ both of the previous statements are
+  true. Consider 
+  \begin{align*}
+    &|(f+g)(x_n)-(f+g)(x_\ast)|\\
+    &=|f(x_n)+g(x_n)-f(x_\ast)-g(x_\ast)|\\
+    &=|(f(x_n)-f(x_\ast))+(g(x_n)-g(x_\ast))|\\
+    &\leq|f(x_n)-f(x_\ast)|+|g(x_n)-g(x_\ast)|\\
+    &<\frac{\varepsilon}{2} + \frac{\varepsilon}{2}\quad \text{when}\ n>N\\
+    &=\varepsilon
+  \end{align*}
+  Now we can conclude that $(f+g)(x_n)\rightarrow(f+g)(x_\ast)$ and thus $f+g$
+  must be continuous.
+  Now consider
+  \begin{align*}
+    &|(f-g)(x_n)-(f-g)(x_\ast)|\\
+    &=|f(x_n)-g(x_n)-f(x_\ast)+g(x_\ast)|\\
+    &=|(f(x_n)-f(x_\ast))+(g(x_\ast)-g(x_n))|\\
+    &\leq|f(x_n)-f(x_\ast)|+|g(x_\ast)-g(x_n)|\\
+    &=|f(x_n)-f(x_\ast)|+|g(x_n)-g(x_\ast)|\\
+    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\quad \text{when}\ n>N\\
+    &=\varepsilon
+  \end{align*}
+  We can see that $(f-g)(x_n)\rightarrow(f-g)(x_\ast)$ and thus $f-g$ must be
+  continuous.
+\end{proof}
+
+\subsection{}%
+\label{sub:1b}
+
+\begin{proof}
+  Let $\varepsilon>0$. We define $M$ such that
+  \begin{align*}
+    M=max\left(\left\{|f(x_\ast)|,|g(x_\ast)|,1\right\}\right)
+  \end{align*}
+  Let $N\in\N$ such that
+  \begin{align*}
+    n>N\implies\begin{cases}
+      |f(x_n)-f(x_\ast)|<\frac{\varepsilon}{3M}\\
+      |g(x_n)-g(x_\ast)|<\frac{\varepsilon}{3M}\\
+    \end{cases}
+  \end{align*}
+  Consider
+  \begin{align*}
+    &|(f \cdot g)(x_n)-(f \cdot g)(x_\ast)|\\
+    &=|f(x_n)g(x_n)-f(x_\ast)g(x_\ast)|\\
+    &=|f(x_n)g(x_n)-f(x_n)g(x_\ast)+f(x_n)g(x_\ast)-f(x_\ast)g(x_\ast)|\\
+    &=|f(x_n)(g(x_n)-g(x_\ast))+g(x_\ast)(f(x_n)-f(x_\ast))|\\
+    &\leq|f(x_n)(g(x_n)-g(x_\ast))|+|g(x_\ast)(f(x_n)-f(x_\ast))|\\
+    &=|f(x_n)||g(x_n)-g(x_\ast)|+|g(x_\ast)||f(x_n)-f(x_\ast)|\\
+    &\text{Since $|g(x_\ast)|\leq M$ and $|f(x_n)|<M+\frac{\varepsilon}{3M}$}\\
+    &<\left(M+\frac{\varepsilon}{3M}\right)|g(x_n)-g(x_\ast)|+M|f(x_n)-f(x_\ast)|\\
+    &<\left(M+\frac{\varepsilon}{3M}\right)\frac{\varepsilon}{3M}+M\frac{\varepsilon}{3M}\quad\text{when}\
+    n>N\\
+    &=\frac{\varepsilon}{3}+\frac{\varepsilon^2}{9M^2}+\frac{varepsilon}{3}\\
+    &\text{Since $M\geq 1$ then we know }
+    &<\frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}\\
+    &=\varepsilon
+  \end{align*}
+\end{proof}
+
+\section{Composition}%
+\label{sec:composition}
+
+Suppose $f:U\rightarrow\R$ and $g:V\rightarrow\R$ are continuous, and that
+$f(U)\subset V$. Show that $g\circ f:U\rightarrow\R$ is continuous.
+
+\sep{2}
+
+\section{Examples}%
+\label{sec:examples}
+
+\begin{enumerate}[label=(\alph*)]
+  \item Show that all polynomial functions are continuous
+  \item Show that $f:(0,\infty)\rightarrow\R$ given by $f(x)=\frac{1}{x}$ is
+    continuous.
+\end{enumerate}
+
+\sep{2}
+
+\section{Non-Example}%
+\label{sec:non_example}
+
+Let $\sigma:\R\rightarrow\R$ is given by
+
+\begin{equation*}\label{eq:4.1}
+  \sigma(x)=\begin{cases}
+    1 & \text{if}\ x\in\Q \\
+    0 & \text{if}\ x\notin\Q
+  \end{cases}
+\end{equation*}
+
+Show that $\sigma$ is not continuous.
+
+\sep{2}
+
+\section{The Square Root Function}%
+\label{sec:the_square_root_function}
+
+Consider the square root function $f:[0,\infty)\rightarrow\R$ given by
+$f(x)=\sqrt{x}$.
+
+\begin{enumerate}[label=(\alph*)]
+  \item Show that the square root function is \textit{strictly increasing},
+    meaning that
+    \begin{equation*}\label{eq:5a.0}
+      a<b\implies\sqrt{a}<\sqrt{b}
+    \end{equation*}
+  \item Show that the square root function is continuous.
+\end{enumerate}
+
+\sep{2}
+
+\section{Intermediate Value Theorem}%
+\label{sec:intermediate_value_theorem}
+
+Suppose that $f:[a,b]\rightarrow\R$ is continuous and that $y_\ast$ is between
+$f(a)$ and $f(b)$. Prove that there exists $x_\ast\in[a,b]$ such that
+$f(x_\ast) = y_\ast$.
+
+\sep{2}
+
+\section{$\varepsilon - \delta$ Criterion for Continuity}%
+\label{sec:_varepsilon_delta_criterion_for_continuity}
+
+Show that the following are equivalent:
+
+\begin{enumerate}[label=(\alph*)]
+  \item $f:\Omega\rightarrow\R$ is continuous at $x_\ast\in\Omega$.
+  \item For each $\varepsilon>0$ there exists $\delta>0$ such that for all
+    $x\in\Omega$ we have
+    \begin{equation*}\label{eq:7b.0}
+      |x-x_\ast|<\delta\implies|f(x)-f(x_\ast)|<\varepsilon
+    \end{equation*}
+\end{enumerate}
+
+Then illustrate the second condition with a picture.
+
+\sep{2}
+
+\section{Example}%
+\label{sec:example}
+
+Show directly that the function $f:\R\rightarrow\R$ given by $f(x)=x^2$
+satisfies condition (b) above at $x_\ast=2$.
+
+\sep{2}
+
+\section{Examples}%
+\label{sec:examples}
+
+\begin{enumerate}[label=(\alph*)]
+  \item Show that $f:[0,1]\rightarrow\R$ given by $f(x)=x^2$ is uniformly
+    continuous.
+  \item Show that $f:[1,\infty)\rightarrow\R$ given by $f(x)=\frac{1}{x}$ is uniformly
+    continuous.
+  \item Show that $f:(0,\infty)\rightarrow\R$ given by $f(x)=\frac{1}{x}$ is
+    not uniformly continuous.
+\end{enumerate}
+
+\sep{2}
+
+\end{document}

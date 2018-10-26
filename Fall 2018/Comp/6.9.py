@@ -7,16 +7,14 @@ from numpy.linalg import eigh
 from pylab import *
 
 L = 5e-10
-# a = 1.60218e-18
-a = 0
+a = 1.60218e-18
+# a = 0
 hb = 1.054571800e-34
 mass = 9.1094e-31
 PSI = None
 
 def simpson(func, a, b, n=100):
     """Approximates integral using simpson method"""
-    # n = int(abs(b - a) / h)
-    # n -= 1 if n % 2 == 1 else 0
     h = abs(b-a)/n
     return (h / 3.0) * (
         func(a) + func(b) +
@@ -62,13 +60,15 @@ def main():
     global PSI
     PSI = lambda x, t: sum([B(init, psi(n, V[n]))*exp(-1j*E[n]*t/hb)*psi(n,V[n])(x) for n in range(len(E))])
     vals = [PSI(x, 0) for x in linspace(0, L)]
+    plot(linspace(0, L), vals)
+    show()
     # animation.FuncAnimation(animate, )
-    for i, t in enumerate(arange(0, 0.1, 0.001)):
-        print("{}.png".format(i))
-        plot(linspace(0, L), [abs(PSI(x,t))**2 for x in linspace(0,L)])
-        savefig('animate/{}.png'.format(i))
-        # show()
-        clf()
+    # for i, t in enumerate(arange(0, 0.1, 0.001)):
+        # print("{}.png".format(i))
+        # plot(linspace(0, L), [abs(PSI(x,t))**2 for x in linspace(0,L)])
+        # savefig('animate/{}.png'.format(i))
+    # show()
+        # clf()
     # print(vals)
     # for f in psis:
         # plot(linspace(0, L), [f(x) for x in linspace(0,L)])
