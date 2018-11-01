@@ -54,7 +54,7 @@ def PSI_init(x):
         return 0
 
 X = np.linspace(0, L, 50)
-T = np.linspace(0, 1.17e-20, 50)
+T = np.linspace(0, 1.17e-16, 50)
 # T = np.linspace(0, 1.17e-30, 40)
 
 fig, ax = pylab.subplots()

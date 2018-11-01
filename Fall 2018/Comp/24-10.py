@@ -1,5 +1,6 @@
 import numpy as np
 import pylab
+from multiprocessing import Pool, cpu_count
 
 
 def f(x, t):
@@ -33,7 +34,7 @@ def RungeKutta2(f1, f2, x_init, y_init, a, b, h=0.1):
             x -= 2 * np.pi
         if(x < -np.pi):
             x += 2 * np.pi
-        if (2*t/3) % (2*np.pi) <= h and t > a + 50*h:
+        if (2*t/3) % (2*np.pi) <= h and t > 100:
             X.append(x)
             Y.append(y)
         k1 = h * f1(x, y, t)
@@ -48,25 +49,32 @@ def RungeKutta2(f1, f2, x_init, y_init, a, b, h=0.1):
         y += (1 / 6) * (l1 + 2 * l2 + 2 * l3 + l4)
     return T, X, Y
 
-def main():
+def helper(fD):
     g = 9.8
     l = 9.8
     q = 0.5
-    fD = 1.465
-    t_max = 50
+    t_max = 200
     OmegaD=2/3
-    # pylab.subplots_adjust(left=0.25, bottom=0.25)
-    # sq = pylab.Slider(axx, 'q', 0.1, 10.0, valinit=0.5)
     f1 = lambda theta,omega,t: omega
     f2 = lambda theta,omega,t: -(g/l)*np.sin(theta)-q*omega+fD*np.sin(OmegaD*t)
-    FD = np.linspace(1.3, 1.5)
-    X = []
-    THETA = []
-    for fD in FD:
-        T, Theta, Omega = RungeKutta2(f1, f2, 0.2, 0, 0, t_max, 0.01)
-        X += ([fD] * len(Theta))
-        THETA += Theta
-    pylab.plot(X, THETA, '.')
+    T, Theta, Omega = RungeKutta2(f1, f2, 0.2, 0, 0, t_max, 0.001)
+    return [(fD, x) for x in Theta]
+
+
+def main():
+    print(cpu_count())
+    # pylab.subplots_adjust(left=0.25, bottom=0.25)
+    # sq = pylab.Slider(axx, 'q', 0.1, 10.0, valinit=0.5)
+    FD = np.linspace(0.0, 1.6, 100)
+    pool = Pool(4)
+    pts  = pool.map(helper, FD)
+    pts = [j for i in pts for j in i]
+    # print(pts[0])
+    # for fD in FD:
+    #     T, Theta, Omega = RungeKutta2(f1, f2, 0.2, 0, 0, t_max, 0.001)
+    #     PT += [(fD, x) for x in Theta]
+    pylab.plot(*zip(*pts), 'ko')
+    # pylab.plot(Theta, Omega, '.')
 
     # fD=1.44
     # T1, Theta1, Omega1 = RungeKutta2(f1, f2, 0.2, 0, 0, t_max, 0.01)
