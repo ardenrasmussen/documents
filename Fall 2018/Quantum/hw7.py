@@ -15,7 +15,8 @@ def Psi(x, t):
 pylab.plot(np.linspace(-L, L, 100), [Psi(x, 0) for x in np.linspace(-L, L, 100)])
 pylab.plot(np.linspace(-L, L, 100), [Psi(x, tau) for x in np.linspace(-L, L, 100)])
 pylab.plot(np.linspace(-L, L, 100), [Psi(x, 2*tau) for x in np.linspace(-L, L, 100)])
-pylab.show()
+pylab.savefig("hw7.png")
+# pylab.show()
 
 
 
