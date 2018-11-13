@@ -3,9 +3,14 @@ import numpy as np
 import pylab
 
 
-def gaussian(x, y):
-    return np.exp(-(x**2 + y**2) / (2 * (25**2)))
-
+def gaussian(x, y, Lx, Ly):
+    return sum([
+        sum([
+            np.exp(-((x + (n * Lx))**2 + (y + (m * Ly))**2) / (2 * (25**2)))
+            for n in range(-1, 1)
+        ])
+        for m in range(-1, 1)
+    ])
 
 def part_a():
     img_data = np.loadtxt('blur.txt')
@@ -15,29 +20,29 @@ def part_a():
 
 
 def part_b():
-    # TODO Check part B
     img_data = np.loadtxt('blur.txt')
     shape = img_data.shape
-    blur = [[
-        gaussian(x, y) + gaussian(x - shape[0], y) + gaussian(x, y - shape[1]) +
-        gaussian(x - shape[0], y - shape[1]) for x in range(shape[0])
-    ] for y in range(shape[1])]
+    blur = [[gaussian(x, y, shape[0], shape[1])
+             for x in range(shape[0])]
+            for y in range(shape[1])]
     pylab.imshow(blur)
     pylab.set_cmap('Greys_r')
     pylab.show()
 
 
 def part_c():
-    # TODO Finish part C
     img_data = np.loadtxt('blur.txt')
     shape = img_data.shape
-    blur = [[
-        gaussian(x, y) + gaussian(x - shape[0], y) + gaussian(x, y - shape[1]) +
-        gaussian(x - shape[0], y - shape[1]) for x in range(shape[0])
-    ] for y in range(shape[1])]
+    blur = [[gaussian(x, y, shape[0], shape[1])
+             for x in range(shape[0])]
+            for y in range(shape[1])]
     fft_img = np.fft.rfft2(img_data)
     fft_blur = np.fft.rfft2(blur)
-    fft_unblured = np.divide(fft_img, fft_blur)
+    fft_unblured = fft_img
+    for i, row in enumerate(fft_unblured):
+        for j, elem in enumerate(row):
+            if fft_blur[i][j] > 1e-3:
+                fft_unblured[i][j] /= fft_blur[i][j]
     unblured = np.fft.irfft2(fft_unblured)
     pylab.imshow(unblured)
     pylab.set_cmap('Greys_r')

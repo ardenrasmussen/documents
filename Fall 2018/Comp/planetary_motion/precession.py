@@ -48,6 +48,8 @@ def minimum(T, X, Y, Vx, Vy, h):
     theta = []
     times = []
     vel = []
+    xpos = []
+    ypos = []
     step = int(0.24 / h)
     for i in range(5):
         v_max = max(V)
@@ -55,10 +57,14 @@ def minimum(T, X, Y, Vx, Vy, h):
         vel.append(v_max)
         theta.append(Theta[index])
         times.append(T[index])
+        xpos.append(X[index])
+        ypos.append(Y[index])
         V = V[:max(index - 20, 0)] + V[min(index + 20, len(V)):]
         Theta = Theta[:max(index - 20, 0)] + Theta[min(index + 20, len(Theta)):]
         T = T[:max(index - 20, 0)] + T[min(index + 20, len(T)):]
-    return vel, theta, times
+        X = X[:max(index - 20, 0)] + X[min(index + 20, len(X)):]
+        Y = Y[:max(index - 20, 0)] + Y[min(index + 20, len(Y)):]
+    return vel, theta, times, xpos, ypos
 
 def get_slope(alpha):
     MsG = 4 * np.pi**2
@@ -68,8 +74,11 @@ def get_slope(alpha):
     f4 = lambda x, y, vx, vy, t: -MsG * y / pow(x**2 + y**2, 3/2)-MsG*y*alpha/pow(x**2+y**2,5/2)
     T, X, Y, Vx, Vy = RungeKutta(f1, f2, f3, f4, 0.3897, 0, 0, 8.166, 0.0, 1,
                                  0.0001)
-    v, y, x = list(minimum(list(T), X, Y, Vx, Vy, 0.0001))
+    v, y, x, xp, yp= list(minimum(list(T), X, Y, Vx, Vy, 0.0001))
     V = [np.sqrt(x**2+y**2) for x, y in zip(Vx, Vy)]
+    # pylab.plot(xp, yp, 'bo')
+    # pylab.plot(X, Y, 'k.', markersize=0.1)
+    # pylab.show()
     # pylab.plot(x, v, 'bo')
     # pylab.plot(T, V, 'k.', markersize=0.1)
     # pylab.show()
@@ -131,7 +140,7 @@ def main():
     m = (E_xy - E_x * E_y) / (E_xx - E_x**2)
     c = (E_xx * E_y - E_x * E_xy)/(E_xx - E_x**2)
     print("{}*x+{}".format(m, c))
-    mer_alpha = 1e-8
+    mer_alpha = 1.1e-8
     print("\u0251={}".format(mer_alpha))
     print("d\u03b8/dt={}".format((m*mer_alpha + c) * 3600 * 0.01))
     pylab.plot(alphas, slopes)
