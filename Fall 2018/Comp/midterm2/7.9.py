@@ -42,7 +42,7 @@ def part_c():
     for i, row in enumerate(fft_unblured):
         for j, elem in enumerate(row):
             if fft_blur[i][j] > 1e-3:
-                fft_unblured[i][j] /= fft_blur[i][j]
+                fft_unblured[i][j] /= (fft_blur[i][j])
     unblured = np.fft.irfft2(fft_unblured)
     pylab.imshow(unblured)
     pylab.set_cmap('Greys_r')
