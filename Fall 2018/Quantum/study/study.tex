@@ -1,0 +1,156 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{physics}
+
+\usepackage[marign=1in]{geometry}
+\usepackage{multicol}
+
+\title{Quantum Mechanics Midterm 2}
+\author{Arden Rasmussen}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{multicols}{2}
+
+\section{Time-Independent Schr\"odinger Equations}%
+\label{sec:time_independent_schr"odinger_equations}
+
+\subsection{Harmonic Oscillator}%
+\label{sub:harmonic_oscillator}
+
+\subsubsection{Base State}%
+\label{ssub:base_state}
+
+\begin{align*}
+  \Psi_0&={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}e^{-\frac{m\omega}{2\hbar}x^2}\\
+  E_0&=\frac{\hbar\omega}{2}
+\end{align*}
+
+\subsubsection{Ladder Operators}%
+\label{ssub:ladder_operators}
+
+\begin{align*}
+  \hat{a_{+}}&=\frac{1}{\sqrt{2m\omega\hbar}}\left[-i\hat{p}+m\omega x\right]\\
+  \hat{a_{-}}&=\frac{1}{\sqrt{2m\omega\hbar}}\left[i\hat{p}+m\omega x\right]\\
+  \left[\hat{a_{-}},\hat{a_{+}}\right]&=1\\
+\end{align*}
+
+\subsubsection{Solving}%
+\label{ssub:solving}
+
+\begin{align*}
+  \hat{a_{+}}\psi_n&=\sqrt{n+1}\psi_{n+1}\\
+  \hat{a_{-}}\psi_n&=\sqrt{n}\psi_{n-1}\\
+  \psi_n&=\frac{1}{\sqrt{n!}}{\left(\hat{a_{+}}\right)}^n\psi_0\\
+  E_n&=\left(n+\frac{1}{2}\right)\hbar\omega
+\end{align*}
+
+\subsubsection{Operators}%
+\label{ssub:operators}
+
+\begin{align*}
+  \hat{x}=\sqrt{\frac{\hbar}{2m\omega}}\left(\hat{a_{+}}+\hat{a_{-}}\right)\\
+  \hat{p}=i\sqrt{\frac{\hbar m \omega}{2}}\left(\hat{a_{+}}-\hat{a_{-}}\right)
+\end{align*}
+
+\subsection{Free Particle}%
+\label{sub:free_particle}
+
+Here be dragons
+
+\section{Formalism}%
+\label{sec:formalism}
+
+\subsection{Hilbert Space}%
+\label{sub:hilbert_space}
+
+All wave functions live in Hilbert space. Any function in that Hilbert space
+can be represented as a linear combination of basis functions of that Hilbert
+space.
+
+\subsection{Observables}%
+\label{sub:observables}
+
+The $\left<O\right>$ is always real for observables. Observables are
+represented by hermitian operators.
+
+\begin{align*}
+  \left<O\right>=\expval{\hat{O}}{\Psi}
+\end{align*}
+
+The eigenvalues of hermitian operators is always real.
+
+\subsection{Uncertainty Principle}%
+\label{sub:uncertainty_principle}
+
+\begin{align*}
+  \sigma_A^2\sigma_B^2\geq {\left(\frac{1}{2i}\expval{\left[\hat{A},\hat{B}\right]}\right)}^2
+\end{align*}
+
+Observables whose operators do not commute car called incompatible observables,
+meaning that measuring one changes the other.
+
+\subsection{Dirac Notation}%
+\label{sub:dirac_notation}
+
+We can express functions as a basis vector in Hilbert space.
+
+\begin{align*}
+  \ket{\alpha}=\begin{pmatrix}
+    \alpha_1\\
+    \alpha_2\\
+    \vdots \\
+    \alpha_n
+  \end{pmatrix}\quad
+  \bra{\alpha}=\begin{pmatrix}
+    \alpha_1^*  \alpha_2^*  \cdots  \alpha_n^*
+  \end{pmatrix}
+\end{align*}
+
+The identity operator is
+
+\begin{align*}
+  \hat{I}=\sum\ket{\alpha}\bra{\alpha}
+\end{align*}
+
+For some operator $\hat{O}$ and eigenvalues $o_n$
+
+\begin{align*}
+  \hat{O}\ket{n}=o_n\ket{n}
+\end{align*}
+
+\subsubsection{Matrix Operators}%
+\label{ssub:matrix_operators}
+
+\begin{align*}
+  O_{nm}\equiv\matrixel{n}{\hat{O}}{m}
+\end{align*}
+
+Hermitian if
+
+\begin{align*}
+  O_{nm}=O_{mn}^*
+\end{align*}
+
+\subsubsection{Harmonic Oscillator}%
+\label{ssub:harmonic_oscillator}
+
+\begin{align*}
+  \hat{a_{+}}\ket{n}&=\sqrt{n+1}\ket{n+1}\\
+  \hat{a_{-}}\ket{n}&=\sqrt{n}\ket{n-1}
+\end{align*}
+
+\subsubsection{Wave Function}%
+\label{ssub:wave_function}
+
+\begin{align*}
+  \ket{\Psi}&=\sum_nA_n\ket{n}\\
+  A_n&=\braket{n}{\Psi}\\
+  \ket{\Psi}&=\sum_n\braket{n}{\Psi}\ket{n}
+\end{align*}
+   
+\end{multicols}
+\end{document}
