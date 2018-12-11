@@ -1,0 +1,58 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k+kn}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{pylab}
+
+\PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{1}
+
+\PYG{k}{def} \PYG{n+nf}{rho}\PYG{p}{(}\PYG{n}{r}\PYG{p}{):}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{r}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mf}{0.5} \PYG{o+ow}{or} \PYG{n}{r}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{==} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5}\PYG{p}{)} \PYG{o+ow}{and} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5} \PYG{o}{\PYGZlt{}=} \PYG{n}{r}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mf}{0.5}\PYG{p}{:}
+        \PYG{k}{return} \PYG{l+m+mi}{1}
+    \PYG{k}{elif} \PYG{p}{(}\PYG{n}{r}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mf}{0.5} \PYG{o+ow}{or} \PYG{n}{r}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5}\PYG{p}{)} \PYG{o+ow}{and} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5} \PYG{o}{\PYGZlt{}=} \PYG{n}{r}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mf}{0.5}\PYG{p}{:}
+        \PYG{k}{return} \PYG{l+m+mi}{1}
+    \PYG{k}{return} \PYG{l+m+mi}{0}
+
+\PYG{k}{def} \PYG{n+nf}{gauss\PYGZus{}seidel}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{,} \PYG{n}{rho}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{tol}\PYG{p}{):}
+    \PYG{n}{error} \PYG{o}{=} \PYG{n}{tol} \PYG{o}{+} \PYG{l+m+mi}{1000}
+    \PYG{n}{N} \PYG{o}{=} \PYG{n}{phi}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{n}{phi\PYGZus{}min} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{while} \PYG{n}{error} \PYG{o}{\PYGZgt{}} \PYG{n}{tol}\PYG{p}{:}
+        \PYG{n}{diff\PYGZus{}max} \PYG{o}{=} \PYG{l+m+mi}{0}
+        \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{N}\PYG{p}{):}
+            \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{N}\PYG{p}{):}
+                \PYG{k}{if} \PYG{n}{i} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{n}{i} \PYG{o}{==} \PYG{n}{N} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{o+ow}{or} \PYG{n}{j} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{n}{j} \PYG{o}{==} \PYG{n}{N} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{:}
+                    \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]}
+                \PYG{k}{else}\PYG{p}{:}
+                    \PYG{n}{old} \PYG{o}{=} \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}
+                    \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{w}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{4} \PYG{o}{*} \PYG{p}{(}
+                        \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]} \PYG{o}{+} \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]} \PYG{o}{+} \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+}
+                        \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{])} \PYG{o}{\PYGZhy{}} \PYG{n}{w} \PYG{o}{*} \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]} \PYG{o}{+} \PYG{p}{(}\PYG{n}{a}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{/} \PYG{l+m+mi}{4}\PYG{p}{)} \PYG{o}{*} \PYG{n}{rho}\PYG{p}{([}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{])}
+                    \PYG{n}{diff\PYGZus{}max} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{diff\PYGZus{}max}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{old}\PYG{p}{))}
+        \PYG{n}{error} \PYG{o}{=} \PYG{n}{diff\PYGZus{}max}
+    \PYG{k}{return} \PYG{n}{phi}
+
+\PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{():}
+    \PYG{n}{phi} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{([}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{])}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{50}\PYG{p}{,}\PYG{l+m+mi}{150}\PYG{p}{):}
+        \PYG{n}{phi}\PYG{p}{[}\PYG{l+m+mi}{50}\PYG{p}{,}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+        \PYG{n}{phi}\PYG{p}{[}\PYG{l+m+mi}{150}\PYG{p}{,}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+        \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{l+m+mi}{50}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+        \PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{l+m+mi}{150}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{n}{phi} \PYG{o}{=} \PYG{n}{gauss\PYGZus{}seidel}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{,} \PYG{n}{rho}\PYG{p}{,} \PYG{l+m+mf}{0.8}\PYG{p}{,} \PYG{l+m+mf}{1e\PYGZhy{}4}\PYG{p}{)}
+
+    \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}V(0,0) = \PYGZob{}\PYGZcb{}\PYGZdq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{[}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{]))}
+    \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}V(0.25,0) = \PYGZob{}\PYGZcb{}\PYGZdq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{[}\PYG{l+m+mi}{125}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{]))}
+
+    \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{)}
+    \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{colorbar}\PYG{p}{()}
+    \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}P3\PYGZus{}3.png\PYGZdq{}}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{e}\PYG{p}{(}\PYG{n}{x1}\PYG{p}{,}\PYG{n}{x2}\PYG{p}{,} \PYG{n}{h} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{o}{/}\PYG{l+m+mi}{200}\PYG{p}{):}
+        \PYG{n}{ex} \PYG{o}{=} \PYG{p}{(}\PYG{n}{phi}\PYG{p}{[}\PYG{n}{x1}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{x2}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{phi}\PYG{p}{[}\PYG{n}{x1}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{x2}\PYG{p}{])}\PYG{o}{/}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{h}\PYG{p}{)}
+        \PYG{n}{ey} \PYG{o}{=} \PYG{p}{(}\PYG{n}{phi}\PYG{p}{[}\PYG{n}{x1}\PYG{p}{,} \PYG{n}{x2}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{phi}\PYG{p}{[}\PYG{n}{x1}\PYG{p}{,}\PYG{n}{x2}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])}\PYG{o}{/}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{h}\PYG{p}{)}
+        \PYG{k}{return} \PYG{p}{[}\PYG{n}{ex}\PYG{p}{,} \PYG{n}{ey}\PYG{p}{]}
+    \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}E(0,0) = \PYGZob{}\PYGZcb{}\PYGZdq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{e}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{)))}
+    \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}E(0.25,0) = \PYGZob{}\PYGZcb{}\PYGZdq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{e}\PYG{p}{(}\PYG{l+m+mi}{125}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{)))}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{:}
+    \PYG{n}{main}\PYG{p}{()}
+\end{Verbatim}

@@ -1,0 +1,51 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k+kn}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{pylab}
+
+\PYG{k}{def} \PYG{n+nf}{RungeKutta}\PYG{p}{(}\PYG{n}{f1}\PYG{p}{,} \PYG{n}{f2}\PYG{p}{,} \PYG{n}{f3}\PYG{p}{,} \PYG{n}{a\PYGZus{}init}\PYG{p}{,} \PYG{n}{b\PYGZus{}init}\PYG{p}{,} \PYG{n}{c\PYGZus{}init}\PYG{p}{,} \PYG{n}{t0}\PYG{p}{,} \PYG{n}{tf}\PYG{p}{,} \PYG{n}{h}\PYG{o}{=}\PYG{l+m+mf}{0.1}\PYG{p}{):}
+    \PYG{n}{A} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{B} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{C} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{T} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{t0}\PYG{p}{,} \PYG{n}{tf}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)}
+    \PYG{n}{a} \PYG{o}{=} \PYG{n}{a\PYGZus{}init}
+    \PYG{n}{b} \PYG{o}{=} \PYG{n}{b\PYGZus{}init}
+    \PYG{n}{c} \PYG{o}{=} \PYG{n}{c\PYGZus{}init}
+    \PYG{k}{for} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n}{T}\PYG{p}{:}
+        \PYG{n}{A}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)}
+        \PYG{n}{B}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{b}\PYG{p}{)}
+        \PYG{n}{C}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{c}\PYG{p}{)}
+        \PYG{n}{k1} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f1}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{c}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+        \PYG{n}{l1} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f2}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{c}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+        \PYG{n}{m1} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f3}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{c}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+        \PYG{n}{k2} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f1}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{k1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{l1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{c} \PYG{o}{+} \PYG{n}{m1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{t} \PYG{o}{+} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{)}
+        \PYG{n}{l2} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f2}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{k1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{l1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{c} \PYG{o}{+} \PYG{n}{m1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{t} \PYG{o}{+} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{)}
+        \PYG{n}{m2} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f3}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{k1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{l1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{c} \PYG{o}{+} \PYG{n}{m1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{t} \PYG{o}{+} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{)}
+        \PYG{n}{k3} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f1}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{k2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{l2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{c} \PYG{o}{+} \PYG{n}{m2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{t} \PYG{o}{+} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{)}
+        \PYG{n}{l3} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f2}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{k2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{l2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{c} \PYG{o}{+} \PYG{n}{m2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{t} \PYG{o}{+} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{)}
+        \PYG{n}{m3} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f3}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{k2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{l2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{c} \PYG{o}{+} \PYG{n}{m2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{t} \PYG{o}{+} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{)}
+        \PYG{n}{k4} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f1}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{k3}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{l3}\PYG{p}{,} \PYG{n}{c} \PYG{o}{+} \PYG{n}{m3}\PYG{p}{,} \PYG{n}{t} \PYG{o}{+} \PYG{n}{h}\PYG{p}{)}
+        \PYG{n}{l4} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f2}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{k3}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{l3}\PYG{p}{,} \PYG{n}{c} \PYG{o}{+} \PYG{n}{m3}\PYG{p}{,} \PYG{n}{t} \PYG{o}{+} \PYG{n}{h}\PYG{p}{)}
+        \PYG{n}{m4} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{n}{f3}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{k3}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{l3}\PYG{p}{,} \PYG{n}{c} \PYG{o}{+} \PYG{n}{m3}\PYG{p}{,} \PYG{n}{t} \PYG{o}{+} \PYG{n}{h}\PYG{p}{)}
+        \PYG{n}{a} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{k1} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{k2} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{k3} \PYG{o}{+} \PYG{n}{k4}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{6}
+        \PYG{n}{b} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{l1} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{l2} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{l3} \PYG{o}{+} \PYG{n}{l4}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{6}
+        \PYG{n}{c} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{m1} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{m2} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{m3} \PYG{o}{+} \PYG{n}{m4}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{6}
+    \PYG{k}{return} \PYG{n}{T}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{B}\PYG{p}{,} \PYG{n}{C}
+
+\PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{():}
+    \PYG{n}{sigma} \PYG{o}{=} \PYG{l+m+mi}{10}
+    \PYG{n}{r} \PYG{o}{=} \PYG{l+m+mi}{28}
+    \PYG{n}{b} \PYG{o}{=} \PYG{l+m+mi}{8}\PYG{o}{/}\PYG{l+m+mi}{3}
+    \PYG{n}{dx} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{z}\PYG{p}{,} \PYG{n}{t}\PYG{p}{:} \PYG{n}{sigma}\PYG{o}{*}\PYG{p}{(}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{)}
+    \PYG{n}{dy} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{,}\PYG{n}{t}\PYG{p}{:} \PYG{n}{r}\PYG{o}{*}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{o}{*}\PYG{n}{z}
+    \PYG{n}{dz} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{,}\PYG{n}{t}\PYG{p}{:} \PYG{n}{x}\PYG{o}{*}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{b}\PYG{o}{*}\PYG{n}{z}
+    \PYG{n}{T}\PYG{p}{,} \PYG{n}{X}\PYG{p}{,} \PYG{n}{Y}\PYG{p}{,} \PYG{n}{Z} \PYG{o}{=} \PYG{n}{RungeKutta}\PYG{p}{(}\PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy}\PYG{p}{,} \PYG{n}{dz}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{,} \PYG{l+m+mf}{0.0001}\PYG{p}{)}
+    \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{T}\PYG{p}{,} \PYG{n}{Y}\PYG{p}{)}
+    \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}P1\PYGZus{}a.png\PYGZdq{}}\PYG{p}{)}
+
+    \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{clf}\PYG{p}{()}
+    \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,}\PYG{n}{Z}\PYG{p}{)}
+    \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}P1\PYGZus{}b.png\PYGZdq{}}\PYG{p}{)}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{:}
+    \PYG{n}{main}\PYG{p}{()}
+\end{Verbatim}

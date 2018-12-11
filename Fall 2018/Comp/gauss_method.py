@@ -35,14 +35,18 @@ def main():
     V = 10
     rho = lambda x, y: 1 if (20 <= x <= 40 and 60 <= y <= 80) else (-1 if (60 <= x <= 80 and 20 <= y <= 40) else 0)
     tolerance = 1e-4
-    times = []
-    for w in np.linspace(0.2, 1.0, 10):
-        phi = np.zeros([N, N], float)
-        phi, time = gaussidal_method(phi, rho, w, tolerance)
-        times.append(time)
-        print(time)
-    print(np.linspace(0.5, 1.0, 5))
-    print(times)
+    # times = []
+    # for w in np.linspace(0.2, 1.0, 10):
+    #     phi = np.zeros([N, N], float)
+    #     phi, time = gaussidal_method(phi, rho, w, tolerance)
+    #     times.append(time)
+    #     print(time)
+    # print(np.linspace(0.5, 1.0, 5))
+    # print(times)
+    phi = np.zeros([N, N], float)
+    phi, time = gaussidal_method(phi, rho, 0.8, tolerance)
+    pylab.imshow(phi)
+    pylab.show()
     # phi_new = np.zeros([N, N], float)
     # phi[0, :] = V
     # while error > tolerance:
@@ -56,8 +60,6 @@ def main():
     #                                             a**2 / 4) * rho(i, j)
     #     error = np.max(np.abs(phi - phi_new))
     #     phi, phi_new = phi_new, phi
-    pylab.imshow(phi)
-    pylab.show()
 
 
 if __name__ == "__main__":

@@ -51,27 +51,29 @@ def main():
     f2 = lambda x, y, vx, vy, t: vy
     f3 = lambda x, y, vx, vy, t: -MsG * x / pow(x**2 + y**2, 3/2)
     f4 = lambda x, y, vx, vy, t: -MsG * y / pow(x**2 + y**2, 3/2)
-    T, X, Y, Vx, Vy = RungeKutta(f1, f2, f3, f4, 0.389, 0, 0, 8.2, 0.0, 1,
+    # T, X, Y, Vx, Vy = RungeKutta(f1, f2, f3, f4, 0.389, 0, 0, 8.2, 0.0, 1,
+    #                              0.001)
+    T, X, Y, Vx, Vy = RungeKutta(f1, f2, f3, f4, 0.389, 0, 0, 5.2, 0.0, 1,
                                  0.001)
     print("Calculated")
+    # pylab.plot(X, Y, 'k.')
+    # pylab.show()
+    fig, ax = pylab.subplots()
+    line, = ax.plot(X[0], Y[0], 'ko')
     pylab.ylim((-0.5, 0.5))
     pylab.xlim((-0.5, 0.5))
-    pylab.plot(X, Y, 'k.')
+
+    def init():
+        line.set_data(X[0], Y[0])
+        return line,
+
+    def anim(i):
+        line.set_data(X[i], Y[i])
+        return line,
+
+    ani = animation.FuncAnimation(
+        fig, anim, init_func=init, interval=20, frames=range(len(T)))
     pylab.show()
-    # fig, ax = pylab.subplots()
-    # line, = ax.plot(X[0], Y[0], 'ko')
-    #
-    # def init():
-    #     line.set_data(X[0], Y[0])
-    #     return line,
-    #
-    # def anim(i):
-    #     line.set_data(X[i], Y[i])
-    #     return line,
-    #
-    # ani = animation.FuncAnimation(
-    #     fig, anim, init_func=init, interval=20, frames=range(len(T)))
-    # pylab.show()
 
 
 if __name__ == "__main__":
