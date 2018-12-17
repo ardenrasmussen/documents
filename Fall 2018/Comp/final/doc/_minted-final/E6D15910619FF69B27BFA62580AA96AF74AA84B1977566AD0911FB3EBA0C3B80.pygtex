@@ -58,7 +58,6 @@
     \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)}
     \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{colorbar}\PYG{p}{()}
     \PYG{n}{pylab}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}P2\PYGZus{}4.png\PYGZdq{}}\PYG{p}{)}
-    \PYG{c+c1}{\PYGZsh{} pylab.show()}
 
 \PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{():}
     \PYG{n}{p2}\PYG{p}{()}

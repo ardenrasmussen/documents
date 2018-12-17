@@ -1,0 +1,394 @@
+\documentclass[8pt]{amsart}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{physics}
+\usepackage{graphics}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+
+\title{Quantum Mechanics Fall 2018}
+\author{Arden Rasmussen}
+\date{\today}
+
+\newcommand{\pder}[2][]{\frac{\partial#1}{\partial#2}}
+\newcommand{\spder}[2][]{\frac{\partial^2 #1}{\partial#2^2}}
+\newcommand{\der}[2][]{\frac{d#1}{d#2}}
+\newcommand{\sder}[2][]{\frac{d^2#1}{d#2^2}}
+\newcommand{\pluseq}{\mathrel{+}=}
+\newcommand{\minuseq}{\mathrel{-}=}
+
+\newcommand{\x}{\hat{x}}
+\newcommand{\p}{\hat{p}}
+\newcommand{\h}{\hat{H}}
+\newcommand{\Op}{\hat{O}}
+
+\newcommand{\RN}[1]{%
+  \textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+\maketitle
+\begin{multicols}{3}
+
+\section{The Wave Function}%
+\label{sec:the_wave_function}
+
+\subsection{The Schr\"odinger Equation}%
+\label{sub:the_schr"odinger_equation}
+\begin{align*}
+  i\hbar\pder[\Psi]{t}=-\frac{\hbar^2}{2m}\spder[\Psi]{x}+V\Psi
+\end{align*}
+
+\subsection{Operators}%
+\label{sub:operators}
+\begin{align*}
+  \expval{\x}&=\expval{\x}{\Psi}\\
+  \expval{\p}=m\frac{d\expval{\x}}{dt}&=\expval{-i\hbar\pder{x}}{\Psi}\\
+  \expval{\h}&=\expval{-\frac{\hbar^2}{2m}\pder{x}+V(x)}{\Psi}\\
+  \left[\hat{A},\hat{B}\right]&=\hat{A}\hat{B}-\hat{B}\hat{A}
+\end{align*}
+
+\subsection{The Uncertainty Principle}%
+\label{sub:the_uncertainty_principle}
+\begin{align*}
+  \sigma_x\sigma_p\geq\frac{\hbar}{2}
+\end{align*}
+
+\section{Time-Independent Schr\"odinger Equation}%
+\label{sec:time_independent_schr"odinger_equation}
+
+\subsection{Stationary States}%
+\label{sub:stationary_states}
+\begin{align*}
+  -\frac{\hbar^2}{2m}\sder[\psi]{x}+V\psi=E\psi\\
+  \Psi(x,t)=\sum_{n=1}^\infty c_n\psi_n(x)e^{-i\frac{E_nt}{\hbar}}
+\end{align*}
+
+\subsection{The Infinite Square Well}%
+\label{sub:the_infinite_square_well}
+\begin{align*}
+  V(x)&=\begin{cases}
+    0 & 0\leq x\leq L\\
+    \infty & \text{otherwise}
+  \end{cases}\\
+  E_n&=\frac{n^2\pi^2\hbar^2}{2mL^2}\\
+  \psi_n(x)&=\sqrt{\frac{2}{L}}\sin\left(\frac{n\pi}{L}x\right)\\
+  \braket{\psi_i}{\psi_j}&=\delta_{ij}\\
+  c_n&=\braket{\psi_n}{\Psi(x,t=0)}
+\end{align*}
+The probability of being in state $n$ is equal to $|c_n|^2$.
+\begin{align*}
+  \expval{\h}=\sum_{n=1}^\infty |c_n|^2E_n
+\end{align*}
+
+\subsection{The Harmonic Oscillator}%
+\label{sub:the_harmonic_oscillator}
+
+\subsubsection{Base State}%
+\label{ssub:base_state}
+
+\begin{align*}
+  \Psi_0&={\left(\frac{m\omega}{\pi\hbar}\right)}^{\frac{1}{4}}e^{-\frac{m\omega}{2\hbar}x^2}\\
+  E_0&=\frac{\hbar\omega}{2}
+\end{align*}
+
+\subsubsection{Ladder Operators}%
+\label{ssub:ladder_operators}
+
+\begin{align*}
+  \hat{a_{+}}&=\frac{1}{\sqrt{2m\omega\hbar}}\left[-i\hat{p}+m\omega x\right]\\
+  \hat{a_{-}}&=\frac{1}{\sqrt{2m\omega\hbar}}\left[i\hat{p}+m\omega x\right]\\
+  \left[\hat{a_{-}},\hat{a_{+}}\right]&=1\\
+\end{align*}
+
+\subsubsection{Solving}%
+\label{ssub:solving}
+
+\begin{align*}
+  \hat{a_{+}}\psi_n&=\sqrt{n+1}\psi_{n+1}\\
+  \hat{a_{-}}\psi_n&=\sqrt{n}\psi_{n-1}\\
+  \psi_n&=\frac{1}{\sqrt{n!}}{\left(\hat{a_{+}}\right)}^n\psi_0\\
+  E_n&=\left(n+\frac{1}{2}\right)\hbar\omega
+\end{align*}
+
+\subsubsection{Operators}%
+\label{ssub:operators}
+
+\begin{align*}
+  \hat{x}=\sqrt{\frac{\hbar}{2m\omega}}\left(\hat{a_{+}}+\hat{a_{-}}\right)\\
+  \hat{p}=i\sqrt{\frac{\hbar m \omega}{2}}\left(\hat{a_{+}}-\hat{a_{-}}\right)
+\end{align*}
+
+\subsection{The Free Particle}%
+\label{sub:the_free_particle}
+
+\begin{align*}
+  k^2&=\frac{2mE}{\hbar^2}\\
+  k&\in\R\\
+  E&=\frac{\hbar^2k^2}{2m}\\
+  p&=\hbar k\\
+  \Psi(x,t)&=\underbrace{Ae^{ikx-i\frac{E}{\hbar}t}}_\text{right
+  mover}+\underbrace{Be^{-ikx-i\frac{E}{\hbar}t}}_\text{left mover}\\
+    \Phi(k)&=\frac{1}{\sqrt{a\pi}}\frac{\sin(ka)}{k}
+\end{align*}
+
+\subsection{Step Potential}%
+\label{sub:step_potential}
+
+\begin{align*}
+  V(x)&=\begin{cases}
+    0 & x<0\\
+    V_0 & x \geq 0
+  \end{cases}\\
+  J_x&=-\frac{\hbar i}{2m}\left[\Psi^*\pder[\Psi]{x}-\Psi\pder[\Psi^*]{x}\right]\\
+  T&\equiv\left|\frac{J_{trans}}{J_{inc}}\right|\quad 0\leq T\leq 1\\
+  R&\equiv\left|\frac{J_{refl}}{J_{inc}}\right|\quad 0\leq R\leq 1
+\end{align*}
+
+\subsubsection{Case 1}%
+\label{ssub:case_1}
+$E>V_0$
+\begin{align*}
+  k_1^2&=\frac{2mE}{\hbar^2}\\
+  \Psi_\RN{1}&=\underbrace{Ae^{ik_1x}}_\text{Incident}+\underbrace{Be^{-ik_1x}}_\text{Reflected}\\
+  k_2^2&=\frac{2m(E-V_0)}{\hbar^2}\\
+  \Psi_{\RN{2}}&=\underbrace{Ce^{ik_2x}}_\text{Transmited}+\underbrace{De^{-ik_2x}}_\text{DNE}\\
+  T&=\frac{4}{\left[1+\frac{k_2}{k_1}\right]^2}\frac{k_2}{k_1}\\
+  R&=\frac{\left[1-\frac{k_2}{k_1}\right]^2}{\left[1+\frac{k_2}{k_1}\right]^2}
+\end{align*}
+
+\subsubsection{Case 2}%
+\label{ssub:case_2}
+$E<V_0$
+\begin{align*}
+  k_1^2&=\frac{2mE}{\hbar^2}\\
+  \Psi_\RN{1}&=\underbrace{Ae^{ik_1x}}_\text{Incident}+\underbrace{Be^{-ik_1x}}_\text{Reflected}\\
+  k_2^2&=\frac{2m(E-V_0)}{\hbar^2}\\
+  \Psi_{\RN{2}}&=\underbrace{Ce^{-k_2x}}_\text{Transmited}+\underbrace{De^{k_2x}}_\text{DNE}\\
+  T&=0\\
+  R&=1
+\end{align*}
+
+
+\section{Formalism}%
+\label{sec:formalism}
+
+\subsection{Observables}%
+\label{sub:observables}
+
+Observances are represented by hermitian operators, and $\expval{O}=\R$.
+\begin{align*}
+  \Op\ket{\psi}=o\ket{\psi}
+\end{align*}
+
+\subsection{The Uncertainty Principle}%
+\label{sub:the_uncertainty_principle}
+
+\begin{align*}
+  \sigma_A^2\sigma_B^2\geq {\left(\frac{1}{2i}\expval{\left[\hat{A},\hat{B}\right]}\right)}^2
+\end{align*}
+
+Observables whose operators do not commute car called incompatible observables,
+meaning that measuring one changes the other.
+
+\subsection{Dirac Notation}%
+\label{sub:dirac_notation}
+
+We can express functions as a basis vector in Hilbert space.
+
+\begin{align*}
+  \ket{\alpha}=\begin{pmatrix}
+    \alpha_1\\
+    \alpha_2\\
+    \vdots \\
+    \alpha_n
+  \end{pmatrix}\quad
+  \bra{\alpha}=\begin{pmatrix}
+    \alpha_1^*  \alpha_2^*  \cdots  \alpha_n^*
+  \end{pmatrix}
+\end{align*}
+
+The identity operator is
+
+\begin{align*}
+  \hat{I}=\sum\ket{\alpha}\bra{\alpha}
+\end{align*}
+
+For some operator $\hat{O}$ and eigenvalues $o_n$
+
+\begin{align*}
+  \hat{O}\ket{n}=o_n\ket{n}
+\end{align*}
+
+\subsubsection{Matrix Operators}%
+\label{ssub:matrix_operators}
+
+\begin{align*}
+  O_{nm}\equiv\matrixel{n}{\hat{O}}{m}
+\end{align*}
+
+Hermitian if
+
+\begin{align*}
+  O_{nm}=O_{mn}^*
+\end{align*}
+
+\subsubsection{Harmonic Oscillator}%
+\label{ssub:harmonic_oscillator}
+
+\begin{align*}
+  \hat{a_{+}}\ket{n}&=\sqrt{n+1}\ket{n+1}\\
+  \hat{a_{-}}\ket{n}&=\sqrt{n}\ket{n-1}
+\end{align*}
+
+\subsubsection{Wave Function}%
+\label{ssub:wave_function}
+
+\begin{align*}
+  \ket{\Psi}&=\sum_nA_n\ket{n}\\
+  A_n&=\braket{n}{\Psi}\\
+  \ket{\Psi}&=\sum_n\braket{n}{\Psi}\ket{n}
+\end{align*}
+
+
+\section{Quantum Mechanics in Three Dimensions}%
+\label{sec:quantum_mechanics_in_three_dimensions}
+
+\subsection{Schr\"odinger Equation in Spherical Coordinates}%
+\label{sub:schr"odinger_equation_in_spherical_coordinates}
+
+\subsubsection{Legendre}%
+\label{ssub:legendre}
+
+\begin{align*}
+  P_l(x)&\equiv\frac{1}{2^ll!}\left(\der{x}\right)^l(x^2-l)^l\\
+  P_l^m(x)&\equiv(1-x^2)^{|m|/2}\left(\der{x}\right)^{|m|}P_l(x)
+\end{align*}
+
+\begin{multicols}{2}
+  \begin{align*}
+    P_0&=1\\
+    P_1&=x\\
+    P_2&=\frac{1}{2}(3x^2-1)\\
+    P_3&=\frac{1}{2}(5x^3-3x)\\
+    P_4&=\frac{1}{8}(35x^4-30x^2-3)
+  \end{align*}
+
+  \begin{align*}
+    P_0^0&=1\\
+    P_1^1&=\sin\theta\\
+    P_1^0&=\cos\theta\\
+    P_2^2&=3\sin^2\theta\\
+    P_2^1&=3\sin\theta\cos\theta\\
+    P_2^0&=\frac{1}{2}(3\cos^2\theta-1)
+  \end{align*}
+\end{multicols}
+
+\subsubsection{Spherical Harmonics}%
+\label{ssub:spherical_harmonics}
+
+\begin{align*}
+  Y_l^m(\theta,\phi)&=\epsilon\sqrt{\frac{(2l+1)}{4\pi}\frac{(l-|m|)!}{(l+|m|)!}}e^{im\phi}P_l^m(\cos\theta)\\
+  \epsilon&=\begin{cases}
+    (-1)^m & m\geq 0\\
+    1 & m \leq 0
+  \end{cases}\\
+    \braket{Y_l^m}{Y_{l'}^{m'}}&=\delta_{ll'}\delta_{mm'}
+\end{align*}
+
+\begin{align*}
+  Y_0^0&=\left(\frac{1}{4\pi}\right)^{1/2}\\
+  Y_1^0&=\left(\frac{3}{4\pi}\right)^{1/2}\cos\theta\\
+  Y_1^{\pm1}&=\mp\left(\frac{3}{8\pi}\right)^{1/2}\sin\theta e^{\pm i\phi}\\
+  Y_2^0&=\left(\frac{5}{16\pi}\right)^{1/2}(3\cos^2\theta-1)\\
+  Y_2^{\pm 1}&=\mp\left(\frac{15}{8\pi}\right)^{1/2}\sin\theta\cos\theta e^{\pm i\phi}\\
+  Y_2^{\pm 2}&=\left(\frac{15}{32\pi}\right)^{1/2}\sin^2\theta e^{\pm 2i\phi}
+\end{align*}
+
+\subsection{The Hydrogen Atom}%
+\label{sub:the_hydrogen_atom}
+\begin{align*}
+  V(r)&=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}\\
+  E_n&=-\left[\frac{m}{2\hbar^2}\left(\frac{e^2}{4\pi\epsilon_0}\right)^2\right]\frac{1}{n^2}\ n\in\N\\
+  a&\equiv \frac{4\pi\epsilon_0\hbar^2}{me^2}=0.529\times10^{-10}m\\
+  E_1&=-13.6eV
+\end{align*}
+
+\subsubsection{Laguerre}%
+\label{ssub:laguerre}
+
+\begin{align*}
+  L_q(x)&\equiv e^x\left(\der{x}\right)^q(e^{-x}x^q)\\
+  L_{q-p}^p(x)&\equiv(-q)^p\left(\der{x}\right)^pL_q(x)
+\end{align*}
+
+\subsubsection{Radial}%
+\label{ssub:radial}
+
+\begin{align*}
+  R_{nl}(r)&=\sqrt{\left(\frac{2}{na}\right)^3\frac{(n-l-1)!}{2n\left[(n+l)!\right]^3}}\\ &\cdot e^{-r/na}\left(\frac{2r}{na}\right)^l\left[L_{n-l-1}^{2l+1}\left(\frac{2r}{na}\right)\right]
+\end{align*}
+
+\begin{align*}
+  R_{10}&=2a^{-3/2}\exp(-r/a)\\
+  R_{20}&=\frac{1}{\sqrt{2}}a^{-3/2}\left(1-\frac{1}{2}\frac{r}{a}\right)\exp(-r/2a)\\
+  R_{21}&=\frac{1}{\sqrt{24}}a^{-3/2}\frac{r}{a}\exp(-r/2a)\\
+\end{align*}
+
+\subsubsection{Wave Function}%
+\label{ssub:wave_function}
+
+\begin{align*}
+  n&\in\N\\
+  0\leq &l < n\\
+  -l\leq &m \leq l\\
+\end{align*}
+\begin{align*}
+  \psi_{nlm}&=\sqrt{\left(\frac{2}{na}\right)^3\frac{(n-l-1)!}{2n\left[(n+l)!\right]^3}}\\
+             &\cdot e^{-r/na}\left(\frac{2r}{na}\right)^l\left[L_{n-l-1}^{2l+1}\left(\frac{2r}{na}\right)\right]Y_l^m(\theta,\phi)
+\end{align*}
+\begin{align*}
+  \psi_{100}(r,\theta,\phi)&=\frac{1}{\sqrt{\pi a^3}}e^{-\frac{r}{a}}\\
+  \braket{\psi_{nlm}}{\psi_{n'l'm'}}&=\delta_{nn'}\delta_{ll'}\delta_{mm'}
+\end{align*}
+
+\subsection{Angular Momentum}%
+\label{sub:angular_momentum}
+\begin{align*}
+  L_x&=yp_z-zp_y\\
+  L_y&=zp_x-xp_z\\
+  L_z&=xp_y-yp_x\\
+  \comm{L_x}{L_y}=i\hbar L_z,\ 
+  \comm{L_y}{L_z}&=i\hbar L_x,\ 
+  \comm{L_z}{L_x}=i\hbar L_y\\
+  L^2&\equiv L_x^2+L_y^2+L_z^2\\
+  \comm{L^2}{L_x}=0,\ 
+  \comm{L^2}{L_y}&=0,\ 
+  \comm{L^2}{L_z}=0\\
+  L_\pm&\equiv L_x\pm iL_y\\
+  \comm{L_z}{L_\pm}&=\pm\hbar L_\pm\\
+  \comm{L^2}{L_\pm}&=0
+\end{align*}
+
+\subsection{Spin}%
+\label{sub:spin}
+\begin{align*}
+  S_i&=\frac{\hbar}{2}\sigma_i\\
+  \sigma_x&\equiv\begin{pmatrix}
+    0 & 1 \\ 1 & 0
+  \end{pmatrix}\\
+  \sigma_y&\equiv\begin{pmatrix}
+    0 & -i \\ i & 0
+  \end{pmatrix}\\
+  \sigma_z&\equiv\begin{pmatrix}
+    1 & 0 \\ 0 & -1
+  \end{pmatrix}
+\end{align*}
+
+\end{multicols}
+\end{document}
