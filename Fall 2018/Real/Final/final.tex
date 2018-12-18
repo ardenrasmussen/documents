@@ -4,16 +4,16 @@
 \usepackage{enumitem}
 \usepackage{amssymb}
 \usepackage[margin=1in]{geometry}
-\usepackage{todonotes}
+\usepackage[obeyDraft]{todonotes}
 
 \title{Real Analysis Fall 2018}
 \author{Arden Rasmussen}
 \date{\today}
 
 \newcommand{\usec}[1]{%
-\section*{#1}%
-\noindent\rule{\textwidth}{2pt}%
-\vspace{10pt}%
+  \section*{#1}%
+  \noindent\rule{\textwidth}{2pt}%
+  \vspace{10pt}%
 }
 
 \definecolor{red}{RGB}{244,67,54}
@@ -288,9 +288,9 @@ $x\in\left[-\frac{1}{4},\frac{1}{4}\right]$.
     \left| g'(z)\right|&=\frac{|g(x)|-|g(0)|}{|x-0|}\\
                        &\text{by \prob{4.b}}\\
                        &=\frac{|g(x)|}{|x|}\\
-             |x||g'(z)|&=|g(x)|\\
-                       &=\text{by \prob{4.a}}\\
-              |x||g(z)|&=|g(x)|.
+    |x||g'(z)|&=|g(x)|\\
+              &=\text{by \prob{4.a}}\\
+    |x||g(z)|&=|g(x)|.
   \end{align*}
   Then by the constraints on $x$ and the assumption of $M$ we find
   \begin{align*}
@@ -387,7 +387,6 @@ since we made no assumptions on $a$ or $x$ this can be generalized to
 \begin{align*}
   \exp(a+b)&=\exp(a)\exp(b)
 \end{align*}
-
 Consider
 \begin{align*}
   &\exp(0)\\
@@ -425,24 +424,27 @@ $q>0$.
 Show that $\exp(n)=e^n$ for $n\in\N$.
 
 \begin{proof}
-  First we prove that $\exp(1)=e$. From the definition of $\exp$
+  First we prove that $\exp(1)=e$. From the definition of $\exp$, we use the
+  value of $x=1$ and expand into the series definition.
   \begin{align*}
     \exp(1)&=\sum_{k=0}^\infty\frac{1^k}{k!}\\
-           &=\sum_{k=0}^\infty\frac{1}{k!}\\
-           &=e
+           &=\sum_{k=0}^\infty\frac{1}{k!}
   \end{align*}
+  Notice that this is exactly the series definition of $e$, thus we know that
+  $\exp(1)=e$.
 \end{proof}
 
 \begin{proof}
-   Let $n\in\N$. Consider
-   \begin{align*}
-     \exp(n)&=\exp(\underbrace{1+1+1+\cdots+1}_\text{$n$ times})\\
-            &\text{then by induction and \prob{4}}\\
-            &=\underbrace{\exp(1)\exp(1)\cdots\exp(1)}_\text{$n$ times}\\
-            &=\exp(1)^n\\
-            &=e^n
-   \end{align*}
-   Thus $\exp(n)=e^n$ for all $n\in\N$.
+  Let $n\in\N$. Consider $\exp(n)$, we know that since $n\in\N$ that it can be
+  represented as a sum of $1$'s, thus
+  \begin{align*}
+    \exp(n)&=\exp(\underbrace{1+1+1+\cdots+1}_\text{$n$ times})\\
+           &\text{then by induction and \prob{4}}\\
+           &=\underbrace{\exp(1)\exp(1)\cdots\exp(1)}_\text{$n$ times}\\
+           &=\exp(1)^n
+  \end{align*}
+  From the previous proof, we know that $\exp(1)=e$ thus we can clearly see
+  that $\exp(n)=e^n$ for all $n\in\N$.
 \end{proof}
 
 \subsection*{(c)}%
@@ -450,387 +452,416 @@ Show that $\exp(n)=e^n$ for $n\in\N$.
 
 Show that $\exp(1/m)=e^{1/m}$ for all $m\in\N$.
 
-\rtodo{Figure something out for this! Don't leave it blank.}
-
-\subsection*{(d)}%
-\label{sub:_d_}
-
-Conclude that $\exp(q)=e^q$ for $q\in\Q$.
-
 \begin{proof}
-   Let $q\in\Q$, such that $q=n/m$ for $n,m\in\N$. Consider
-   \begin{align*}
-     \exp(q)&=\exp\left(\frac{n}{m}\right)\\
-            &=\exp\underbrace{\left(\frac{1}{m}+\frac{1}{m}+\cdots+\frac{1}{m}\right)}_\text{$n$
-            times}\\
-            &\text{by induction and \prob{4}}\\
-            &=\underbrace{\exp\left(\frac{1}{m}\right)\exp\left(\frac{1}{m}\right)\cdots\exp\left(\frac{1}{m}\right)}_\text{$n$
-            times}\\
-            &=\exp\left(\frac{1}{m}\right)^n\\
-            &\text{by \prob{5.c}}\\
-            &={e^{1/m}}^n\\
-            &=e^{n/m}\\
-            &=e^q
-   \end{align*}
-   Thus $\exp(q)=e^q$ for all $q\in\Q$.
-\end{proof}
-
-\usec{Problem 6}%
-\label{sec:problem_6}
-
-We define the \textbf{logarithm function} to be the inverse of the exponential
-function, so $\log(x)=\exp^{-1}(x)$.
-
-\subsection*{(a)}%
-\label{sub:_a_}
-
-Explain how we know that the logarithm function is differentiable and compute
-its derivative.
-
-\begin{proof}
-  We know that the logarithm is differentiable, because $\exp(x)$ is a
-  bijection. And if a function is a bijection, and differentiable, then that
-  functions inverse must also be a bijections, and differentiable. Thus $\log$
-  must be differentiable.
-
-  We prove by the use of the Inverse Function Theorem (\thm{4.11}). Since
-  $\exp$ is differentiable, and since $\exp'=\exp$ clearly, $\exp'$ is
-  continuous. From \prob{2}, we know that $\exp'(x_*)\neq 0$ for all $x_*\in\R$,
-  since $\exp(x)>0$ for all $x\in\R$. Then, by the Inverse Function Theorem,
-  there exists $\delta>0$ such that within $B_\delta(x_*)$ is inevitable, and
-  that $\exp^{-1}$ is differentiable and satisfying
+  Consider $m\in\N$. We consider $\exp\left(\frac{1}{m}\right)$. Consider
+  rasing this to the power of $m$ to obtain
   \begin{align*}
-    (\exp^{-1})'(y)&=\frac{1}{\exp'(\exp^{-1}(y))}\\
-    \log'(y)&=\frac{1}{\exp(\log(y))}.
-  \end{align*}
-  By the definition of an inverse function, we know that $\exp(\log(x))=x$,
-  thus
-  \begin{align*}
-    \log'(y)&=\frac{1}{y}.
-  \end{align*}
-  Since we made no assumptions on $x_*$ or $y$, then this is satisfied for all
-  $y\in(0,\infty)$.
-\end{proof}
-
-\subsection*{(b)}%
-\label{sub:_b_}
-
-Show that the ``usual log rules'' hold:
-\begin{align*}
-  \log(xy)=\log(x)+\log(y),\quad
-  \log(x/y)=\log(x)-\log(y),\quad
-  \log(x^y)=y\log(x).
-\end{align*}
-
-\subsubsection*{$\log(xy)=\log(x)+\log(y)$:}%
-\label{ssub:_log_xy_log_x_log_y_}
-
-\begin{proof}
-  Consider $\log(xy)$ for any $x,y\in(0,\infty)$. Define some $\alpha$ and
-  $\beta$ such that
-  \begin{align*}
-    \log(x)&=\alpha,\quad&\log(y)&=\beta\\
-    \exp(\alpha)&=x,\quad&\exp(\beta)&=y.
-  \end{align*}
-  Thus we rewrite the expression as
-  \begin{align*}
-    \log(xy)&=\log(\exp(\alpha)\exp(\beta))\\
-            &\text{by \prob{4}}\\
-            &=\log(\exp(\alpha+\beta))\\
-            &\text{by inverse}\\
-            &=\alpha+\beta\\
-            &=\log(x)+\log(y)
-  \end{align*}
-  Thus $\log(xy)=\log(x)+\log(y)$ is true.
-\end{proof}
-
-\subsubsection*{$\log(x/y)=\log(x)-\log(y)$:}%
-\label{ssub:_log_x_y_log_x_log_y_}
-
-\begin{proof}
-  Consider $\log\left(\frac{x}{y}\right)$ for any $x,y\in(0,\infty)$. We again
-  define $\alpha,\beta\in\R$, in the same way as before. Thus our expression
-  becomes
-  \begin{align*}
-    \log\left(\frac{x}{y}\right)&=\log\left(\frac{\exp(\alpha)}{\exp(\beta)}\right)\\
-                                &\text{by \prob{4}}\\
-                                &=\log(\exp(\alpha)\exp(-\beta))\\
-                                &=\log(\exp(\alpha-\beta))\\
-                                &=\alpha-\beta\\
-                                &=\log(x)-\log(y).
-  \end{align*}
-  Thus $\log(x/y)=\log(x)-\log(y)$ holds.
-\end{proof}
-
-\subsubsection*{$\log(x^y)=y\log(x)$:}%
-\label{ssub:_log_x_y_ylog_x_}
-
-\begin{proof}
-  Consider $\log(x^y)$ for any $x,y\in(0,\infty)$. We again define $\alpha$ in
-  the same was as before. Thus we can write
-  \begin{align*}
-    \log(x^y)&=\log(\exp(\alpha)^y)\\
-             &\text{by \prob{5}}\\
-             &=\log(e^{\alpha^y})\\
-             &=\log(e^{y\alpha})\\
-             &=y\alpha\\
-             &=y\log(x)
-  \end{align*}
-  Thus $\log(x^y)=y\log(x)$ holds.
-\end{proof}
-
-\usec{Problem 7}%
-\label{sec:problem_7}
-
-The real numbers
-
-\subsection*{(a)}%
-\label{sub:_a_}
-
-What are the axioms/properties that we are assuming about the real number. What
-purpose do each of these axioms serve? (That is, what motivates each of these
-axioms?)
-
-The axioms of the real numbers are:
-\begin{itemize}
-  \item Field axioms
-    \begin{itemize}
-      \item Addition axioms
-        \begin{itemize}
-          \item Commutative $x+y=y+x\ \forall x,y\in\F$.
-          \item Associative $(x+y)+z=x+(y+z)\ \forall x,y\in\F$.
-          \item There exists an Additive Identity $0\in\F$ such that
-            $0+x=x\ \forall x\in\F$.
-          \item For all $x\in\F$ there exists an additive inverse $-x\in\F$
-            such that $x+(-x)=0$.
-        \end{itemize}
-      \item Multiplication axioms
-        \begin{itemize}
-          \item Commutative $x\cdot y=y\cdot x\ \forall x,y\in\F$.
-          \item Associative $(x\cdot y)\cdot z = x\cdot(y\cdot z)\ \forall
-            x,y,z\in\F$.
-          \item There exists a multiplicative identity $1\in\F\setminus{0}$
-            such that $1\cdot x=x\ \forall x\in\F$.
-          \item For all $x\in\F\setminus\{0\}$ there exists a multiplicative
-            inverse $x^{-1}\in\F$ such that $x\cdot x^{-1}=1$.
-        \end{itemize}
-      \item Distributive law $x\cdot(y+z)=x\cdot y+x\cdot z\ \forall
-        x,y,z\in\F$.
-    \end{itemize}
-  \item Ordered fields
-    \begin{itemize}
-      \item For each $x,y\in\F$ precisely one of the following holds: $x<y$,
-        $x=y$, or $y<x$.
-      \item if $x,y,z\in\F$ with $x<y$ and $y<z$, then $x<z$.
-      \item if $x,y,z\in\F$ with $x<y$ then $x+z<y+z$.
-      \item if $x,y\in\F$ with $0<x$ and $0<y$ then $0<x\cdot y$.
-    \end{itemize}
-  \item Archimedian property. For each $x\in\F$ with $x>0$ there exists
-    $n\in\N$ with $n>x$.
-  \item Bisection Search is successful. For every sequence of closed intervals
-    $I_n$ with
-    \begin{enumerate}
-      \item $I_n\subset I_{n+1}\ \forall n\in\N$.
-      \item $|I_n|\to0$.
-    \end{enumerate}
-    we have $\bigcap_{n\in\N}I_n\neq\emptyset$.
-\end{itemize}
-
-The field axioms provide us with a system where our expressions for addition,
-subtraction, multiplication and division work as we desire them to. The ordered
-field axiom allows us to construct sequences of real numbers. Then the
-archimedian property says that there is some number that is greater than a
-given $x$, e.g. there is always a number larger. Bisection search says that
-there will always be some value between two other numbers, as the interval goes
-to zero, but will always contain some elements.
-
-\gtodo{Write more reasoning for the different axioms.}
-
-\subsection*{(b)}%
-\label{sub:_b_}
-
-Define what it means for a sequence $\left\{x_n\right\}\subset\R$ to converge to
-$x_*\in\R$.
-
-A sequence $\left\{x_n\right\}\subset \R$ converges to $x_*\in\R$ if for all
-$\varepsilon\in\R$ with $\varepsilon>0$ there exists some $N\in\N$ such that
-\begin{align*}
-   k>N\implies |x_k-x_*|<\varepsilon.
-\end{align*}
-In this case we write $x_n\to x_*$.
-
-\subsection*{(c)}%
-\label{sub:_c_}
-
-Give an example of a theorem (or other fun fact) that makes use of sequences.
-What makes this result noteworthy?
-
-A theorem that makes uses of sequences is Squeeze theory (\prop{1.17}). This
-theorem is very noteworthy, because it is necessary for other axioms, such at
-bisection search. It allows us to say that two things converging toward one
-another, will squeeze some third sequence and they will all converge to the
-same value. This is incredibly useful and very intuitive.
-
-\gtodo{More?}
-
-\usec{Problem 8}%
-\label{sec:problem_8}
-
-Metric spaces
-
-\subsection*{(a)}%
-\label{sub:_a_}
-
-Give the definition of a metric space.
-
-Let $X$ be a set. A function $d:X\times X\to[0,\infty)$ is a metric on $X$ if
-$d$ is
-\begin{enumerate}
-  \item definite, meaning that for all $x,y\in X$ we have $d(x,y)=0$ if and
-    only if $x=y$.
-  \item symmetric meaning that $d(x,y)=d(y,x)$ for all $x,y\in X$, and
-  \item satisfies the triangle inequality
-    \begin{align*}
-      d(x,y)\leq d(x,z)+d(z,y)
+    \exp\left(\frac{1}{m}\right)^m&=\underbrace{\exp\left(\frac{1}{m}\right)\exp\left(\frac{1}{m}\right)\cdots}_\text{$m$
+    times}\\
+                                  &\text{by induction and \prob{4}}\\
+                                  &=\exp\underbrace{\left(\frac{1}{m}+\frac{1}{m}+\cdots\right)}_\text{$m$
+                                  times}\\
+                                  &=\exp\left(\frac{m}{m}\right)\\
+                                  &=\exp(1)\\
+                                  &\text{from \prob{5.b}}\\
+                                  &=e\\
+                                  &=e^\frac{m}{m}\\
+                                  &=\left(e^\frac{1}{m}\right)^m
     \end{align*}
-    for all $x,y,z\in X$.
-\end{enumerate}
-if $d$ is a metric on $X$ then the pair $(X,d)$ is called a metric space.
-
-\subsection*{(b)}%
-\label{sub:_b_}
-
-Give the definition of what it means for a set to be open in a metric space.
-
-Let $Y\subset X$.
-\begin{enumerate}
-  \item An open ball is defined as $B_r(p)=\left\{q\in X\vert
-    d(p,q)<r\right\}$.
-  \item A point $p\in Y$ is an interior point if there exists an open ball
-    $B_r(q)$ such that $p\in B_r(q)\subset Y$.
-  \item $Y$ is open in $X$ if each element of $Y$ is an interior point.
-\end{enumerate}
-
-\subsection*{(c)}%
-\label{sub:_c_}
-
-Give three examples of metric spaces -- one example where the elements are
-number, one example where the elements are pairs of numbers, and one example
-where the elements are functions. Give an example of an open ball in each of
-your three examples.
-
-\ytodo{Ask Paul if this is what he meant by an example of an open ball, or
-should I leave it more general?. Drawing?}
-
-\begin{enumerate}
-  \item $\left(\R, |x-y|\right)$.
+    Thus we can see that
     \begin{align*}
-      B_{0.5}(0)=\left\{y\in\R\ \bigg\vert\ |x-y|<0.5\right\}=(-0.5,0.5).
+      \exp\left(\frac{1}{m}\right)^m&=\left(e^\frac{1}{m}\right)^m
     \end{align*}
-  \item $\left(\R^2,\sqrt{{|x_1-y_1|}^2+{|x_2-y_2|}^2}\right)$.
+    Then we take the square root of each side and we obtain that
     \begin{align*}
-      B_{0.5}(0)=\left\{y\in\R^2\ \bigg\vert\
-      \sqrt{{|x_1-y_1|}^2+{|x_2-y_2|}^2}<0.5\right\}=\left\{y\in\R\ \bigg\vert\
-    \sqrt{y_1^2+y_2^2}<0.5\right\}
+      \exp\left(\frac{1}{m}\right)&=e^\frac{1}{m}
     \end{align*}
-  \item $\left(C_b(X),0 \text{ if } f=g \text{ else } 1\right)\equiv$ All continuous bounded
-    functions $f:X\to\R$, with the norm $\Vert f\Vert=\sup_X|f|$ is finite.
-    With the discrete metric.
+    Thus we can conclude that $\exp(1/m)=e^{1/m}$ for all $m\in\N$.
+  \end{proof}
+
+  \subsection*{(d)}%
+  \label{sub:_d_}
+
+  Conclude that $\exp(q)=e^q$ for $q\in\Q$.
+
+  \begin{proof}
+    Let $q\in\Q$, such that $q=n/m$ for $n,m\in\N$. Consider
     \begin{align*}
-      B_{0.5}(f)=\left\{g\in C_b(X)\ \bigg\vert\ 0\text{ if
-      }f=g\right\}=\left\{f\right\}
+      \exp(q)&=\exp\left(\frac{n}{m}\right)\\
+             &=\exp\underbrace{\left(\frac{1}{m}+\frac{1}{m}+\cdots+\frac{1}{m}\right)}_\text{$n$
+             times}\\
+             &\text{by induction and \prob{4}}\\
+             &=\underbrace{\exp\left(\frac{1}{m}\right)\exp\left(\frac{1}{m}\right)\cdots\exp\left(\frac{1}{m}\right)}_\text{$n$
+             times}\\
+             &=\exp\left(\frac{1}{m}\right)^n\\
+             &\text{by \prob{5.c}}\\
+             &={e^{1/m}}^n\\
+             &=e^{n/m}\\
+             &=e^q
     \end{align*}
-\end{enumerate}
+    Thus $\exp(q)=e^q$ for all $q\in\Q$.
+  \end{proof}
 
-\subsection*{(d)}%
-\label{sub:_d_}
+  \usec{Problem 6}%
+  \label{sec:problem_6}
 
-Give an example of a theorem (or other fun fact) that makes use of open sets.
-What makes this result noteworthy?
+  We define the \textbf{logarithm function} to be the inverse of the exponential
+  function, so $\log(x)=\exp^{-1}(x)$.
 
-An interesting theorem is the open set definition of continuous functions
-(\thm{3.23}). This theorem states that a function is continuous if and only if
-every open set in the co-domain the preimage of that set is also open in the
-domain.
+  \subsection*{(a)}%
+  \label{sub:_a_}
 
-This is a very noteworthy result, as we con construct a notion of continuous
-functions without every really having a function, we just need to know how open
-sets relate over some mapping. Because we only need to think of the open sets
-of a metric space, it is very cool that we can then uses these open sets to
-determine weather a function is continuous or not.
+  Explain how we know that the logarithm function is differentiable and compute
+  its derivative.
 
-\gtodo{More?}
+  \begin{proof}
+    We know that the logarithm is differentiable, because $\exp(x)$ is a
+    bijection. And if a function is a bijection, and differentiable, then that
+    functions inverse must also be a bijections, and differentiable. Thus $\log$
+    must be differentiable.
 
-\usec{Problem 9}%
-\label{sec:problem_9}
-
-Continuous functions
-
-\subsection*{(a)}%
-\label{sub:_a_}
-
-State the four equivalent notions of continuity for functions. Illustrate each
-notion for the function $f:\R^2\to\R$ given by $f(x,y)=x^2+y^2$.
-
-Suppose $(X,dx)$ and $(Y,dy)$ are metric spaces and $f:X\to Y$. Then the
-following are equivalent.
-
-\begin{enumerate}
-  \item $f$ is continuous.
-  \item For each $x_*\in X$ and $\varepsilon >0$ there exists $\delta >0$ such
-    that
+    We prove by the use of the Inverse Function Theorem (\thm{4.11}). Since
+    $\exp$ is differentiable, and since $\exp'=\exp$ clearly, $\exp'$ is
+    continuous. From \prob{2}, we know that $\exp'(x_*)\neq 0$ for all $x_*\in\R$,
+    since $\exp(x)>0$ for all $x\in\R$. Then, by the Inverse Function Theorem,
+    there exists $\delta>0$ such that within $B_\delta(x_*)$ is inevitable, and
+    that $\exp^{-1}$ is differentiable and satisfying
     \begin{align*}
-      dx(x,x_*)<\delta\implies dy(f(x),f(x_*))<\varepsilon.
+      (\exp^{-1})'(y)&=\frac{1}{\exp'(\exp^{-1}(y))}\\
+      \log'(y)&=\frac{1}{\exp(\log(y))}.
     \end{align*}
-  \item For each open set $U\subset Y$ the preimage $f^{-1}(U)$ is open in $X$.
-  \item For each closed set $V\subset Y$ the preimage $f^{-1}(V)$ is closed in
-    $X$.
-\end{enumerate}
+    By the definition of an inverse function, we know that $\exp(\log(x))=x$,
+    thus
+    \begin{align*}
+      \log'(y)&=\frac{1}{y}.
+    \end{align*}
+    Since we made no assumptions on $x_*$ or $y$, then this is satisfied for all
+    $y\in(0,\infty)$.
+  \end{proof}
 
-% \vspace{4in}
-\noindent\fbox{\parbox{\textwidth}{$\ $\vspace{4in}}}
+  \subsection*{(b)}%
+  \label{sub:_b_}
 
-\subsection*{(b)}%
-\label{sub:_b_}
+  Show that the ``usual log rules'' hold:
+  \begin{align*}
+    \log(xy)=\log(x)+\log(y),\quad
+    \log(x/y)=\log(x)-\log(y),\quad
+    \log(x^y)=y\log(x).
+  \end{align*}
 
-Give an example of a theorem (or other fun fact) that makes use of continuous
-functions. What makes this result noteworthy?
+  \subsubsection*{$\log(xy)=\log(x)+\log(y)$:}%
+  \label{ssub:_log_xy_log_x_log_y_}
 
-The basic properties of continuous functions are very fun (\prob{1} Exam 1). I
-think that these properties are very cool, because they prove that
-combinations of continuous function are then continuous. Because of this all
-that needs to be shown is that a very limited number of functions must be
-proven to be continuous, then by these properties, combinations, products,
-compositions and any combination of these is then also continuous.
+  \begin{proof}
+    Consider $\log(xy)$ for any $x,y\in(0,\infty)$. Define some $\alpha$ and
+    $\beta$ such that
+    \begin{align*}
+      \log(x)&=\alpha,\quad&\log(y)&=\beta\\
+      \exp(\alpha)&=x,\quad&\exp(\beta)&=y.
+    \end{align*}
+    Thus we rewrite the expression as
+    \begin{align*}
+      \log(xy)&=\log(\exp(\alpha)\exp(\beta))\\
+              &\text{by \prob{4}}\\
+              &=\log(\exp(\alpha+\beta))\\
+              &\text{by inverse}\\
+              &=\alpha+\beta\\
+              &=\log(x)+\log(y)
+    \end{align*}
+    Thus $\log(xy)=\log(x)+\log(y)$ is true.
+  \end{proof}
 
-This can be especially useful, when showing a function is continuous, if all of
-the individual components are continuous, then the function as a whole is also
-continuous. This greatly simplifies continuity proofs, and that is very
-convenient and useful.
+  \subsubsection*{$\log(x/y)=\log(x)-\log(y)$:}%
+  \label{ssub:_log_x_y_log_x_log_y_}
 
-\gtodo{More?}
+  \begin{proof}
+    Consider $\log\left(\frac{x}{y}\right)$ for any $x,y\in(0,\infty)$. We again
+    define $\alpha,\beta\in\R$, in the same way as before. Thus our expression
+    becomes
+    \begin{align*}
+      \log\left(\frac{x}{y}\right)&=\log\left(\frac{\exp(\alpha)}{\exp(\beta)}\right)\\
+                                  &\text{by \prob{4}}\\
+                                  &=\log(\exp(\alpha)\exp(-\beta))\\
+                                  &=\log(\exp(\alpha-\beta))\\
+                                  &=\alpha-\beta\\
+                                  &=\log(x)-\log(y).
+    \end{align*}
+    Thus $\log(x/y)=\log(x)-\log(y)$ holds.
+  \end{proof}
 
-\usec{Problem 10}%
-\label{sec:problem_10}
+  \subsubsection*{$\log(x^y)=y\log(x)$:}%
+  \label{ssub:_log_x_y_ylog_x_}
 
-Synthesis
+  \begin{proof}
+    Consider $\log(x^y)$ for any $x,y\in(0,\infty)$. We again define $\alpha$ in
+    the same was as before. Thus we can write
+    \begin{align*}
+      \log(x^y)&=\log(\exp(\alpha)^y)\\
+               &\text{by \prob{5}}\\
+               &=\log(e^{\alpha^y})\\
+               &=\log(e^{y\alpha})\\
+               &=y\alpha\\
+               &=y\log(x)
+    \end{align*}
+    Thus $\log(x^y)=y\log(x)$ holds.
+  \end{proof}
 
-Write a few words indicating how the ideas about numbers, metric spaces, and
-continuous functions discussed in this course help lay the foundation for a
-more rigorous theory of calculus.
+  \usec{Problem 7}%
+  \label{sec:problem_7}
 
-Using these concepts for numbers, metrics, and functions, we are able to
-construct most aspects of the theory of calculus, while only taking the axioms
-that we listed in \prob{9.a}. Because these are the only assumptions that need
-to be made, the definitions that we construct for calculus are more rigorous.
-As they do not require any more assumptions. Normally we calculus requires many
-more assumptions in order to construct some of the concepts, but with this
-process, we are able to minimize the number of axioms required for the theory
-of calculus. This allows for larger generalizability, as anything that
-satisfies the short list of assumptions can be applied to use in the theory of
-calculus. Thus this method lays the foundation for a more rigorous theory of
-calculus.
+  The real numbers
 
-\gtodo{Write More?}
+  \subsection*{(a)}%
+  \label{sub:_a_}
 
-\end{document}
+  What are the axioms/properties that we are assuming about the real number. What
+  purpose do each of these axioms serve? (That is, what motivates each of these
+  axioms?)
+
+  The axioms of the real numbers are:
+  \begin{itemize}
+    \item Field axioms
+      \begin{itemize}
+        \item Addition axioms
+          \begin{itemize}
+            \item Commutative $x+y=y+x\ \forall x,y\in\F$.
+            \item Associative $(x+y)+z=x+(y+z)\ \forall x,y\in\F$.
+            \item There exists an Additive Identity $0\in\F$ such that
+              $0+x=x\ \forall x\in\F$.
+            \item For all $x\in\F$ there exists an additive inverse $-x\in\F$
+              such that $x+(-x)=0$.
+          \end{itemize}
+        \item Multiplication axioms
+          \begin{itemize}
+            \item Commutative $x\cdot y=y\cdot x\ \forall x,y\in\F$.
+            \item Associative $(x\cdot y)\cdot z = x\cdot(y\cdot z)\ \forall
+              x,y,z\in\F$.
+            \item There exists a multiplicative identity $1\in\F\setminus{0}$
+              such that $1\cdot x=x\ \forall x\in\F$.
+            \item For all $x\in\F\setminus\{0\}$ there exists a multiplicative
+              inverse $x^{-1}\in\F$ such that $x\cdot x^{-1}=1$.
+          \end{itemize}
+        \item Distributive law $x\cdot(y+z)=x\cdot y+x\cdot z\ \forall
+          x,y,z\in\F$.
+      \end{itemize}
+    \item Ordered fields
+      \begin{itemize}
+        \item For each $x,y\in\F$ precisely one of the following holds: $x<y$,
+          $x=y$, or $y<x$.
+        \item if $x,y,z\in\F$ with $x<y$ and $y<z$, then $x<z$.
+        \item if $x,y,z\in\F$ with $x<y$ then $x+z<y+z$.
+        \item if $x,y\in\F$ with $0<x$ and $0<y$ then $0<x\cdot y$.
+      \end{itemize}
+    \item Archimedian property. For each $x\in\F$ with $x>0$ there exists
+      $n\in\N$ with $n>x$.
+    \item Bisection Search is successful. For every sequence of closed intervals
+      $I_n$ with
+      \begin{enumerate}
+        \item $I_n\subset I_{n+1}\ \forall n\in\N$.
+        \item $|I_n|\to0$.
+      \end{enumerate}
+      we have $\bigcap_{n\in\N}I_n\neq\emptyset$.
+  \end{itemize}
+
+  The field axioms provide us with a system where our expressions for addition,
+  subtraction, multiplication and division work as we expect them to. This
+  means that we want the operations to be commutative and associative. We also
+  want some construction of additive identity, additive inverse, multiplicative
+  identity, and the multiplicative inverse. These field axioms provide the
+  basis of natural numbers that are needed to construct the reals. The ordered
+  field axiom allows us to construct sequences of natural numbers, which is
+  frequently used to converge to a real number. Then the
+  archimedian property says that there is some number that is greater than a
+  given $x$, e.g. there is always a number larger. Bisection search says that
+  there will always be some value between two other numbers, as the interval goes
+  to zero, but will always contain some elements.
+
+  \gtodo{Write more reasoning for the different axioms.}
+
+  \subsection*{(b)}%
+  \label{sub:_b_}
+
+  Define what it means for a sequence $\left\{x_n\right\}\subset\R$ to converge to
+  $x_*\in\R$.
+
+  A sequence $\left\{x_n\right\}\subset \R$ converges to $x_*\in\R$ if for all
+  $\varepsilon\in\R$ with $\varepsilon>0$ there exists some $N\in\N$ such that
+  \begin{align*}
+    k>N\implies |x_k-x_*|<\varepsilon.
+  \end{align*}
+  In this case we write $x_n\to x_*$.
+
+  \subsection*{(c)}%
+  \label{sub:_c_}
+
+  Give an example of a theorem (or other fun fact) that makes use of sequences.
+  What makes this result noteworthy?
+
+  A theorem that makes uses of sequences is Squeeze theory (\prop{1.17}). This
+  theorem is very noteworthy, because it is necessary for other axioms, such at
+  bisection search. It allows us to say that two things converging toward one
+  another, will squeeze some third sequence and they will all converge to the
+  same value. This is incredibly useful and very intuitive.
+
+  \gtodo{More?}
+
+  \usec{Problem 8}%
+  \label{sec:problem_8}
+
+  Metric spaces
+
+  \subsection*{(a)}%
+  \label{sub:_a_}
+
+  Give the definition of a metric space.
+
+  Let $X$ be a set. A function $d:X\times X\to[0,\infty)$ is a metric on $X$ if
+  $d$ is
+  \begin{enumerate}
+    \item definite, meaning that for all $x,y\in X$ we have $d(x,y)=0$ if and
+      only if $x=y$.
+    \item symmetric meaning that $d(x,y)=d(y,x)$ for all $x,y\in X$, and
+    \item satisfies the triangle inequality
+      \begin{align*}
+        d(x,y)\leq d(x,z)+d(z,y)
+      \end{align*}
+      for all $x,y,z\in X$.
+  \end{enumerate}
+  if $d$ is a metric on $X$ then the pair $(X,d)$ is called a metric space.
+
+  \subsection*{(b)}%
+  \label{sub:_b_}
+
+  Give the definition of what it means for a set to be open in a metric space.
+
+  Let $Y\subset X$.
+  \begin{enumerate}
+    \item An open ball is defined as $B_r(p)=\left\{q\in X\vert
+      d(p,q)<r\right\}$.
+    \item A point $p\in Y$ is an interior point if there exists an open ball
+      $B_r(q)$ such that $p\in B_r(q)\subset Y$.
+    \item $Y$ is open in $X$ if each element of $Y$ is an interior point.
+  \end{enumerate}
+
+  \subsection*{(c)}%
+  \label{sub:_c_}
+
+  Give three examples of metric spaces -- one example where the elements are
+  number, one example where the elements are pairs of numbers, and one example
+  where the elements are functions. Give an example of an open ball in each of
+  your three examples.
+
+  \ytodo{Ask Paul if this is what he meant by an example of an open ball, or
+  should I leave it more general?. Drawing?}
+
+  \begin{enumerate}
+    \item $\left(\R, |x-y|\right)$.
+      \begin{align*}
+        B_{0.5}(0)=\left\{y\in\R\ \bigg\vert\ |x-y|<0.5\right\}=(-0.5,0.5).
+      \end{align*}
+    \item $\left(\R^2,\sqrt{{|x_1-y_1|}^2+{|x_2-y_2|}^2}\right)$.
+      \begin{align*}
+        B_{0.5}(0)=\left\{y\in\R^2\ \bigg\vert\
+          \sqrt{{|x_1-y_1|}^2+{|x_2-y_2|}^2}<0.5\right\}=\left\{y\in\R\ \bigg\vert\
+        \sqrt{y_1^2+y_2^2}<0.5\right\}
+      \end{align*}
+    \item $\left(C_b(X),0 \text{ if } f=g \text{ else } 1\right)\equiv$ All continuous bounded
+      functions $f:X\to\R$, with the norm $\Vert f\Vert=\sup_X|f|$ is finite.
+      With the discrete metric.
+      \begin{align*}
+        B_{0.5}(f)=\left\{g\in C_b(X)\ \bigg\vert\ 0\text{ if
+        }f=g\right\}=\left\{f\right\}
+      \end{align*}
+  \end{enumerate}
+
+  \subsection*{(d)}%
+  \label{sub:_d_}
+
+  Give an example of a theorem (or other fun fact) that makes use of open sets.
+  What makes this result noteworthy?
+
+  An interesting theorem is the open set definition of continuous functions
+  (\thm{3.23}). This theorem states that a function is continuous if and only if
+  every open set in the co-domain the preimage of that set is also open in the
+  domain.
+
+  This is a very noteworthy result, as we con construct a notion of continuous
+  functions without every really having a function, we just need to know how open
+  sets relate over some mapping. Because we only need to think of the open sets
+  of a metric space, it is very cool that we can then uses these open sets to
+  determine weather a function is continuous or not.
+
+  \gtodo{More?}
+
+  \usec{Problem 9}%
+  \label{sec:problem_9}
+
+  Continuous functions
+
+  \subsection*{(a)}%
+  \label{sub:_a_}
+
+  State the four equivalent notions of continuity for functions. Illustrate each
+  notion for the function $f:\R^2\to\R$ given by $f(x,y)=x^2+y^2$.
+
+  Suppose $(X,dx)$ and $(Y,dy)$ are metric spaces and $f:X\to Y$. Then the
+  following are equivalent.
+
+  \begin{enumerate}
+    \item $f$ is continuous.
+    \item For each $x_*\in X$ and $\varepsilon >0$ there exists $\delta >0$ such
+      that
+      \begin{align*}
+        dx(x,x_*)<\delta\implies dy(f(x),f(x_*))<\varepsilon.
+      \end{align*}
+    \item For each open set $U\subset Y$ the preimage $f^{-1}(U)$ is open in $X$.
+    \item For each closed set $V\subset Y$ the preimage $f^{-1}(V)$ is closed in
+      $X$.
+  \end{enumerate}
+
+  \noindent\fbox{\parbox{\textwidth}{$\ $\vspace{9in}}}
+
+  \subsection*{(b)}%
+  \label{sub:_b_}
+
+  Give an example of a theorem (or other fun fact) that makes use of continuous
+  functions. What makes this result noteworthy?
+
+  The basic properties of continuous functions are very fun (\prob{1} Exam 1). I
+  think that these properties are very cool, because they prove that
+  combinations of continuous function are then continuous. Because of this all
+  that needs to be shown is that a very limited number of functions must be
+  proven to be continuous, then by these properties, combinations, products,
+  compositions and any combination of these is then also continuous.
+
+  This can be especially useful, when showing a function is continuous, if all of
+  the individual components are continuous, then the function as a whole is also
+  continuous. This greatly simplifies continuity proofs, and that is very
+  convenient and useful.
+
+  \gtodo{More?}
+
+  \usec{Problem 10}%
+  \label{sec:problem_10}
+
+  Synthesis
+
+  Write a few words indicating how the ideas about numbers, metric spaces, and
+  continuous functions discussed in this course help lay the foundation for a
+  more rigorous theory of calculus.
+
+  Using these concepts for numbers, metrics, and functions, we are able to
+  construct most aspects of the theory of calculus, while only taking the axioms
+  that we listed in \prob{9.a}. Because these are the only assumptions that need
+  to be made, the definitions that we construct for calculus are more rigorous.
+  As they do not require any more assumptions. Normally we calculus requires many
+  more assumptions in order to construct some of the concepts, but with this
+  process, we are able to minimize the number of axioms required for the theory
+  of calculus. This allows for larger generalizability, as anything that
+  satisfies the short list of assumptions can be applied to use in the theory of
+  calculus. Thus this method lays the foundation for a more rigorous theory of
+  calculus.
+
+  \gtodo{Write More?}
+
+  \end{document}
