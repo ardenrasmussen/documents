@@ -1,0 +1,43 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amscd}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{multicol}
+\usepackage{subfiles}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{graphics}
+
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+
+\title{Modern Ray Tracing}
+\author{Arden Rasmussen}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  Ray Tracing is the basis of most modern rendering systems, as it attempts to
+  simulate the physices of light as it interacts with the environment. This
+  paper serves to comment on the major methods that are used in modern
+  implementations of ray tracing based rendering. There is significant more
+  information that cannot be compleatly explained here, but the primary aspects
+  of the major methods are explained. The three primary sections of this paper
+  are \textit{rendering}, \textit{shading}, \textit{material}, and
+  \textit{lighting}. These are the four main components in rendering engines.
+  Each portion will be explained in more detail in its respective sections.
+\end{abstract}
+
+\begin{multicols}{2}
+  \subfile{sec/rendering.tex}
+\end{multicols}
+
+\end{document}
