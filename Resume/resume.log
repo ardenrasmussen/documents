@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.15)  21 OCT 2018 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.9)  24 JAN 2019 14:49
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
 **resume.tex
 (./resume.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 7 language(s) loaded.
 (./moderncv.cls
 Document Class: moderncv 2013/02/09 v1.3.0 modern curriculum vitae and letter d
 ocument class
@@ -1029,40 +1029,40 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 17.
 
-Overfull \hbox (256.7532pt too wide) in paragraph at lines 58--58
+Overfull \hbox (256.7532pt too wide) in paragraph at lines 59--59
 [][][]| 
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (192.56491pt too wide) in paragraph at lines 111--111
+Overfull \hbox (192.56491pt too wide) in paragraph at lines 112--112
 [][][]| 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 113.
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
  (./resume.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 113.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
 Package rerunfilecheck Info: File `resume.out' has not changed.
 (rerunfilecheck)             Checksum: 840F1CB0111FE6DA7F9F069297FC80D0;682.
  ) 
 Here is how much of TeX's memory you used:
- 20262 strings out of 494923
- 346332 string characters out of 6180741
- 433514 words of memory out of 5000000
- 23372 multiletter control sequences out of 15000+600000
+ 20262 strings out of 494847
+ 346332 string characters out of 6179080
+ 433759 words of memory out of 5000000
+ 23381 multiletter control sequences out of 15000+600000
  587943 words of font info for 76 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
+ 59 hyphenation exceptions out of 8191
  39i,18n,45p,10381b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
 public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb>
-Output written on resume.pdf (2 pages, 132447 bytes).
+Output written on resume.pdf (2 pages, 132372 bytes).
 PDF statistics:
  74 PDF objects out of 1000 (max. 8388607)
  62 compressed objects within 1 object stream
