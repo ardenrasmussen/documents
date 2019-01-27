@@ -185,18 +185,18 @@ of readability, and understanding.
 
 |               |     |                                 |
 | ------------- | --- | ------------------------------- |
-| _statements_  | →   | **⊥**                           |
+| _statements_  | →   | $\bot$                           |
 |               |     | _expression_ **;** _statements_ |
 | _expression_  | →   | _term_ _expression'_            |
 | _expression'_ | →   | **+** _term_ _expression'_      |
-|               |     | ε                               |
+|               |     | $\varepsilon$                               |
 | _term_        | →   | _factor_ _term'_                |
 | _term'_       | →   | **\*** _factor_ _term'_         |
-|               |     | ε                               |
+|               |     | $\varepsilon$                               |
 | _factor_      | →   | **number**                      |
 |               |     | **(** _expression_ **)**        |
 
-The ⊥ symbol is an end-of-input marker.
+The $\bot$ symbol is an end-of-input marker.
 
 ### Syntax Diagrams
 

@@ -1,0 +1,53 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amscd}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{multicol}
+\usepackage{subfiles}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{graphics}
+
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+\newcommand{\Ot}{\mathcal{O}_t}
+\newcommand{\Os}{\mathcal{O}_s}
+
+
+\title{Matrix Multiplication Algorithm Comparison}
+\author{Arden Rasmussen}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  Matrix multiplication is a key part of may different computer algorithms, and
+  is widely used across the fields of computer science. Because of the important
+  role that it plays, much work has been put into developing more efficient
+  algorithms for matrix multiplication. A lot of progress has been made because
+  of this research, there are now a number of different matrix multiplication
+  algorithms, that are used for different purposes. This paper will compare the
+  best, average, and worst case time and memory requirements for these
+  different matrix multiplication algorithms, and provide some guidelines as to
+  when the different methods are most useful.
+\end{abstract}
+
+\begin{multicols}{2}
+  \subfile{sec/introduction.tex}
+  \subfile{sec/naive.tex}
+  \subfile{sec/strassen.tex}
+  \subfile{sec/le_gall.tex}
+
+  \nocite{*}
+  \bibliographystyle{alpha}
+  \bibliography{main}
+\end{multicols}
+
+\end{document}
