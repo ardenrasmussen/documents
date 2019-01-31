@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1548370186 "resume.tex" "resume.pdf" "resume" 1548370186
+["pdflatex"] 1548910669 "resume.tex" "resume.pdf" "resume" 1548910669
   "/etc/texmf/web2c/texmf.cnf" 1519595310 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1480098696 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
@@ -100,16 +100,16 @@
   "/usr/share/texmf/tex/latex/lm/t1lmss.fd" 1256929440 1639 ba1c66ef577aa5cadc2c0fdc691a26ee ""
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1540879405 164837 f472f40ab643c6b1fa7fff8b04d446df ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1541823953 812183 a7a3e5235c25b265dfd255028ea467d6 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1548390762 814157 c6875cb9dce8929bb3e9e2cbc5a44028 ""
   "collection.sty" 1519594849 3442 2c44689ae8f030470835ecc0280921a5 ""
   "moderncv.cls" 1519594849 26081 43d40f7251b60ed16df10ef8d3b5e1e8 ""
   "moderncvcolorblue.sty" 1519594849 1009 a644893ba936a7152b723471e27a7a7c ""
   "moderncvcompatibility.sty" 1519594849 4245 d6f474403bf64fa8e2e65e1aa8d4bfe1 ""
   "moderncviconsmarvosym.sty" 1519594849 2173 26071d76033bcc56545977ed0d333498 ""
   "moderncvstyleclassic.sty" 1519594849 13069 5a81fe974fd0f49aeed22c2b5aecc3cf ""
-  "resume.aux" 1548370186 1102 c5a0c4da839a18acbdfaff67d11ad3ac ""
-  "resume.out" 1548370186 682 840f1cb0111fe6da7f9f069297fc80d0 ""
-  "resume.tex" 1548370184 4446 31c983cffa30c4d640f46efd6c089d13 ""
+  "resume.aux" 1548910669 1102 c5a0c4da839a18acbdfaff67d11ad3ac ""
+  "resume.out" 1548910669 682 840f1cb0111fe6da7f9f069297fc80d0 ""
+  "resume.tex" 1548910668 4444 c48c40ed7ac0e47c1db04761ebf77042 ""
   "tweaklist.sty" 1519594849 1966 8ce3a021c0bc6369db88faeddf828d71 ""
   (generated)
   "resume.log"
