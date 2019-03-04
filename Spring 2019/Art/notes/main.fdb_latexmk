@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1551655403 "main.tex" "main.pdf" "main" 1551655411
+["pdflatex"] 1551722813 "main.tex" "main.pdf" "main" 1551722822
   "/etc/texmf/web2c/texmf.cnf" 1519595310 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1480098701 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
@@ -147,10 +147,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1540879405 164837 f472f40ab643c6b1fa7fff8b04d446df ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1548390762 814157 c6875cb9dce8929bb3e9e2cbc5a44028 ""
-  "main.aux" 1551655411 17251 07e5b3c8ad0549c6803e4a15b68b0ab3 ""
-  "main.nav" 1551655411 10782 edde5109426b863d1531a1df637c1799 ""
-  "main.out" 1551655411 441 49d83e88fc8c76e783e026f2b221b5d4 ""
-  "main.tex" 1551655402 10433 36f3ebbf9fef59d4dfdf6d440b643e11 ""
+  "main.aux" 1551722822 17251 07e5b3c8ad0549c6803e4a15b68b0ab3 ""
+  "main.nav" 1551722822 10782 edde5109426b863d1531a1df637c1799 ""
+  "main.out" 1551722822 441 49d83e88fc8c76e783e026f2b221b5d4 ""
+  "main.tex" 1551655425 10433 36f3ebbf9fef59d4dfdf6d440b643e11 ""
   "ppt1/1551384928_1215_28022019_272x652.png" 1551384928 124668 6b593a4e541ad3c9e52d4495160aae6b ""
   "ppt1/1551384937_1215_28022019_315x653.png" 1551384937 189106 df39487b0c2895d1eb30a0b22589eb88 ""
   "ppt1/1551384950_1215_28022019_255x611.png" 1551384950 112912 16ca137c065889a0f4e9792077f5ace6 ""
@@ -244,10 +244,10 @@
   "ppt9/1551557974_1219_02032019_487x643.png" 1551557974 190231 020dc96aa01d8632a242bf0b7821d947 ""
   "ppt9/1551557984_1219_02032019_235x658.png" 1551557984 132855 1ef638adc72a6e4e287a0be050dfa0a8 ""
   (generated)
-  "main.snm"
-  "main.nav"
-  "main.pdf"
-  "main.out"
-  "main.toc"
   "main.aux"
+  "main.out"
+  "main.pdf"
+  "main.nav"
+  "main.snm"
   "main.log"
+  "main.toc"
