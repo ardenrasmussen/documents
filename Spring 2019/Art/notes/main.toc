@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Agean Bronze Age. 3000-1000BCE}{2}{0}{1}
+\beamer@sectionintoc {2}{Geometric Period. 1100-700BCE}{13}{0}{2}
+\beamer@sectionintoc {3}{"Orientalizing" Period. 710-600BCE}{19}{0}{3}
+\beamer@sectionintoc {4}{The Archaic Period 600-520BCE}{30}{0}{4}
+\beamer@sectionintoc {5}{Late Archaic 520-480BCE}{59}{0}{5}
+\beamer@sectionintoc {6}{Early Classical 480-440BCE}{78}{0}{6}
+\beamer@sectionintoc {7}{High Classical 440-400BCE}{90}{0}{7}

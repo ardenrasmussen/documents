@@ -1,0 +1,253 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+% \usepackage[margin=1in]{geometry}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\abs}[1]{\left\Vert{#1}\right\Vert}
+\newcommand{\e}{\varepsilon}
+\newcommand{\de}{\delta}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+
+\title{Real II Review}
+\author{Arden Rasmussen}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+% \begin{multicols}{2}
+\section{Differentiability}%
+\label{sec:differentiability}
+
+\subsection{Definition}%
+\label{sub:definition}
+
+\begin{definition}
+  Suppose $F:\U\ra\R^m$ is differentiable at $P$. Then
+  \[
+    F(P+\vec{h})=F(P)+[DF(P)]\vec{h}+\vec{E},\quad with\quad
+    \lim_{\abs{\vec{h}}\ra 0}\frac{\abs{\vec{E}}}{\abs{\vec{h}}}=0.
+  \]
+\end{definition}
+
+\subsection{Differentiable / Linearizable}%
+\label{sub:differentiable_linearizable}
+
+Clearly when $\vec{h}=\vec{0}$ then the linearization nust equal the function
+at that point, thus \[L(P+\vec{h})=F(P)+A\vec{h}+\vec{E}\] for some matrix $A$.
+Thus when we take the $i$-th component of $F$, we get
+\[
+  F^i(p^1,\ldots,p^j+h,\ldots,p^n)=F^i(p^1,\ldots,p^n)+A_j^ih+E^i
+\]
+
+Rearanging to solve for $A_j^i$ we find that $A_j^i=\pder{F^i}{x^j}$. Thus if a
+function is differentiable/linearizable then the matrix of the linearization
+\textit{has to be} the Jacobi matrix.
+
+\subsection{Error term}%
+\label{sub:error_term}
+
+We want the error term to die faster than $\vec{h}$ because we get the error
+term from Taylors Theorem, so if this is not the case, then as $\vec{h}\ra0$ we
+would have the error exploding, and that would be bad. So part of
+differentiability is that the error term must die.
+
+\subsection{Existence is not differentiable}%
+\label{sub:existance_is_not_differentiable}
+
+A partial derivative can exists at all points, but by some nature of the
+function, it may not be a continuous partial derivative. Thus one cannot assume
+that if the partial derivative exists, that the function is differentiable.
+However, it is safe to say that if the partial derivative exists and is
+continuous then the function is differentiable.
+
+\subsection{Mean Value Theorem / Taylor Theorem}%
+\label{sub:mean_value_theorem_taylor_theorem}
+
+\section{Measuring sizes of stuff}%
+\label{sec:measuring_sizes_of_stuff}
+
+\subsection{k-forms}%
+\label{sub:k_forms}
+
+\subsubsection{Motivation}%
+\label{ssub:motivation}
+
+\subsubsection{Determinant}%
+\label{ssub:determinant}
+
+\subsection{Measure Theory}%
+\label{sub:measure_theory}
+
+\subsubsection{Jordan Measure}%
+\label{ssub:jordan_measure}
+
+Jordan measure is a method to measure the size of an "arbitrary" shape, Because
+a k-form can only measure the size of a parallelotope, and can't handle
+arbitrary shapes.
+
+\subsubsection{What is not Jordan measurable}%
+\label{ssub:what_is_not_jordan_measurable}
+
+$\Q\cap[0,1]$ is not Jordan measurable, because $\mu_{int}=0$, and
+$\mu_{out}=1$, this is also because $\partial
+\Q=\bar{\Q}\setminus\text{Int}{\Q}=\R$. Then the measure of the boundary is not
+zero, this is an issue.
+
+\subsubsection{Jordan measure of zero}%
+\label{ssub:jordan_measure_of_zero}
+
+We know that a set has Jordan measure of zero if we can completely cover it in
+boxes, where the sum of the area of the boxes is less than some $\epsilon$.
+Then we are able to make $\epsilon\ra0$, and thus the measure must also be
+zero. This entails ensuring that the boxes completely cover the set, and that
+we can make them as small as we want. For our homework we used the angle to
+change the size of the boxes.
+
+\subsubsection{Measurable by boundary}%
+\label{ssub:measurable_by_boundary}
+
+This is an IFF. If the set is measurable, then we can construct two coverings,
+$B_{in}$ and $B_{out}$, where $B_{in}\subset\text{Int}(\U)$, and $B_{out}$
+intersects $\bar{\U}$ non-trivially, i.e. also covers the boundary or it over
+estimates. As we refine these coverings, they should both approach $\mu(\U)$.
+Thus the difference between them will become less than $\epsilon$. The
+difference between the two sets will be exactly boxes that contain $\partial
+\U$, thus $\mu(\partial\U)<\epsilon$.
+
+If the measure of the boundary is zero, then we extend the grid by the
+hyper planes which define the sides of the boxes, thus effectively cutting the
+boxes up. There are sets in this global grid, that are entirely within $\U$,
+and then there are sets that cover $\bar{\U}$, the difference of these sets
+will be a covering of $\partial \U$, not that it may not be the same covering
+that we started with, but it will also be less than $\epsilon$, thus since the
+difference of $\B_{out}$, and $\B_{in}$ must be less than $\epsilon$, since
+this is true for all $\epsilon$, than $\U$ must me measurable.
+
+\section{Riemann Integration}%
+\label{sec:riemann_integration}
+
+\subsection{Definition}%
+\label{sub:definition}
+
+\begin{definition}
+  We say that the function $f$ is Riemann-integrable over $\U$ if there exists
+  $I\in\R$ such that for all $\e>0$ there exists $\de>0$ such that for all
+  decompositions $\U_*$ with $s(\U_*)<\de$ and all sample points $\xi_*$ we
+  have
+  \[
+    \abs{RS(f,\U_*,\xi_*)}<\e
+  \]
+\end{definition}
+
+\begin{definition}
+  We say that the function $f$ is Riemann-integrable over $\U$ if for all
+  $\e>0$ there exists $\de>0$ such tat for all decompositions $\U_*$ and
+  $\widetilde{\U_*}$ with $s(\U_*),s(\widetilde{\U_*})<\de$ and all sample
+  points $\xi_*,\widetilde{\xi_*}$ we have
+  \[
+    \abs{RS(f,\U_*,\xi_*)-RS(f,\widetilde{\U_*},\widetilde{\xi_*})} < \e
+  \]
+\end{definition}
+
+\begin{theorem}
+  If $f$ is uniformly continuous over $\U$ then $f$ is Riemann integrable over
+  $\U$.
+\end{theorem}
+
+\begin{theorem}
+  $f$ is Riemann integrable iff the set of discontinuities is of measure zero.
+\end{theorem}
+
+\subsection{Show not integrable}%
+\label{sub:show_not_integrable}
+
+\subsection{Fundamental Theorem of Calculus}%
+\label{sub:fundamental_theorem_of_calculus}
+
+\section{Universal Properties}%
+\label{sec:univresal_properties}
+
+\subsection{Exterior Product}%
+\label{sub:exterior_product}
+
+\subsection{Tensor Product}%
+\label{sub:tensor_product}
+
+\section{Random bits of linear / tensor algebra}%
+\label{sec:random_bits_of_linear_tensor_algebra}
+
+\subsection{Dual Space}%
+\label{sub:dual_space}
+
+\subsection{Tensor terminology}%
+\label{sub:tensor_terminology}
+
+\subsection{Raising and Lowering indices}%
+\label{sub:raising_and_lowering_indices}
+
+\section{Volume Forms}%
+\label{sec:volume_forms}
+
+\subsection{Orientation of a Space}%
+\label{sub:orientation_of_a_space}
+
+\subsection{Corollary 2 in Part II}%
+\label{sub:corollary_2_in_part_ii}
+
+\subsection{$\text{dvol}_g$}%
+\label{sub:_dvol_g_}
+
+\subsection{Hodge start}%
+\label{sub:hodge_start}
+
+\subsection{Cross product}%
+\label{sub:cross_product}
+
+\subsubsection{What is it?}%
+\label{ssub:what_is_it_}
+
+\subsubsection{Does it have the properties we want?}%
+\label{ssub:does_it_have_the_properties_we_want_}
+
+\subsubsection{5.10.4}%
+\label{ssub:5_10_4}
+
+\section{Category Theory}%
+\label{sec:category_theory}
+
+\subsection{What did you learn?}%
+\label{sub:what_did_you_learn_}
+
+A category is a construct of \textit{objects} and \textit{morphisms} between
+the objects. Objects could be for example vector spaces, and then the
+associated morphisms would be linear transformations. It seems pretty
+straightforward, and very useful. Most of the proofs are done through diagram
+chasing.
+
+\subsection{What is a functor?}%
+\label{sub:what_is_a_functor_}
+
+A \textit{functor} is a method for converting from one category to another.
+Functors must take isomorphisms to isomorphisms, and take compositions to
+compositions. This is useful if examining a problem in one category is hard,
+then it can be converted to an easier category. Note that if a functor maps an
+isomorphism, it does not mean that the morphism in category 1 is an
+isomorphism. Thus this can only be used as a contrapositive tool.
+
+% \end{multicols}
+
+\end{document}
