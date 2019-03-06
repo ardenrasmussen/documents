@@ -1,13 +1,16 @@
-\documentclass[12pt]{amsart}
+\documentclass[12pt]{armath}
 \usepackage{amsmath}
+\usepackage{mathtools}% Loads amsmath
 \usepackage{csquotes}
 \usepackage{enumitem}
 \usepackage{multicol}
+\usepackage{tikz}
 
 % \usepackage[margin=1in]{geometry}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{definition}{Definition}[section]
+\newtheorem{corollary}{Corollary}[section]
 
 \newcommand{\U}{\mathcal{U}}
 \newcommand{\B}{\mathcal{B}}
@@ -15,10 +18,18 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\abs}[1]{\left\Vert{#1}\right\Vert}
+\newcommand{\abs}[1]{\left\vert{#1}\right\vert}
+\newcommand{\aabs}[1]{\left\Vert{#1}\right\Vert}
 \newcommand{\e}{\varepsilon}
 \newcommand{\de}{\delta}
 \newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ppder}[2]{\frac{\partial^2 #1}{{\partial #2}^2}}
+\newcommand{\dvol}{\text{dvol}_g}
+\newcommand{\bs}{\rule{0.3cm}{0.15mm}}
+\newcommand{\kp}[1]{\partial_{#1_1},\ldots,\partial_{#1_k}}
+\newcommand{\kpw}[1]{\partial_{#1_1}\wedge\ldots\wedge\partial_{#1_k}}
+\newcommand{\kd}[1]{dx^{#1_1},\ldots,dx^{#1_k}}
+\newcommand{\kdw}[1]{dx^{#1_1}\wedge\ldots\wedge dx^{#1_k}}
 
 \title{Real II Review}
 \author{Arden Rasmussen}
@@ -39,7 +50,7 @@
   Suppose $F:\U\ra\R^m$ is differentiable at $P$. Then
   \[
     F(P+\vec{h})=F(P)+[DF(P)]\vec{h}+\vec{E},\quad with\quad
-    \lim_{\abs{\vec{h}}\ra 0}\frac{\abs{\vec{E}}}{\abs{\vec{h}}}=0.
+    \lim_{\aabs{\vec{h}}\ra 0}\frac{\aabs{\vec{E}}}{\aabs{\vec{h}}}=0.
   \]
 \end{definition}
 
@@ -77,6 +88,80 @@ continuous then the function is differentiable.
 \subsection{Mean Value Theorem / Taylor Theorem}%
 \label{sub:mean_value_theorem_taylor_theorem}
 
+\begin{theorem}[Mean Value Theorem]
+  Suppose $\U\subseteq\R^n$ is convex and suppose $F:\U\ra\R$ has continuous
+  partial derivatives. Then for each $P_1,P_2\in\U$ there exists $Q$ such that
+  \[
+    F(P_2)-F(P_1)=[DF(Q)]\cdot\overrightarrow{P_1P_2}
+  \]
+\end{theorem}
+
+\begin{proof}
+  Let $F$ be continuously differentiable. Take $f:\R\ra\R$ as
+  \begin{align*}
+    f(t)=F(P_1+t\overrightarrow{P_1P_2})
+  \end{align*}
+  where $P_1,P_2\in\U$. with $t\in[0,1]$. Then applying one dimension mean
+  value theorem $\exists z\in R$ such that
+  \begin{align*}
+    f(1)-f(0)=f'(z)\cdot 1
+  \end{align*}
+  we can find $f'(z)$ to be
+  \begin{align*}
+    f'(z)=DF\vert_{P_1+z\overrightarrow{P_1P_2}}\cdot\overrightarrow{P_1P_2}
+  \end{align*}
+  thus
+  \begin{align*}
+    f(1)-f(0)&=DF\vert_{P_1+z\overrightarrow{P_1P_2}}\cdot\overrightarrow{P_1P_2}\\
+    F(P_1)-F(P_2)&=DF\vert_{P_1+z\overrightarrow{P_1P_2}}\cdot\overrightarrow{P_1P_2}\\
+    F(P_2)-F(P_1)&=[DF(Q)]\cdot\overrightarrow{P_1P_2}\quad
+    Q=P_1+z\overrightarrow{P_1P_2}
+  \end{align*}
+\end{proof}
+
+\begin{theorem}[Taylor Theorem]
+  Suppose $\U\subseteq\R^n$ is convex. Suppose further that $F:\U\ra\R$ is
+  smooth.
+  \begin{itemize}
+    \item Suppose $F$ has bounded second order partial derivatives. Then there
+      is a constant $M_2$ depending only on the bounds on the second partial
+      derivatives such that for each $P\in \U$ and each $\vec{h}$ with
+      $P+\vec{h}\in\U$ we have
+      \[
+        F(P+\vec{h})=F(P)+[DF(P)]\vec{h}+E_1
+      \]
+      with $\abs{E_1}\leq\frac{1}{2!}M_2\aabs{\vec{h}}^2$.
+    \item Suppose $F$ has bounded third order partial derivatives. Then there
+      is a constant $M_3$ depending only on the bounds on the third partial
+      derivatives such that for each $P\in\U$ and each $\vec{h}$ with
+      $P+\vec{h}\in\U$ we have
+      \[
+        F(P+\vec{h})=F(P)+[DF(P)]\vec{h}+\frac{1}{2!}\vec{h}^T[\text{Hess}F(P)]\vec{h{+E_2}}
+      \]
+      with $\abs{E_2}\leq\frac{1}{3!}M_3\aabs{\vec{h}}^3$.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  \begin{align*}
+     f(t)=F(P+t\vec{h})
+  \end{align*}
+  \begin{align*}
+    f(1)&=f(0)+f'(0)+\frac{1}{2}f''(0)+\frac{1}{6}f'''(z)\cdot \beta\\
+    f'(t)&=\pder{F}{x^1}(P+t\vec{h})h^1+\ldots+\pder{F}{x^n}(P+t\vec{h})h^n\\
+    f''(t)&=\ppder{F}{x^1}(P+t\vec{h})(h^1)^2+\frac{\partial^2 F}{\partial
+    x^1\partial x^2}(P+t\vec{h})h^1h^2\cdot 2+\ldots
+  \end{align*}
+  \begin{align*}
+    f^{(k)}(t)=\left(h^1\pder{}{x^1}+\ldots+h^n\pder{}{x^n}\right)^kF(P+t\vec{h})
+  \end{align*}
+  Where $\aabs{E}\leq C\aabs{\vec{h}}^3$ where $C$ is some constant which
+  depends on
+  \begin{align*}
+    \sup_{i,j,k}\abs{\frac{\partial^3 F}{\partial x^i\partial x^j\partial x^k}}
+  \end{align*}
+\end{proof}
+
 \section{Measuring sizes of stuff}%
 \label{sec:measuring_sizes_of_stuff}
 
@@ -86,8 +171,20 @@ continuous then the function is differentiable.
 \subsubsection{Motivation}%
 \label{ssub:motivation}
 
+k-forms set a "standard" for measuring the size and the orientation of a
+k-parallelotope.
+
 \subsubsection{Determinant}%
 \label{ssub:determinant}
+
+For a n-form on n-dimensional vector space leads to the concept of determinant.
+
+\begin{align*}
+  &\omega(\vec{V_1},\ldots,\vec{V_n})\\
+  &=\underbrace{\sum\text{sign}(\sigma)V_1^{\sigma(1)}\cdots
+  V_n^{\sigma(n)}}_\text{determinant}\omega(\partial_1,\ldots,\partial_n)\\
+  &=\omega(\partial_1,\ldots,\partial_n)\det\left[\ \ \right]
+\end{align*}
 
 \subsection{Measure Theory}%
 \label{sub:measure_theory}
@@ -175,8 +272,50 @@ this is true for all $\epsilon$, than $\U$ must me measurable.
 \subsection{Show not integrable}%
 \label{sub:show_not_integrable}
 
+I would show this by contradiction, Assume that it is integrable, then we set
+$\e<0.5$, then using the Cauchy definition, we select two partitions, and we
+select the sample points $\xi_*$ to be rational values, and $\widetilde{\xi_*}$
+to be irrational values. Thus when we use the Cauchy definition we see that we
+will have a contradiction, thus the function is not Riemann integrable. This
+only works for sure because we are able to pick any selection of sample points.
+
 \subsection{Fundamental Theorem of Calculus}%
 \label{sub:fundamental_theorem_of_calculus}
+
+\begin{theorem}
+  Let $f:[a,b]\ra\R$ be continuously differentiable. Then
+  \[
+    \int_{x\in[a,b]}\pder{f}{x}dx=f(b)-f(a)
+  \]
+\end{theorem}
+\begin{proof}
+  Since $\pder{f}{x}$ is continuous we know it is Riemann-integrable over
+  $[a,b]$; let $I$ be the value of its Riemann integral over $[a,b]$. This
+  means that for each $\e$ there is $\de>0$ such that for all decompositions
+  $\U_*$ of $[a,b]$ with $s(\U_*)<\de$ and all sample points $\xi_*$ we have
+  \[
+    \left|RS(f',\U_*,\xi_*)-I\right|<\e
+  \]
+  Consider any subdivision points
+  \[
+    a=a_0<a_1<\ldots<a-p=b,
+  \]
+  with $a_{i+1}-a_i<\de$ for all $i$. Note that this gives us a decomposition
+  $\U_*$ of $[a,b]$ with $s(\U_*)<\de$. By the Mean Value Theorem there exists
+  $\xi_i\in(a_i,a_{i+1})$ such that
+  \[
+    \frac{f(a_{i+1})-f(a_i)}{a_{i+1}-a_i}=\pder{f}{x}(\xi_i)
+  \]
+  By design we have
+  \[
+    RS(f',\U_*,\xi_*)=f(b)-f(a)
+  \]
+  The overall conclusion is that for all $\e>0$ we have
+  \[
+    |(f(b)-f(a))-I|<\e
+  \]
+  In other words, $I=f(b)-f(a)$.
+\end{proof}
 
 \section{Universal Properties}%
 \label{sec:univresal_properties}
@@ -184,70 +323,245 @@ this is true for all $\epsilon$, than $\U$ must me measurable.
 \subsection{Exterior Product}%
 \label{sub:exterior_product}
 
-\subsection{Tensor Product}%
-\label{sub:tensor_product}
+\begin{center}
+  \begin{tikzpicture}[scale=1, transform shape]
+    \node (a) at (0,3){$V\times\ldots\times V$};
+    \node (b) at (5,3){$\U$};
+    \node (c) at (0,0){$V\wedge\ldots\wedge V$};
+    \draw [->] (a) --node[above]{$\omega$} (b);
+    \draw [->] (a) --node[left]{$a$} (c);
+    \draw [->] (c) --node[below]{$\exists ! L$} (b);
+  \end{tikzpicture}
+\end{center}
 
-\section{Random bits of linear / tensor algebra}%
-\label{sec:random_bits_of_linear_tensor_algebra}
+Let $V$ be a vector space. By the \textit{k-th exterior power of $V$} we mean a
+vector space $E^k$ together with an alternating multi linear map
+$a:V\times\ldots\times V\ra E^k$ (on $k$ copies of $V$) such that for each
+alternating multi linear map $\omega:V\times\ldots\times V\ra \U$ there exists a
+unique linear map $L:E^k\ra \U$ for which $\omega=L\circ a$.
 
-\subsection{Dual Space}%
-\label{sub:dual_space}
+\begin{proof}
+  The mapping $a$ is alternating and multilinear. We start our proof by
+  addressing the mapping $a$ in more detail.
 
-\subsection{Tensor terminology}%
-\label{sub:tensor_terminology}
+  Once a basis for $V$ is fixed, we have the decomposition
+  \begin{align*}
+    \vec{V_1}\wedge\ldots\wedge{V_k}=a(\vec{V_1},\ldots,\vec{V_k})=\sum a^{i_1\ldots
+    i_k}(\vec{V_1},\ldots,\vec{V_k})\partial_{i_1}\wedge\ldots\wedge\partial_{i_k}
+  \end{align*}
+  in which
+  \begin{align*}
+    a^{i_1\ldots
+    i_k}(\vec{V_1},\ldots,\vec{V_k})=\vec{V_1}\wedge\ldots\wedge\vec{V_k}(dx^{i_1},\ldots,dx^{i_k})
+  \end{align*}
 
-\subsection{Raising and Lowering indices}%
-\label{sub:raising_and_lowering_indices}
+  However, each individual coordinate mapping $a^{i_1\ldots i_k}$ is itself
+  a k-form and can be expressed as
+  \begin{align*}
+    a^{i_1\ldots i_k}=\sum a^{i_1\ldots
+    i_k}(\partial_{j_1},\ldots,\partial_{j_k})dx^{j_1}\wedge\ldots\wedge
+    dx^{j_k}
+  \end{align*}
+  It now follows that
+  \begin{align*}
+    a^{i_1\ldots
+    i_k}(\vec{V_1},\ldots,\vec{V_k})=\vec{V_1}\wedge\ldots\wedge\vec{V_k}(dx^{i_1},\ldots,dx^{i_k})=dx^{i_1}\wedge\ldots\wedge
+    dx^{i_k}(\vec{V_1},\ldots,\vec{V_k})
+  \end{align*}
+  i.e. that $a^{i_1\ldots i_k}=dx^{i_1}\wedge\ldots\wedge dx^{i_k}$. We are
+  now ready to proceed with the main part of the proof.
 
-\section{Volume Forms}%
-\label{sec:volume_forms}
+  To see that there is at most one mapping $L$ corresponding to a given
+  $\omega$ it suffices to observe that any such $L$ must satisfy
+  \begin{align*}
+    L(\partial_{i_1}\wedge\ldots\wedge
+    \partial_{i_k})=\omega(\partial_{i_1},\ldots,\partial_{i_k})
+  \end{align*}
+  The latter in fact, defines a unique linear map $L:\Lambda^k(V)\ra W$. It
+  remains to argue that $\omega=L\circ a$.
 
-\subsection{Orientation of a Space}%
-\label{sub:orientation_of_a_space}
+  To do so it suffices to focus on the coordinate mappings $\omega^i :=
+  dy^i\circ\omega$ and $L^i:=dy^i\circ L$. As above, coordinate mappings are
+  k-forms and thus we may write
+  \begin{align*}
+    \omega^i=\sum \omega^i(\kp{i})\kdw{i}
+  \end{align*}
+  Upon evaluation we obtain
+  \begin{align*}
+    \omega^i(\vec{V_1},\ldots,\vec{V_k})&=\sum L^i(\kpw{i})a^{i_1\ldots
+    i_k}(\vec{V_1},\vec{V_k})\\
+                                        &=L^i\left(\sum a^{i_1\ldots
+                                        i_k}(\vec{V_1},\ldots,\vec{V_k})\kpw{i}\right)\\
+                                        &=L^i(a(\vec{V_1},\ldots,\vec{V_k}))
+    \end{align*}
+    that is, $\omega^i=L^i\circ a$ and $\omega=L\circ a$.
 
-\subsection{Corollary 2 in Part II}%
-\label{sub:corollary_2_in_part_ii}
+    To See that the exterior power is unique up to isomorphism, suppose you had
+    two: $(\Lambda^k(V)_1,a_1)$ and $(\Lambda^k(V)_2,a_2)$. By the Universal
+    Property there would exists unique linear mapping $L_1$ and $L_2$ such that
+    \begin{align*}
+      a_2=L_1\circ a_1\quad a_1=L_2\circ a_2
+    \end{align*}
+    Since then
+    \begin{align*}
+      a_1=(L_2\circ L_1)\circ a_1\quad a_2=(L_1\circ L_2)\circ a_2
+    \end{align*}
+    the uniqueness portion of the Universal Property implies that both $L_2\circ
+    L_1$ and $L_1\circ L_2$ are identity mappings. In particular, one concludes
+    that $L_1$ and $L_2$ are isomorphisms.
+  \end{proof}
 
-\subsection{$\text{dvol}_g$}%
-\label{sub:_dvol_g_}
+  \subsection{Tensor Product}%
+  \label{sub:tensor_product}
 
-\subsection{Hodge start}%
-\label{sub:hodge_start}
+  \begin{center}
+    \begin{tikzpicture}[scale=1, transform shape]
+      \node (a) at (0,3){$V_1\times\ldots\times V_k$};
+      \node (b) at (5,3){$\U$};
+      \node (c) at (0,0){$V_1\otimes\ldots\otimes V_k$};
+      \draw [->] (a) --node[above]{$\omega$} (b);
+      \draw [->] (a) --node[left]{$b$} (c);
+      \draw [->] (c) --node[below]{$\exists ! L$} (b);
+    \end{tikzpicture}
+  \end{center}
 
-\subsection{Cross product}%
-\label{sub:cross_product}
+  Let $V_1,\ldots,V_k$ be vector spaces. By the tensor product of
+  $V_1,\ldots,V_k$ we man a vector space denoted $V_1\otimes\ldots\otimes V_k$
+  together with a bilinear map $b:V_1\times\ldots\times V_k\ra
+  V_1\otimes\ldots\otimes V_k$ such that for each multilinear map
+  $\omega:V_1\times\ldots\times V_k\ra\U$ there exists a unique linear map
+  $L:V_1\otimes\ldots\otimes V_k\ra\U$ for which $\omega=L\circ b$.
 
-\subsubsection{What is it?}%
-\label{ssub:what_is_it_}
+  \section{Random bits of linear / tensor algebra}%
+  \label{sec:random_bits_of_linear_tensor_algebra}
 
-\subsubsection{Does it have the properties we want?}%
-\label{ssub:does_it_have_the_properties_we_want_}
+  \subsection{Dual Space}%
+  \label{sub:dual_space}
 
-\subsubsection{5.10.4}%
-\label{ssub:5_10_4}
+  \begin{definition}
+    Let $V$ be a vector space. The set of all covectors of $\omega:V\ra\R$ is
+    called the dual space to $V$ and is denoted by $V^*$.
+  \end{definition}
 
-\section{Category Theory}%
-\label{sec:category_theory}
+  The dual space and the vector space have the same dimension, were we define the
+  basis to be of the form
+  \begin{align*}
+    dx_i(\partial_j)=\begin{cases}1 & \text{if}\ i=j\\
+    0 & \text{if}\ i\neq j\end{cases}
+  \end{align*}
 
-\subsection{What did you learn?}%
-\label{sub:what_did_you_learn_}
+  We verified that this acts as a basis for the dual space. Because $V$ and $V^*$
+  have the same dimension then there is a correspondence between $\partial_i$ and
+  $dx_i$.
 
-A category is a construct of \textit{objects} and \textit{morphisms} between
-the objects. Objects could be for example vector spaces, and then the
-associated morphisms would be linear transformations. It seems pretty
-straightforward, and very useful. Most of the proofs are done through diagram
-chasing.
+  \subsection{Tensor terminology}%
+  \label{sub:tensor_terminology}
+  \begin{align*}
+    T\in\left[\bigotimes^p V^*\right]\otimes\left[\bigotimes^q V\right]
+  \end{align*}
 
-\subsection{What is a functor?}%
-\label{sub:what_is_a_functor_}
+  \begin{align*}
+    T_{i_1\ldots i_p}^{j_1\ldots j_q}\equiv
+    T(\partial_{i_1},\ldots,\partial_{i_p},dx^{j_1},\ldots,dx^{j_q})
+  \end{align*}
 
-A \textit{functor} is a method for converting from one category to another.
-Functors must take isomorphisms to isomorphisms, and take compositions to
-compositions. This is useful if examining a problem in one category is hard,
-then it can be converted to an easier category. Note that if a functor maps an
-isomorphism, it does not mean that the morphism in category 1 is an
-isomorphism. Thus this can only be used as a contrapositive tool.
+  \subsection{Raising and Lowering indices}%
+  \label{sub:raising_and_lowering_indices}
 
-% \end{multicols}
+  \section{Volume Forms}%
+  \label{sec:volume_forms}
 
-\end{document}
+  \subsection{Orientation of a Space}%
+  \label{sub:orientation_of_a_space}
+
+  The orientation of a space is based on a set of basis vectors and a volume
+  form, The orientation of space can be thought of as how much a parallelotope is
+  in the same direction of the basis vectors, or agrees with how the volume
+  form measures the space. This can be show with vectors, were a vector in the
+  $x,y,z$ direction would be positive but a vector in the $-x,-y,-z$ direction
+  would be considered as negatively oriented.
+
+  \subsection{Corollary 2 in Part II}%
+  \label{sub:corollary_2_in_part_ii}
+
+  \begin{corollary}
+    Let $\left\{\partial_1,\ldots,\partial_n\right\}$ be an orthonormal basis of
+    an n-dimensional innerproduct space, with innerproduct $g$. If $\omega$ is a
+    volume form with $\omega(\partial_1,\ldots,\partial_n)=1$ then
+    \[
+      \abs{\omega(\vec{V_1},\ldots,\vec{V_n})}=\sqrt{\det\left[g(\vec{V_i},
+      \vec{V_j})\right]}
+    \]
+  \end{corollary}
+
+  \subsection{dvol}%
+  \label{sub:_dvol}
+  \begin{align*}
+    \dvol=\sqrt{\det\left[g(\partial_i,\partial_j)\right]}dx^1\wedge\ldots\wedge
+    dx^n
+  \end{align*}
+
+  This is able to determine the orientation because of the alternating nature of
+  $\wedge$ products, and the size is due to the linearity of wedge products, and
+  the determinant. The determinant represents the measure of one "unit" cell
+  based on the basis vectors, and the dot product, then the size of each vector
+  multiplied together then scaled by this amount provide the area.
+
+  \subsection{Hodge start}%
+  \label{sub:hodge_start}
+
+  Given some alternating multilinear mapping
+  \begin{align*}
+    (\vec{V_1},\ldots,\vec{V_k})\ra\omega(\vec{V_1},\ldots,\vec{V_k},\bs,\ldots,\bs)
+  \end{align*}
+  then by the Universal Property we have a linear mapping
+  \begin{align*}
+    \star_\omega:\Lambda^k(V)\ra\Lambda^{n-k}(V^*)
+  \end{align*}
+
+  It basically it places in the first $k$ values into the function of $\omega$
+  and returns a new function that takes $n-k$ values.
+  \begin{align*}
+    \star_\omega(\vec{V_1},\ldots,\vec{V_k})=\omega(\vec{V_1},\ldots,\vec{V_k},\bs,\ldots\bs)
+  \end{align*}
+
+  There is also an equivalent representation that works for co-vectors. It is
+  pretty much the same thing.
+
+  \subsection{Cross product}%
+  \label{sub:cross_product}
+
+  \subsubsection{What is it?}%
+  \label{ssub:what_is_it_}
+
+  \subsubsection{Does it have the properties we want?}%
+  \label{ssub:does_it_have_the_properties_we_want_}
+
+  \subsubsection{5.10.4}%
+  \label{ssub:5_10_4}
+
+  \section{Category Theory}%
+  \label{sec:category_theory}
+
+  \subsection{What did you learn?}%
+  \label{sub:what_did_you_learn_}
+
+  A category is a construct of \textit{objects} and \textit{morphisms} between
+  the objects. Objects could be for example vector spaces, and then the
+  associated morphisms would be linear transformations. It seems pretty
+  straightforward, and very useful. Most of the proofs are done through diagram
+  chasing.
+
+  \subsection{What is a functor?}%
+  \label{sub:what_is_a_functor_}
+
+  A \textit{functor} is a method for converting from one category to another.
+  Functors must take isomorphisms to isomorphisms, and take compositions to
+  compositions. This is useful if examining a problem in one category is hard,
+  then it can be converted to an easier category. Note that if a functor maps an
+  isomorphism, it does not mean that the morphism in category 1 is an
+  isomorphism. Thus this can only be used as a contrapositive tool.
+
+  % \end{multicols}
+
+      \end{document}
