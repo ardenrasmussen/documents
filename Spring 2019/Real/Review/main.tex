@@ -26,10 +26,14 @@
 \newcommand{\ppder}[2]{\frac{\partial^2 #1}{{\partial #2}^2}}
 \newcommand{\dvol}{\text{dvol}_g}
 \newcommand{\bs}{\rule{0.3cm}{0.15mm}}
+\newcommand{\kpn}[1]{\partial_{1},\ldots,\partial_{#1}}
 \newcommand{\kp}[1]{\partial_{#1_1},\ldots,\partial_{#1_k}}
 \newcommand{\kpw}[1]{\partial_{#1_1}\wedge\ldots\wedge\partial_{#1_k}}
 \newcommand{\kd}[1]{dx^{#1_1},\ldots,dx^{#1_k}}
 \newcommand{\kdw}[1]{dx^{#1_1}\wedge\ldots\wedge dx^{#1_k}}
+\newcommand{\va}{\vec{V_1}}
+\newcommand{\vb}{\vec{V_2}}
+\newcommand{\vxv}{\vec{V_1}\times_g\vec{V_2}}
 
 \title{Real II Review}
 \author{Arden Rasmussen}
@@ -144,255 +148,253 @@ continuous then the function is differentiable.
 
 \begin{proof}
   \begin{align*}
-     f(t)=F(P+t\vec{h})
+    f(t)=F(P+t\vec{h})
   \end{align*}
   \begin{align*}
     f(1)&=f(0)+f'(0)+\frac{1}{2}f''(0)+\frac{1}{6}f'''(z)\cdot \beta\\
     f'(t)&=\pder{F}{x^1}(P+t\vec{h})h^1+\ldots+\pder{F}{x^n}(P+t\vec{h})h^n\\
     f''(t)&=\ppder{F}{x^1}(P+t\vec{h})(h^1)^2+\frac{\partial^2 F}{\partial
     x^1\partial x^2}(P+t\vec{h})h^1h^2\cdot 2+\ldots
-  \end{align*}
+    \end{align*}
+    \begin{align*}
+      f^{(k)}(t)=\left(h^1\pder{}{x^1}+\ldots+h^n\pder{}{x^n}\right)^kF(P+t\vec{h})
+    \end{align*}
+    Where $\aabs{E}\leq C\aabs{\vec{h}}^3$ where $C$ is some constant which
+    depends on
+    \begin{align*}
+      \sup_{i,j,k}\abs{\frac{\partial^3 F}{\partial x^i\partial x^j\partial x^k}}
+    \end{align*}
+  \end{proof}
+
+  \section{Measuring sizes of stuff}%
+  \label{sec:measuring_sizes_of_stuff}
+
+  \subsection{k-forms}%
+  \label{sub:k_forms}
+
+  \subsubsection{Motivation}%
+  \label{ssub:motivation}
+
+  k-forms set a "standard" for measuring the size and the orientation of a
+  k-parallelotope.
+
+  \subsubsection{Determinant}%
+  \label{ssub:determinant}
+
+  For a n-form on n-dimensional vector space leads to the concept of determinant.
+
   \begin{align*}
-    f^{(k)}(t)=\left(h^1\pder{}{x^1}+\ldots+h^n\pder{}{x^n}\right)^kF(P+t\vec{h})
-  \end{align*}
-  Where $\aabs{E}\leq C\aabs{\vec{h}}^3$ where $C$ is some constant which
-  depends on
-  \begin{align*}
-    \sup_{i,j,k}\abs{\frac{\partial^3 F}{\partial x^i\partial x^j\partial x^k}}
-  \end{align*}
-\end{proof}
-
-\section{Measuring sizes of stuff}%
-\label{sec:measuring_sizes_of_stuff}
-
-\subsection{k-forms}%
-\label{sub:k_forms}
-
-\subsubsection{Motivation}%
-\label{ssub:motivation}
-
-k-forms set a "standard" for measuring the size and the orientation of a
-k-parallelotope.
-
-\subsubsection{Determinant}%
-\label{ssub:determinant}
-
-For a n-form on n-dimensional vector space leads to the concept of determinant.
-
-\begin{align*}
   &\omega(\vec{V_1},\ldots,\vec{V_n})\\
   &=\underbrace{\sum\text{sign}(\sigma)V_1^{\sigma(1)}\cdots
   V_n^{\sigma(n)}}_\text{determinant}\omega(\partial_1,\ldots,\partial_n)\\
   &=\omega(\partial_1,\ldots,\partial_n)\det\left[\ \ \right]
-\end{align*}
-
-\subsection{Measure Theory}%
-\label{sub:measure_theory}
-
-\subsubsection{Jordan Measure}%
-\label{ssub:jordan_measure}
-
-Jordan measure is a method to measure the size of an "arbitrary" shape, Because
-a k-form can only measure the size of a parallelotope, and can't handle
-arbitrary shapes.
-
-\subsubsection{What is not Jordan measurable}%
-\label{ssub:what_is_not_jordan_measurable}
-
-$\Q\cap[0,1]$ is not Jordan measurable, because $\mu_{int}=0$, and
-$\mu_{out}=1$, this is also because $\partial
-\Q=\bar{\Q}\setminus\text{Int}{\Q}=\R$. Then the measure of the boundary is not
-zero, this is an issue.
-
-\subsubsection{Jordan measure of zero}%
-\label{ssub:jordan_measure_of_zero}
-
-We know that a set has Jordan measure of zero if we can completely cover it in
-boxes, where the sum of the area of the boxes is less than some $\epsilon$.
-Then we are able to make $\epsilon\ra0$, and thus the measure must also be
-zero. This entails ensuring that the boxes completely cover the set, and that
-we can make them as small as we want. For our homework we used the angle to
-change the size of the boxes.
-
-\subsubsection{Measurable by boundary}%
-\label{ssub:measurable_by_boundary}
-
-This is an IFF. If the set is measurable, then we can construct two coverings,
-$B_{in}$ and $B_{out}$, where $B_{in}\subset\text{Int}(\U)$, and $B_{out}$
-intersects $\bar{\U}$ non-trivially, i.e. also covers the boundary or it over
-estimates. As we refine these coverings, they should both approach $\mu(\U)$.
-Thus the difference between them will become less than $\epsilon$. The
-difference between the two sets will be exactly boxes that contain $\partial
-\U$, thus $\mu(\partial\U)<\epsilon$.
-
-If the measure of the boundary is zero, then we extend the grid by the
-hyper planes which define the sides of the boxes, thus effectively cutting the
-boxes up. There are sets in this global grid, that are entirely within $\U$,
-and then there are sets that cover $\bar{\U}$, the difference of these sets
-will be a covering of $\partial \U$, not that it may not be the same covering
-that we started with, but it will also be less than $\epsilon$, thus since the
-difference of $\B_{out}$, and $\B_{in}$ must be less than $\epsilon$, since
-this is true for all $\epsilon$, than $\U$ must me measurable.
-
-\section{Riemann Integration}%
-\label{sec:riemann_integration}
-
-\subsection{Definition}%
-\label{sub:definition}
-
-\begin{definition}
-  We say that the function $f$ is Riemann-integrable over $\U$ if there exists
-  $I\in\R$ such that for all $\e>0$ there exists $\de>0$ such that for all
-  decompositions $\U_*$ with $s(\U_*)<\de$ and all sample points $\xi_*$ we
-  have
-  \[
-    \abs{RS(f,\U_*,\xi_*)}<\e
-  \]
-\end{definition}
-
-\begin{definition}
-  We say that the function $f$ is Riemann-integrable over $\U$ if for all
-  $\e>0$ there exists $\de>0$ such tat for all decompositions $\U_*$ and
-  $\widetilde{\U_*}$ with $s(\U_*),s(\widetilde{\U_*})<\de$ and all sample
-  points $\xi_*,\widetilde{\xi_*}$ we have
-  \[
-    \abs{RS(f,\U_*,\xi_*)-RS(f,\widetilde{\U_*},\widetilde{\xi_*})} < \e
-  \]
-\end{definition}
-
-\begin{theorem}
-  If $f$ is uniformly continuous over $\U$ then $f$ is Riemann integrable over
-  $\U$.
-\end{theorem}
-
-\begin{theorem}
-  $f$ is Riemann integrable iff the set of discontinuities is of measure zero.
-\end{theorem}
-
-\subsection{Show not integrable}%
-\label{sub:show_not_integrable}
-
-I would show this by contradiction, Assume that it is integrable, then we set
-$\e<0.5$, then using the Cauchy definition, we select two partitions, and we
-select the sample points $\xi_*$ to be rational values, and $\widetilde{\xi_*}$
-to be irrational values. Thus when we use the Cauchy definition we see that we
-will have a contradiction, thus the function is not Riemann integrable. This
-only works for sure because we are able to pick any selection of sample points.
-
-\subsection{Fundamental Theorem of Calculus}%
-\label{sub:fundamental_theorem_of_calculus}
-
-\begin{theorem}
-  Let $f:[a,b]\ra\R$ be continuously differentiable. Then
-  \[
-    \int_{x\in[a,b]}\pder{f}{x}dx=f(b)-f(a)
-  \]
-\end{theorem}
-\begin{proof}
-  Since $\pder{f}{x}$ is continuous we know it is Riemann-integrable over
-  $[a,b]$; let $I$ be the value of its Riemann integral over $[a,b]$. This
-  means that for each $\e$ there is $\de>0$ such that for all decompositions
-  $\U_*$ of $[a,b]$ with $s(\U_*)<\de$ and all sample points $\xi_*$ we have
-  \[
-    \left|RS(f',\U_*,\xi_*)-I\right|<\e
-  \]
-  Consider any subdivision points
-  \[
-    a=a_0<a_1<\ldots<a-p=b,
-  \]
-  with $a_{i+1}-a_i<\de$ for all $i$. Note that this gives us a decomposition
-  $\U_*$ of $[a,b]$ with $s(\U_*)<\de$. By the Mean Value Theorem there exists
-  $\xi_i\in(a_i,a_{i+1})$ such that
-  \[
-    \frac{f(a_{i+1})-f(a_i)}{a_{i+1}-a_i}=\pder{f}{x}(\xi_i)
-  \]
-  By design we have
-  \[
-    RS(f',\U_*,\xi_*)=f(b)-f(a)
-  \]
-  The overall conclusion is that for all $\e>0$ we have
-  \[
-    |(f(b)-f(a))-I|<\e
-  \]
-  In other words, $I=f(b)-f(a)$.
-\end{proof}
-
-\section{Universal Properties}%
-\label{sec:univresal_properties}
-
-\subsection{Exterior Product}%
-\label{sub:exterior_product}
-
-\begin{center}
-  \begin{tikzpicture}[scale=1, transform shape]
-    \node (a) at (0,3){$V\times\ldots\times V$};
-    \node (b) at (5,3){$\U$};
-    \node (c) at (0,0){$V\wedge\ldots\wedge V$};
-    \draw [->] (a) --node[above]{$\omega$} (b);
-    \draw [->] (a) --node[left]{$a$} (c);
-    \draw [->] (c) --node[below]{$\exists ! L$} (b);
-  \end{tikzpicture}
-\end{center}
-
-Let $V$ be a vector space. By the \textit{k-th exterior power of $V$} we mean a
-vector space $E^k$ together with an alternating multi linear map
-$a:V\times\ldots\times V\ra E^k$ (on $k$ copies of $V$) such that for each
-alternating multi linear map $\omega:V\times\ldots\times V\ra \U$ there exists a
-unique linear map $L:E^k\ra \U$ for which $\omega=L\circ a$.
-
-\begin{proof}
-  The mapping $a$ is alternating and multilinear. We start our proof by
-  addressing the mapping $a$ in more detail.
-
-  Once a basis for $V$ is fixed, we have the decomposition
-  \begin{align*}
-    \vec{V_1}\wedge\ldots\wedge{V_k}=a(\vec{V_1},\ldots,\vec{V_k})=\sum a^{i_1\ldots
-    i_k}(\vec{V_1},\ldots,\vec{V_k})\partial_{i_1}\wedge\ldots\wedge\partial_{i_k}
-  \end{align*}
-  in which
-  \begin{align*}
-    a^{i_1\ldots
-    i_k}(\vec{V_1},\ldots,\vec{V_k})=\vec{V_1}\wedge\ldots\wedge\vec{V_k}(dx^{i_1},\ldots,dx^{i_k})
   \end{align*}
 
-  However, each individual coordinate mapping $a^{i_1\ldots i_k}$ is itself
-  a k-form and can be expressed as
-  \begin{align*}
-    a^{i_1\ldots i_k}=\sum a^{i_1\ldots
-    i_k}(\partial_{j_1},\ldots,\partial_{j_k})dx^{j_1}\wedge\ldots\wedge
-    dx^{j_k}
-  \end{align*}
-  It now follows that
-  \begin{align*}
-    a^{i_1\ldots
-    i_k}(\vec{V_1},\ldots,\vec{V_k})=\vec{V_1}\wedge\ldots\wedge\vec{V_k}(dx^{i_1},\ldots,dx^{i_k})=dx^{i_1}\wedge\ldots\wedge
-    dx^{i_k}(\vec{V_1},\ldots,\vec{V_k})
-  \end{align*}
-  i.e. that $a^{i_1\ldots i_k}=dx^{i_1}\wedge\ldots\wedge dx^{i_k}$. We are
-  now ready to proceed with the main part of the proof.
+  \subsection{Measure Theory}%
+  \label{sub:measure_theory}
 
-  To see that there is at most one mapping $L$ corresponding to a given
-  $\omega$ it suffices to observe that any such $L$ must satisfy
-  \begin{align*}
-    L(\partial_{i_1}\wedge\ldots\wedge
-    \partial_{i_k})=\omega(\partial_{i_1},\ldots,\partial_{i_k})
-  \end{align*}
-  The latter in fact, defines a unique linear map $L:\Lambda^k(V)\ra W$. It
-  remains to argue that $\omega=L\circ a$.
+  \subsubsection{Jordan Measure}%
+  \label{ssub:jordan_measure}
 
-  To do so it suffices to focus on the coordinate mappings $\omega^i :=
-  dy^i\circ\omega$ and $L^i:=dy^i\circ L$. As above, coordinate mappings are
-  k-forms and thus we may write
-  \begin{align*}
-    \omega^i=\sum \omega^i(\kp{i})\kdw{i}
-  \end{align*}
-  Upon evaluation we obtain
-  \begin{align*}
-    \omega^i(\vec{V_1},\ldots,\vec{V_k})&=\sum L^i(\kpw{i})a^{i_1\ldots
-    i_k}(\vec{V_1},\vec{V_k})\\
-                                        &=L^i\left(\sum a^{i_1\ldots
-                                        i_k}(\vec{V_1},\ldots,\vec{V_k})\kpw{i}\right)\\
-                                        &=L^i(a(\vec{V_1},\ldots,\vec{V_k}))
+  Jordan measure is a method to measure the size of an "arbitrary" shape, Because
+  a k-form can only measure the size of a parallelotope, and can't handle
+  arbitrary shapes.
+
+  \subsubsection{What is not Jordan measurable}%
+  \label{ssub:what_is_not_jordan_measurable}
+
+  $\Q\cap[0,1]$ is not Jordan measurable, because $\mu_{int}=0$, and
+  $\mu_{out}=1$, this is also because $\partial
+  \Q=\bar{\Q}\setminus\text{Int}{\Q}=\R$. Then the measure of the boundary is not
+  zero, this is an issue.
+
+  \subsubsection{Jordan measure of zero}%
+  \label{ssub:jordan_measure_of_zero}
+
+  We know that a set has Jordan measure of zero if we can completely cover it in
+  boxes, where the sum of the area of the boxes is less than some $\epsilon$.
+  Then we are able to make $\epsilon\ra0$, and thus the measure must also be
+  zero. This entails ensuring that the boxes completely cover the set, and that
+  we can make them as small as we want. For our homework we used the angle to
+  change the size of the boxes.
+
+  \subsubsection{Measurable by boundary}%
+  \label{ssub:measurable_by_boundary}
+
+  This is an IFF. If the set is measurable, then we can construct two coverings,
+  $B_{in}$ and $B_{out}$, where $B_{in}\subset\text{Int}(\U)$, and $B_{out}$
+  intersects $\bar{\U}$ non-trivially, i.e. also covers the boundary or it over
+  estimates. As we refine these coverings, they should both approach $\mu(\U)$.
+  Thus the difference between them will become less than $\epsilon$. The
+  difference between the two sets will be exactly boxes that contain $\partial
+  \U$, thus $\mu(\partial\U)<\epsilon$.
+
+  If the measure of the boundary is zero, then we extend the grid by the
+  hyper planes which define the sides of the boxes, thus effectively cutting the
+  boxes up. There are sets in this global grid, that are entirely within $\U$,
+  and then there are sets that cover $\bar{\U}$, the difference of these sets
+  will be a covering of $\partial \U$, not that it may not be the same covering
+  that we started with, but it will also be less than $\epsilon$, thus since the
+  difference of $\B_{out}$, and $\B_{in}$ must be less than $\epsilon$, since
+  this is true for all $\epsilon$, than $\U$ must me measurable.
+
+  \section{Riemann Integration}%
+  \label{sec:riemann_integration}
+
+  \subsection{Definition}%
+  \label{sub:definition}
+
+  \begin{definition}
+    We say that the function $f$ is Riemann-integrable over $\U$ if there exists
+    $I\in\R$ such that for all $\e>0$ there exists $\de>0$ such that for all
+    decompositions $\U_*$ with $s(\U_*)<\de$ and all sample points $\xi_*$ we
+    have
+    \[
+      \abs{RS(f,\U_*,\xi_*)}<\e
+    \]
+  \end{definition}
+
+  \begin{definition}
+    We say that the function $f$ is Riemann-integrable over $\U$ if for all
+    $\e>0$ there exists $\de>0$ such tat for all decompositions $\U_*$ and
+    $\widetilde{\U_*}$ with $s(\U_*),s(\widetilde{\U_*})<\de$ and all sample
+    points $\xi_*,\widetilde{\xi_*}$ we have
+    \[
+      \abs{RS(f,\U_*,\xi_*)-RS(f,\widetilde{\U_*},\widetilde{\xi_*})} < \e
+    \]
+  \end{definition}
+
+  \begin{theorem}
+    If $f$ is uniformly continuous over $\U$ then $f$ is Riemann integrable over
+    $\U$.
+  \end{theorem}
+
+  \begin{theorem}
+    $f$ is Riemann integrable iff the set of discontinuities is of measure zero.
+  \end{theorem}
+
+  \subsection{Show not integrable}%
+  \label{sub:show_not_integrable}
+
+  I would show this by contradiction, Assume that it is integrable, then we set
+  $\e<0.5$, then using the Cauchy definition, we select two partitions, and we
+  select the sample points $\xi_*$ to be rational values, and $\widetilde{\xi_*}$
+  to be irrational values. Thus when we use the Cauchy definition we see that we
+  will have a contradiction, thus the function is not Riemann integrable. This
+  only works for sure because we are able to pick any selection of sample points.
+
+  \subsection{Fundamental Theorem of Calculus}%
+  \label{sub:fundamental_theorem_of_calculus}
+
+  \begin{theorem}
+    Let $f:[a,b]\ra\R$ be continuously differentiable. Then
+    \[
+      \int_{x\in[a,b]}\pder{f}{x}dx=f(b)-f(a)
+    \]
+  \end{theorem}
+  \begin{proof}
+    Since $\pder{f}{x}$ is continuous we know it is Riemann-integrable over
+    $[a,b]$; let $I$ be the value of its Riemann integral over $[a,b]$. This
+    means that for each $\e$ there is $\de>0$ such that for all decompositions
+    $\U_*$ of $[a,b]$ with $s(\U_*)<\de$ and all sample points $\xi_*$ we have
+    \[
+      \left|RS(f',\U_*,\xi_*)-I\right|<\e
+    \]
+    Consider any subdivision points
+    \[
+      a=a_0<a_1<\ldots<a-p=b,
+    \]
+    with $a_{i+1}-a_i<\de$ for all $i$. Note that this gives us a decomposition
+    $\U_*$ of $[a,b]$ with $s(\U_*)<\de$. By the Mean Value Theorem there exists
+    $\xi_i\in(a_i,a_{i+1})$ such that
+    \[
+      \frac{f(a_{i+1})-f(a_i)}{a_{i+1}-a_i}=\pder{f}{x}(\xi_i)
+    \]
+    By design we have
+    \[
+      RS(f',\U_*,\xi_*)=f(b)-f(a)
+    \]
+    The overall conclusion is that for all $\e>0$ we have
+    \[
+      |(f(b)-f(a))-I|<\e
+    \]
+    In other words, $I=f(b)-f(a)$.
+  \end{proof}
+
+  \section{Universal Properties}%
+  \label{sec:univresal_properties}
+
+  \subsection{Exterior Product}%
+  \label{sub:exterior_product}
+
+  \begin{center}
+    \begin{tikzpicture}[scale=1, transform shape]
+      \node (a) at (0,3){$V\times\ldots\times V$};
+      \node (b) at (5,3){$\U$};
+      \node (c) at (0,0){$V\wedge\ldots\wedge V$};
+      \draw [->] (a) --node[above]{$\omega$} (b);
+      \draw [->] (a) --node[left]{$a$} (c);
+      \draw [->] (c) --node[below]{$\exists ! L$} (b);
+    \end{tikzpicture}
+  \end{center}
+
+  Let $V$ be a vector space. By the \textit{k-th exterior power of $V$} we mean a
+  vector space $E^k$ together with an alternating multi linear map
+  $a:V\times\ldots\times V\ra E^k$ (on $k$ copies of $V$) such that for each
+  alternating multi linear map $\omega:V\times\ldots\times V\ra \U$ there exists a
+  unique linear map $L:E^k\ra \U$ for which $\omega=L\circ a$.
+
+  \begin{proof}
+    The mapping $a$ is alternating and multilinear. We start our proof by
+    addressing the mapping $a$ in more detail.
+
+    Once a basis for $V$ is fixed, we have the decomposition
+    \begin{align*}
+      \vec{V_1}\wedge\ldots\wedge{V_k}=a(\vec{V_1},\ldots,\vec{V_k})=\sum a^{i_1\ldots
+      i_k}(\vec{V_1},\ldots,\vec{V_k})\partial_{i_1}\wedge\ldots\wedge\partial_{i_k}
+    \end{align*}
+    in which
+    \begin{align*}
+      a^{i_1\ldots
+      i_k}(\vec{V_1},\ldots,\vec{V_k})=\vec{V_1}\wedge\ldots\wedge\vec{V_k}(dx^{i_1},\ldots,dx^{i_k})
+    \end{align*}
+
+    However, each individual coordinate mapping $a^{i_1\ldots i_k}$ is itself
+    a k-form and can be expressed as
+    \begin{align*}
+      a^{i_1\ldots i_k}=\sum a^{i_1\ldots
+      i_k}(\partial_{j_1},\ldots,\partial_{j_k})dx^{j_1}\wedge\ldots\wedge
+      dx^{j_k}
+    \end{align*}
+    It now follows that
+    \begin{align*}
+      a^{i_1\ldots
+      i_k}(\vec{V_1},\ldots,\vec{V_k})=\vec{V_1}\wedge\ldots\wedge\vec{V_k}(dx^{i_1},\ldots,dx^{i_k})=dx^{i_1}\wedge\ldots\wedge
+      dx^{i_k}(\vec{V_1},\ldots,\vec{V_k})
+    \end{align*}
+    i.e. that $a^{i_1\ldots i_k}=dx^{i_1}\wedge\ldots\wedge dx^{i_k}$. We are
+    now ready to proceed with the main part of the proof.
+
+    To see that there is at most one mapping $L$ corresponding to a given
+    $\omega$ it suffices to observe that any such $L$ must satisfy
+    \begin{align*}
+      L(\partial_{i_1}\wedge\ldots\wedge
+      \partial_{i_k})=\omega(\partial_{i_1},\ldots,\partial_{i_k})
+    \end{align*}
+    The latter in fact, defines a unique linear map $L:\Lambda^k(V)\ra W$. It
+    remains to argue that $\omega=L\circ a$.
+
+    To do so it suffices to focus on the coordinate mappings $\omega^i :=
+    dy^i\circ\omega$ and $L^i:=dy^i\circ L$. As above, coordinate mappings are
+    k-forms and thus we may write
+    \begin{align*}
+      \omega^i=\sum \omega^i(\kp{i})\kdw{i}
+    \end{align*}
+    Upon evaluation we obtain
+    \begin{align*}
+      \omega^i(\vec{V_1},\ldots,\vec{V_k})&=\sum L^i(\kpw{i})a^{i_1\ldots i_k}(\vec{V_1},\vec{V_k})\\
+                                          &=L^i\left(\sum a^{i_1\ldots i_k}(\vec{V_1},\ldots,\vec{V_k})\kpw{i}\right)\\
+                                          &=L^i(a(\vec{V_1},\ldots,\vec{V_k}))
     \end{align*}
     that is, $\omega^i=L^i\circ a$ and $\omega=L\circ a$.
 
@@ -468,6 +470,46 @@ unique linear map $L:E^k\ra \U$ for which $\omega=L\circ a$.
   \subsection{Raising and Lowering indices}%
   \label{sub:raising_and_lowering_indices}
 
+  Raising and lowering indicies are methods for converting between the vector
+  space and the associtated covector space.
+  \begin{align*}
+    \flat&:V\ra V^*\\
+    \sharp&:V^*\ra V
+  \end{align*}
+
+  They can be defined as
+  \begin{align*}
+    \omega_i=g_{ij}V^j\leftrightarrow V^i=g^{ij}\omega_j
+  \end{align*}
+
+  To understand $T^{ab}=g^{ai}g^{bj}T_{ij}$ we begin with the universal
+  property.
+
+  \begin{center}
+    \begin{tikzpicture}[scale=1, transform shape]
+      \node (a) at (0,3){$V^*\times V^*$};
+      \node (b) at (5,3){$V\otimes V$};
+      \node (c) at (0,0){$T\in V^*\otimes V^*$};
+      \draw [->] (a) --node[above]{$\omega$} (b);
+      \draw [->] (a) --node[left]{$a$} (c);
+      \draw [->] (c) --node[below]{$\exists ! L$} (b);
+    \end{tikzpicture}
+  \end{center}
+
+  Thus we define $L(dx^i\otimes
+  dx^j)=\omega(dx_i,dx_j)=\left(dx^i\right)^\sharp\otimes\left(dx^j\right)^\sharp$.
+  Using this definition we we want to find $L(T)$, first we decompose $T$
+  into its basis.
+  \begin{align*}
+    L(T)&=L(\sum T_{ij}dx^i\otimes dx^j)\\
+        &=\sum T_{ij}L(dx^i\otimes dx^j)\\
+        &=\sum T_{ij}\left(dx^i\right)^\sharp\otimes\left(dx^j\right)^\sharp\\
+        &=\sum
+        T_{ij}\left(g^{ai}\partial_a\right)\otimes\left(g^{bj}\partial_j\right)\\
+        &=\sum \underbrace{T_{ij}g^{ai}g^{bj}}_{T^{ab}}\partial_a\otimes\partial_b
+  \end{align*}
+
+
   \section{Volume Forms}%
   \label{sec:volume_forms}
 
@@ -493,6 +535,27 @@ unique linear map $L:E^k\ra \U$ for which $\omega=L\circ a$.
       \vec{V_j})\right]}
     \]
   \end{corollary}
+
+  \begin{proof}
+    If $\left\{\kpn{n}\right\}$ basis forms a parallelotope of unit volume
+    which can be expressed as
+    $\omega\left(\kpn{n}\right)=1$ then
+    \begin{align*}
+      \omega\left(\vec{V_1},\ldots,\vec{V_n}\right)=\det\left[V_j^i\right]
+    \end{align*}
+    Then with $g$ $\left\{\kpn{n}\right\}$ is an orthonormal basis.
+    \begin{align*}
+      \left(\omega\left(\vec{V_1},\ldots\vec{V_n}\right)\right)^2
+      &=\left(\det\left[V_j^i\right]\right)^2\\
+      &={\det\left[V_j^i\right]}^T\cdot\det\left[V_j^i\right]\\
+      &=\det\left(\left[V_k^i\right]^T\cdot\left[V_j^i\right]\right)\\
+      &=\det\left(g\left(\vec{V_i},\vec{V_j}\right)\right)
+    \end{align*}
+  \end{proof}
+
+  This relates to $(1)$, because this is the same equation that we would get
+  using the new form of dot-product, and we would solve $(1)$, by using the
+  universal propery twice.
 
   \subsection{dvol}%
   \label{sub:_dvol}
@@ -528,17 +591,54 @@ unique linear map $L:E^k\ra \U$ for which $\omega=L\circ a$.
   There is also an equivalent representation that works for co-vectors. It is
   pretty much the same thing.
 
+  We will almost always be using $\star_{\dvol}$ so this always maps to
+  $\dvol$.
+
+  The method for relating to $(3)$ would be to just use the new dot-product to
+  show the orthonormal of the basis, then the second part is to use the
+  previous homework to express what $\star_{\dvol}(\kpn{n})$ should give us, then
+  just use the same dot-product to show that that is orthonormal.
+
   \subsection{Cross product}%
   \label{sub:cross_product}
 
   \subsubsection{What is it?}%
   \label{ssub:what_is_it_}
 
+  \begin{align*}
+    \vec{V_1}\times_g\vec{V_2}:={\left[\star_{\text{dvol}_g}(\vec{V_1}\wedge\vec{V_2})\right]}^\#
+  \end{align*}
+  And by definition we have
+  \begin{align*}
+    \dvol(\vec{V_1},\vec{V_2},\vec{W})=g(\vec{V_1}\times_g\vec{V_2},\vec{W})
+  \end{align*}
+  for all $\vec{W}$.
+
   \subsubsection{Does it have the properties we want?}%
   \label{ssub:does_it_have_the_properties_we_want_}
 
-  \subsubsection{5.10.4}%
-  \label{ssub:5_10_4}
+  This does have the properties that we want from Calc III.
+
+  Recal that $\vec{V_1}\wedge\vec{V_2}$ is zero only if $\vec{V_1}$ and
+  $\vec{V_2}$ are linearly dependent. It thus follows that
+  $\vec{V_1}\times_g\vec{V_2}\neq 0$ so long $\vec{V_1}$ and $\vec{V_2}$ are
+  not collinear. For the rest of the discussion suppose $\vec{V_1}$ and
+  $\vec{V_2}$ are independent. Feeding in $\vec{V_1}$ or $\vec{V_2}$ for
+  $\vec{W}$ gives $0$: this is why the direction of
+  $\vec{V_1}\times_g\vec{V_2}$ is orthogonal to the plane spanned by
+  $\vec{V_1}$ and $\vec{V_2}$. Also, feeding in $\vec{V_1}\times_g\vec{V_2}$
+  for $\vec{W}$ gives that $\left\{\va,\vb,\vxv\right\}$ is a positively
+  oriented basis. In addition, the very same formula shows that the volume of
+  the parallelotope spanned by $\left\{\va,\vb,\vxv\right\}$ is equal to the
+  square of the magintuede of $\vxv$. The volume in question is the product of
+  the height $\aabs{\vxv}_g$ and the area of the parellelogram spanned by
+  $\left\{\va,\vb\right\}$ by Corollary 2. Therefore we obtain
+  \begin{align*}
+    \aabs{\vxv}_g\cdot\text{Area}=\aabs{\vxv}^2_g\implies\text{Area}=\aabs{\vxv}_g
+  \end{align*}
+
+  The forumla for computing the cross product is a result of the the formula
+  for $\dvol$.
 
   \section{Category Theory}%
   \label{sec:category_theory}
