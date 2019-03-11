@@ -1,0 +1,1 @@
+/home/arden/Programming/latex/armath/armath.cls

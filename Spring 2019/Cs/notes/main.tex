@@ -1,0 +1,796 @@
+\documentclass[10pt]{armath}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{minted}
+\usepackage{multicol}
+% \usepackage[margin=1in]{geometry}
+
+\title{Computer Architecture Review}
+\author{Arden Rasmussen}
+\date{\today}
+
+\newcommand{\s}[1]{\mintinline{c}{#1}}
+\newcommand{\as}[1]{\mintinline{assembly}{#1}}
+
+\begin{document}
+\maketitle
+% \begin{multicols}{2}
+
+\section{Representing and Manipulating Information}%
+\label{sec:representing_and_manipulating_information}
+
+\subsection{Information Storage}%
+\label{sub:information_storage}
+
+Computers store data in blocks of 8bits or \textit{bytes}. These bytes are
+represented as a large array, where each element can be indexed individually.
+
+\subsubsection{Hexadecimal Notation}%
+\label{ssub:hexadecimal_notation}
+
+Instead of representing numbers from 0-9 hex represents them as 0-F. Its
+pretty straight forward
+
+\subsubsection{Data Sizes}%
+\label{ssub:data_sizes}
+
+The index of the memory is represented by a \textit{word}, thus the size of the
+memory is limited by the size of the word representation. Addresses can range
+from $0-2^w-1$, for a $w$-bit word size.
+
+\begin{center}
+  \begin{tabular}{c c}
+    C declaration & Bytes \\
+    \hline
+    \s{char} & 1\\
+    \s{short} & 2 \\
+    \s{int} & 4 \\
+    \s{long} & 8 \\
+    \s{char*} & 8 \\
+    \s{float} & 4 \\
+    \s{double} & 8\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Addressing and Byte Ordering}%
+\label{ssub:addressing_and_byte_ordering}
+
+There is little and big endian. Little endian puts the most significant byte
+last, and the big endian puts the most significant byte first. Almost
+everything uses little endian.
+
+\subsubsection{Representing Strings}%
+\label{ssub:representing_strings}
+
+Text data almost universally utilizes ASCII, and thus is more platform
+independent than byte data.
+
+\subsubsection{Representing Code}%
+\label{ssub:representing_code}
+
+Binary code is almost never compatible with another machine, or operating
+system. Thus most things must be compiled separately.
+
+\subsubsection{Introduction to Boolean Algebra}%
+\label{ssub:introduction_to_boolean_algebra}
+
+\begin{center}
+  \begin{tabular}{c c c}
+    \hline
+    not & \s{~} & \s{~p}\\
+    and & \s{&} & \s{p&q}\\
+    or & \s{|} & \s{p|q}\\
+    exclusive-or & \s{^} & \s{p^q}\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Bit-Level Operations in C}%
+\label{ssub:bit_level_operations_in_c}
+
+This is just using the boolean algebra to implement bitwise manipulation. It
+can be fast and useful for some purposes.
+
+\subsubsection{Logical Operations in C}%
+\label{ssub:logical_operations_in_c}
+
+\begin{center}
+  \begin{tabular}{c c c}
+    \hline
+    and & \s{&&} & \s{p&&q}\\
+    or & \s{||} & \s{p||q}\\
+    not & \s{!} & \s{!p}\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Shift Operations in C}%
+\label{ssub:shift_operations_in_c}
+
+There is right shift(\s{>>}) and left shift(\s{<<}). They in general move all
+the bits of some value by the provided count, then filling in the new bits
+with \s{0} most of the time. If you are using arithmetic right shift, then it
+will fill the new bits with a copy of the sign of that value. This is useful
+when it is necessary t preserve the sign of some number. Most implementations
+use arithmetic right shift for signed, and logical for unsigned , but not all,
+so be warned.
+
+\subsection{Integer Representations}%
+\label{sub:integer_representations}
+
+\subsubsection{Integral Data Types}%
+\label{ssub:integral_data_types}
+
+Signed numbers support negative values, and unsigned do not. This usually means
+that unsigned get an additional bit for the actual value, meaning that they can
+become much larger.
+
+\subsubsection{Unsigned Encodings}%
+\label{ssub:unsigned_encodings}
+
+This is just as you would interpret a binary number.
+\begin{align*}
+  \sum_{i=0}^{w-1}x_i2^i
+\end{align*}
+
+\subsubsection{Two's-Complement Encodings}%
+\label{ssub:two_s_complement_encodings}
+
+This is the method for storing signed integers, The idea is to have a sign bit
+at the beginning, then add the rest of the bits as an unsigned integer to the
+weight of that signed bit.
+\begin{align*}
+  -x_{w-1}2^{w-1}+\sum_{i=0}^{w-2}x_i2^i
+\end{align*}
+
+\subsubsection{Conversions between Signed and Unsigned}%
+\label{ssub:conversions_between_signed_and_unsigned}
+
+Both of these leave the bit representation unchanged and just change how it is
+interpreted.
+
+Converting from two's complement to unsigned. For $x$ such that $TMin_w\leq
+x\leq TMax_w$
+\begin{align*}
+  \begin{cases}
+    x+2^w & x<0\\
+    x & x\geq 0
+  \end{cases}
+\end{align*}
+
+Converting from unsigned to two's complement. For $u$ such that $0\leq u\leq
+UMax_w$
+\begin{align*}
+  \begin{cases}
+    u & u \leq TMax_w\\
+    y-2^w & u > TMax_w
+  \end{cases}
+\end{align*}
+
+\subsubsection{Signed versus Unsigned in C}%
+\label{ssub:signed_versus_unsigned_in_c}
+
+C allows for both signed and unsigned, and can mostly handle the conversations
+between the two but there are some cases when issues will happen. For example
+\s{-1 < 0U} $\rightarrow$ \s{0}. Because the bit representation of \s{-1} is a
+very large number if it were to be interpreted as an unsigned integer.
+
+\subsubsection{Expanding the Bit Representation of a Number}%
+\label{ssub:expanding_the_bit_representation_of_a_number}
+
+Converting from an unsigned number to a larger data type, we simply add leading
+zeros. Converting a two's complement number to a larger data type, we simply
+add leading copies of the most significant bit.
+
+\subsubsection{Truncating Numbers}%
+\label{ssub:truncating_numbers}
+
+Truncation of an unsigned number is just done by cutting off all of the bits
+that don't fit into the new representation.
+
+Truncation of a two's complement number is a similar practice, but also
+copying the sign bit to the new most significant bit.
+
+\subsection{Integer Arithmetic}%
+\label{sub:integer_arithmetic}
+
+\subsubsection{Unsigned Addition}%
+\label{ssub:unsigned_addition}
+
+For $x$ and $y$ such that $0\leq x,y <2^w$
+\begin{align*}
+  x+_w^uy=\begin{cases}
+    x+y & x+y < 2^w  \text{  normal}\\
+    x + y - 2^w & 2^w \leq x+y < 2^{w+1}  \text{  overflow}
+  \end{cases}
+\end{align*}
+
+Unsigned negation
+for any number $x$ such that $0\leq x<2^w$, its $w$-bit unsigned negation
+$-_w^ux$ is given as
+\begin{align*}
+  -_w^ux=\begin{cases}
+    x & x=0\\
+    2^w-x & x>0
+  \end{cases}
+\end{align*}
+
+\subsubsection{Two's-Complement Addition}%
+\label{ssub:two_s_complement_addition}
+
+For integer values $x$ and $y$ in range $-2^{w-1}\leq x,y \leq 2^{w-1}-1$
+\begin{align*}
+  x+_w^ty=\begin{cases}
+    x+y-2^w & 2^{w-1}\leq x+y\text{  positive overflow}\\
+    x+y & -2^{w-1}\leq x+y < w^{w-1}\text{  normal}\\
+    x+y+2^w & x+y < -2^{w-1}\text{  negative overflow}
+  \end{cases}
+\end{align*}
+
+\subsubsection{Two's-Complement Negation}%
+\label{ssub:two_s_complement_negation}
+
+For $x$ in the range $TMin_w\leq x\leq TMax_w$, its two's complement negation
+$-_w^tx$ is given as
+\begin{align*}
+  -_w^tx=\begin{cases}
+    TMin_w & x=TMin_w\\
+    -x & x>TMin_w
+  \end{cases}
+\end{align*}
+
+\subsubsection{Unsigned Multiplication}%
+\label{ssub:unsigned_multiplication}
+
+For $x$ and $y$ such that $0\leq x,y\leq UMax_w$
+\begin{align*}
+  x *_w^uy=(x\cdot y)\mod 2^w
+\end{align*}
+
+\subsubsection{Two's-Complement Multiplication}%
+\label{ssub:two_s_complement_multiplication}
+
+For $x$ and $y$ such that $TMin_w\leq x,y \leq TMax_w$
+\begin{align*}
+  x*_w^ty=U2T_w((x\cdot y)\mod 2^w)
+\end{align*}
+Basically do the unsigned multiplication and then convert to a signed integer.
+
+\subsubsection{Multiplying by Constants}%
+\label{ssub:multiplying_by_constants}
+
+Multiplying by powers of $2$ is the same as shifting the bits to the left by
+that power.
+
+\subsubsection{Dividing by Power of 2}%
+\label{ssub:dividing_by_power_of_2}
+
+Dividing by a power of two is just shifting the bits by that power to the
+right.
+
+\subsection{Floating Point}%
+\label{sub:floating_point}
+
+\subsubsection{IEEE Floating-Point Representation}%
+\label{ssub:ieee_floating_point_representation}
+
+The IEEE floating-point standard represents a number in a form $V=(-1)^s\times
+M\times 2^E$.
+\begin{itemize}
+  \item The sign $s$ determines weather the number is negative or positive,
+    where the interpretation of the sign bit for numeric value $0$ is handled
+    as a special case.
+  \item The significand $M$ is a fractional binary number that ranges either
+    between $1$ and $2-\epsilon$ or between $0$ and $1-\epsilon$.
+  \item The exponent $E$ weights the value by a (possibly negative) power of
+    $2$.
+\end{itemize}
+
+This splits the bits into three blocks, the sign bit. The $k$-bit exponent, and
+the $n$-bit fraction.
+
+\paragraph{Normalized Values}%
+\label{par:normalized_values}
+
+This is when the exponent is not all zeros and not all ones. When this is the
+case the value of the exponent $E=e-Bias$ where $e$ is the unsigned number
+represented by the bits, and $Bias=2^{k-1}-1$. The fraction field is
+interpreted as representing the fractional value $f$, where $0\leq f<1$, then
+the significand is defined as $M=1+f$
+
+\paragraph{Denormalized Values}%
+\label{par:denormalized_values}
+
+When the exponent field is all zeros, then $E=1-Bias$, and $M=f$
+
+\paragraph{Special Values}%
+\label{par:special_values}
+
+If the exponent is all ones, and the fraction is all zeros, then this is
+$\infty$, if the fraction is not all zeros, then the value is $Nan$.
+
+\subsubsection{Rounding}%
+\label{ssub:rounding}
+
+There are four methods of rounding. Round-to-event, Round-toward-zero,
+Round-down, Round-up.
+
+\subsubsection{Floating Point in C}%
+\label{ssub:floating_point_in_c}
+
+C provides \s{float} and \s{double}, and uses round-to-event. And it will
+appropriately handle the conversion between integers and floating point with
+possible rounding or overflow appropriately.
+
+\section{Machine-Level Representation of Programs}%
+\label{sec:machine_level_representation_of_programs}
+
+\subsection{Program Encodings}%
+\label{sub:program_encodings}
+
+The compiler takes the C code through several levels of abstraction before it
+can generate the executable.
+
+\subsubsection{Machine-Level Code}%
+\label{ssub:machine_level_code}
+
+The machine level code is dependent on the instruction set architecture. These
+ISAs describe how the program behaves for every given instruction. The compiler
+converts C into assembly code. Assembly code is just one step up from the
+binary, but is much more readable.
+
+\subsubsection{Notes on Formatting}%
+\label{ssub:notes_on_formatting}
+
+Add comments, it makes things easier.
+
+\subsection{Data Formats}%
+\label{sub:data_formats}
+
+\begin{center}
+  \begin{tabular}{c c c c}
+    C & Intel & Assembly Suffix & Bytes\\
+    \hline
+    \s{char} & Byte & \s{b} & 1\\
+    \s{short} & Word & \s{w} & 2\\
+    \s{int} & Double Word & \s{l} & 4\\
+    \s{long} & Quad Word & \s{q} & 8\\
+    \s{char*} & Quad Word & \s{q} & 8\\
+    \s{float} & Single Precision & \s{s} & 4\\
+    \s{double} & Double Precision & \s{l} & 8\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Access Information}%
+\label{sub:access_information}
+
+Registers are used to temporally store values, there are names for accessing
+only subsections of a register, but it all stores the same information.
+
+\begin{center}
+  \begin{tabular}{l l l l l}
+    63 & 31 & 15 & 7 & Type\\
+    \hline
+    \s{rax} & \s{eax} & \s{ax} & \s{al} & Return value\\
+    \s{rbx} & \s{ebx} & \s{bx} & \s{bl} & Callee saved\\
+    \s{rcx} & \s{ecx} & \s{cx} & \s{cl} & 4th argument\\
+    \s{rdx} & \s{edx} & \s{dx} & \s{dl} & 3rd argument\\
+    \s{rsi} & \s{esi} & \s{si} & \s{sil} & 2nd argument\\
+    \s{rdi} & \s{edi} & \s{di} & \s{dil} & 1st argument\\
+    \s{rbp} & \s{ebp} & \s{bp} & \s{bpl} & Callee saved\\
+    \s{rsp} & \s{esp} & \s{sp} & \s{spl} & Stack pointer\\
+    \s{r8} & \s{r8d} & \s{r8w} & \s{r8b} & 5th argument\\
+    \s{r9} & \s{r9d} & \s{r9w} & \s{r9b} & 6th argument\\
+    \s{r10} & \s{r10d} & \s{r10w} & \s{r10b} & Caller saved\\
+    \s{r11} & \s{r11d} & \s{r11w} & \s{r11b} & Caller saved\\
+    \s{r12} & \s{r12d} & \s{r12w} & \s{r12b} & Callee saved\\
+    \s{r13} & \s{r13d} & \s{r13w} & \s{r13b} & Callee saved\\
+    \s{r14} & \s{r14d} & \s{r14w} & \s{r14b} & Callee saved\\
+    \s{r15} & \s{r15d} & \s{r15w} & \s{r15b} & Callee saved\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Operand Specifiers}%
+\label{ssub:operand_specifiers}
+
+\begin{center}
+  \begin{tabular}{l l l l}
+    Type & Form & Operand Value & Name\\
+    \hline
+    Immediate & $\$Imm$ & $Imm$ & Immediate\\
+    Register & $r_a$ & $R[r_a]$ & Register\\
+    Memory & $Imm$ & $M[Imm]$ & Absolute\\
+    Memory & $(r_a)$ & $M[R[r_a]]$ & Indirect\\
+    Memory & $Imm(r_b)$ & $M[Imm+R[r_b]]$ & Base + Displacement\\
+    Memory & $(r_b,r_i)$ & $M[R[r_b] + R[r_i]]$ & Indexed\\
+    Memory & $Imm(r_b,r_i)$ & $M[Imm+R[r_b] + R[r_i]]$ & Indexed\\
+    Memory & $(,r_i,s)$ & $M[R[r_i]\cdot s]$ & Scaled Indexed\\
+    Memory & $Imm(,r_i,s)$ & $M[Imm+R[r_i]\cdot s]$ & Scaled Indexed\\
+    Memory & $(r_b,r_i,s)$ & $M[R[r_b]+R[r_i]\cdot s]$ & Scaled Indexed\\
+    Memory & $Imm(r_b,r_i,s)$ & $M[Imm+R[r_b]+R[r_i]\cdot s]$ & Scaled Indexed\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Data Movement Instructions}%
+\label{ssub:data_movement_instructions}
+
+\begin{center}
+  \begin{tabular}{l l l}
+    \hline
+    Instruction & Effect & Description\\
+    \hline
+    \hline
+    \s{MOV} & $S, D\quad D\leftarrow S$ & Move\\
+    \s{movb} & & Move Byte\\
+    \s{movw} & & Move Word\\
+    \s{movl} & & Move Double Word\\
+    \s{movq} & & Move Quad Word\\
+    \hline
+    \s{movabsq} & $I,R\quad R\leftarrow I$ & Move absolute quad word\\
+    \hline
+    \s{MOVZ} & $S,R\quad R\leftarrow\text{ZeroExtend}(S)$ & Move with zero
+    extension\\
+    \s{movzbw} & & Move zero-extended byte to word\\
+    \s{movzbl} & & Move zero-extended byte to double word\\
+    \s{movzbq} & & Move zero-extended byte to quad word\\
+    \s{movzwl} & & Move zero-extended word to double word\\
+    \s{movzwq} & & Move zero-extended word to quad word\\
+    \s{movzlq} & & Move zero-extended double word to quad word\\
+    \hline
+    \s{MOVS} & $S,R\quad R\leftarrow\text{SignExtend}(S)$ & Move with sign
+    extension\\
+    \s{movsbw} & & Move sign-extended byte to word\\
+    \s{movsbl} & & Move sign-extended byte to double word\\
+    \s{movsbq} & & Move sign-extended byte to quad word\\
+    \s{movswl} & & Move sign-extended word to double word\\
+    \s{movswq} & & Move sign-extended word to quad word\\
+    \s{movslq} & & Move sign-extended double word to quad word\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Pushing and Popping Stack Data}%
+\label{ssub:pushing_and_popping_stack_data}
+
+\begin{center}
+  \begin{tabular}{l l l}
+    Instruction & Effect & Description\\
+    \hline
+    \s{pushq} $S$ & $R[\%rsp]\leftarrow R[\%rsp]-8$ & Push quad word\\
+                  & $M[R[\%rsp]]\leftarrow S$ & \\
+    \s{popq} $D$ & $D\leftarrow M[R[\%rsp]]$ & Pop quad word\\
+                 & $R[\%rsp]\leftarrow R[\%rsp] + 8$ &\\
+                 \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Arithmetic and Logical Operations}%
+\label{sub:arithmetic_and_logical_operations}
+
+\begin{center}
+  \begin{tabular}{l l l}
+    \hline
+    Instruction & Effect & Description\\
+    \hline
+    \hline
+    \s{leaq} $S,D$ & $D\leftarrow \&S$ & Load effective address\\
+    \hline
+    \s{INC} $D$ & $D\leftarrow D+1$ & Increment\\
+    \s{DEC} $D$ & $D\leftarrow D-1$ & Decrement\\
+    \s{Neg} $D$ & $D\leftarrow -D$ & Negate\\
+    \s{Not} $D$ & $D\leftarrow ~D$ & Complement\\
+    \hline
+    \s{ADD} $S,D$ & $D\leftarrow D+S$ & Add\\
+    \s{SUB} $S,D$ & $D\leftarrow D-S$ & Subtract\\
+    \s{IMUL} $S,D$ & $D\leftarrow D*S$ & Multiply\\
+    \s{XOR} $S,D$ & $D\leftarrow D\wedge S$ & Exclusive-or\\
+    \s{OR} $S,D$ & $D\leftarrow D|S$ & Or\\
+    \s{AND} $S,D$ & $D\leftarrow D\&S$ & And\\
+    \hline
+    \s{SAL} $k,D$ & $D\leftarrow D<<k$ & Left shift\\
+    \s{SHL} $k,D$ & $D\leftarrow D<<k$ & Left shift\\
+    \s{SAR} $k,D$ & $D\leftarrow D>>_Ak$ & Arithmetic right shift\\
+    \s{SHR} $k,D$ & $D\leftarrow D>>_Lk$ & Logical right shift\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Special Arithmetic Operations}%
+\label{sub:special_arithmetic_operations}
+
+\begin{center}
+  \begin{tabular}{l l l}
+    \hline
+    Instruction & Effect & Description\\
+    \hline
+    \hline
+    \s{imulq} $S$ & $R[\%rdx]:R[\%rax]\leftarrow S\times R[\%rax]$ & Signed
+    full multiply\\
+    \s{mulq} $S$ & $R[\%rdx]:R[\%rax]\leftarrow S\times R[\%rax]$ &Unsigned
+    full multiply\\
+    \s{cqto} & $R[\%rdx]:R[\%rax]\leftarrow \text{SignExtend}(R[\%rax])$ &
+    Convert to oct word\\
+    \s{idivq} $S$ & $R[\%rdx]\leftarrow R[\%rdx]:R[\%rax]\mod S$ & Signed
+    divide\\
+                  & $R[\%rdx]\leftarrow R[\%rdx]:R[\%rax]\div S$ & \\
+    \s{divq} $S$ & $R[\%rdx]\leftarrow R[\%rdx]:R[\%rax]\mod S$ &Unsigned
+    divide\\
+                 & $R[\%rdx]\leftarrow R[\%rdx]:R[\%rax]\div S$ & \\
+                 \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Control}%
+\label{sub:control}
+
+\subsubsection{Condition Codes}%
+\label{ssub:condition_codes}
+
+\begin{description}
+  \item[\s{CF}] Carry flag. The most recent operation generated a carry out of
+    the most significant bit. Used to detect overflow for unsigned operations.
+  \item[\s{ZF}] Zero flag. The most recent operation yielded zero.
+  \item[\s{SF}] Sign flag. The most recent operation yielded a negative value.
+  \item[\s{OF}] Overflow flag. The most recent operation caused a two's
+    complement overflow--either negative or positive.
+\end{description}
+
+Note that the \s{leaq} operation does not alter condition codes, but all other
+arithmetic operations do.
+
+There are also two instructions that set the condition codes without altering
+the registers.
+
+\begin{center}
+  \begin{tabular}{l l l}
+    Instruction & Based on & Description\\
+    \hline
+    \s{CMP} & $S_1,S_2\quad S_2-S_1$ & Compare\\
+    \s{TEST} & $S_1,S_2\quad S_1 \& S_2$ & Test\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Accessing the Condition Codes}%
+\label{ssub:accessing_the_condition_codes}
+
+The \s{SET} instruction is used to get the values stored in the condition
+codes.
+
+\begin{center}
+  \begin{tabular}{l l l l}
+    Instruction & Synonym & Effect & Set condition\\
+    \hline
+    \s{sete} $D$ & \s{setz} & $D\leftarrow ZF$ & Equal/Zero\\
+    \s{setne} $D$ & \s{setnz} & $D\leftarrow ~ZF$ & Note Equal/Not Zero\\
+    \s{sets} $D$ & & $D\leftarrow SF$ & Negative\\
+    \s{setns} $D$ & & $D\leftarrow ~SF$ & Nonnegative\\
+    \s{setg} $D$ & \s{setnle} & $D\leftarrow ~(SF\wedge OF)\&~ZF$ & Greater
+    (signed $>$)\\
+    \s{setge} $D$ & \s{setnl} & $D\leftarrow ~(SF\wedge OF)$ & Greater or equal
+    (signed $\geq$)\\
+    \s{setl} $D$ & \s{setnge} & $D\leftarrow SF\wedge OF$ &Less
+    (signed $<$)\\
+    \s{setle} $D$ & \s{setng} & $D\leftarrow (SF\wedge OF) | ZF$ & Less or equal
+    (signed $\leq$)\\
+    \s{seta} $D$ & \s{setnbe} & $D\leftarrow ~CF\&~ZF$ & Above (unsigned $>$)\\
+    \s{setae} $D$ & \s{setnb} & $D\leftarrow ~CF$ & Above or equal (unsigned
+    $\geq$)\\
+    \s{setb} $D$ & \s{setnae} & $D\leftarrow CF$ & Below (unsigned $<$)\\
+    \s{setbe} $D$ & \s{setna} & $D\leftarrow CF|ZF$ & Below or equal (unsigned
+    $\leq$)\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Jump Instructions}%
+\label{ssub:jump_instructions}
+
+The jump instruction causes the program execution to change to a new part of
+the code.
+
+\begin{center}
+  \begin{tabular}{l l l l}
+    Instruction & Synonym & Jump condition & Description\\
+    \hline
+    \s{jmp} $Label$ & & 1 & Direct Jump\\
+    \s{jmp} $*Operand$ & & 1 & Indirect Jump\\
+    \s{je} $Label$ & \s{jz} & \s{ZF} & Equal/Zero\\
+    \s{jne} $Label$ & \s{jnz} & \s{~ZF} & Not Equal/Not Zero\\
+    \s{js} $Label$ & & \s{SF} & Negative\\
+    \s{jns} $Label$ & & \s{~SF} & Nonegative\\
+    \s{jg} $Label$ & \s{jnle} & $~(SF\wedge OF)\&~ZF$ & Greater
+    (signed $>$)\\
+    \s{jge} $Label$ & \s{jnl} & $~(SF\wedge OF)$ & Greater or equal
+    (signed $\geq$)\\
+    \s{jl} $Label$ & \s{jnge} & $SF\wedge OF$ &Less
+    (signed $<$)\\
+    \s{jle} $Label$ & \s{jng} & $(SF\wedge OF) | ZF$ & Less or equal
+    (signed $\leq$)\\
+    \s{ja} $Label$ & \s{jnbe} & $~CF\&~ZF$ & Above (unsigned $>$)\\
+    \s{jae} $Label$ & \s{jnb} & $~CF$ & Above or equal (unsigned
+    $\geq$)\\
+    \s{jb} $Label$ & \s{jnae} & $CF$ & Below (unsigned $<$)\\
+    \s{jbe} $Label$ & \s{jna} & $CF|ZF$ & Below or equal (unsigned
+    $\leq$)\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Jump Instruction Encodings}%
+\label{ssub:jump_instruction_encodings}
+
+Most jump instructions use relative jumps, they jump based upon the difference
+between the target and the instruction following the jump. Then there is the
+absolute, where the address is the absolute position of the next instruction.
+
+\subsubsection{Implementing Conditional Branches with Conditional Control}%
+\label{ssub:implementing_conditional_brances_with_conditional_control}
+
+The most general way of implementing conditional code in assembly is to use
+conditional jumps. If some condition has been met, then the jump is made
+otherwise the jump is not executed.
+
+\subsubsection{Implementing Conditional Branches with Conditional Moves}%
+\label{ssub:implementing_conditional_brances_with_conditional_moves}
+
+This method is to compute both results of some conditional, then depending of
+the result of the condition save that value. This is very efficient, with the
+exception of when there is a lot of computation in the condition.
+
+\subsubsection{Loops}%
+\label{ssub:loops}
+
+\paragraph{Do-While Loops}%
+\label{par:do_while_loops}
+
+This executes the statement, evaluates the test expression and continues the
+loop if the evaluation result is nonzero.
+
+\paragraph{While Loops}%
+\label{par:while_loops}
+
+This must evaluate the test expression first, then if the evaluation result is
+nonzero, then it enters the loop. Once it enters the loop it acts the exact
+same as a do-while loop.
+
+\subsubsection{Switch Statements}%
+\label{ssub:switch_statements}
+
+These are great. They are often implement through the use of a jump table. This
+is a table where the entry $i$ is the address of the instruction that should be
+preformed when the switch index is equal to $i$. Thus there are no conditional
+statements that are being evaluated, there is only jumping to a position based
+upon the value of the index.
+
+\subsection{Procedures}%
+\label{sub:procedures}
+
+There are three main parts of a procedure. Passing control, Passing data, and
+Allocating and deallocating memory.
+
+\subsubsection{The Run-Time Stack}%
+\label{ssub:the_run_time_stack}
+
+A \textit{stack frame} is a block on the stack that is specifically allocated
+for each procedure. The stack frame is the section of the stack that stores any
+additional local variable, the arguments, the saved registers, and the return
+address for the callee function.
+
+\subsubsection{Control Transfer}%
+\label{ssub:control_transfer}
+
+Passing control involves simply setting the program counter to the starting
+address for the code of the procedure.
+
+\begin{center}
+  \begin{tabular}{l l}
+    Instruction & Description\\
+    \hline
+    \s{call} $Label$ & Procedure call\\
+    \s{call} $*Operand$ & Procedure call\\
+    \s{ret} & Return from call\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Data Transfer}%
+\label{ssub:data_transfer}
+
+Argument data is passed through registers, and the return value is stored in
+\s{rax}. If there are more than six arguments then the additional ones are
+passed on the stack.
+
+\subsubsection{Local Storage on the Stack}%
+\label{ssub:local_storage_on_the_stack}
+
+Typically local variables are stored in the stack frame if there is not enough
+registers to handle all of them.
+
+\subsubsection{Local Storage in Registers}%
+\label{ssub:local_storage_in_registers}
+
+The registers are a constant source of data, and are accessible by any
+procedure. Thus we need to save the values in the register such that the called
+function does not disrupt the values that the callee procedure has stored in
+those registers. \s{rbx}, \s{rbp}, and \s{r12}-\s{r15}, these is called
+callee-saved registers, because it is up to the callee to preserve the values
+of the registers. All other registers are caller saved.
+
+\subsubsection{Recursive Procedures}%
+\label{ssub:recursive_procedures}
+
+Recursive calls is handled by just creating a new stack frame for each
+recursive depth, such that one does not interfere with another.
+
+\subsection{Array Allocation and Access}%
+\label{sub:array_allocation_and_access}
+
+\subsubsection{Basic Principles}%
+\label{ssub:basic_principles}
+
+Arrays are stored in contiguous lengths of memory. Using this the memory
+referencing instructions are designed to simplify array access.
+
+\subsubsection{Pointer Arithmetic}%
+\label{ssub:pointer_arithmetic}
+
+This is just explaining how pointers work, they are the exact same as arrays
+just with some slightly different notation.
+
+\subsubsection{Nested Arrays}%
+\label{ssub:nested_arrays}
+
+Nested arrays are still stored contiguously in memory, meanings that the first
+row is immediately followed by the second and so on. This makes accessing the
+values from assembly very simple because we just dereference the value of
+$A[i][j] = A[W*i+j]$, where $W$ is the width of the array.
+
+\subsubsection{Fixed-Size Arrays}%
+\label{ssub:fixed_size_arrays}
+
+The C compiler is able to make many optimizations on fixed size arrays, and so
+it is preferable to use these when possible.
+
+\subsubsection{Variable-Size Arrays}%
+\label{ssub:variable_size_arrays}
+
+Variable sized arrays are not stored on the stack, because they must be done
+using \s{malloc}, so they are instead stored on the heap.
+
+\subsection{Heterogeneous Data Structures}%
+\label{sub:heterogeneous_data_structures}
+
+\subsubsection{Structures}%
+\label{ssub:structures}
+
+The assembly implementation of a \s{struct} is similar to that of an array. All
+values are stored in contiguous region of memory and a pointer to a structure
+is the address of its first byte. The compiler maintains information about each
+structure type indicating the byte offset of each field. To access elements,
+the compiler generates the appropriate offset to the address of that value in
+the structure.
+
+\subsubsection{Unions}%
+\label{ssub:unions}
+
+\s{union} is a method to store any number of types in the same block of memory.
+This can greatly save on memory, if only one value is saved at a time. One
+important thing is to be able to interpret what type is currently stored in the
+union.
+
+\subsubsection{Data Alignment}%
+\label{ssub:data_alignment}
+
+Many computer systems require the data to be aligned and must be a multiple of
+some $K$ (2,4,8). These requirements are for the sake of hardware. This
+alignment means that if dome data type takes less than the requirement then
+empty bytes are inserted in order to make it fill the specified alignment.
+
+% \end{multicols}
+\end{document}
