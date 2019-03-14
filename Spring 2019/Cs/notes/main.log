@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  10 MAR 2019 21:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  14 MAR 2019 10:18
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -432,11 +432,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \MPnumerator=\count150
 \makeMPintoPDFobject=\count151
 \everyMPtoPDFconversion=\toks33
-)
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 \openout5 = `main.pyg'.
 
- (./_minted-main/default-pyg-prefix.pygstyle) (./_minted-main/default.pygstyle)
 
+(./_minted-main/default-pyg-prefix.pygstyle) (./_minted-main/default.pygstyle)
 (./_minted-main/6EF9AA8C5BA3356EC387AD031B5F84B4042D2615758B6C3F03C186B02CFC62B
 2.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
@@ -541,7 +541,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 
 
 (./_minted-main/168CBB42AB38EED5E9DFB44BFF9F4BDA042D2615758B6C3F03C186B02CFC62B
-2.pygtex) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+2.pygtex)
 \openout5 = `main.pyg'.
 
 
@@ -556,7 +556,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 
 
 (./_minted-main/897316929176464EBC9AD085F31E7284042D2615758B6C3F03C186B02CFC62B
-2.pygtex)
+2.pygtex) [2]
 \openout5 = `main.pyg'.
 
 
@@ -571,7 +571,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 
 
 (./_minted-main/EB844645E8E61DE0A4CF4B991E65E63E042D2615758B6C3F03C186B02CFC62B
-2.pygtex) [2] [3]
+2.pygtex) [3]
 \openout5 = `main.pyg'.
 
 
@@ -581,7 +581,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 
 
 (./_minted-main/40BC979FC51C312C66F13621C9C53E84042D2615758B6C3F03C186B02CFC62B
-2.pygtex)
+2.pygtex) [4]
 \openout5 = `main.pyg'.
 
 
@@ -971,7 +971,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 
 
 (./_minted-main/42BB81BD475D1FD99FE14E6A78A2D10B042D2615758B6C3F03C186B02CFC62B
-2.pygtex) [4]
+2.pygtex) [5]
 \openout5 = `main.pyg'.
 
 
@@ -1072,14 +1072,10 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 
 (./_minted-main/204EB333A5AF58C977C6EF9F8F38E98C042D2615758B6C3F03C186B02CFC62B
 2.pygtex)
-Overfull \hbox (40.7574pt too wide) in paragraph at lines 423--455
+Overfull \hbox (40.7574pt too wide) in paragraph at lines 458--490
  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
 \openout5 = `main.pyg'.
 
 
@@ -1164,7 +1160,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 (./_minted-main/E0C2579C6E0F00B4296530D4AEAB6946042D2615758B6C3F03C186B02CFC62B
-2.pygtex)
+2.pygtex) [6]
 \openout5 = `main.pyg'.
 
 
@@ -1190,11 +1186,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 (./_minted-main/C5696F6E08226A8D7FFF793CC0AF20DD042D2615758B6C3F03C186B02CFC62B
 2.pygtex)
-Overfull \hbox (10.02367pt too wide) in paragraph at lines 507--526
+Overfull \hbox (10.02367pt too wide) in paragraph at lines 542--561
  [] 
  []
 
-[6]
 \openout5 = `main.pyg'.
 
 
@@ -1344,7 +1339,7 @@ Overfull \hbox (10.02367pt too wide) in paragraph at lines 507--526
 
 
 (./_minted-main/85B13439A5E752A5248F7095FC21ECD5042D2615758B6C3F03C186B02CFC62B
-2.pygtex)
+2.pygtex) [7]
 \openout5 = `main.pyg'.
 
 
@@ -1484,19 +1479,18 @@ Overfull \hbox (10.02367pt too wide) in paragraph at lines 507--526
 
 
 (./_minted-main/76D73406422B71166C6542FD59849EF3042D2615758B6C3F03C186B02CFC62B
-2.pygtex) [7]
-Overfull \hbox (1.97069pt too wide) in paragraph at lines 635--638
+2.pygtex)
+Overfull \hbox (1.97069pt too wide) in paragraph at lines 670--673
  \OT1/cmr/m/n/10 2.6.5.\OT1/cmr/m/it/10 Implementing Con-di-tional Branches wit
 h Con-di-tional Con-trol.[] \OT1/cmr/m/n/10 The most gen-
  []
 
-
-Overfull \hbox (2.47777pt too wide) in paragraph at lines 688--690
+[8]
+Overfull \hbox (2.47777pt too wide) in paragraph at lines 723--725
  \OT1/cmr/m/n/10 2.7.2.\OT1/cmr/m/it/10 Control Trans-fer.[] \OT1/cmr/m/n/10 Pa
 ss-ing con-trol in-volves sim-ply set-ting the pro-gram counter
  []
 
-[8]
 \openout5 = `main.pyg'.
 
 
@@ -1536,7 +1530,7 @@ ss-ing con-trol in-volves sim-ply set-ting the pro-gram counter
 
 
 (./_minted-main/26ABAD7716E043534C0470E5EEDDCAEA042D2615758B6C3F03C186B02CFC62B
-2.pygtex)
+2.pygtex) [9]
 \openout5 = `main.pyg'.
 
 
@@ -1551,18 +1545,18 @@ ss-ing con-trol in-volves sim-ply set-ting the pro-gram counter
 
 
 (./_minted-main/A59C7454298D67293080970E1168A133042D2615758B6C3F03C186B02CFC62B
-2.pygtex) [9] [10] (./main.aux)
+2.pygtex) [10] (./main.aux)
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
  7548 strings out of 494847
  176461 string characters out of 6179080
- 302811 words of memory out of 5000000
+ 302975 words of memory out of 5000000
  9990 multiletter control sequences out of 15000+600000
  9562 words of font info for 38 fonts, out of 8000000 for 9000
  220 hyphenation exceptions out of 8191
- 37i,16n,35p,814b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,16n,35p,814b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
@@ -1575,7 +1569,7 @@ msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb>
-Output written on main.pdf (10 pages, 186714 bytes).
+Output written on main.pdf (10 pages, 187529 bytes).
 PDF statistics:
  85 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream

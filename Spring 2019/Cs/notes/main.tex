@@ -32,6 +32,41 @@ represented as a large array, where each element can be indexed individually.
 Instead of representing numbers from 0-9 hex represents them as 0-F. Its
 pretty straight forward
 
+\begin{center}
+  \begin{tabular}{c c c}
+    Decimal & Hex & Binary\\
+    \hline
+    0 & 0 & 0000\\
+    1 & 1 & 0001\\
+    2 & 2 & 0010\\
+    3 & 3 & 0011\\
+    4 & 4 & 0100\\
+    5 & 5 & 0101\\
+    6 & 6 & 0110\\
+    7 & 7 & 0111\\
+    8 & 8 & 1000\\
+    9 & 9 & 1001\\
+    10 & A & 1010\\
+    11 & B & 1011\\
+    12 & C & 1100\\
+    13 & D & 1101\\
+    14 & E & 1110\\
+    15 & F & 1111\\
+    \hline
+  \end{tabular}
+\end{center}
+
+Converting from decimal to hex is done by the process outlined below
+
+\begin{align*}
+  x&=9430\\
+  \frac{9430}{16}&=589 r6\\
+  \frac{589}{16}&=36 r13\\
+  \frac{32}{16}&=2 r4\\
+  \frac{2}{16}&=0 r2\\
+  x&=0\times 24\text{D}6
+\end{align*}
+
 \subsubsection{Data Sizes}%
 \label{ssub:data_sizes}
 

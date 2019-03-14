@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1552276819 "main.tex" "main.pdf" "main" 1552276820
+["pdflatex"] 1552583917 "main.tex" "main.pdf" "main" 1552583918
   "/dev/null" 1552186065 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1519595310 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -278,11 +278,11 @@
   "_minted-main/default.pygstyle" 1552246313 9275 f200be7fc0b7de2461cca28cb35b1427 ""
   "armath.cls" 1551747223 61360 7e50d27347c9de934896dbcd5766426b ""
   "main.aex" 0 -1 0 ""
-  "main.aux" 1552276820 27623 57c0ddd62db25e84dde78718ed2fb013 ""
-  "main.tex" 1552276815 26943 1c2c4c7af9ac5e7ecf4a77a6c7504a95 ""
+  "main.aux" 1552583918 27631 a7f419e8a91f94f1c958e30ccbfab2c3 ""
+  "main.tex" 1552583844 27612 b5300c395256f436f8b2c8f9bd32eb4d ""
   "main.w18" 0 -1 0 ""
   (generated)
-  "main.pyg"
-  "main.log"
   "main.aux"
+  "main.log"
   "main.pdf"
+  "main.pyg"
