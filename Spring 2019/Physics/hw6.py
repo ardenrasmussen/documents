@@ -11,4 +11,5 @@ for t in np.arange(0,2, dt):
     X.append(((1-(w0**2*dt**2)/4)/(1+(w0**2*dt**2)/4))*(2*X[-1]) - X[-2])
 
 plt.plot(np.arange(0,2,dt), X[2:])
-plt.show()
+plt.savefig("hw6.pdf")
+# plt.show()
