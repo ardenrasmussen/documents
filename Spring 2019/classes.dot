@@ -1,0 +1,14 @@
+digraph FEM {
+  //splines=ortho;
+  node[shape=box];
+  abstrct[label="Abstract"];
+  cycling2[label="Cycling"];
+  eeh[label="Early European History"];
+  tennis[label="Tennis"];
+  walk[label="Waling/Jogging/Running"];
+  budd[label="Buddhism"];
+  eaa[label="East Asian Art"];
+  yoga[label="Yoga"];
+  
+  //mwf89->mwf910a[label="Cycling"];
+}
