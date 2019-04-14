@@ -232,8 +232,70 @@
   is not important if we count them or not, thus the important number is the
   number of hidden layers in the network.
 
+  There are many different types of layers that can be utilized together in a
+  neural network. This introduction will provide a brief introduction to many
+  of the commonly implemented types of layers, but will only go into specific
+  detail and implementation of a select few of the layer types.
+
+  \begin{description}
+    \item[Input] The input layer reads the data from the user and then passes
+      that on to the next layer in the network. This layer does no computation
+      on its own, it is only used as a house keeping tool to keep everything
+      concise and organized.
+    \item[Output] The output layer takes the values that are determined by the
+      previous layers of the network, and provides them to the user.
+    \item[Dense] A dense or fully connected layer is what we will mainly be
+      focusing on. A dense layer means that each neuron in the layer is
+      connected to every neuron in the previous layer and every neuron in the
+      next layer. For this introduction to neural networks, this is where the
+      core of the computation is preformed. The computation of this layer is
+      \[
+        f((W\cdot V) + b)
+      \]
+      where $f$ is the activation function for the layer, $W$ is the matrix of
+      weights for the dense layer, sometimes called the kernel, $V$ is the
+      vector of input values passed to the layer by the previous layer, and $b$
+      is the vector of bias values that are applied to the product of the
+      weights and input.
+    \item[Activation] This layer is a tool that can be used to apply special
+      activation functions, beyond what is normally applied by the dense layer.
+      This means that this layer simply computes
+      \[
+        f(V)
+      \]
+      where $f$ is some activation function, and $V$ is the vector of input
+      values.
+    \item[Dropout] Dropout is a more advanced tool that is used to prevent
+      over fitting during the training stages. It randomly sets some
+      percentages of the input values to $0$ before passing them on.
+    \item[Reshape] This is a utility layer that is used for when the input data
+      may not be a strict vector of values. For example if the input is an
+      image with a red, green, and blue channel, then the input would be a
+      three dimensional matrix of values. The reshape layer allows the user to
+      reshape the data into whatever format is necessary for the later layers
+      of the network. So to pass an image into a dense layer, one would reshape
+      the three dimensional matrix into a one dimensional matrix or vector.
+    \item[Convolutional] The convolutional layer is a key part of most image
+      recognition neural networks. The convolutional layer applies a matrix of
+      weights over a small region of the input values, then by some means of
+      moving the region that it will apply the matrix, the process is repeated
+      to cover the entirety of the input values. There are many nuances of
+      this type of layer that must be considered for proper implementation.
+    \item[Pooling] The pooling layer is intended to quickly reduce the scale of
+      the data that is begin passed through the network, by some method. The
+      pooling layer takes the input values and outputs a significantly reduced
+      size of output values. There are two ways that this commonly done. Either
+      by taking the $max$ of several values in the input layer, or by taking
+      the $avg$ of those values. Either way, this layer takes many values and
+      condenses them down into a single value, either though maximum, or
+      averaging.
+  \end{description}
+
   \subsubsection{Network}%
   \label{ssub:network}
+
+  The network is the final part of the structure. It does nothing more than
+  organize the layers that are present within it.
 
   \subsection{Forward Propagation}%
   \label{sub:forward_propagation}

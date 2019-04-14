@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1554254754 "main.tex" "main.pdf" "main" 1554254755
+["pdflatex"] 1555206833 "main.tex" "main.pdf" "main" 1555206834
   "/etc/texmf/web2c/texmf.cnf" 1519595310 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
@@ -186,9 +186,9 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1548390762 814157 c6875cb9dce8929bb3e9e2cbc5a44028 ""
   "figures/nn_single.tikz" 1553632592 510 fb83b4fe1a1c97bf937593ab70e8cc66 ""
   "figures/nn_two_layer.tikz" 1553631296 2989 74b0d0a71a275055cd01c61e93df18db ""
-  "main.aux" 1554254755 3734 fd69db60cfb332aaebb3c42fd5e377a4 ""
-  "main.tex" 1554254752 19446 18f94736e8c2200bd63d9668c15cf9df ""
+  "main.aux" 1555206834 2316 ba3dd603e1125065263a3ca7b49a9f09 ""
+  "main.tex" 1555206831 14369 28f870d7c9fbbf208a650651bd8e522d ""
   (generated)
+  "main.pdf"
   "main.aux"
   "main.log"
-  "main.pdf"
