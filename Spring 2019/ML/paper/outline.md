@@ -1,54 +1,38 @@
-# Introduction #
+# WEB 1
 
-* Importance
-* Applicability
-* Purpose
+* Single Neuron
+    * Activation
+* Feedforward Neural Network
+* Multi Layer Perceptron
+    * Back-Prop
 
-# Neural Networks #
+# WEB 2
 
-* Introduction
-* Terminology
+* Neural Networks
+* Biological Motivation
+* Architecture
+* Types
+    * Feedforward
+        * Multi Layer Perceptron
+        * Convolutional
+    * Recurrent
+* Activation functions
 
-## Structure ##
+# WEB 3
 
-### Neuron ###
+* Perceptrons
+* Architecture
+* Gradient Descent
+* Implementation
 
-### Layer ###
+# WEB 4
 
-### Activation Functions ###
-
-### Network ###
-
-## Forward Prop ##
-
-## Learning ##
-
-### Gradient Descent ###
-
-### Back Prop ###
-
-## Summary ##
-
-# Genetic Algorithms #
-
-* Introduction
-* Terminology
-* Purpose
-
-## Structure ##
-
-### Initialization ###
-
-### Evaluation ###
-
-### Selection ###
-
-### Recombination/Crossover ###
-
-### Mutation ###
-
-### Replacement ###
-
-## Integration ##
-
-## Summary ##
+* Definition
+* Elements
+* Feedforward
+    * Multi Layer Perceptron
+    * Gradient Descent
+* Optimization
+* Activation
+* Logistic Regression
+* Loss Functions

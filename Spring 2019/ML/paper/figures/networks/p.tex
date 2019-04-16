@@ -1,0 +1,12 @@
+\begin{tikzpicture}[scale=1, transform shape]
+  \definecolor{ired}{RGB}{244,67,54}
+  \definecolor{ipurple}{RGB}{156,39,176}
+  \definecolor{iblue}{RGB}{33,150,243}
+  \definecolor{igreen}{RGB}{76,175,80}
+  \definecolor{iyellow}{RGB}{255,235,59}
+  \node[circle,fill=iyellow] (i00) at (0,-0.5) {};
+  \node[circle,fill=iyellow] (i01) at (0,0.5) {};
+  \node[circle,fill=ired] (o10) at (1,0.0) {};
+  \draw (i00) -- (o10);
+  \draw (i01) -- (o10);
+\end{tikzpicture}

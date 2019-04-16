@@ -1,0 +1,56 @@
+\begin{tikzpicture}[scale=1, transform shape]
+  \definecolor{ired}{RGB}{244,67,54}
+  \definecolor{ipurple}{RGB}{156,39,176}
+  \definecolor{iblue}{RGB}{33,150,243}
+  \definecolor{igreen}{RGB}{76,175,80}
+  \definecolor{iyellow}{RGB}{255,235,59}
+  \node[circle,fill=iyellow] (i00) at (0,-1.0) {};
+  \node[circle,fill=iyellow] (i01) at (0,0.0) {};
+  \node[circle,fill=iyellow] (i02) at (0,1.0) {};
+  \node[circle,fill=igreen] (d10) at (1,-1.5) {};
+  \draw (i00) -- (d10);
+  \draw (i01) -- (d10);
+  \draw (i02) -- (d10);
+  \node[circle,fill=igreen] (d11) at (1,-0.5) {};
+  \draw (i00) -- (d11);
+  \draw (i01) -- (d11);
+  \draw (i02) -- (d11);
+  \node[circle,fill=igreen] (d12) at (1,0.5) {};
+  \draw (i00) -- (d12);
+  \draw (i01) -- (d12);
+  \draw (i02) -- (d12);
+  \node[circle,fill=igreen] (d13) at (1,1.5) {};
+  \draw (i00) -- (d13);
+  \draw (i01) -- (d13);
+  \draw (i02) -- (d13);
+  \node[circle,fill=igreen] (d20) at (2,-1.5) {};
+  \draw (d10) -- (d20);
+  \draw (d11) -- (d20);
+  \draw (d12) -- (d20);
+  \draw (d13) -- (d20);
+  \node[circle,fill=igreen] (d21) at (2,-0.5) {};
+  \draw (d10) -- (d21);
+  \draw (d11) -- (d21);
+  \draw (d12) -- (d21);
+  \draw (d13) -- (d21);
+  \node[circle,fill=igreen] (d22) at (2,0.5) {};
+  \draw (d10) -- (d22);
+  \draw (d11) -- (d22);
+  \draw (d12) -- (d22);
+  \draw (d13) -- (d22);
+  \node[circle,fill=igreen] (d23) at (2,1.5) {};
+  \draw (d10) -- (d23);
+  \draw (d11) -- (d23);
+  \draw (d12) -- (d23);
+  \draw (d13) -- (d23);
+  \node[circle,fill=ired] (o30) at (3,-0.5) {};
+  \draw (d20) -- (o30);
+  \draw (d21) -- (o30);
+  \draw (d22) -- (o30);
+  \draw (d23) -- (o30);
+  \node[circle,fill=ired] (o31) at (3,0.5) {};
+  \draw (d20) -- (o31);
+  \draw (d21) -- (o31);
+  \draw (d22) -- (o31);
+  \draw (d23) -- (o31);
+\end{tikzpicture}

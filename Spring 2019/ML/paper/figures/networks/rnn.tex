@@ -1,0 +1,56 @@
+\begin{tikzpicture}[scale=1, transform shape]
+  \definecolor{ired}{RGB}{244,67,54}
+  \definecolor{ipurple}{RGB}{156,39,176}
+  \definecolor{iblue}{RGB}{33,150,243}
+  \definecolor{igreen}{RGB}{76,175,80}
+  \definecolor{iyellow}{RGB}{255,235,59}
+  \node[circle,fill=iyellow] (i00) at (0,-1.0) {};
+  \node[circle,fill=iyellow] (i01) at (0,0.0) {};
+  \node[circle,fill=iyellow] (i02) at (0,1.0) {};
+  \node[circle,fill=iblue] (r10) at (1,-1.0) {};
+  \draw (i00) -- (r10);
+  \draw (i01) -- (r10);
+  \draw (i02) -- (r10);
+  \draw[] (r10.45) arc (-15:195:1.25mm);
+  \node[circle,fill=iblue] (r11) at (1,0.0) {};
+  \draw (i00) -- (r11);
+  \draw (i01) -- (r11);
+  \draw (i02) -- (r11);
+  \draw (r10) -- (r11);
+  \draw[] (r11.45) arc (-15:195:1.25mm);
+  \node[circle,fill=iblue] (r12) at (1,1.0) {};
+  \draw (i00) -- (r12);
+  \draw (i01) -- (r12);
+  \draw (i02) -- (r12);
+  \draw (r11) -- (r12);
+  \draw[] (r12.45) arc (-15:195:1.25mm);
+  \node[circle,fill=iblue] (r20) at (2,-1.0) {};
+  \draw (r10) -- (r20);
+  \draw (r11) -- (r20);
+  \draw (r12) -- (r20);
+  \draw[] (r20.45) arc (-15:195:1.25mm);
+  \node[circle,fill=iblue] (r21) at (2,0.0) {};
+  \draw (r10) -- (r21);
+  \draw (r11) -- (r21);
+  \draw (r12) -- (r21);
+  \draw (r20) -- (r21);
+  \draw[] (r21.45) arc (-15:195:1.25mm);
+  \node[circle,fill=iblue] (r22) at (2,1.0) {};
+  \draw (r10) -- (r22);
+  \draw (r11) -- (r22);
+  \draw (r12) -- (r22);
+  \draw (r21) -- (r22);
+  \draw[] (r22.45) arc (-15:195:1.25mm);
+  \node[circle,fill=ired] (o30) at (3,-1.0) {};
+  \draw (r20) -- (o30);
+  \draw (r21) -- (o30);
+  \draw (r22) -- (o30);
+  \node[circle,fill=ired] (o31) at (3,0.0) {};
+  \draw (r20) -- (o31);
+  \draw (r21) -- (o31);
+  \draw (r22) -- (o31);
+  \node[circle,fill=ired] (o32) at (3,1.0) {};
+  \draw (r20) -- (o32);
+  \draw (r21) -- (o32);
+  \draw (r22) -- (o32);
+\end{tikzpicture}

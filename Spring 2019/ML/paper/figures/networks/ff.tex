@@ -1,0 +1,18 @@
+\begin{tikzpicture}[scale=1, transform shape]
+  \definecolor{ired}{RGB}{244,67,54}
+  \definecolor{ipurple}{RGB}{156,39,176}
+  \definecolor{iblue}{RGB}{33,150,243}
+  \definecolor{igreen}{RGB}{76,175,80}
+  \definecolor{iyellow}{RGB}{255,235,59}
+  \node[circle,fill=iyellow] (i00) at (0,-0.5) {};
+  \node[circle,fill=iyellow] (i01) at (0,0.5) {};
+  \node[circle,fill=igreen] (d10) at (1,-0.5) {};
+  \draw (i00) -- (d10);
+  \draw (i01) -- (d10);
+  \node[circle,fill=igreen] (d11) at (1,0.5) {};
+  \draw (i00) -- (d11);
+  \draw (i01) -- (d11);
+  \node[circle,fill=ired] (o20) at (2,0.0) {};
+  \draw (d10) -- (o20);
+  \draw (d11) -- (o20);
+\end{tikzpicture}
