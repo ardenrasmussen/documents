@@ -1,0 +1,308 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{cms/global//global/global}
+    \entry{GIC}{book}{}
+      \name{author}{3}{}{%
+        {{hash=4c482ca8a76d7882a9f584a22920b0dd}{%
+           family={Brinkmann},
+           familyi={B\bibinitperiod},
+           given={Vinzenz},
+           giveni={V\bibinitperiod}}}%
+        {{hash=16cc1051a994907e470e82eee8241c73}{%
+           family={Dreyfus},
+           familyi={D\bibinitperiod},
+           given={Renée},
+           giveni={R\bibinitperiod}}}%
+        {{hash=85cc050196c3ee9e885b866ec7b973cc}{%
+           family={Koch-Brinkmann},
+           familyi={K\bibinithyphendelim B\bibinitperiod},
+           given={Ulrik},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Francisco}%
+      }
+      \list{publisher}{1}{%
+        {Fine Arts Museum of San Francisco}%
+      }
+      \strng{namehash}{bfc11991968b7dd0efa36ae4b4408ea3}
+      \strng{fullhash}{bfc11991968b7dd0efa36ae4b4408ea3}
+      \strng{bibnamehash}{bfc11991968b7dd0efa36ae4b4408ea3}
+      \strng{authorbibnamehash}{bfc11991968b7dd0efa36ae4b4408ea3}
+      \strng{authornamehash}{bfc11991968b7dd0efa36ae4b4408ea3}
+      \strng{authorfullhash}{bfc11991968b7dd0efa36ae4b4408ea3}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \true{uniquework}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{subtitle}{Polychromy in the ancient world}
+      \field{title}{Gods in Color}
+      \field{year}{2017}
+    \endentry
+    \entry{EPRL}{online}{}
+      \name{author}{1}{}{%
+        {{hash=5703c11282bdf6dadb0b608bf5a58787}{%
+           family={Calliope},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{5703c11282bdf6dadb0b608bf5a58787}
+      \strng{fullhash}{5703c11282bdf6dadb0b608bf5a58787}
+      \strng{bibnamehash}{5703c11282bdf6dadb0b608bf5a58787}
+      \strng{authorbibnamehash}{5703c11282bdf6dadb0b608bf5a58787}
+      \strng{authornamehash}{5703c11282bdf6dadb0b608bf5a58787}
+      \strng{authorfullhash}{5703c11282bdf6dadb0b608bf5a58787}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \true{uniquework}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Examine a painting with 'raking-light'}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://go.galegroup.com.library.lcproxy.org/ps/i.do?id=GALE%7CA146434221&v=2.1&u=lcc&it=r&p=ITOF&sw=w
+      \endverb
+      \verb{url}
+      \verb http://go.galegroup.com.library.lcproxy.org/ps/i.do?id=GALE%7CA146434221&v=2.1&u=lcc&it=r&p=ITOF&sw=w
+      \endverb
+    \endentry
+    \entry{CBF}{online}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labeltitlesource}{title}
+      \field{title}{Cosmopolitans Based in Frankfurt}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.liebieghaus.de/en/insights/cosmopolitan-based-frankfurt
+      \endverb
+      \verb{url}
+      \verb https://www.liebieghaus.de/en/insights/cosmopolitan-based-frankfurt
+      \endverb
+    \endentry
+    \entry{PK}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ec903c3942010183af17c370b5d219e4}{%
+           family={Museum\bibnamedelimb of\bibnamedelimb Classical\bibnamedelima Archeology},
+           familyi={M\bibinitperiod\bibinitdelim o\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Cambridge},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{ec903c3942010183af17c370b5d219e4}
+      \strng{fullhash}{ec903c3942010183af17c370b5d219e4}
+      \strng{bibnamehash}{ec903c3942010183af17c370b5d219e4}
+      \strng{authorbibnamehash}{ec903c3942010183af17c370b5d219e4}
+      \strng{authornamehash}{ec903c3942010183af17c370b5d219e4}
+      \strng{authorfullhash}{ec903c3942010183af17c370b5d219e4}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \true{uniquework}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Peplos Kore}
+      \verb{urlraw}
+      \verb https://www.classics.cam.ac.uk/museum/collections/peplos-kore
+      \endverb
+      \verb{url}
+      \verb https://www.classics.cam.ac.uk/museum/collections/peplos-kore
+      \endverb
+    \endentry
+    \entry{CNN}{online}{}
+      \name{author}{1}{}{%
+        {{hash=93609204cc7e295f4de442c9b8250712}{%
+           family={Prisco},
+           familyi={P\bibinitperiod},
+           given={Jacopo},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{93609204cc7e295f4de442c9b8250712}
+      \strng{fullhash}{93609204cc7e295f4de442c9b8250712}
+      \strng{bibnamehash}{93609204cc7e295f4de442c9b8250712}
+      \strng{authorbibnamehash}{93609204cc7e295f4de442c9b8250712}
+      \strng{authornamehash}{93609204cc7e295f4de442c9b8250712}
+      \strng{authorfullhash}{93609204cc7e295f4de442c9b8250712}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \true{uniquework}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{'Gods in Color' returns antiquities to their original colorful grandure}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.cnn.com/style/article/gods-in-color-ancient-world-polychromy/index.html
+      \endverb
+      \verb{url}
+      \verb https://www.cnn.com/style/article/gods-in-color-ancient-world-polychromy/index.html
+      \endverb
+    \endentry
+    \entry{PKI}{online}{}
+      \name{author}{1}{}{%
+        {{hash=bce4673617671671391a45f5a5e367f8}{%
+           family={Project},
+           familyi={P\bibinitperiod},
+           given={Art\bibnamedelima History},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{bce4673617671671391a45f5a5e367f8}
+      \strng{fullhash}{bce4673617671671391a45f5a5e367f8}
+      \strng{bibnamehash}{bce4673617671671391a45f5a5e367f8}
+      \strng{authorbibnamehash}{bce4673617671671391a45f5a5e367f8}
+      \strng{authornamehash}{bce4673617671671391a45f5a5e367f8}
+      \strng{authorfullhash}{bce4673617671671391a45f5a5e367f8}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \true{uniquework}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Peplos Kore}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://arthistoryproject.com/timeline/the-ancient-world/greece/peplos-kore/
+      \endverb
+      \verb{url}
+      \verb https://arthistoryproject.com/timeline/the-ancient-world/greece/peplos-kore/
+      \endverb
+    \endentry
+    \entry{UVV}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2cd4abf5eaedf9c60834a27e82e04710}{%
+           family={Reusch},
+           familyi={R\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{2cd4abf5eaedf9c60834a27e82e04710}
+      \strng{fullhash}{2cd4abf5eaedf9c60834a27e82e04710}
+      \strng{bibnamehash}{2cd4abf5eaedf9c60834a27e82e04710}
+      \strng{authorbibnamehash}{2cd4abf5eaedf9c60834a27e82e04710}
+      \strng{authornamehash}{2cd4abf5eaedf9c60834a27e82e04710}
+      \strng{authorfullhash}{2cd4abf5eaedf9c60834a27e82e04710}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \true{uniquework}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Visibe and Ultraviolet Spectroscopy}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www2.chemistry.msu.edu/faculty/reusch/virttxtjml/spectrpy/uv-vis/spectrum.htm
+      \endverb
+      \verb{url}
+      \verb https://www2.chemistry.msu.edu/faculty/reusch/virttxtjml/spectrpy/uv-vis/spectrum.htm
+      \endverb
+    \endentry
+    \entry{BV}{online}{}
+      \name{author}{1}{}{%
+        {{hash=25f41fd9d10eae99771d31ff92679d04}{%
+           family={Sexton},
+           familyi={S\bibinitperiod},
+           given={Jennifer\bibnamedelima McGlinchey},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{25f41fd9d10eae99771d31ff92679d04}
+      \strng{fullhash}{25f41fd9d10eae99771d31ff92679d04}
+      \strng{bibnamehash}{25f41fd9d10eae99771d31ff92679d04}
+      \strng{authorbibnamehash}{25f41fd9d10eae99771d31ff92679d04}
+      \strng{authornamehash}{25f41fd9d10eae99771d31ff92679d04}
+      \strng{authorfullhash}{25f41fd9d10eae99771d31ff92679d04}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \true{uniquework}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Beyond Visible: UV-Visible Fluorescense in Works of Art}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.mfah.org/blogs/inside-mfah/beyond-visible-uv-visible-fluorescence-in-works-of-art
+      \endverb
+      \verb{url}
+      \verb https://www.mfah.org/blogs/inside-mfah/beyond-visible-uv-visible-fluorescence-in-works-of-art
+      \endverb
+    \endentry
+    \entry{UVS}{book}{}
+      \name{author}{2}{}{%
+        {{hash=cf5b0df067eb7c708a2946fb5927fb26}{%
+           family={Thomas},
+           familyi={T\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=72b7e8ee183bc52a26eaebbc378076dd}{%
+           family={Ando},
+           familyi={A\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {ACOL University of Greenwich}%
+      }
+      \strng{namehash}{b1ae603c3b8edc3d75470f4fd6a70472}
+      \strng{fullhash}{b1ae603c3b8edc3d75470f4fd6a70472}
+      \strng{bibnamehash}{b1ae603c3b8edc3d75470f4fd6a70472}
+      \strng{authorbibnamehash}{b1ae603c3b8edc3d75470f4fd6a70472}
+      \strng{authornamehash}{b1ae603c3b8edc3d75470f4fd6a70472}
+      \strng{authorfullhash}{b1ae603c3b8edc3d75470f4fd6a70472}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \true{uniquework}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Ultraviolet and Visible Spectroscopy}
+      \field{year}{1996}
+    \endentry
+    \entry{RLI}{online}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \true{uniquework}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Raking light across a wall}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Raking_light#/media/File:Sl%C3%A4pljus_-_Ystad-2015.jpg
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Raking_light#/media/File:Sl%C3%A4pljus_-_Ystad-2015.jpg
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

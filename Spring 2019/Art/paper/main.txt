@@ -165,7 +165,7 @@ and highlights.
 This method of raking light does not provide researchers will too much
 information about what pigments were actually present on a sculpture, but it
 does help in the determination of the regions of different pigments. Thus if a
-pigment is determined anywhere in the region, it is reasonable to believe
+pigment is determined anywhere in the region, it is reasonable to  believe
 that that pigment was used for the entirety of the region. Using raking light
 can be seen in this image of a wall shown in figure
 \ref{fig:raking_light_3}\autocite{RLI}.
