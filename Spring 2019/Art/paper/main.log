@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  26 APR 2019 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  29 APR 2019 12:19
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1051,15 +1051,18 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 <raking_light.jpg, id=21, 1279.78125pt x 803.0pt>
 File: raking_light.jpg Graphic file (type jpg)
 <use raking_light.jpg>
-Package pdftex.def Info: raking_light.jpg  used on input line 175.
+Package pdftex.def Info: raking_light.jpg  used on input line 174.
 (pdftex.def)             Requested size: 180.0pt x 112.93384pt.
- [3] [4 <./raking_light.jpg>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 280.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 280.
+ [3 <./raking_light.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Overfull \hbox (9.15787pt too wide) in paragraph at lines 281--281
+ [4]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 271.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 271.
+
+Overfull \hbox (9.15787pt too wide) in paragraph at lines 272--272
 [][]\T1/lmr/m/n/10 Prisco, Ja-copo. ^^P  'Gods in Color' re-turns an-tiq-ui-ties to their orig-i-nal col-or-ful grandure.^^Q
  []
 
@@ -1071,13 +1074,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  22625 strings out of 494847
  428639 string characters out of 6179080
- 1028009 words of memory out of 5000000
+ 1029009 words of memory out of 5000000
  25405 multiletter control sequences out of 15000+600000
  47332 words of font info for 50 fonts, out of 8000000 for 9000
  220 hyphenation exceptions out of 8191
- 55i,8n,56p,814b,3713s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,8n,56p,814b,3710s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb>
-Output written on main.pdf (6 pages, 4174775 bytes).
+Output written on main.pdf (6 pages, 4174172 bytes).
 PDF statistics:
  66 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream

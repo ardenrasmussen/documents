@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber main"] 1556295607 "main.bcf" "main.bbl" "main" 1556322572
-  "main.bcf" 1556322572 119878 9db5e2e52fb2242b0e35da2cef110d92 ""
+["biber main"] 1556295607 "main.bcf" "main.bbl" "main" 1556565547
+  "main.bcf" 1556565547 119878 9db5e2e52fb2242b0e35da2cef110d92 ""
   "ref.bib" 1556295721 1989 77a8b4c5d8ef8cf3f506f20df908191d ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1556322570 "main.tex" "main.pdf" "main" 1556322572
+["pdflatex"] 1556565545 "main.tex" "main.pdf" "main" 1556565547
   "/etc/texmf/web2c/texmf.cnf" 1519595310 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1480098696 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
@@ -186,15 +186,15 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1540879405 164837 f472f40ab643c6b1fa7fff8b04d446df ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1548390762 814157 c6875cb9dce8929bb3e9e2cbc5a44028 ""
   "armath.cls" 1555084974 61311 ee1f56e2b37c5fda38d1c1753cd9fcf0 ""
-  "main.aux" 1556322572 2986 6d8c617aee6aaf0ec4b61ab4887555bb ""
+  "main.aux" 1556565547 2986 4e32e28557b2582953132ee970e467ab ""
   "main.bbl" 1556295608 12065 6764cde2d90631e84ce74d3a600f66af "biber main"
-  "main.run.xml" 1556322572 2346 169718d7afe55d5af9958409cf09bbe8 ""
-  "main.tex" 1556322569 14693 e15fe8e7672e9271ed6c4e6aad62afa0 ""
+  "main.run.xml" 1556565547 2346 169718d7afe55d5af9958409cf09bbe8 ""
+  "main.tex" 1556565544 14085 f1d44505fea4af0bb8891abc7a3cb69a ""
   "raking_light.jpg" 1555103224 1680487 7dc55d0812be86ce99bcb6ea68020d30 ""
   "visual_analysis.png" 1555103467 1584757 71d2a971ffa5acdce507d60af871b770 ""
   (generated)
-  "main.run.xml"
-  "main.aux"
   "main.bcf"
+  "main.aux"
   "main.pdf"
   "main.log"
+  "main.run.xml"
