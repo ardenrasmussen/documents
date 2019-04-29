@@ -1,0 +1,304 @@
+\documentclass{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{cite}
+
+\title{Independent Study Group Report}
+\author{Arden Rasmussen, Sean Richardson, Adriana Rogers }
+\date{Spring 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+% ADRIANA
+
+\section{Optimization}
+% SEAN
+%this is a math problem, and these are the CS ways to solve it.
+
+\section{Neural Networks}
+%ADRIANA + ARDEN
+
+\subsection{Architecture}
+
+\subsection{Propagation}
+%computational graph
+%loss functions -- harken back to optimization section
+
+\subsection{Convolutional Layers}
+
+\section{Genetic Algorithms}
+%ADRIANA
+
+\subsection{Initialization}
+
+\subsection{Evaluation}
+
+\subsection{Selection}
+
+\subsection{Recombination}
+
+\subsection{Mutation}
+
+\subsection{Replacement}
+
+\section{Snake Project}
+
+We decided to apply the strategies of neural networks and genetic algorithms in
+order to train an AI to play a game of snake. This sample implementation
+provides a good testing ground for utilizing these strategies. The search space
+for an AI to play snake is sufficiently large, that it is possible to see
+improvements in the performance of the AI, but it is small enough that those
+improvements do not take long.
+% ARDEN
+
+\subsection{Game Set-Up and Rules}
+
+The first step of the process was to construct the game itself. The game
+itself is very simple. A player controls a snake on a grid. The snake is
+trying to eat food (an apple), and every time the snake eats a piece of food,
+it grows in length by one. If the snake runs into the walls or itself, it dies.
+
+We decided to split the game into four main functions.
+\begin{enumerate}
+  \item \textit{Initialize:} This function initializes the game state. This
+    includes the position of the apple, the position of the snake, and the size
+    of the grid. For most of our testing we defaulted to a grid of size 20.
+  \item \textit{Get Move:} This function provides provides some interface with
+    the current game state, and retrieves a direction to move in. This
+    interface can either be a user input, or it could be some AI process.
+  \item \textit{Update:} This function updates the game state provided with
+    the direction to move in. This function moves the snake, and if it eats an
+    apple, it extends the snake by one, and spawns a new apple on the grid.
+  \item \textit{Valid:} This function checks if the current game state is
+    valid. This is where we test to see if the snake has run into itself, or a
+    wall.
+\end{enumerate}
+
+The basic structure of the snake program is to execute function 1 once, and
+then while the game state is valid execute functions 2-3. The final part of the
+game is the scoring system. Each update without dying increases the score by
+1, and each apple eaten increases the score by 1000.
+
+\begin{figure}[htpb]
+  \begin{center}
+    \begin{tikzpicture}[scale=0.75, transform shape,
+      box/.style={rectangle,draw=black,thick,minimum size=1cm}]
+      \foreach \x in {0,...,10}{
+        \foreach \y in {0,...,10}{
+          \node[box] at (\x,\y){};
+        }
+      }
+      \node[box,fill=green] at (7,3){};
+      \node[box,fill=black] at (5,6){};
+      \node[box,fill=black] at (5,7){};
+      \node[box,fill=black] at (5,8){};
+      \node[box,fill=black] at (6,8){};
+      \node[box,fill=black] at (7,8){};
+      \node[box,fill=black] at (7,7){};
+      \node[box,fill=red] at (7,6){};
+    \end{tikzpicture}
+  \end{center}
+  \caption{Example game state for a snake game, here black denotes the snake
+  body, green denotes the apple, and red denotes the snake head.}
+  \label{fig:snake_game}
+\end{figure}
+
+
+Using this basic structure of the snake game, we determine that the
+optimization problem at hand is to maximize the score of the game. Now we
+construct the architecture of a neural network and genetic algorithm to solve
+this optimization problem.
+
+\subsection{Neural Network Structure}
+
+Since any neural network requires a specific number of input, we decided on
+utilizes rays. For each of the four directions from the snake, we cast a ray.
+The ray will tell the neural network how far away something is in that
+direction. For this we case three different rays in each direction.
+\begin{enumerate}
+  \item Apple Ray. Tells the network how far away the apple is in that
+    direction, if at all.
+  \item Snake Ray. Tells the network how far away the snake body is in that
+    direction, if at all.
+  \item Wall Ray Tells the network how far away the wall is in that direction.
+\end{enumerate}
+The casting of these rays can be seen in figures \ref{fig:snake_rays}.
+
+\begin{figure}[htpb]
+  \begin{center}
+    \begin{tikzpicture}[scale=0.75, transform shape,
+      box/.style={rectangle,draw=black,thick,minimum size=1cm}]
+      \foreach \x in {0,...,10}{
+        \foreach \y in {0,...,10}{
+          \node[box] at (\x,\y){};
+        }
+      }
+      \node[box,fill=green] at (7,3){};
+      \node[box,fill=black] at (5,6){};
+      \node[box,fill=black] at (5,7){};
+      \node[box,fill=black] at (5,8){};
+      \node[box,fill=black] at (6,8){};
+      \node[box,fill=black] at (7,8){};
+      \node[box,fill=black] at (7,7){};
+      \node[box,fill=red] at (7,6){};
+
+      \draw[thick,color=green] (7,5.5) -- (7,3.5);
+      \draw[thick,color=green,dashed] (7.5,6) -- (10.5,6);
+      \draw[thick,color=green,dashed] (6.5,6) -- (-0.5,6);
+      \draw[thick,color=green,dashed] (7,6.5) -- (7,10.5);
+
+      \draw[thick,color=blue,] (7.2,5.5) -- (7.2,-0.5);
+      \draw[thick,color=blue,] (7.5,6.2) -- (10.5,6.2);
+      \draw[thick,color=blue,] (6.5,5.8) -- (-0.5,5.8);
+      \draw[thick,color=blue,] (6.8,6.5) -- (6.8,10.5);
+
+      \draw[thick,color=red,dashed] (6.8,5.5) -- (6.8,-0.5);
+      \draw[thick,color=red,dashed] (7.5,5.8) -- (10.5,5.8);
+      \draw[thick,color=red,] (6.5,6.2) -- (5.5,6.2);
+      \draw[thick,color=red,] (7.2,6.5) -- (7.2,6.5);
+
+    \end{tikzpicture}
+  \end{center}
+  \caption{Rays cast from the snake head. Green rays are the apple rays, red
+    rays are the snake rays, and blue rays are the wall rays. If a ray is dashed,
+  then it did not hit anything.}
+  \label{fig:snake_rays}
+\end{figure}
+
+Once each ray has been cast, we pass the reciprocal of the distance to the
+neural network. For example the down apple ray in figure \ref{fig:snake_rays},
+would have a distance of $2$ since it travels two spaces before hitting the
+apple. Thus the network would get a value of $\frac{1}{2}$. This is done so
+that closer values are larger, and thus can easily be viewed as more important.
+
+We also know that the output of the snake must be one of four values; Up, Down,
+Left, or Right. Using this we constructed a neural network with $12$ input
+neurons and $4$ output neurons. Most of the tests that we made were done
+without any hidden layers, but it is also possible to insert hidden layers as
+desired. The architecture of the network is demonstrated in figure
+\ref{fig:snake_0layer}.
+
+\begin{figure}[htpb]
+  \begin{center}
+    \begin{tikzpicture}[scale=1, transform shape]
+      \node[circle,fill=black] (d00) at (0,-2.75) {};
+      \node[circle,fill=black] (d01) at (0,-2.25) {};
+      \node[circle,fill=black] (d02) at (0,-1.75) {};
+      \node[circle,fill=black] (d03) at (0,-1.25) {};
+      \node[circle,fill=black] (d04) at (0,-0.75) {};
+      \node[circle,fill=black] (d05) at (0,-0.25) {};
+      \node[circle,fill=black] (d06) at (0,0.25) {};
+      \node[circle,fill=black] (d07) at (0,0.75) {};
+      \node[circle,fill=black] (d08) at (0,1.25) {};
+      \node[circle,fill=black] (d09) at (0,1.75) {};
+      \node[circle,fill=black] (d010) at (0,2.25) {};
+      \node[circle,fill=black] (d011) at (0,2.75) {};
+      \node[circle,fill=black] (d10) at (5,-1.5) {};
+      \draw (d00) -- (d10);
+      \draw (d01) -- (d10);
+      \draw (d02) -- (d10);
+      \draw (d03) -- (d10);
+      \draw (d04) -- (d10);
+      \draw (d05) -- (d10);
+      \draw (d06) -- (d10);
+      \draw (d07) -- (d10);
+      \draw (d08) -- (d10);
+      \draw (d09) -- (d10);
+      \draw (d010) -- (d10);
+      \draw (d011) -- (d10);
+      \node[circle,fill=black] (d11) at (5,-0.5) {};
+      \draw (d00) -- (d11);
+      \draw (d01) -- (d11);
+      \draw (d02) -- (d11);
+      \draw (d03) -- (d11);
+      \draw (d04) -- (d11);
+      \draw (d05) -- (d11);
+      \draw (d06) -- (d11);
+      \draw (d07) -- (d11);
+      \draw (d08) -- (d11);
+      \draw (d09) -- (d11);
+      \draw (d010) -- (d11);
+      \draw (d011) -- (d11);
+      \node[circle,fill=black] (d12) at (5,0.5) {};
+      \draw (d00) -- (d12);
+      \draw (d01) -- (d12);
+      \draw (d02) -- (d12);
+      \draw (d03) -- (d12);
+      \draw (d04) -- (d12);
+      \draw (d05) -- (d12);
+      \draw (d06) -- (d12);
+      \draw (d07) -- (d12);
+      \draw (d08) -- (d12);
+      \draw (d09) -- (d12);
+      \draw (d010) -- (d12);
+      \draw (d011) -- (d12);
+      \node[circle,fill=black] (d13) at (5,1.5) {};
+      \draw (d00) -- (d13);
+      \draw (d01) -- (d13);
+      \draw (d02) -- (d13);
+      \draw (d03) -- (d13);
+      \draw (d04) -- (d13);
+      \draw (d05) -- (d13);
+      \draw (d06) -- (d13);
+      \draw (d07) -- (d13);
+      \draw (d08) -- (d13);
+      \draw (d09) -- (d13);
+      \draw (d010) -- (d13);
+      \draw (d011) -- (d13);
+    \end{tikzpicture}
+  \end{center}
+  \caption{Architecture of the snake AI neural network.}
+  \label{fig:snake_0layer}
+\end{figure}
+
+Using this network architecture, there will be $48$ weights in the weight
+matrix, and $4$ bias values in the bias vector. This means that there will be a
+total of $52$ values that must be optimized.
+
+
+\subsection{Training Network with Genetic Algorithm}
+
+To optimize weights of a neural network, one must have training data, and the
+answer key to that data. For situations like a game of snake. It is impossible
+to know which direction it should go given every game state, so we are unable
+to optimize a neural network in the classical method. This is why we implement
+a genetic algorithm to optimize the neural network.
+
+We construct a population of chromosomes, where each chromosomes has 52 genes.
+We define a method for the conversion from the list of genes in the chromosome
+to a neural network. The process is outlined below.
+
+\begin{align*}
+  \text{Chromo}=\left[x_1,\ldots,x_{52}\right]\implies
+  W=\begin{bmatrix}
+    x_1 & x_2 & \ldots & x_{12}\\
+    x_{13} & x_{14} & \ldots & x_{24}\\
+    x_{25} & x_{26} & \ldots & x_{36}\\
+    x_{37} & x_{38} & \ldots & x_{48}\\
+    \end{bmatrix},\quad B=\begin{bmatrix}
+    x_{49} \\ x_{50} \\ x_{51} \\ x_{52}
+  \end{bmatrix}
+\end{align*}
+
+For the evaluation stage of the genetic algorithm, each chromosome is converted
+into a neural network, and it the plays the game of snake. The score returned
+from that game is the fitness of the chromosome. Since the game has some
+randomness in the generation of the apples. We evaluate each chromosome $5$
+times, and average the scores to be the fitness. Then the rest of the genetic
+algorithm proceeds as nominal, selecting the best chromosomes of the
+population. After 20-50 generations, the network has usually made considerable
+progress, and the learning curve has begun to plateau.
+
+In the future it would be beneficial to experiment with additional layers, and
+how having more layers of different sizes would effect the fitness of the
+neural networks produced by the genetic algorithm.
+
+\nocite{*}
+\bibliographystyle{alpha}
+\bibliography{main}
+
+\end{document}
+

@@ -1,0 +1,71 @@
+\begin{tikzpicture}[scale=1, transform shape]
+  \definecolor{ired}{RGB}{244,67,54}
+  \definecolor{ipurple}{RGB}{156,39,176}
+  \definecolor{iblue}{RGB}{33,150,243}
+  \definecolor{igreen}{RGB}{76,175,80}
+  \definecolor{iyellow}{RGB}{255,235,59}
+  \node[circle,fill=igreen] (d00) at (0,-5.5) {};
+  \node[circle,fill=igreen] (d01) at (0,-4.5) {};
+  \node[circle,fill=igreen] (d02) at (0,-3.5) {};
+  \node[circle,fill=igreen] (d03) at (0,-2.5) {};
+  \node[circle,fill=igreen] (d04) at (0,-1.5) {};
+  \node[circle,fill=igreen] (d05) at (0,-0.5) {};
+  \node[circle,fill=igreen] (d06) at (0,0.5) {};
+  \node[circle,fill=igreen] (d07) at (0,1.5) {};
+  \node[circle,fill=igreen] (d08) at (0,2.5) {};
+  \node[circle,fill=igreen] (d09) at (0,3.5) {};
+  \node[circle,fill=igreen] (d010) at (0,4.5) {};
+  \node[circle,fill=igreen] (d011) at (0,5.5) {};
+  \node[circle,fill=igreen] (d10) at (1,-1.5) {};
+  \draw (d00) -- (d10);
+  \draw (d01) -- (d10);
+  \draw (d02) -- (d10);
+  \draw (d03) -- (d10);
+  \draw (d04) -- (d10);
+  \draw (d05) -- (d10);
+  \draw (d06) -- (d10);
+  \draw (d07) -- (d10);
+  \draw (d08) -- (d10);
+  \draw (d09) -- (d10);
+  \draw (d010) -- (d10);
+  \draw (d011) -- (d10);
+  \node[circle,fill=igreen] (d11) at (1,-0.5) {};
+  \draw (d00) -- (d11);
+  \draw (d01) -- (d11);
+  \draw (d02) -- (d11);
+  \draw (d03) -- (d11);
+  \draw (d04) -- (d11);
+  \draw (d05) -- (d11);
+  \draw (d06) -- (d11);
+  \draw (d07) -- (d11);
+  \draw (d08) -- (d11);
+  \draw (d09) -- (d11);
+  \draw (d010) -- (d11);
+  \draw (d011) -- (d11);
+  \node[circle,fill=igreen] (d12) at (1,0.5) {};
+  \draw (d00) -- (d12);
+  \draw (d01) -- (d12);
+  \draw (d02) -- (d12);
+  \draw (d03) -- (d12);
+  \draw (d04) -- (d12);
+  \draw (d05) -- (d12);
+  \draw (d06) -- (d12);
+  \draw (d07) -- (d12);
+  \draw (d08) -- (d12);
+  \draw (d09) -- (d12);
+  \draw (d010) -- (d12);
+  \draw (d011) -- (d12);
+  \node[circle,fill=igreen] (d13) at (1,1.5) {};
+  \draw (d00) -- (d13);
+  \draw (d01) -- (d13);
+  \draw (d02) -- (d13);
+  \draw (d03) -- (d13);
+  \draw (d04) -- (d13);
+  \draw (d05) -- (d13);
+  \draw (d06) -- (d13);
+  \draw (d07) -- (d13);
+  \draw (d08) -- (d13);
+  \draw (d09) -- (d13);
+  \draw (d010) -- (d13);
+  \draw (d011) -- (d13);
+\end{tikzpicture}
