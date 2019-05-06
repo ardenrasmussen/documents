@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Etruscan 1000-50 BCE}{2}{0}{1}
+\beamer@sectionintoc {2}{Republican Period 509-27 BCE}{10}{0}{2}
+\beamer@sectionintoc {3}{Early Roman Empire 27 BCE - 96 CE}{37}{0}{3}
+\beamer@sectionintoc {4}{High Roman Empire 96CE-192CE}{67}{0}{4}
+\beamer@sectionintoc {5}{Late Roman Empire 193CE-337CE}{89}{0}{5}

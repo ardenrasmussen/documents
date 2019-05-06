@@ -1,0 +1,270 @@
+\documentclass[10pt]{armath}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{minted}
+\usepackage{multicol}
+% \usepackage[margin=1in]{geometry}
+
+\title{Computer Architecture Review}
+\author{Arden Rasmussen}
+\date{\today}
+
+\newcommand{\s}[1]{\mintinline{c}{#1}}
+\newcommand{\as}[1]{\mintinline{assembly}{#1}}
+\newcommand{\ra}{$\rightarrow$}
+\newcommand{\la}{$\leftarrow$}
+
+\begin{document}
+\maketitle
+
+\section{Processor Architecture}%
+\label{sec:processor_architecture}
+
+\subsection{The Y86-64 Instruction Set Architecture}%
+\label{sub:the_y86_64_instruction_set_architecture}
+
+\subsubsection{Programmer-Visible State}%
+\label{ssub:programmer_visible_state}
+
+\begin{center}
+  \begin{tabular}{c c}
+    Number & Register\\
+    \hline
+    0 & \s{rax}\\
+    1 & \s{rcx}\\
+    2 & \s{rdx}\\
+    3 & \s{rbx}\\
+    4 & \s{rsp}\\
+    5 & \s{rbp}\\
+    6 & \s{rsi}\\
+    7 & \s{rdi}\\
+    8 & \s{r8}\\
+    9 & \s{r9}\\
+    A & \s{r10}\\
+    B & \s{r11}\\
+    C & \s{r12}\\
+    D & \s{r13}\\
+    E & \s{r14}\\
+    F & \s{NULL}\\\hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Y86-64 Instructions}%
+\label{ssub:y86_64_instructions}
+
+\begin{center}
+  \begin{tabular}{c l l l l}
+    Instruction & Bytes & & &\\\hline
+    \s{halt} & 00 & & &\\
+    \s{nop} & 10 & & &\\
+    \s{rrmovq rA, rB} & 20 & rA & rB &\\
+    \s{irmovq V, rB} & 30 & F & rB & V\\
+    \s{rmmovq rA, D(rB)} & 40 & rA & rB & D\\
+    \s{mrmovq D(rB), rA} & 50 & rA & rB & D\\
+    \s{OPq rA, rB} & 6fn & rA & rB &\\
+    \s{jXX Dest} & 7fn & Dest\\
+    \s{cmovXX rA, rB} & 2fn & rA & rB\\
+    \s{call Dest} & 80 & Dest\\
+    \s{ret} & 90 & & &\\
+    \s{pushq rA} & A0 & rA & F\\
+    \s{popq rA} & B0 & rA & F\\\hline
+  \end{tabular}
+\end{center}
+
+\begin{multicols}{3}
+\begin{center}
+  \begin{tabular}{c l}
+    Operations & \\\hline
+    \s{addq} & 60\\
+    \s{subq} & 61\\
+    \s{andq} & 62\\
+    \s{xorq} & 63\\\hline
+  \end{tabular}
+\end{center}
+
+\begin{center}
+  \begin{tabular}{c l}
+    Branches & \\\hline
+    \s{jmp} & 70\\
+    \s{jle} & 71\\
+    \s{jl} & 72\\
+    \s{je} & 73\\
+    \s{jne} & 74\\
+    \s{jge} & 75\\
+    \s{jg} & 76\\\hline
+  \end{tabular}
+\end{center}
+
+\begin{center}
+  \begin{tabular}{c l}
+    Moves & \\\hline
+    \s{rrmovq} & 20\\
+    \s{cmovle} & 21\\
+    \s{cmovl} & 22\\
+    \s{cmove} & 23\\
+    \s{cmovne} & 24\\
+    \s{cmovge} & 25\\
+    \s{cmovg} & 26\\\hline
+  \end{tabular}
+\end{center}
+\end{multicols}
+
+\subsection{Logic Design and the Hardware Control language HCL}%
+\label{sub:logic_design_and_the_hardware_control_language_hcl}
+
+\subsubsection{Logic Gates}%
+\label{ssub:logic_gates}
+
+There are three basic boolean logic gates, \s{AND}, \s{OR}, and \s{NOT}. HCL
+expressions are written using C operations.
+
+\begin{center}
+  \begin{tabular}{c c}
+  Gates & Expression\\\hline
+  \s{AND} & \s{&&}\\
+  \s{OR} & \s{||}\\
+  \s{NOT} & \s{!}\\\hline
+  \end{tabular}
+\end{center}
+
+Multiple logic gates can be combined into a larger gate, and then further
+combined to compute any process.
+
+\subsection{Sequential Y86-64 Implementations}%
+\label{sub:sequential_y86_64_implementations}
+
+\subsubsection{Organizing Processing into Stages}%
+\label{ssub:organizing_processing_into_stages}
+
+\begin{description}
+  \item[Fetch] THe fetch stage reads the bytes of an instruction from memory,
+    using the program counter as the memory address.
+  \item[Decode] The decode stages reads up to two operands from teh register
+    file, giving values \s{valA} and \s{valB}.
+  \item[Execute] In the execution stage, the arithmetic/logic is preformed.
+  \item[Memory] The memory stages may write data to memory, or it may read data
+    from memory.
+  \item[Write back] The write-back stage writes up to two results to the
+    register file.
+  \item[PC update] The PC is set to the address of the next instruction.
+\end{description}
+
+\subsection{General Principles of Pipelining}%
+\label{sub:general_principles_of_pipelining}
+
+Pipelining allows for processes to be paralleled, and proceed in unison with
+other processes.
+
+The clock cycle of a pipelined system, will be the delay of the longest stage,
+plus the delay of the \s{Reg} stage(20ps). The delay will be the clock cycle
+multiplied by the number of stages. This means that more stages will not
+necessarily be faster.
+
+\subsection{Pipelined Y86-64 Implementations}%
+\label{sub:pipelined_y86_64_implementations}
+
+Hazards can occurs, when an operation requires data that is still being
+computed by a previous operation. This can be resolved by stalling. This is
+just waiting for the previous operation to complete before executing the new
+one. It can also be better avoided by forwarding, this is when the previous
+operation completes its execution, its write back stage directly writes it to
+the current operation. This means that there still may be a need for some
+stalling, but less of it is necessary.
+
+\section{The Memory Hierarchy}%
+\label{sec:the_memory_hierarchy}
+
+\subsection{Locality}%
+\label{sub:locality}
+
+Locality is the concept of referencing data that is spatially or temporally near
+by. By improving locality, performance is often improved due to caching. The
+smaller the loop body and the greater the number of loop iterations, the better
+the locality.
+
+\subsection{The Memory Hierarchy}%
+\label{sub:the_memory_hierarchy}
+
+The lower the level, the faster and smaller the cache is. The larger the level,
+the larger space the cache is, but it is also much slower.
+
+\begin{center}
+  \begin{tabular}{c c}
+  Level & Name\\\hline
+  L0 & Regs\\
+  L1 & L1 cache (SRAM)\\
+  L2 & L2 cache (SRAM)\\
+  L3 & L3 cache (SRAM)\\
+  L4 & Main memory (DRAM)\\
+  L5 & Local secondary storage (local disks)\\
+  L6 & Remote secondary storage (distributed file systems, Web servers)\\\hline
+  \end{tabular}
+\end{center}
+
+\subsection{Cache Memories}%
+\label{sub:cache_memories}
+
+\subsubsection{Generic Cache Memory Organization}%
+\label{ssub:generic_cache_memory_organization}
+
+A cache is made of sets, where each set has a number of lines. The lines are
+indexed by a tag, and has a valid bit. For each line there is a cache block of
+data actually stored there. Caches are usually mapped to directly by memory
+address. This is such that the first $t$ bits are the tag, the next $s$ bits
+are the set bits and the final $b$ bits denote the block offset.
+
+\subsubsection{Direct-Mapped Caches}%
+\label{ssub:direct_mapped_caches}
+
+There caches only have one line, and the set directly corresponds to the value
+in the memory address.
+
+\subsubsection{Set Associative Caches}%
+\label{ssub:set_associative_caches}
+
+These caches have multiple lines for each set. This way each set can store two
+caches misses based on the memory address.
+
+\subsubsection{Fully Associative Caches}%
+\label{ssub:fully_associative_caches}
+
+Fully associative cache consists of a single set that contains all the cache
+lines.
+
+Having larger block size, allows for better spacial locality, but mean that
+there will be a smaller number of cache lines. Higher associativity (lines per
+set) can increase the hit time, because it must check more and more tags in the
+set.
+
+\section{Virtual Memory}%
+\label{sec:virtual_memory}
+
+\subsection{Address Spaces}%
+\label{sub:address_spaces}
+
+Virtual memory, is a method of storing little used blocks of data on the disk
+to free up more space on the physical faster memory.
+
+\subsection{VM as a Tool for Caching}%
+\label{sub:vm_as_a_tool_for_caching}
+
+Virtual pages are chunks of data that are in one of three states
+\begin{description}
+  \item[Unallocated] Pages that have not yet been allocated by the VM system.
+    These pages have no data
+  \item[Cached] Allocated pages that are currently cached in physical memory.
+  \item[Uncached] Allocated pages that are not cached in physical memory.
+\end{description}
+The pages can be cached, and there will be page hits and misses.
+
+\subsection{Dynamic Memory Allocation}%
+\label{sub:dynamic_memory_allocation}
+
+Dynamic memory allocation grows the heap with calls to a C allocator, such a
+malloc. Allocators allocate memory only in the heap, and the align the blocks
+of memory for better access. A good free function, will Coalesce freed blocks,
+so if two freed blocks are adjacent to one another, then they will be joined
+into a larger block.
+
+\end{document}

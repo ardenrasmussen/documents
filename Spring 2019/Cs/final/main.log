@@ -1,0 +1,591 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  4 MAY 2019 14:59
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 7 language(s) loaded.
+(./armath.cls
+
+LaTeX Warning: You have requested document class `armath',
+               but the document class provides `amsart'.
+
+Document Class: amsart 2015/03/04 v2.20.2
+\linespacing=\dimen102
+\normalparindent=\dimen103
+\normaltopskip=\skip41
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip42
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen104
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen105
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks15
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip43
+\multlinetaggap=\skip44
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 387.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+\copyins=\insert199
+\abstractbox=\box28
+\listisep=\skip45
+\c@part=\count91
+\c@section=\count92
+\c@subsection=\count93
+\c@subsubsection=\count94
+\c@paragraph=\count95
+\c@subparagraph=\count96
+\c@figure=\count97
+\c@table=\count98
+\abovecaptionskip=\skip46
+\belowcaptionskip=\skip47
+\captionindent=\dimen113
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks24
+) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
+ (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count99
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+\csq@reset=\count100
+\csq@gtype=\count101
+\csq@glevel=\count102
+\csq@qlevel=\count103
+\csq@maxlvl=\count104
+\csq@tshold=\count105
+\csq@ltx@everypar=\toks26
+ (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2018/02/11 v5.2c csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip51
+\enit@outerparindent=\dimen114
+\enit@toks=\toks27
+\enit@inbox=\box29
+\enitdp@description=\count106
+) (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))) (/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2017/07/08 v1.3.1 fvextra - extensions and patches for fancyvrb
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix <2008/02/07> (tvz)
+\FV@CodeLineNo=\count107
+\FV@InFile=\read1
+\FV@TabBox=\box30
+\c@FancyVerbLine=\count108
+\FV@StepNumber=\count109
+\FV@OutFile=\write3
+) (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count110
+\output=\toks28
+\linenoprevgraf=\count111
+\linenumbersep=\dimen115
+\linenumberwidth=\dimen116
+\c@linenumber=\count112
+\c@pagewiselinenumber=\count113
+\c@LN@truepage=\count114
+\c@internallinenumber=\count115
+\c@internallinenumbers=\count116
+\quotelinenumbersep=\dimen117
+\bframerule=\dimen118
+\bframesep=\dimen119
+\bframebox=\box31
+
+
+LaTeX Warning: Command \@parboxrestore  has changed.
+               Check if current package is valid.
+
+LaTeX Info: Redefining \\ on input line 3056.
+)
+
+Package fvextra Warning: csquotes should be loaded after fvextra, to avoid a warning from the lineno package on input line 37.
+
+\c@FV@TrueTabGroupLevel=\count117
+\c@FV@TrueTabCounter=\count118
+\FV@TabBox@Group=\box32
+\FV@TmpLength=\skip52
+\c@FV@HighlightLinesStart=\count119
+\c@FV@HighlightLinesStop=\count120
+\FV@LoopCount=\count121
+\FV@NCharsBox=\box33
+\FV@BreakIndent=\dimen120
+\FV@BreakIndentNChars=\count122
+\FV@BreakSymbolSepLeft=\dimen121
+\FV@BreakSymbolSepLeftNChars=\count123
+\FV@BreakSymbolSepRight=\dimen122
+\FV@BreakSymbolSepRightNChars=\count124
+\FV@BreakSymbolIndentLeft=\dimen123
+\FV@BreakSymbolIndentLeftNChars=\count125
+\FV@BreakSymbolIndentRight=\dimen124
+\FV@BreakSymbolIndentRightNChars=\count126
+\c@FancyVerbLineBreakLast=\count127
+\FV@LineBox=\box34
+\FV@LineIndentBox=\box35
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count128
+\calc@Bcount=\count129
+\calc@Adimen=\dimen125
+\calc@Bdimen=\dimen126
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count130
+\calc@Cskip=\skip55
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 67.
+) (/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
+)
+runsystem(uname -s > "main.w18")...executed.
+
+ (./main.w18)
+runsystem(rm -- "main.w18")...executed.
+
+) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write4
+\integerpart=\count131
+\decimalpart=\count132
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+) (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip56
+\fb@frw=\dimen127
+\fb@frh=\dimen128
+\FrameRule=\dimen129
+\FrameSep=\dimen130
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count133
+\float@exts=\toks29
+\float@box=\box36
+\@float@everytoks=\toks30
+\@floatcapt=\box37
+)
+\minted@appexistsfile=\read2
+\minted@bgbox=\box38
+\minted@code=\write5
+\c@minted@FancyVerbLineTemp=\count134
+\c@minted@pygmentizecounter=\count135
+\@float@every@listing=\toks31
+\c@listing=\count136
+)
+runsystem(mkdir -p _minted-main)...executed.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
+\c@tracingmulticols=\count137
+\mult@box=\box39
+\multicol@leftmargin=\dimen131
+\c@unbalance=\count138
+\c@collectmore=\count139
+\doublecol@number=\count140
+\multicoltolerance=\count141
+\multicolpretolerance=\count142
+\full@width=\dimen132
+\page@free=\dimen133
+\premulticols=\dimen134
+\postmulticols=\dimen135
+\multicolsep=\skip57
+\multicolbaselineskip=\skip58
+\partial@page=\box40
+\last@line=\box41
+\maxbalancingoverflow=\dimen136
+\mult@rightbox=\box42
+\mult@grightbox=\box43
+\mult@gfirstbox=\box44
+\mult@firstbox=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\c@columnbadness=\count143
+\c@finalcolumnbadness=\count144
+\last@try=\dimen137
+\multicolovershoot=\dimen138
+\multicolundershoot=\dimen139
+\mult@nat@firstbox=\box63
+\colbreak@box=\box64
+\mc@col@check@num=\count145
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+ (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+runsystem(which pygmentize && touch main.aex)...executed.
+
+runsystem(rm main.aex)...executed.
+
+ (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count146
+\scratchdimen=\dimen140
+\scratchbox=\box65
+\nofMPsegments=\count147
+\nofMParguments=\count148
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count149
+\MPscratchDim=\dimen141
+\MPnumerator=\count150
+\makeMPintoPDFobject=\count151
+\everyMPtoPDFconversion=\toks33
+)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/default-pyg-prefix.pygstyle) (./_minted-main/default.pygstyle) (./_minted-main/25F17A2E19FF9FC4758BDB848BAEA087042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/C1F63AAC67AD0089C0EAD8AB91132E82042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/5991713A3E84A2440F3E66D82C83C12C042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/B7D8BA899A0454C622B56EFF6483B501042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/4DA5925101CE70FE709F38EAAD828314042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/7D1F7D1811E7D8375873AA013BAD930A042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/C88E78BF37346EB51B7A9F1D80E2A440042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/39E79E0244FD32640B66871AE20F5DBF042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/0BD0BE45573AE86028178A851E37FF06042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/BF8BECBB0DAE20D6E2FF06DE1D9582F0042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/0392DA322189B70B9D42BE684CECFAB3042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/DB1BB9D47B757C1FE3236B525B0A38DB042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/271887F6F272C08D1910336B1801702E042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/C2104C9C47737440F2F47FDDE53ED662042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/A5931A54F88947067DF8AE5D079C9DBE042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/CA35C56C0C379F292F8FAB68B3A19F61042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/0E9EDE2C34995A577CB1E50D7BA97726042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/FC87AD40F8D502D70DBC1199C5CC45E9042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/874DF375174496C60236F181DE588F4A042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/90034114EA894BBBA311B1E578B3D9EA042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/A36212707D6139D599B36829EE1F1E1F042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+
+(./_minted-main/C77006764D00BE897DF7A3EEC4E8DF7B042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/D730BDF1CC0049766D4233E3F48F73FA042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/ABEC88ECF2B996FA3421D48341E8144F042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/A41D451D73E34BCF8F79EB7FDF167413042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/B1937174B21C9BD36BDE470C6BC65629042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/538BD7F4EAF11C81E8213E2207C750C5042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/A1AC8F589A7B6303CD2434D4398AD9AC042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/4B4F07D2764A3D0F5F1A2BE384EDC37C042D2615758B6C3F03C186B02CFC62B2.pygtex) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+\openout5 = `main.pyg'.
+
+ (./_minted-main/AAAA1B253581FA4B5B38AA71A36E209A042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/4D3DF0F35F831CE0B6284EFFA2C83F6D042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/929BF32DBAFBD2CAA46A62CD5BB36221042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/AE6C68D98A2195CB9201BC30C15D34DA042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/09F11AE0C5E5B5539659FDEA259F71FD042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/705E177CBD2A9D63B214533E2230D29E042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/9E278005F9B837A5DEA656C2DE5F9EB4042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/67E863285F18439510B43FA772D5D1B6042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/1772277E4A0B86B5360CC57428D4BAF9042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/02A2788EEAE0DAF4E3C64F8F9E323E59042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/CA740248E1D65EDCAE7CE17CF1DCF93F042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/6017014231B8C792415F40042DD972A2042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/236326E3726D7C8BE9B53E1EEF27D4B9042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+
+(./_minted-main/C5F8E6F0A8DFD4F341FA29ED46F439D4042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/233C2F2DCECCA2BA5831D8C65C1B804A042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/269681EAFEE3131A30162CF41009199E042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/B52D144AA531175E9F46A2A07635B503042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/4C22117304DF3E078CFA9ABBB0C39599042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/19BF32B8725EC794D434280902D78E18042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/3B2992C503F32D3599B3179745DD1DB4042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/D55FA734C1FA905B7A4B7F40C535819B042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/19BF32B8725EC794D434280902D78E18042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/40CE32C380B9651EFC2DCC29999E62AC042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/3B2992C503F32D3599B3179745DD1DB4042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/02FC4E7B0C34AF223DEAE62F2C0EE5FF042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/D55FA734C1FA905B7A4B7F40C535819B042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/8183AA57A23658EFE7BA7AEBE60816BC042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/9146DF1248394EBF82DEC4DC41D34762042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/5295218302552BAB208A605AADF881F1042D2615758B6C3F03C186B02CFC62B2.pygtex)
+\openout5 = `main.pyg'.
+
+ (./_minted-main/4DD9F43F0043B0A3AFB049D0D621B00A042D2615758B6C3F03C186B02CFC62B2.pygtex) [2] [3] [4] (./main.aux)
+runsystem(rm main.pyg)...executed.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6897 strings out of 494847
+ 127106 string characters out of 6179080
+ 243368 words of memory out of 5000000
+ 9797 multiletter control sequences out of 15000+600000
+ 9562 words of font info for 38 fonts, out of 8000000 for 9000
+ 220 hyphenation exceptions out of 8191
+ 37i,9n,35p,814b,443s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (4 pages, 119978 bytes).
+PDF statistics:
+ 49 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

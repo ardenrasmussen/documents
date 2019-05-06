@@ -1,0 +1,1537 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  4 MAY 2019 13:37
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 7 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
+Document Class: beamer 2018/02/20 v3.50 A class for typesetting presentations
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count79
+)
+\beamer@tempbox=\box26
+\beamer@tempcount=\count80
+\c@beamerpauses=\count81
+ (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
+\beamer@slideinframe=\count82
+\beamer@minimum=\count83
+)
+\beamer@commentbox=\box27
+\beamer@modecount=\count84
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+\headdp=\dimen102
+\footheight=\dimen103
+\sidebarheight=\dimen104
+\beamer@tempdim=\dimen105
+\beamer@finalheight=\dimen106
+\beamer@animht=\dimen107
+\beamer@animdp=\dimen108
+\beamer@animwd=\dimen109
+\beamer@leftmargin=\dimen110
+\beamer@rightmargin=\dimen111
+\beamer@leftsidebar=\dimen112
+\beamer@rightsidebar=\dimen113
+\beamer@boxsize=\dimen114
+\beamer@vboxoffset=\dimen115
+\beamer@descdefault=\dimen116
+\beamer@descriptionwidth=\dimen117
+\beamer@lastskip=\skip41
+\beamer@areabox=\box28
+\beamer@animcurrent=\box29
+\beamer@animshowbox=\box30
+\beamer@sectionbox=\box31
+\beamer@logobox=\box32
+\beamer@linebox=\box33
+\beamer@sectioncount=\count85
+\beamer@subsubsectionmax=\count86
+\beamer@subsectionmax=\count87
+\beamer@sectionmax=\count88
+\beamer@totalheads=\count89
+\beamer@headcounter=\count90
+\beamer@partstartpage=\count91
+\beamer@sectionstartpage=\count92
+\beamer@subsectionstartpage=\count93
+\beamer@animationtempa=\count94
+\beamer@animationtempb=\count95
+\beamer@xpos=\count96
+\beamer@ypos=\count97
+\beamer@ypos@offset=\count98
+\beamer@showpartnumber=\count99
+\beamer@currentsubsection=\count100
+\beamer@coveringdepth=\count101
+\beamer@sectionadjust=\count102
+\beamer@tocsectionnumber=\count103
+ (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+))
+\beamer@paperwidth=\skip42
+\beamer@paperheight=\skip43
+ (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+) (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count104
+\Gm@cntv=\count105
+\c@Gm@tempcnt=\count106
+\Gm@bindingoffset=\dimen118
+\Gm@wd@mp=\dimen119
+\Gm@odd@mp=\dimen120
+\Gm@even@mp=\dimen121
+\Gm@layoutwidth=\dimen122
+\Gm@layoutheight=\dimen123
+\Gm@layouthoffset=\dimen124
+\Gm@layoutvoffset=\dimen125
+\Gm@dimlist=\toks15
+) (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen126
+\Gin@req@width=\dimen127
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks16
+\pgfutil@tempdima=\dimen128
+\pgfutil@tempdimb=\dimen129
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box34
+ (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks17
+\pgfkeys@temptoks=\toks18
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks19
+))
+\pgf@x=\dimen130
+\pgf@y=\dimen131
+\pgf@xa=\dimen132
+\pgf@ya=\dimen133
+\pgf@xb=\dimen134
+\pgf@yb=\dimen135
+\pgf@xc=\dimen136
+\pgf@yc=\dimen137
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count107
+\c@pgf@countb=\count108
+\c@pgf@countc=\count109
+\c@pgf@countd=\count110
+\t@pgf@toka=\toks20
+\t@pgf@tokb=\toks21
+\t@pgf@tokc=\toks22
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count111
+\pgfsyssoftpath@bigbuffer@items=\count112
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen138
+\pgfmath@count=\count113
+\pgfmath@box=\box35
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count114
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen139
+\pgf@picmaxx=\dimen140
+\pgf@picminy=\dimen141
+\pgf@picmaxy=\dimen142
+\pgf@pathminx=\dimen143
+\pgf@pathmaxx=\dimen144
+\pgf@pathminy=\dimen145
+\pgf@pathmaxy=\dimen146
+\pgf@xx=\dimen147
+\pgf@xy=\dimen148
+\pgf@yx=\dimen149
+\pgf@yy=\dimen150
+\pgf@zx=\dimen151
+\pgf@zy=\dimen152
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen153
+\pgf@path@lasty=\dimen154
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen155
+\pgf@shorten@start@additional=\dimen156
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box36
+\pgf@hbox=\box37
+\pgf@layerbox@main=\box38
+\pgf@picture@serial@count=\count115
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen157
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen158
+\pgf@pt@y=\dimen159
+\pgf@pt@temp=\dimen160
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen161
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen162
+\pgf@sys@shading@range@num=\count116
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box39
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+))) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
+Package: xxcolor 2003/10/24 ver 0.1
+\XC@nummixins=\count117
+\XC@countmixins=\count118
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package hobsub Info: Skipping package `atbegshi' (already loaded).
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen163
+\Hy@linkcounter=\count119
+\Hy@pagecounter=\count120
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count121
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4383.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4383.
+Package hyperref Info: Option `implicit' set `false' on input line 4383.
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count122
+ (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5115.
+\XeTeXLinkMargin=\dimen164
+\Fld@menulength=\count123
+\Field@Width=\dimen165
+\Fld@charsize=\dimen166
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count124
+
+
+Package hyperref Message: Stopped early.
+
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+\Fld@listcount=\count125
+\c@bookmark@seq@number=\count126
+ (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
+)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaserequires.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasefont.sty (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks26
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty (/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
+)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemisc.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
+\beamer@argscount=\count127
+\beamer@lastskipcover=\skip44
+\beamer@trivlistdepth=\count128
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetitle.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasesection.sty
+\c@lecture=\count129
+\c@part=\count130
+\c@section=\count131
+\c@subsection=\count132
+\c@subsubsection=\count133
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
+\beamer@framebox=\box40
+\beamer@frametitlebox=\box41
+\beamer@zoombox=\box42
+\beamer@zoomcount=\count134
+\beamer@zoomframecount=\count135
+\beamer@frametextheight=\dimen167
+\c@subsectionslide=\count136
+\beamer@frametopskip=\skip45
+\beamer@framebottomskip=\skip46
+\beamer@frametopskipautobreak=\skip47
+\beamer@framebottomskipautobreak=\skip48
+\beamer@envbody=\toks27
+\framewidth=\dimen168
+\c@framenumber=\count137
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
+\beamer@verbatimfileout=\write4
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
+\beamer@splitbox=\box43
+\beamer@autobreakcount=\count138
+\beamer@autobreaklastheight=\dimen169
+\beamer@frametitletoks=\toks28
+\beamer@framesubtitletoks=\toks29
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
+\beamer@footins=\box44
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecolor.sty
+\beamer@bg@ht=\dimen170
+\beamer@bg@wd=\dimen171
+\beamer@bg@dp=\dimen172
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
+\beamer@frameboxcopy=\box45
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetoc.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
+\beamer@sbttoks=\toks30
+ (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
+\bmb@box=\box46
+\bmb@colorbox=\box47
+\bmb@boxshadow=\box48
+\bmb@boxshadowball=\box49
+\bmb@boxshadowballlarge=\box50
+\bmb@temp=\dimen173
+\bmb@dima=\dimen174
+\bmb@dimb=\dimen175
+\bmb@prevheight=\dimen176
+)
+\beamer@blockheadheight=\dimen177
+)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty (/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks31
+)
+\c@figure=\count139
+\c@table=\count140
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
+\beamer@section@min@dim=\dimen178
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks32
+\ex@=\dimen179
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen180
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count141
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count142
+\leftroot@=\count143
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count144
+\DOTSCASE@=\count145
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+\big@size=\dimen181
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count146
+\c@MaxMatrixCols=\count147
+\dotsspace@=\muskip11
+\c@parentequation=\count148
+\dspbrk@lvl=\count149
+\tag@help=\toks33
+\row@=\count150
+\column@=\count151
+\maxfields@=\count152
+\andhelp@=\toks34
+\eqnshift@=\dimen182
+\alignsep@=\dimen183
+\tagshift@=\dimen184
+\tagwidth@=\dimen185
+\totwidth@=\dimen186
+\lineht@=\dimen187
+\@envbody=\toks35
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks36
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks37
+\thm@bodyfont=\toks38
+\thm@headfont=\toks39
+\thm@notefont=\toks40
+\thm@headpunct=\toks41
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks42
+)
+\c@theorem=\count153
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemedefault.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
+\beamer@dima=\dimen188
+\beamer@dimb=\dimen189
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=307.28987pt
+* \textheight=244.6939pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=14.22636pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count154
+\scratchdimen=\dimen190
+\scratchbox=\box53
+\nofMPsegments=\count155
+\nofMParguments=\count156
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count157
+\MPscratchDim=\dimen191
+\MPnumerator=\count158
+\makeMPintoPDFobject=\count159
+\everyMPtoPDFconversion=\toks44
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+ (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+)) ABD: EveryShipout initializing macros
+\AtBeginShipoutBox=\box54
+Package hyperref Info: Link coloring OFF on input line 22.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count160
+)
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
+ (./main.out) (./main.out)
+\@outlinefile=\write5
+\openout5 = `main.out'.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 22.
+\symnumbers=\mathgroup6
+\sympureletters=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 22.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 22.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 22.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 22.
+ (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-environment-dictionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-months-dictionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-numbers-dictionary-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+) (./main.nav) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+]
+<ppt1/1556995328_1142_04052019_684x456.png, id=91, 686.565pt x 457.71pt>
+File: ppt1/1556995328_1142_04052019_684x456.png Graphic file (type png)
+<use ppt1/1556995328_1142_04052019_684x456.png>
+Package pdftex.def Info: ppt1/1556995328_1142_04052019_684x456.png  used on input line 29.
+(pdftex.def)             Requested size: 245.83273pt x 163.88849pt.
+ [3
+
+ <./ppt1/1556995328_1142_04052019_684x456.png>]
+<ppt1/1556995338_1142_04052019_685x439.png, id=118, 687.56876pt x 440.64626pt>
+File: ppt1/1556995338_1142_04052019_685x439.png Graphic file (type png)
+<use ppt1/1556995338_1142_04052019_685x439.png>
+Package pdftex.def Info: ppt1/1556995338_1142_04052019_685x439.png  used on input line 31.
+(pdftex.def)             Requested size: 245.82495pt x 157.54329pt.
+ [4
+
+ <./ppt1/1556995338_1142_04052019_685x439.png>]
+<ppt1/1556995357_1142_04052019_685x422.png, id=145, 687.56876pt x 423.5825pt>
+File: ppt1/1556995357_1142_04052019_685x422.png Graphic file (type png)
+<use ppt1/1556995357_1142_04052019_685x422.png>
+Package pdftex.def Info: ppt1/1556995357_1142_04052019_685x422.png  used on input line 32.
+(pdftex.def)             Requested size: 245.82495pt x 151.44252pt.
+ [5
+
+ <./ppt1/1556995357_1142_04052019_685x422.png>]
+<ppt1/1556995372_1142_04052019_420x602.png, id=171, 421.575pt x 604.2575pt>
+File: ppt1/1556995372_1142_04052019_420x602.png Graphic file (type png)
+<use ppt1/1556995372_1142_04052019_420x602.png>
+Package pdftex.def Info: ppt1/1556995372_1142_04052019_420x602.png  used on input line 33.
+(pdftex.def)             Requested size: 150.22302pt x 215.31969pt.
+ [6
+
+ <./ppt1/1556995372_1142_04052019_420x602.png>]
+<ppt1/1556995383_1143_04052019_415x606.png, id=197, 416.55624pt x 608.2725pt>
+File: ppt1/1556995383_1143_04052019_415x606.png Graphic file (type png)
+<use ppt1/1556995383_1143_04052019_415x606.png>
+Package pdftex.def Info: ppt1/1556995383_1143_04052019_415x606.png  used on input line 34.
+(pdftex.def)             Requested size: 147.44946pt x 215.31175pt.
+ [7
+
+ <./ppt1/1556995383_1143_04052019_415x606.png>]
+<ppt1/1556995410_1143_04052019_396x601.png, id=224, 397.485pt x 603.25375pt>
+File: ppt1/1556995410_1143_04052019_396x601.png Graphic file (type png)
+<use ppt1/1556995410_1143_04052019_396x601.png>
+Package pdftex.def Info: ppt1/1556995410_1143_04052019_396x601.png  used on input line 35.
+(pdftex.def)             Requested size: 141.86932pt x 215.31178pt.
+ [8
+
+ <./ppt1/1556995410_1143_04052019_396x601.png>]
+<ppt1/1556995419_1143_04052019_806x532.png, id=250, 809.0225pt x 533.995pt>
+File: ppt1/1556995419_1143_04052019_806x532.png Graphic file (type png)
+<use ppt1/1556995419_1143_04052019_806x532.png>
+Package pdftex.def Info: ppt1/1556995419_1143_04052019_806x532.png  used on input line 36.
+(pdftex.def)             Requested size: 245.83183pt x 162.2612pt.
+ [9
+
+ <./ppt1/1556995419_1143_04052019_806x532.png>] [10
+
+]
+<ppt1/1556995481_1144_04052019_737x484.png, id=303, 739.76375pt x 485.815pt>
+File: ppt1/1556995481_1144_04052019_737x484.png Graphic file (type png)
+<use ppt1/1556995481_1144_04052019_737x484.png>
+Package pdftex.def Info: ppt1/1556995481_1144_04052019_737x484.png  used on input line 41.
+(pdftex.def)             Requested size: 245.82726pt x 161.4388pt.
+ [11
+
+ <./ppt1/1556995481_1144_04052019_737x484.png>]
+<ppt1/1556995492_1144_04052019_804x454.png, id=330, 807.015pt x 455.7025pt>
+File: ppt1/1556995492_1144_04052019_804x454.png Graphic file (type png)
+<use ppt1/1556995492_1144_04052019_804x454.png>
+Package pdftex.def Info: ppt1/1556995492_1144_04052019_804x454.png  used on input line 42.
+(pdftex.def)             Requested size: 245.82521pt x 138.81174pt.
+ [12
+
+ <./ppt1/1556995492_1144_04052019_804x454.png>]
+<ppt1/1556995511_1145_04052019_595x598.png, id=357, 597.23125pt x 600.2425pt>
+File: ppt1/1556995511_1145_04052019_595x598.png Graphic file (type png)
+<use ppt1/1556995511_1145_04052019_595x598.png>
+Package pdftex.def Info: ppt1/1556995511_1145_04052019_595x598.png  used on input line 44.
+(pdftex.def)             Requested size: 214.23758pt x 215.31778pt.
+ [13
+
+ <./ppt1/1556995511_1145_04052019_595x598.png>]
+<ppt1/1556995528_1145_04052019_408x359.png, id=384, 409.53pt x 360.34625pt>
+File: ppt1/1556995528_1145_04052019_408x359.png Graphic file (type png)
+<use ppt1/1556995528_1145_04052019_408x359.png>
+Package pdftex.def Info: ppt1/1556995528_1145_04052019_408x359.png  used on input line 45.
+(pdftex.def)             Requested size: 244.70757pt x 215.31866pt.
+ [14
+
+ <./ppt1/1556995528_1145_04052019_408x359.png>]
+<ppt1/1556995542_1145_04052019_807x531.png, id=410, 810.02625pt x 532.99126pt>
+File: ppt1/1556995542_1145_04052019_807x531.png Graphic file (type png)
+<use ppt1/1556995542_1145_04052019_807x531.png>
+Package pdftex.def Info: ppt1/1556995542_1145_04052019_807x531.png  used on input line 47.
+(pdftex.def)             Requested size: 245.82782pt x 161.75288pt.
+ [15
+
+ <./ppt1/1556995542_1145_04052019_807x531.png>]
+<ppt2/1556996066_1154_04052019_800x561.png, id=436, 803.0pt x 563.10374pt>
+File: ppt2/1556996066_1154_04052019_800x561.png Graphic file (type png)
+<use ppt2/1556996066_1154_04052019_800x561.png>
+Package pdftex.def Info: ppt2/1556996066_1154_04052019_800x561.png  used on input line 49.
+(pdftex.def)             Requested size: 245.82747pt x 172.3865pt.
+ [16
+
+ <./ppt2/1556996066_1154_04052019_800x561.png>]
+<ppt2/1556996076_1154_04052019_815x504.png, id=463, 818.05624pt x 505.89pt>
+File: ppt2/1556996076_1154_04052019_815x504.png Graphic file (type png)
+<use ppt2/1556996076_1154_04052019_815x504.png>
+Package pdftex.def Info: ppt2/1556996076_1154_04052019_815x504.png  used on input line 50.
+(pdftex.def)             Requested size: 245.83069pt x 152.0229pt.
+ [17
+
+ <./ppt2/1556996076_1154_04052019_815x504.png>]
+<ppt2/1556996095_1154_04052019_847x513.png, id=489, 850.17625pt x 514.92375pt>
+File: ppt2/1556996095_1154_04052019_847x513.png Graphic file (type png)
+<use ppt2/1556996095_1154_04052019_847x513.png>
+Package pdftex.def Info: ppt2/1556996095_1154_04052019_847x513.png  used on input line 51.
+(pdftex.def)             Requested size: 245.8313pt x 148.89192pt.
+ [18
+
+ <./ppt2/1556996095_1154_04052019_847x513.png>]
+<ppt2/1556996105_1155_04052019_729x520.png, id=515, 731.73375pt x 521.95pt>
+File: ppt2/1556996105_1155_04052019_729x520.png Graphic file (type png)
+<use ppt2/1556996105_1155_04052019_729x520.png>
+Package pdftex.def Info: ppt2/1556996105_1155_04052019_729x520.png  used on input line 52.
+(pdftex.def)             Requested size: 245.82736pt x 175.3501pt.
+ [19
+
+ <./ppt2/1556996105_1155_04052019_729x520.png>]
+<ppt2/1556996121_1155_04052019_871x582.png, id=542, 874.26625pt x 584.1825pt>
+File: ppt2/1556996121_1155_04052019_871x582.png Graphic file (type png)
+<use ppt2/1556996121_1155_04052019_871x582.png>
+Package pdftex.def Info: ppt2/1556996121_1155_04052019_871x582.png  used on input line 54.
+(pdftex.def)             Requested size: 245.83342pt x 164.26526pt.
+ [20
+
+ <./ppt2/1556996121_1155_04052019_871x582.png>]
+<ppt2/1556996142_1155_04052019_869x569.png, id=568, 872.25874pt x 571.13374pt>
+File: ppt2/1556996142_1155_04052019_869x569.png Graphic file (type png)
+<use ppt2/1556996142_1155_04052019_869x569.png>
+Package pdftex.def Info: ppt2/1556996142_1155_04052019_869x569.png  used on input line 56.
+(pdftex.def)             Requested size: 245.82793pt x 160.96213pt.
+ [21
+
+ <./ppt2/1556996142_1155_04052019_869x569.png>]
+<ppt2/1556996158_1155_04052019_602x621.png, id=595, 604.2575pt x 623.32875pt>
+File: ppt2/1556996158_1155_04052019_602x621.png Graphic file (type png)
+<use ppt2/1556996158_1155_04052019_602x621.png>
+Package pdftex.def Info: ppt2/1556996158_1155_04052019_602x621.png  used on input line 58.
+(pdftex.def)             Requested size: 208.72722pt x 215.31496pt.
+ [22
+
+ <./ppt2/1556996158_1155_04052019_602x621.png>]
+<ppt3/1556996572_1202_04052019_445x641.png, id=621, 446.66875pt x 643.40375pt>
+File: ppt3/1556996572_1202_04052019_445x641.png Graphic file (type png)
+<use ppt3/1556996572_1202_04052019_445x641.png>
+Package pdftex.def Info: ppt3/1556996572_1202_04052019_445x641.png  used on input line 61.
+(pdftex.def)             Requested size: 149.47989pt x 215.31824pt.
+ [23
+
+ <./ppt3/1556996572_1202_04052019_445x641.png>]
+<ppt3/1556996598_1203_04052019_496x605.png, id=647, 497.86pt x 607.26875pt>
+File: ppt3/1556996598_1203_04052019_496x605.png Graphic file (type png)
+<use ppt3/1556996598_1203_04052019_496x605.png>
+Package pdftex.def Info: ppt3/1556996598_1203_04052019_496x605.png  used on input line 62.
+(pdftex.def)             Requested size: 176.52502pt x 215.31783pt.
+ [24
+
+ <./ppt3/1556996598_1203_04052019_496x605.png>]
+<ppt3/1556996626_1203_04052019_785x422.png, id=673, 787.94376pt x 423.5825pt>
+File: ppt3/1556996626_1203_04052019_785x422.png Graphic file (type png)
+<use ppt3/1556996626_1203_04052019_785x422.png>
+Package pdftex.def Info: ppt3/1556996626_1203_04052019_785x422.png  used on input line 64.
+(pdftex.def)             Requested size: 245.82303pt x 132.14944pt.
+ [25
+
+ <./ppt3/1556996626_1203_04052019_785x422.png>]
+<ppt3/1556996640_1204_04052019_345x638.png, id=701, 346.29375pt x 640.3925pt>
+File: ppt3/1556996640_1204_04052019_345x638.png Graphic file (type png)
+<use ppt3/1556996640_1204_04052019_345x638.png>
+Package pdftex.def Info: ppt3/1556996640_1204_04052019_345x638.png  used on input line 65.
+(pdftex.def)             Requested size: 116.43315pt x 215.31699pt.
+ [26
+
+ <./ppt3/1556996640_1204_04052019_345x638.png>]
+<ppt3/1556996963_1209_04052019_771x580.png, id=727, 773.89125pt x 582.175pt>
+File: ppt3/1556996963_1209_04052019_771x580.png Graphic file (type png)
+<use ppt3/1556996963_1209_04052019_771x580.png>
+Package pdftex.def Info: ppt3/1556996963_1209_04052019_771x580.png  used on input line 67.
+(pdftex.def)             Requested size: 245.83173pt x 184.93178pt.
+ [27
+
+ <./ppt3/1556996963_1209_04052019_771x580.png>]
+<ppt3/1556996664_1204_04052019_384x508.png, id=753, 385.44pt x 509.905pt>
+File: ppt3/1556996664_1204_04052019_384x508.png Graphic file (type png)
+<use ppt3/1556996664_1204_04052019_384x508.png>
+Package pdftex.def Info: ppt3/1556996664_1204_04052019_384x508.png  used on input line 69.
+(pdftex.def)             Requested size: 162.76001pt x 215.31793pt.
+ [28
+
+ <./ppt3/1556996664_1204_04052019_384x508.png>]
+<ppt4/1556997097_1211_04052019_437x619.png, id=779, 438.63875pt x 621.32124pt>
+File: ppt4/1556997097_1211_04052019_437x619.png Graphic file (type png)
+<use ppt4/1556997097_1211_04052019_437x619.png>
+Package pdftex.def Info: ppt4/1556997097_1211_04052019_437x619.png  used on input line 72.
+(pdftex.def)             Requested size: 152.00653pt x 215.3136pt.
+ [29
+
+ <./ppt4/1556997097_1211_04052019_437x619.png>]
+<ppt4/1556997107_1211_04052019_406x642.png, id=806, 407.5225pt x 644.4075pt>
+File: ppt4/1556997107_1211_04052019_406x642.png Graphic file (type png)
+<use ppt4/1556997107_1211_04052019_406x642.png>
+Package pdftex.def Info: ppt4/1556997107_1211_04052019_406x642.png  used on input line 73.
+(pdftex.def)             Requested size: 136.16798pt x 215.31984pt.
+ [30
+
+ <./ppt4/1556997107_1211_04052019_406x642.png>]
+<ppt4/1556997117_1211_04052019_420x639.png, id=832, 421.575pt x 641.39626pt>
+File: ppt4/1556997117_1211_04052019_420x639.png Graphic file (type png)
+<use ppt4/1556997117_1211_04052019_420x639.png>
+Package pdftex.def Info: ppt4/1556997117_1211_04052019_420x639.png  used on input line 74.
+(pdftex.def)             Requested size: 141.51958pt x 215.31194pt.
+ [31
+
+ <./ppt4/1556997117_1211_04052019_420x639.png>]
+<ppt4/1556997150_1212_04052019_286x641.png, id=859, 287.0725pt x 643.40375pt>
+File: ppt4/1556997150_1212_04052019_286x641.png Graphic file (type png)
+<use ppt4/1556997150_1212_04052019_286x641.png>
+Package pdftex.def Info: ppt4/1556997150_1212_04052019_286x641.png  used on input line 75.
+(pdftex.def)             Requested size: 96.07022pt x 215.31824pt.
+ [32
+
+ <./ppt4/1556997150_1212_04052019_286x641.png>]
+<ppt4/1556997160_1212_04052019_383x648.png, id=885, 384.43625pt x 650.43pt>
+File: ppt4/1556997160_1212_04052019_383x648.png Graphic file (type png)
+<use ppt4/1556997160_1212_04052019_383x648.png>
+Package pdftex.def Info: ppt4/1556997160_1212_04052019_383x648.png  used on input line 76.
+(pdftex.def)             Requested size: 127.26323pt x 215.31744pt.
+ [33
+
+ <./ppt4/1556997160_1212_04052019_383x648.png>]
+<ppt4/1556997172_1212_04052019_418x525.png, id=912, 419.5675pt x 526.96875pt>
+File: ppt4/1556997172_1212_04052019_418x525.png Graphic file (type png)
+<use ppt4/1556997172_1212_04052019_418x525.png>
+Package pdftex.def Info: ppt4/1556997172_1212_04052019_418x525.png  used on input line 77.
+(pdftex.def)             Requested size: 171.43478pt x 215.31882pt.
+ [34
+
+ <./ppt4/1556997172_1212_04052019_418x525.png>]
+<ppt4/1556997182_1213_04052019_482x598.png, id=938, 483.8075pt x 600.2425pt>
+File: ppt4/1556997182_1213_04052019_482x598.png Graphic file (type png)
+<use ppt4/1556997182_1213_04052019_482x598.png>
+Package pdftex.def Info: ppt4/1556997182_1213_04052019_482x598.png  used on input line 78.
+(pdftex.def)             Requested size: 173.55045pt x 215.31778pt.
+ [35
+
+ <./ppt4/1556997182_1213_04052019_482x598.png>]
+<ppt4/1556997193_1213_04052019_813x527.png, id=963, 816.04875pt x 528.97626pt>
+File: ppt4/1556997193_1213_04052019_813x527.png Graphic file (type png)
+<use ppt4/1556997193_1213_04052019_813x527.png>
+Package pdftex.def Info: ppt4/1556997193_1213_04052019_813x527.png  used on input line 79.
+(pdftex.def)             Requested size: 245.82512pt x 159.34789pt.
+ [36
+
+ <./ppt4/1556997193_1213_04052019_813x527.png>] [37
+
+]
+<ppt5/1556998505_1235_04052019_358x644.png, id=1018, 359.3425pt x 646.415pt>
+File: ppt5/1556998505_1235_04052019_358x644.png Graphic file (type png)
+<use ppt5/1556998505_1235_04052019_358x644.png>
+Package pdftex.def Info: ppt5/1556998505_1235_04052019_358x644.png  used on input line 84.
+(pdftex.def)             Requested size: 119.69646pt x 215.31989pt.
+ [38
+
+ <./ppt5/1556998505_1235_04052019_358x644.png>]
+<ppt5/1556998546_1235_04052019_268x576.png, id=1045, 269.005pt x 578.16pt>
+File: ppt5/1556998546_1235_04052019_268x576.png Graphic file (type png)
+<use ppt5/1556998546_1235_04052019_268x576.png>
+Package pdftex.def Info: ppt5/1556998546_1235_04052019_268x576.png  used on input line 85.
+(pdftex.def)             Requested size: 100.18292pt x 215.31854pt.
+ [39
+
+ <./ppt5/1556998546_1235_04052019_268x576.png>]
+<ppt5/1556998564_1236_04052019_448x606.png, id=1071, 449.68pt x 608.2725pt>
+File: ppt5/1556998564_1236_04052019_448x606.png Graphic file (type png)
+<use ppt5/1556998564_1236_04052019_448x606.png>
+Package pdftex.def Info: ppt5/1556998564_1236_04052019_448x606.png  used on input line 86.
+(pdftex.def)             Requested size: 159.17435pt x 215.31175pt.
+ [40
+
+ <./ppt5/1556998564_1236_04052019_448x606.png>]
+<ppt5/1556998575_1236_04052019_711x545.png, id=1097, 713.66624pt x 547.04375pt>
+File: ppt5/1556998575_1236_04052019_711x545.png Graphic file (type png)
+<use ppt5/1556998575_1236_04052019_711x545.png>
+Package pdftex.def Info: ppt5/1556998575_1236_04052019_711x545.png  used on input line 87.
+(pdftex.def)             Requested size: 245.83397pt x 188.43814pt.
+ [41
+
+ <./ppt5/1556998575_1236_04052019_711x545.png>]
+<ppt6/1556998658_1237_04052019_655x488.png, id=1124, 657.45625pt x 489.83pt>
+File: ppt6/1556998658_1237_04052019_655x488.png Graphic file (type png)
+<use ppt6/1556998658_1237_04052019_655x488.png>
+Package pdftex.def Info: ppt6/1556998658_1237_04052019_655x488.png  used on input line 89.
+(pdftex.def)             Requested size: 245.83322pt x 183.15512pt.
+ [42
+
+ <./ppt6/1556998658_1237_04052019_655x488.png>]
+<ppt6/1556998704_1238_04052019_727x464.png, id=1150, 729.72626pt x 465.74pt>
+File: ppt6/1556998704_1238_04052019_727x464.png Graphic file (type png)
+<use ppt6/1556998704_1238_04052019_727x464.png>
+Package pdftex.def Info: ppt6/1556998704_1238_04052019_727x464.png  used on input line 91.
+(pdftex.def)             Requested size: 245.83217pt x 156.89975pt.
+ [43
+
+ <./ppt6/1556998704_1238_04052019_727x464.png>]
+<ppt6/1556998714_1238_04052019_426x574.png, id=1177, 427.5975pt x 576.1525pt>
+File: ppt6/1556998714_1238_04052019_426x574.png Graphic file (type png)
+<use ppt6/1556998714_1238_04052019_426x574.png>
+Package pdftex.def Info: ppt6/1556998714_1238_04052019_426x574.png  used on input line 93.
+(pdftex.def)             Requested size: 159.8006pt x 215.31818pt.
+ [44
+
+ <./ppt6/1556998714_1238_04052019_426x574.png>]
+<ppt6/1556998726_1238_04052019_314x638.png, id=1203, 315.1775pt x 640.3925pt>
+File: ppt6/1556998726_1238_04052019_314x638.png Graphic file (type png)
+<use ppt6/1556998726_1238_04052019_314x638.png>
+Package pdftex.def Info: ppt6/1556998726_1238_04052019_314x638.png  used on input line 95.
+(pdftex.def)             Requested size: 105.97105pt x 215.31699pt.
+ [45
+
+ <./ppt6/1556998726_1238_04052019_314x638.png>]
+<ppt6/1556998743_1239_04052019_794x519.png, id=1230, 796.9775pt x 520.94624pt>
+File: ppt6/1556998743_1239_04052019_794x519.png Graphic file (type png)
+<use ppt6/1556998743_1239_04052019_794x519.png>
+Package pdftex.def Info: ppt6/1556998743_1239_04052019_794x519.png  used on input line 96.
+(pdftex.def)             Requested size: 245.83221pt x 160.68881pt.
+ [46
+
+ <./ppt6/1556998743_1239_04052019_794x519.png>]
+<ppt6/1556998752_1239_04052019_592x636.png, id=1256, 594.22pt x 638.385pt>
+File: ppt6/1556998752_1239_04052019_592x636.png Graphic file (type png)
+<use ppt6/1556998752_1239_04052019_592x636.png>
+Package pdftex.def Info: ppt6/1556998752_1239_04052019_592x636.png  used on input line 97.
+(pdftex.def)             Requested size: 200.41818pt x 215.31413pt.
+ [47
+
+ <./ppt6/1556998752_1239_04052019_592x636.png>]
+<ppt6/1556998768_1239_04052019_562x551.png, id=1282, 564.1075pt x 553.06625pt>
+File: ppt6/1556998768_1239_04052019_562x551.png Graphic file (type png)
+<use ppt6/1556998768_1239_04052019_562x551.png>
+Package pdftex.def Info: ppt6/1556998768_1239_04052019_562x551.png  used on input line 98.
+(pdftex.def)             Requested size: 219.6137pt x 215.3152pt.
+ [48
+
+ <./ppt6/1556998768_1239_04052019_562x551.png>]
+<ppt6/1556998782_1239_04052019_411x630.png, id=1308, 412.54124pt x 632.3625pt>
+File: ppt6/1556998782_1239_04052019_411x630.png Graphic file (type png)
+<use ppt6/1556998782_1239_04052019_411x630.png>
+Package pdftex.def Info: ppt6/1556998782_1239_04052019_411x630.png  used on input line 100.
+(pdftex.def)             Requested size: 140.4636pt x 215.30917pt.
+ [49
+
+ <./ppt6/1556998782_1239_04052019_411x630.png>]
+<ppt6/1556998791_1239_04052019_761x265.png, id=1335, 763.85374pt x 265.99374pt>
+File: ppt6/1556998791_1239_04052019_761x265.png Graphic file (type png)
+<use ppt6/1556998791_1239_04052019_761x265.png>
+Package pdftex.def Info: ppt6/1556998791_1239_04052019_761x265.png  used on input line 101.
+(pdftex.def)             Requested size: 245.82518pt x 85.60272pt.
+ [50
+
+ <./ppt6/1556998791_1239_04052019_761x265.png>]
+<ppt6/1556998799_1239_04052019_807x331.png, id=1362, 810.02625pt x 332.24126pt>
+File: ppt6/1556998799_1239_04052019_807x331.png Graphic file (type png)
+<use ppt6/1556998799_1239_04052019_807x331.png>
+Package pdftex.def Info: ppt6/1556998799_1239_04052019_807x331.png  used on input line 102.
+(pdftex.def)             Requested size: 245.82782pt x 100.829pt.
+ [51
+
+ <./ppt6/1556998799_1239_04052019_807x331.png>]
+<ppt7/1556998838_1240_04052019_723x292.png, id=1388, 725.71124pt x 293.095pt>
+File: ppt7/1556998838_1240_04052019_723x292.png Graphic file (type png)
+<use ppt7/1556998838_1240_04052019_723x292.png>
+Package pdftex.def Info: ppt7/1556998838_1240_04052019_723x292.png  used on input line 104.
+(pdftex.def)             Requested size: 245.83054pt x 99.28424pt.
+ [52
+
+ <./ppt7/1556998838_1240_04052019_723x292.png>]
+<ppt7/1556998845_1240_04052019_687x555.png, id=1414, 689.57625pt x 557.08125pt>
+File: ppt7/1556998845_1240_04052019_687x555.png Graphic file (type png)
+<use ppt7/1556998845_1240_04052019_687x555.png>
+Package pdftex.def Info: ppt7/1556998845_1240_04052019_687x555.png  used on input line 105.
+(pdftex.def)             Requested size: 245.82718pt x 198.59401pt.
+ [53
+
+ <./ppt7/1556998845_1240_04052019_687x555.png>]
+<ppt7/1556998862_1241_04052019_366x483.png, id=1440, 367.3725pt x 484.81125pt>
+File: ppt7/1556998862_1241_04052019_366x483.png Graphic file (type png)
+<use ppt7/1556998862_1241_04052019_366x483.png>
+Package pdftex.def Info: ppt7/1556998862_1241_04052019_366x483.png  used on input line 106.
+(pdftex.def)             Requested size: 163.16351pt x 215.32236pt.
+ [54
+
+ <./ppt7/1556998862_1241_04052019_366x483.png>]
+<ppt7/1556998886_1241_04052019_315x524.png, id=1467, 316.18124pt x 525.965pt>
+File: ppt7/1556998886_1241_04052019_315x524.png Graphic file (type png)
+<use ppt7/1556998886_1241_04052019_315x524.png>
+Package pdftex.def Info: ppt7/1556998886_1241_04052019_315x524.png  used on input line 107.
+(pdftex.def)             Requested size: 129.43733pt x 215.318pt.
+ [55
+
+ <./ppt7/1556998886_1241_04052019_315x524.png>]
+<ppt7/1556998903_1241_04052019_715x502.png, id=1494, 717.68124pt x 503.8825pt>
+File: ppt7/1556998903_1241_04052019_715x502.png Graphic file (type png)
+<use ppt7/1556998903_1241_04052019_715x502.png>
+Package pdftex.def Info: ppt7/1556998903_1241_04052019_715x502.png  used on input line 108.
+(pdftex.def)             Requested size: 245.82625pt x 172.59409pt.
+ [56
+
+ <./ppt7/1556998903_1241_04052019_715x502.png>]
+<ppt7/1556998925_1242_04052019_861x549.png, id=1520, 864.22874pt x 551.05875pt>
+File: ppt7/1556998925_1242_04052019_861x549.png Graphic file (type png)
+<use ppt7/1556998925_1242_04052019_861x549.png>
+Package pdftex.def Info: ppt7/1556998925_1242_04052019_861x549.png  used on input line 109.
+(pdftex.def)             Requested size: 245.83301pt x 156.75066pt.
+ [57
+
+ <./ppt7/1556998925_1242_04052019_861x549.png>]
+<ppt7/1556998939_1242_04052019_712x515.png, id=1546, 714.67pt x 516.93124pt>
+File: ppt7/1556998939_1242_04052019_712x515.png Graphic file (type png)
+<use ppt7/1556998939_1242_04052019_712x515.png>
+Package pdftex.def Info: ppt7/1556998939_1242_04052019_712x515.png  used on input line 111.
+(pdftex.def)             Requested size: 245.83078pt x 177.81299pt.
+ [58
+
+ <./ppt7/1556998939_1242_04052019_712x515.png>]
+<ppt8/1556999020_1243_04052019_427x608.png, id=1573, 428.60126pt x 610.28pt>
+File: ppt8/1556999020_1243_04052019_427x608.png Graphic file (type png)
+<use ppt8/1556999020_1243_04052019_427x608.png>
+Package pdftex.def Info: ppt8/1556999020_1243_04052019_427x608.png  used on input line 113.
+(pdftex.def)             Requested size: 151.21602pt x 215.31462pt.
+ [59
+
+ <./ppt8/1556999020_1243_04052019_427x608.png>]
+<ppt8/1556999041_1244_04052019_344x624.png, id=1599, 345.29pt x 626.34pt>
+File: ppt8/1556999041_1244_04052019_344x624.png Graphic file (type png)
+<use ppt8/1556999041_1244_04052019_344x624.png>
+Package pdftex.def Info: ppt8/1556999041_1244_04052019_344x624.png  used on input line 114.
+(pdftex.def)             Requested size: 118.69841pt x 215.3134pt.
+ [60
+
+ <./ppt8/1556999041_1244_04052019_344x624.png>]
+<ppt8/1556999048_1244_04052019_356x615.png, id=1625, 357.335pt x 617.30624pt>
+File: ppt8/1556999048_1244_04052019_356x615.png Graphic file (type png)
+<use ppt8/1556999048_1244_04052019_356x615.png>
+Package pdftex.def Info: ppt8/1556999048_1244_04052019_356x615.png  used on input line 115.
+(pdftex.def)             Requested size: 124.63837pt x 215.31628pt.
+ [61
+
+ <./ppt8/1556999048_1244_04052019_356x615.png>]
+<ppt8/1556999064_1244_04052019_479x564.png, id=1652, 480.79625pt x 566.115pt>
+File: ppt8/1556999064_1244_04052019_479x564.png Graphic file (type png)
+<use ppt8/1556999064_1244_04052019_479x564.png>
+Package pdftex.def Info: ppt8/1556999064_1244_04052019_479x564.png  used on input line 116.
+(pdftex.def)             Requested size: 182.86586pt x 215.31598pt.
+ [62
+
+ <./ppt8/1556999064_1244_04052019_479x564.png>]
+<ppt8/1556999122_1245_04052019_476x567.png, id=1679, 477.785pt x 569.12625pt>
+File: ppt8/1556999122_1245_04052019_476x567.png Graphic file (type png)
+<use ppt8/1556999122_1245_04052019_476x567.png>
+Package pdftex.def Info: ppt8/1556999122_1245_04052019_476x567.png  used on input line 117.
+(pdftex.def)             Requested size: 180.76553pt x 215.32364pt.
+ [63
+
+ <./ppt8/1556999122_1245_04052019_476x567.png>]
+<ppt9/1556999190_1246_04052019_619x533.png, id=1705, 621.32124pt x 534.99875pt>
+File: ppt9/1556999190_1246_04052019_619x533.png Graphic file (type png)
+<use ppt9/1556999190_1246_04052019_619x533.png>
+Package pdftex.def Info: ppt9/1556999190_1246_04052019_619x533.png  used on input line 119.
+(pdftex.def)             Requested size: 245.8316pt x 211.67729pt.
+ [64
+
+ <./ppt9/1556999190_1246_04052019_619x533.png>]
+<ppt9/1556999206_1246_04052019_532x523.png, id=1731, 533.995pt x 524.96124pt>
+File: ppt9/1556999206_1246_04052019_532x523.png Graphic file (type png)
+<use ppt9/1556999206_1246_04052019_532x523.png>
+Package pdftex.def Info: ppt9/1556999206_1246_04052019_532x523.png  used on input line 120.
+(pdftex.def)             Requested size: 219.02084pt x 215.3156pt.
+ [65
+
+ <./ppt9/1556999206_1246_04052019_532x523.png>]
+<ppt9/1556999217_1246_04052019_539x609.png, id=1756, 541.02126pt x 611.28375pt>
+File: ppt9/1556999217_1246_04052019_539x609.png Graphic file (type png)
+<use ppt9/1556999217_1246_04052019_539x609.png>
+Package pdftex.def Info: ppt9/1556999217_1246_04052019_539x609.png  used on input line 121.
+(pdftex.def)             Requested size: 190.56555pt x 215.31432pt.
+ [66
+
+ <./ppt9/1556999217_1246_04052019_539x609.png>] [67
+
+]
+<ppt9/1556999259_1247_04052019_408x519.png, id=1811, 409.53pt x 520.94624pt>
+File: ppt9/1556999259_1247_04052019_408x519.png Graphic file (type png)
+<use ppt9/1556999259_1247_04052019_408x519.png>
+Package pdftex.def Info: ppt9/1556999259_1247_04052019_408x519.png  used on input line 127.
+(pdftex.def)             Requested size: 169.26439pt x 215.31427pt.
+ [68
+
+ <./ppt9/1556999259_1247_04052019_408x519.png>]
+<ppt9/1556999280_1248_04052019_167x596.png, id=1838, 167.62625pt x 598.235pt>
+File: ppt9/1556999280_1248_04052019_167x596.png Graphic file (type png)
+<use ppt9/1556999280_1248_04052019_167x596.png>
+Package pdftex.def Info: ppt9/1556999280_1248_04052019_167x596.png  used on input line 128.
+(pdftex.def)             Requested size: 60.3326pt x 215.31879pt.
+ [69
+
+ <./ppt9/1556999280_1248_04052019_167x596.png>]
+<ppt10/1556999344_1249_04052019_602x446.png, id=1864, 604.2575pt x 447.6725pt>
+File: ppt10/1556999344_1249_04052019_602x446.png Graphic file (type png)
+<use ppt10/1556999344_1249_04052019_602x446.png>
+Package pdftex.def Info: ppt10/1556999344_1249_04052019_602x446.png  used on input line 130.
+(pdftex.def)             Requested size: 245.82938pt x 182.12607pt.
+ [70
+
+ <./ppt10/1556999344_1249_04052019_602x446.png>]
+<ppt10/1556999366_1249_04052019_474x549.png, id=1891, 475.7775pt x 551.05875pt>
+File: ppt10/1556999366_1249_04052019_474x549.png Graphic file (type png)
+<use ppt10/1556999366_1249_04052019_474x549.png>
+Package pdftex.def Info: ppt10/1556999366_1249_04052019_474x549.png  used on input line 131.
+(pdftex.def)             Requested size: 185.90094pt x 215.31564pt.
+ [71
+
+ <./ppt10/1556999366_1249_04052019_474x549.png>]
+<ppt11/1556999414_1250_04052019_428x589.png, id=1917, 429.605pt x 591.20876pt>
+File: ppt11/1556999414_1250_04052019_428x589.png Graphic file (type png)
+<use ppt11/1556999414_1250_04052019_428x589.png>
+Package pdftex.def Info: ppt11/1556999414_1250_04052019_428x589.png  used on input line 133.
+(pdftex.def)             Requested size: 156.46036pt x 215.31578pt.
+ [72
+
+ <./ppt11/1556999414_1250_04052019_428x589.png>]
+<ppt11/1556999463_1251_04052019_525x594.png, id=1943, 526.96875pt x 596.2275pt>
+File: ppt11/1556999463_1251_04052019_525x594.png Graphic file (type png)
+<use ppt11/1556999463_1251_04052019_525x594.png>
+Package pdftex.def Info: ppt11/1556999463_1251_04052019_525x594.png  used on input line 134.
+(pdftex.def)             Requested size: 190.30362pt x 215.31496pt.
+ [73
+
+ <./ppt11/1556999463_1251_04052019_525x594.png>]
+<ppt12/1556999524_1252_04052019_798x453.png, id=1970, 800.9925pt x 454.69875pt>
+File: ppt12/1556999524_1252_04052019_798x453.png Graphic file (type png)
+<use ppt12/1556999524_1252_04052019_798x453.png>
+Package pdftex.def Info: ppt12/1556999524_1252_04052019_798x453.png  used on input line 136.
+(pdftex.def)             Requested size: 245.824pt x 139.5467pt.
+ [74
+
+ <./ppt12/1556999524_1252_04052019_798x453.png>]
+<ppt12/1556999535_1252_04052019_739x510.png, id=1996, 741.77126pt x 511.9125pt>
+File: ppt12/1556999535_1252_04052019_739x510.png Graphic file (type png)
+<use ppt12/1556999535_1252_04052019_739x510.png>
+Package pdftex.def Info: ppt12/1556999535_1252_04052019_739x510.png  used on input line 137.
+(pdftex.def)             Requested size: 245.82657pt x 169.65027pt.
+ [75
+
+ <./ppt12/1556999535_1252_04052019_739x510.png>]
+<ppt12/1556999544_1252_04052019_362x579.png, id=2023, 363.3575pt x 581.17125pt>
+File: ppt12/1556999544_1252_04052019_362x579.png Graphic file (type png)
+<use ppt12/1556999544_1252_04052019_362x579.png>
+Package pdftex.def Info: ppt12/1556999544_1252_04052019_362x579.png  used on input line 138.
+(pdftex.def)             Requested size: 134.62312pt x 215.32263pt.
+ [76
+
+ <./ppt12/1556999544_1252_04052019_362x579.png>]
+<ppt12/1556999555_1252_04052019_724x352.png, id=2049, 726.715pt x 353.32pt>
+File: ppt12/1556999555_1252_04052019_724x352.png Graphic file (type png)
+<use ppt12/1556999555_1252_04052019_724x352.png>
+Package pdftex.def Info: ppt12/1556999555_1252_04052019_724x352.png  used on input line 139.
+(pdftex.def)             Requested size: 245.8268pt x 119.51799pt.
+ [77
+
+ <./ppt12/1556999555_1252_04052019_724x352.png>]
+<ppt12/1556999572_1252_04052019_241x560.png, id=2075, 241.90375pt x 562.1pt>
+File: ppt12/1556999572_1252_04052019_241x560.png Graphic file (type png)
+<use ppt12/1556999572_1252_04052019_241x560.png>
+Package pdftex.def Info: ppt12/1556999572_1252_04052019_241x560.png  used on input line 140.
+(pdftex.def)             Requested size: 92.6626pt x 215.31561pt.
+ [78
+
+ <./ppt12/1556999572_1252_04052019_241x560.png>]
+<ppt12/1556999585_1253_04052019_245x594.png, id=2101, 245.91875pt x 596.2275pt>
+File: ppt12/1556999585_1253_04052019_245x594.png Graphic file (type png)
+<use ppt12/1556999585_1253_04052019_245x594.png>
+Package pdftex.def Info: ppt12/1556999585_1253_04052019_245x594.png  used on input line 141.
+(pdftex.def)             Requested size: 88.80835pt x 215.31496pt.
+ [79
+
+ <./ppt12/1556999585_1253_04052019_245x594.png>]
+<ppt13/1556999624_1253_04052019_381x545.png, id=2129, 382.42876pt x 547.04375pt>
+File: ppt13/1556999624_1253_04052019_381x545.png Graphic file (type png)
+<use ppt13/1556999624_1253_04052019_381x545.png>
+Package pdftex.def Info: ppt13/1556999624_1253_04052019_381x545.png  used on input line 143.
+(pdftex.def)             Requested size: 150.52376pt x 215.31613pt.
+ [80
+
+ <./ppt13/1556999624_1253_04052019_381x545.png>]
+<ppt13/1556999674_1254_04052019_725x524.png, id=2155, 727.71875pt x 525.965pt>
+File: ppt13/1556999674_1254_04052019_725x524.png Graphic file (type png)
+<use ppt13/1556999674_1254_04052019_725x524.png>
+Package pdftex.def Info: ppt13/1556999674_1254_04052019_725x524.png  used on input line 145.
+(pdftex.def)             Requested size: 245.8332pt x 177.67807pt.
+ [81
+
+ <./ppt13/1556999674_1254_04052019_725x524.png>]
+<ppt13/1556999692_1254_04052019_450x500.png, id=2181, 451.6875pt x 501.875pt>
+File: ppt13/1556999692_1254_04052019_450x500.png Graphic file (type png)
+<use ppt13/1556999692_1254_04052019_450x500.png>
+Package pdftex.def Info: ppt13/1556999692_1254_04052019_450x500.png  used on input line 146.
+(pdftex.def)             Requested size: 193.78763pt x 215.31958pt.
+ [82
+
+ <./ppt13/1556999692_1254_04052019_450x500.png>]
+<ppt13/1556999702_1255_04052019_388x473.png, id=2207, 389.455pt x 474.77374pt>
+File: ppt13/1556999702_1255_04052019_388x473.png Graphic file (type png)
+<use ppt13/1556999702_1255_04052019_388x473.png>
+Package pdftex.def Info: ppt13/1556999702_1255_04052019_388x473.png  used on input line 148.
+(pdftex.def)             Requested size: 176.62585pt x 215.31967pt.
+ [83
+
+ <./ppt13/1556999702_1255_04052019_388x473.png>]
+<ppt13/1556999719_1255_04052019_170x590.png, id=2234, 170.6375pt x 592.2125pt>
+File: ppt13/1556999719_1255_04052019_170x590.png Graphic file (type png)
+<use ppt13/1556999719_1255_04052019_170x590.png>
+Package pdftex.def Info: ppt13/1556999719_1255_04052019_170x590.png  used on input line 149.
+(pdftex.def)             Requested size: 62.04132pt x 215.31989pt.
+ [84
+
+ <./ppt13/1556999719_1255_04052019_170x590.png>]
+<ppt14/1556999773_1256_04052019_848x315.png, id=2260, 851.18pt x 316.18124pt>
+File: ppt14/1556999773_1256_04052019_848x315.png Graphic file (type png)
+<use ppt14/1556999773_1256_04052019_848x315.png>
+Package pdftex.def Info: ppt14/1556999773_1256_04052019_848x315.png  used on input line 152.
+(pdftex.def)             Requested size: 245.82281pt x 91.31389pt.
+ [85
+
+ <./ppt14/1556999773_1256_04052019_848x315.png>]
+<ppt14/1556999784_1256_04052019_858x250.png, id=2287, 861.2175pt x 250.9375pt>
+File: ppt14/1556999784_1256_04052019_858x250.png Graphic file (type png)
+<use ppt14/1556999784_1256_04052019_858x250.png>
+Package pdftex.def Info: ppt14/1556999784_1256_04052019_858x250.png  used on input line 154.
+(pdftex.def)             Requested size: 245.83063pt x 71.62897pt.
+ [86
+
+ <./ppt14/1556999784_1256_04052019_858x250.png>]
+<ppt14/1556999793_1256_04052019_599x442.png, id=2313, 601.24625pt x 443.6575pt>
+File: ppt14/1556999793_1256_04052019_599x442.png Graphic file (type png)
+<use ppt14/1556999793_1256_04052019_599x442.png>
+Package pdftex.def Info: ppt14/1556999793_1256_04052019_599x442.png  used on input line 156.
+(pdftex.def)             Requested size: 245.83365pt x 181.39978pt.
+ [87
+
+ <./ppt14/1556999793_1256_04052019_599x442.png>]
+<ppt14/1556999805_1256_04052019_173x616.png, id=2339, 173.64874pt x 618.31pt>
+File: ppt14/1556999805_1256_04052019_173x616.png Graphic file (type png)
+<use ppt14/1556999805_1256_04052019_173x616.png>
+Package pdftex.def Info: ppt14/1556999805_1256_04052019_173x616.png  used on input line 157.
+(pdftex.def)             Requested size: 60.4706pt x 215.31732pt.
+ [88
+
+ <./ppt14/1556999805_1256_04052019_173x616.png>] [89
+
+]
+<ppt14/1556999837_1257_04052019_490x489.png, id=2390, 491.8375pt x 490.83376pt>
+File: ppt14/1556999837_1257_04052019_490x489.png Graphic file (type png)
+<use ppt14/1556999837_1257_04052019_490x489.png>
+Package pdftex.def Info: ppt14/1556999837_1257_04052019_490x489.png  used on input line 164.
+(pdftex.def)             Requested size: 215.75624pt x 215.31592pt.
+ [90
+
+ <./ppt14/1556999837_1257_04052019_490x489.png>]
+<ppt14/1556999845_1257_04052019_446x642.png, id=2417, 447.6725pt x 644.4075pt>
+File: ppt14/1556999845_1257_04052019_446x642.png Graphic file (type png)
+<use ppt14/1556999845_1257_04052019_446x642.png>
+Package pdftex.def Info: ppt14/1556999845_1257_04052019_446x642.png  used on input line 165.
+(pdftex.def)             Requested size: 149.58356pt x 215.31984pt.
+ [91
+
+ <./ppt14/1556999845_1257_04052019_446x642.png>]
+<ppt14/1556999870_1257_04052019_526x609.png, id=2445, 527.9725pt x 611.28375pt>
+File: ppt14/1556999870_1257_04052019_526x609.png Graphic file (type png)
+<use ppt14/1556999870_1257_04052019_526x609.png>
+Package pdftex.def Info: ppt14/1556999870_1257_04052019_526x609.png  used on input line 166.
+(pdftex.def)             Requested size: 185.96935pt x 215.31432pt.
+ [92
+
+ <./ppt14/1556999870_1257_04052019_526x609.png>]
+<ppt14/1556999880_1258_04052019_500x585.png, id=2471, 501.875pt x 587.19376pt>
+File: ppt14/1556999880_1258_04052019_500x585.png Graphic file (type png)
+<use ppt14/1556999880_1258_04052019_500x585.png>
+Package pdftex.def Info: ppt14/1556999880_1258_04052019_500x585.png  used on input line 167.
+(pdftex.def)             Requested size: 184.02905pt x 215.314pt.
+ [93
+
+ <./ppt14/1556999880_1258_04052019_500x585.png>]
+<ppt14/1556999886_1258_04052019_667x347.png, id=2497, 669.50125pt x 348.30125pt>
+File: ppt14/1556999886_1258_04052019_667x347.png Graphic file (type png)
+<use ppt14/1556999886_1258_04052019_667x347.png>
+Package pdftex.def Info: ppt14/1556999886_1258_04052019_667x347.png  used on input line 168.
+(pdftex.def)             Requested size: 245.83188pt x 127.89154pt.
+ [94
+
+ <./ppt14/1556999886_1258_04052019_667x347.png>]
+<ppt14/1556999920_1258_04052019_297x625.png, id=2523, 298.11375pt x 627.34375pt>
+File: ppt14/1556999920_1258_04052019_297x625.png Graphic file (type png)
+<use ppt14/1556999920_1258_04052019_297x625.png>
+Package pdftex.def Info: ppt14/1556999920_1258_04052019_297x625.png  used on input line 169.
+(pdftex.def)             Requested size: 102.31714pt x 215.31384pt.
+ [95
+
+ <./ppt14/1556999920_1258_04052019_297x625.png>]
+<ppt14/1556999943_1259_04052019_381x417.png, id=2550, 382.42876pt x 418.56375pt>
+File: ppt14/1556999943_1259_04052019_381x417.png Graphic file (type png)
+<use ppt14/1556999943_1259_04052019_381x417.png>
+Package pdftex.def Info: ppt14/1556999943_1259_04052019_381x417.png  used on input line 170.
+(pdftex.def)             Requested size: 196.72833pt x 215.31683pt.
+ [96
+
+ <./ppt14/1556999943_1259_04052019_381x417.png>]
+<ppt15/1557000013_1300_04052019_392x547.png, id=2576, 393.47pt x 549.05125pt>
+File: ppt15/1557000013_1300_04052019_392x547.png Graphic file (type png)
+<use ppt15/1557000013_1300_04052019_392x547.png>
+Package pdftex.def Info: ppt15/1557000013_1300_04052019_392x547.png  used on input line 172.
+(pdftex.def)             Requested size: 154.30522pt x 215.31877pt.
+ [97
+
+ <./ppt15/1557000013_1300_04052019_392x547.png>]
+<ppt15/1557000053_1300_04052019_657x518.png, id=2603, 659.46375pt x 519.9425pt>
+File: ppt15/1557000053_1300_04052019_657x518.png Graphic file (type png)
+<use ppt15/1557000053_1300_04052019_657x518.png>
+Package pdftex.def Info: ppt15/1557000053_1300_04052019_657x518.png  used on input line 173.
+(pdftex.def)             Requested size: 245.82915pt x 193.81964pt.
+ [98
+
+ <./ppt15/1557000053_1300_04052019_657x518.png>]
+<ppt15/1557000082_1301_04052019_766x316.png, id=2629, 768.8725pt x 317.185pt>
+File: ppt15/1557000082_1301_04052019_766x316.png Graphic file (type png)
+<use ppt15/1557000082_1301_04052019_766x316.png>
+Package pdftex.def Info: ppt15/1557000082_1301_04052019_766x316.png  used on input line 174.
+(pdftex.def)             Requested size: 245.83304pt x 101.41414pt.
+ [99
+
+ <./ppt15/1557000082_1301_04052019_766x316.png>]
+<ppt15/1557000091_1301_04052019_411x597.png, id=2656, 412.54124pt x 599.23875pt>
+File: ppt15/1557000091_1301_04052019_411x597.png Graphic file (type png)
+<use ppt15/1557000091_1301_04052019_411x597.png>
+Package pdftex.def Info: ppt15/1557000091_1301_04052019_411x597.png  used on input line 175.
+(pdftex.def)             Requested size: 148.23146pt x 215.31432pt.
+ [100
+
+ <./ppt15/1557000091_1301_04052019_411x597.png>]
+<ppt15/1557000103_1301_04052019_357x622.png, id=2682, 358.33875pt x 624.3325pt>
+File: ppt15/1557000103_1301_04052019_357x622.png Graphic file (type png)
+<use ppt15/1557000103_1301_04052019_357x622.png>
+Package pdftex.def Info: ppt15/1557000103_1301_04052019_357x622.png  used on input line 176.
+(pdftex.def)             Requested size: 123.58325pt x 215.31873pt.
+ [101
+
+ <./ppt15/1557000103_1301_04052019_357x622.png>]
+<ppt15/1557000114_1301_04052019_658x410.png, id=2708, 660.4675pt x 411.5375pt>
+File: ppt15/1557000114_1301_04052019_658x410.png Graphic file (type png)
+<use ppt15/1557000114_1301_04052019_658x410.png>
+Package pdftex.def Info: ppt15/1557000114_1301_04052019_658x410.png  used on input line 177.
+(pdftex.def)             Requested size: 245.83044pt x 153.17702pt.
+ [102
+
+ <./ppt15/1557000114_1301_04052019_658x410.png>]
+<ppt15/1557000129_1302_04052019_405x599.png, id=2734, 406.51875pt x 601.24625pt>
+File: ppt15/1557000129_1302_04052019_405x599.png Graphic file (type png)
+<use ppt15/1557000129_1302_04052019_405x599.png>
+Package pdftex.def Info: ppt15/1557000129_1302_04052019_405x599.png  used on input line 178.
+(pdftex.def)             Requested size: 145.58366pt x 215.32004pt.
+[103
+
+ <./ppt15/1557000129_1302_04052019_405x599.png>]
+<ppt15/1557000141_1302_04052019_388x524.png, id=2761, 389.455pt x 525.965pt>
+File: ppt15/1557000141_1302_04052019_388x524.png Graphic file (type png)
+<use ppt15/1557000141_1302_04052019_388x524.png>
+Package pdftex.def Info: ppt15/1557000141_1302_04052019_388x524.png  used on input line 180.
+(pdftex.def)             Requested size: 159.43393pt x 215.318pt.
+ [104
+
+ <./ppt15/1557000141_1302_04052019_388x524.png>]
+<ppt16/1557000206_1303_04052019_386x639.png, id=2788, 387.4475pt x 641.39626pt>
+File: ppt16/1557000206_1303_04052019_386x639.png Graphic file (type png)
+<use ppt16/1557000206_1303_04052019_386x639.png>
+Package pdftex.def Info: ppt16/1557000206_1303_04052019_386x639.png  used on input line 182.
+(pdftex.def)             Requested size: 130.06323pt x 215.31194pt.
+ [105
+
+ <./ppt16/1557000206_1303_04052019_386x639.png>]
+<ppt16/1557000228_1303_04052019_679x507.png, id=2814, 681.54625pt x 508.90125pt>
+File: ppt16/1557000228_1303_04052019_679x507.png Graphic file (type png)
+<use ppt16/1557000228_1303_04052019_679x507.png>
+Package pdftex.def Info: ppt16/1557000228_1303_04052019_679x507.png  used on input line 183.
+(pdftex.def)             Requested size: 245.83484pt x 183.56151pt.
+ [106
+
+ <./ppt16/1557000228_1303_04052019_679x507.png>]
+<ppt16/1557000246_1304_04052019_669x542.png, id=2840, 671.50874pt x 544.0325pt>
+File: ppt16/1557000246_1304_04052019_669x542.png Graphic file (type png)
+<use ppt16/1557000246_1304_04052019_669x542.png>
+Package pdftex.def Info: ppt16/1557000246_1304_04052019_669x542.png  used on input line 184.
+(pdftex.def)             Requested size: 245.83127pt x 199.16374pt.
+ [107
+
+ <./ppt16/1557000246_1304_04052019_669x542.png>]
+<ppt16/1557000259_1304_04052019_578x621.png, id=2866, 580.1675pt x 623.32875pt>
+File: ppt16/1557000259_1304_04052019_578x621.png Graphic file (type png)
+<use ppt16/1557000259_1304_04052019_578x621.png>
+Package pdftex.def Info: ppt16/1557000259_1304_04052019_578x621.png  used on input line 185.
+(pdftex.def)             Requested size: 200.40587pt x 215.31496pt.
+ [108
+
+ <./ppt16/1557000259_1304_04052019_578x621.png>]
+<ppt16/1557000266_1304_04052019_858x304.png, id=2893, 861.2175pt x 305.14pt>
+File: ppt16/1557000266_1304_04052019_858x304.png Graphic file (type png)
+<use ppt16/1557000266_1304_04052019_858x304.png>
+Package pdftex.def Info: ppt16/1557000266_1304_04052019_858x304.png  used on input line 186.
+(pdftex.def)             Requested size: 245.83063pt x 87.10081pt.
+ [109
+
+ <./ppt16/1557000266_1304_04052019_858x304.png>]
+<ppt16/1557000277_1304_04052019_725x474.png, id=2920, 727.71875pt x 475.7775pt>
+File: ppt16/1557000277_1304_04052019_725x474.png Graphic file (type png)
+<use ppt16/1557000277_1304_04052019_725x474.png>
+Package pdftex.def Info: ppt16/1557000277_1304_04052019_725x474.png  used on input line 187.
+(pdftex.def)             Requested size: 245.8332pt x 160.72404pt.
+ [110
+
+ <./ppt16/1557000277_1304_04052019_725x474.png>]
+<ppt16/1557000285_1304_04052019_290x634.png, id=2945, 291.0875pt x 636.3775pt>
+File: ppt16/1557000285_1304_04052019_290x634.png Graphic file (type png)
+<use ppt16/1557000285_1304_04052019_290x634.png>
+Package pdftex.def Info: ppt16/1557000285_1304_04052019_290x634.png  used on input line 189.
+(pdftex.def)             Requested size: 98.48874pt x 215.31677pt.
+ [111
+
+ <./ppt16/1557000285_1304_04052019_290x634.png>]
+\tf@nav=\write6
+\openout6 = `main.nav'.
+
+\tf@toc=\write7
+\openout7 = `main.toc'.
+
+\tf@snm=\write8
+\openout8 = `main.snm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 194.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 194.
+ (./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 194.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 194.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 9FE929FA33AE51868093DAFFB51C9786;313.
+ ) 
+Here is how much of TeX's memory you used:
+ 17613 strings out of 494847
+ 341754 string characters out of 6179080
+ 384105 words of memory out of 5000000
+ 20243 multiletter control sequences out of 15000+600000
+ 5757 words of font info for 21 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 48i,14n,51p,771b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb>
+Output written on main.pdf (111 pages, 64863463 bytes).
+PDF statistics:
+ 3035 PDF objects out of 3580 (max. 8388607)
+ 2781 compressed objects within 28 object streams
+ 233 named destinations out of 1000 (max. 500000)
+ 608 words of extra memory for PDF output out of 10000 (max. 10000000)
+

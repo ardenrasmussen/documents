@@ -1,0 +1,17 @@
+\begin{thebibliography}{GBC16}
+
+\bibitem[GBC16]{Goodfellow-et-al-2016}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep Learning}.
+\newblock MIT Press, 2016.
+
+\bibitem[Li]{stanford}
+Fei-Fei Li.
+\newblock Cs231n: Convolutional neural networks for visual recognition.
+
+\bibitem[SGK05]{genetic}
+Kumara Sastry, David Goldberg, and Graham Kendall.
+\newblock Genetic algorithms.
+\newblock In {\em Search methodologies}, pages 97--125. Springer, 2005.
+
+\end{thebibliography}
