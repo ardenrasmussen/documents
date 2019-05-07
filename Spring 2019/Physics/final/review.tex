@@ -2,14 +2,217 @@
 \usepackage{amsmath}
 \usepackage{csquotes}
 \usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[margin=1in]{geometry}
 
 \title{Theoretical Dynamics Review}
 \author{Arden Rasmussen}
 \date{\today}
 
+\newcommand{\vc}[1]{\overrightarrow{#1}}
+
 
 \begin{document}
 \maketitle
+
+% Constrained Lagrangian (Shape/Tension)
+% Coupled Oscilator
+
+\begin{multicols}{2}
+
+  \section{Rockets}%
+  \label{sec:rockets}
+
+  Variable mass
+  \begin{align*}
+    m\frac{d\vec{v}}{dt}=\vc{F_{ext}}+\underbrace{\vc{U_{e,r}}\frac{dm}{dt}}_{T=\text{thrust}}\\
+  \end{align*}
+
+  For rocket fired upwards $\vc{F_{ext}}=-mg$.
+
+  \subsection{Tsiolkovsky's Rocket Equations}%
+  \label{sub:tsiolkovsky_s_rocket_equations}
+
+  \begin{align*}
+    V_f-V_i=U_{e,r}\ln\left(\frac{m_i}{m_f}\right)
+  \end{align*}
+
+  \subsection{Center of Mass}%
+  \label{sub:center_of_mass}
+
+  \begin{align*}
+    \vc{R}\equiv\frac{\sum m_k\vc{r}_k}{M_{tot}}
+  \end{align*}
+
+  \begin{align*}
+    K=\underbrace{\frac{1}{2}M_{tot}V^2_{cm}}_\text{translating}
+    +\underbrace{\frac{1}{2}I_{cm}\omega^2}_\text{rotating}
+  \end{align*}
+
+  \section{Rolling down incline}%
+  \label{sec:rolling_down_incline}
+
+  Conserve of E
+  \begin{align*}
+    Mgh=\frac{1}{2}MV^2_{cm}+\frac{1}{2}I_{cm}\omega^2\quad I_{cm}=fMR^2
+  \end{align*}
+
+  No rotational $V_{cm}=\sqrt{2gh}$
+  With rotational $V_{cm}=\sqrt{\frac{2gh}{1+f}}$
+
+  \subsection{Rolling Without Slipping}%
+  \label{sub:rolling_without_slipping}
+
+  \begin{align*}
+    V_{cm}=\omega r
+  \end{align*}
+
+  \section{Collisions}%
+  \label{sec:collisions}
+
+  \subsection{Inelastic}%
+  \label{sub:inelastic}
+
+  $p_{tot}$ conserved, $E_{mech}$ \textbf{not} conserved. Use total mass for
+  the final mas, as they stick together.
+
+  \subsection{Elastic}%
+  \label{sub:elastic}
+
+  $p_{tot}$ and $E_{mech}$ are both conserved. Things collide and don't stick.
+  $p_{1f}\perp p_{2f}$. Use $p_{ix}=p_{fx}$, and same with $y$, then use the
+  relation found there in the expression for $E$.
+
+  Objects end on trajectories perpendicular to one another.
+
+  \section{Central Force Motion}%
+  \label{sec:central_force_motion}
+
+  Angular momentum $\vc{L}$ conserved, use polar coordinates, motion in plane
+  $\perp\vc{L}$.
+
+  \begin{align*}
+    \vc{p}&=m\vc{v}\\
+    \vc{L}&=I\omega=fmr^2\dot{\theta}
+  \end{align*}
+
+  \begin{align*}
+    \vc{N}=\frac{d\vc{L}}{t}
+  \end{align*}
+
+  Torque is time rate of change of angular momentum.
+
+  \begin{align*}
+    V_{eff}(r)=V(r)+\frac{L^2}{2mr^2}
+  \end{align*}
+
+  \begin{itemize}
+    \item Circular
+    \item Elliptical
+    \item Parabolic
+    \item Hyperbolic
+  \end{itemize}
+
+  \begin{align*}
+    E(r)=\frac{1}{2}m\dot{r}^2+V_{eff}(r)
+  \end{align*}
+
+  \begin{align*}
+    T=\frac{2\pi}{\dot{\theta}}\quad
+    f=\frac{\dot{\theta}}{2\pi}
+  \end{align*}
+
+  \subsection{Small Oscillations}%
+  \label{sub:small_oscillations}
+
+  $a$ is the radius of circular motion. Find this by taking the first
+  derivative and setting it equal t zero.
+
+  \begin{align*}
+    k=\frac{d^2V}{dx^2}\Bigr|_{x_min}&\implies
+    k_r=\frac{d^2V_{eff}}{dr^2}\Bigr|_{a}\\
+                                     &\qquad\omega_r=\sqrt{\frac{k_r}{m}}
+  \end{align*}
+
+  \section{Hamiltonian}%
+  \label{sec:hamiltonian}
+  
+  \begin{align*}
+    H=\sum_{k=1}p_k\dot{q}_k-L
+  \end{align*}
+
+  \begin{align*}
+    p_k\equiv\frac{\partial L}{\partial \dot{q}_k}
+  \end{align*}
+
+  \begin{align*}
+    \frac{\partial H}{\partial p_k}&=\dot{q}_k\\
+    \frac{\partial H}{\partial q_k}&=-\dot{p_k}+Q_k\\
+    \frac{\partial H}{\partial t}&=-\frac{\partial L}{\partial t}
+  \end{align*}
+
+  $\frac{d H}{dt}=$ if $Q_k=0$, which means all forces are derivable form a
+  potential, and $\frac{\partial H}{\partial t}=0$, which means that $H$ is not
+  explicit function of time (does not have $t$ directly in it).
+
+  \section{Lagrangians}%
+  \label{sec:lagrangians}
+
+  \begin{align*}
+     L=K-V
+  \end{align*}
+  
+  \begin{align*}
+    \frac{d}{dt}\frac{\partial L}{\partial \dot{x}}-\frac{\partial L}{\partial
+    x}=0
+  \end{align*}
+
+  \section{Coupled Oscillators}%
+  \label{sec:coupled_oscillators}
+  
+  \begin{align*}
+    m\ddot{x_1}&=-k(x_1-l)+k_{12}(x_2-x_1-l_{12})\\
+    m\ddot{x_2}&=-k_{12}(x_2-x_1-l_{12})-k(x_2-(l+l_12))
+  \end{align*}
+
+  \begin{align*}
+    u_1\equiv x_1-l\quad u_2\equiv x_2-(L+l_{12})
+  \end{align*}
+
+  \begin{align*}
+    m\ddot{u_1}&=-ku_1+k_{12}(u_2-u_1)\\
+    m\ddot{u_2}&=-ku_2-k_{12}(u_2-u_1)
+  \end{align*}
+
+  Since there is no dampening, we guess
+  \begin{align*}
+    u_1&=\beta_1\cos(\omega t+\theta)\\
+    u_2&=\beta_2\cos(\omega t+\theta)
+  \end{align*}
+  If there was dampening, one would guess with complex numbers. We assume that
+  $\omega$, and $\theta$ are the same for both masses.
+
+  Now plug this into the previous equations, and construct system of equations.
+  For this it will be
+  \begin{align*}
+    \underbrace{
+     \begin{pmatrix}
+       -m\omega^2+k+k_{12} & -k_{12}\\
+       -k_{12} & -m\omega^2+k+k_{12}
+     \end{pmatrix}
+     }_A
+     \begin{pmatrix}
+        \beta_1 \\ \beta_2
+     \end{pmatrix}=
+     \begin{pmatrix}
+        0 \\ 0
+     \end{pmatrix}
+  \end{align*}
+  To have non-trivial solutions, we need $\det(A)=0$. So take the determinant,
+  and set it equal to zero. Use that to solve for $\omega$, you will probably
+  need to use quadratic formula, but also okay to cheat a bit.
+
+\end{multicols}
 
 
 \end{document}
