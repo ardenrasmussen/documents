@@ -21,6 +21,23 @@
 \section{Processor Architecture}%
 \label{sec:processor_architecture}
 
+\subsection{Data Alignment}%
+\label{sub:data_alignment}
+
+Primitive objects of $K$ bytes must have an address that is a multiple of $K$.
+\begin{center}
+  \begin{tabular}{c c}
+    K & Types\\\hline
+    1 & \s{char}\\
+    2 & \s{short}\\
+    4 & \s{int},\s{float}\\
+    8 & \s{long},\s{double},\s{char *}\\\hline
+  \end{tabular}
+\end{center}
+
+Structs must satisfy $8$ byte alignment, so we add additional bytes to meet
+this requirement.
+
 \subsection{The Y86-64 Instruction Set Architecture}%
 \label{sub:the_y86_64_instruction_set_architecture}
 
@@ -172,6 +189,15 @@ operation completes its execution, its write back stage directly writes it to
 the current operation. This means that there still may be a need for some
 stalling, but less of it is necessary.
 
+\subsubsection{Performance}%
+\label{ssub:preformance}
+
+\begin{align*}
+  Clock Cycle &= \sum Stages + Pipeline Register\\
+  Latency &= Pipelines \cdot Clock Cycle\\
+  Throughput &= \frac{1000}{Clock Cycle}
+\end{align*}
+
 \section{The Memory Hierarchy}%
 \label{sec:the_memory_hierarchy}
 
@@ -236,6 +262,24 @@ Having larger block size, allows for better spacial locality, but mean that
 there will be a smaller number of cache lines. Higher associativity (lines per
 set) can increase the hit time, because it must check more and more tags in the
 set.
+
+\subsection{Cache Parameters}%
+\label{sub:cache_parameters}
+
+\begin{center}
+  \begin{tabular}{c c}
+  Parameter & Description\\\hline
+  $S=2^s$ & Number of sets\\
+  $E$ & Number of lines per set\\
+  $B=2^b$ & Block size(bytes)\\
+  $m=\log_2(M)$ & Number of physical address bits\\
+  $M=2^m$ & Maximum number of unique memory addresses\\
+  $s=\log_2(S)$ & Number of set index bits\\
+  $b=\log_2(B)$ & Number of block offset bits\\
+  $t=m-(s+b)$ & Number of tag bits\\
+  $C=B\times E\times S$ & Cache size(bytes), not including overhead\\\hline
+  \end{tabular}
+\end{center}
 
 \section{Virtual Memory}%
 \label{sec:virtual_memory}
