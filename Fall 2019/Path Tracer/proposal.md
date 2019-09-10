@@ -1,9 +1,8 @@
 # Proposal #
 ### Arden Rasmussen ###
 
-The primary goal of this independents study is to develop and understand the
-industry standard methods for computer graphics rendering. Specifically
-rendering techniques using path tracing.
+The primary goal of this independent study is to develop an understanding
+for computer graphics path rendering techniques.
 
 I will develop a library that can be used by others that makes use of path
 tracing, and some additional advanced rendering techniques. The library should
@@ -14,7 +13,8 @@ my performance will be evaluated at the end of the semester, based upon the
 code that I have written.
 
 I will present a library, and write a paper on the process that I have learned
-about.
+about. The final test will be if my code is able to use path tracing to render
+several scenes that the supervisor has defined.
 
 We will meet weekly, and be able to email each other if other situations arise.
 
