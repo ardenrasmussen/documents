@@ -1,0 +1,152 @@
+\documentclass[10pt]{amsart}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{enumitem}
+
+\title{Quiz Study Guide}
+\author{Arden Rasmussen}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\section{Terminology}%
+\label{sec:terminology}
+
+\begin{enumerate}
+  \item State the commutative and the associative rules for an operation. State
+    the distributive rule.
+    \begin{description}
+      \item[Commutative Rule] \[a\star b=b\star a\]
+      \item[Associative Rule] \[( a \star b)\star c =
+        a\star(b\star c)\]
+      \item[Distributive Rule]
+        \begin{align*}
+          (a\star b)\circ c&= (a\circ c)\star(b \circ c)\\
+          a\circ(b\star c)&=(a\circ b)\star(a\circ c)
+        \end{align*}
+    \end{description}
+  \item What do we mean when we say that\ldots
+    \begin{enumerate}[listparindent=0.7cm]
+      \item Something is an ``identity'' with respect to an operation? E.g.\ what
+        do we mean by an ``additive identity''? Or by a ``multiplicative
+        identity''?
+
+        Something is an identity if $a\star \text{Id}=a$, and
+        $\text{Id}\star a=a$. That operation applied to the identity and any
+        other value is equal to that other value.
+      \item An element is ``invertible with respect to an operation''? What do we
+        mean by a ``multiplicative inverse''?
+
+        An element is invertible with respect to an operation if there exists
+        an ``identity'' for that operation, and there exists a value such that
+        $a\star a^{-1}=\text{Id}$, and $a^{-1}\star a=\text{Id}$.
+      \item $(G,\star)$ constitutes a group?
+        \begin{itemize}
+          \item $\star$ is associative.
+          \item $\star$ has an identity.
+          \item Every element of $G$ has an inverse with respect to $\star$.
+          \item $\star$ May or may not be commutative.
+        \end{itemize}
+      \item $(R,\oplus,\otimes)$ constitutes a ring? A commutative ring? How
+        about a field?
+        \begin{itemize}
+          \item $(R,\oplus)$ is a commutative group.
+          \item $\otimes$ is associative.
+          \item $\otimes$ distributes over $\oplus$.
+          \item $\otimes$ may or may not be commutative.
+          \item $\otimes$ may or may not have identity.
+          \item Elements of $R$ may or may not have an inverse.
+        \end{itemize}
+      \item an element is a ``unit'' in a ring?
+      \item an element is a ``zero divisor'' in a ring?
+      \item something is an ``integral domain''?
+    \end{enumerate}
+\end{enumerate}
+
+\section{Examples}%
+\label{sec:examples}
+
+\begin{enumerate}
+  \item Consider a collection $\mathcal{F}$ of functions
+    $f:\mathbb{R}\rightarrow\mathbb{R}$. Composition of functions is an
+    operation in the set $\mathcal{F}$.  \[f,g\in\mathcal{F}\rightarrow f\circ
+    g\in\mathcal{F}.\]
+    \begin{enumerate}[listparindent=0.7cm]
+      \item Which rules does this operation satisfy?
+
+        $\circ$ satisfies the Associative rule.
+      \item Does it have an identity?
+
+        Yes $\text{Id}(x)=x$.
+      \item Does every element of $\mathcal{F}$ have its inverse?
+
+        No, consider $f(x)=e^x$, the inverse would be $f^{-1}(x)=\ln(x)$. But
+        $\ln: \mathbb{R} > 0 \mapsto \mathbb{R}$, thus
+        $f^{-1}(x)\notin\mathcal{F}$.
+      \item Does $\mathcal{F}$ constitute a group? A ring? A field?
+    \end{enumerate}
+  \item Let $M_n(\mathbb{R})$ be the set of $n\times n$ matrices whose entries
+    are real numbers.
+    \begin{enumerate}[listparindent=0.7cm]
+      \item Which rules do matrix addition and multiplication satisfy?
+
+        Matrix addition satisfies commutative rule, and the Associative rule.
+        Matrix multiplication satisfies Associative rule, and the distributive
+        rule.
+      \item Does matrix addition have an identity? If so, what is it? Likewise
+        is there a multiplicative identity? If so, what is it?
+
+        The identity of matrix addition is the zero matrix, the multiplicative
+        identity is the identity matrix.
+      \item Does every matrix in $M_n(\mathbb{R})$ have its additive inverse?
+        For matrices with additive inverse explain how one would go about
+        finding the supposed inverse. How about multiplicative inverse? Explain
+        how one would go about finding it.
+
+        Yes, every matrix has its additive inverse, to find it, multiply every
+        element of the matrix by $-1$. Not all matrices have a multiplicative
+        inverse.
+      \item Is $\begin{pmatrix}2 & 1 \\ 1 & 2\end{pmatrix}$ a unit in
+        $M_2(\mathbb{R})$? What if I changed the framework of the problem and
+        considered $M_2(\mathbb{Z})$, the set of $2\times 2$ matrices whose
+        entries are integers, in in place of $M_2(\mathbb{R})$?
+      \item Is $\begin{pmatrix}1&1\\2&0\end{pmatrix}$ a zero divisor in
+        $M_2(\mathbb{R})$? How about in $M_2(\mathbb{Z})$? How about
+        $\begin{pmatrix}0&1\\0&0\end{pmatrix}$ is it a zero division in
+        $M_2(\mathbb{R})$? $M_2(\mathbb{Z})$?
+      \item Does $M_n(\mathbb{R})$ constitute a group? A ring? A field? An
+        integral domain?
+    \end{enumerate}
+  \item Let $S\neq \emptyset$. Union $\cup$ and intersection $\cap$ are
+    operation on the power set $\mathcal{P}(S)$.
+    \begin{enumerate}[listparindent=0.7cm]
+      \item Which rules do $\cup$ and $\cap$ satisfy?
+      \item Does $\cup$ have an identity? If so, what is it? Does $\cap$ have
+        an identity? If so, what is it?
+      \item Does every $X\in\mathcal{P}(S)$ have an inverse with respect to
+        $\cup$? If so, what is it? Does every $X\in\mathcal{P}(S)$ have an
+        inverse with respect to $\cap$? If so, what is it?
+      \item Does $\mathcal{P}(S)$ constitute a group? A ring? A field? An
+        integral domain?
+    \end{enumerate}
+  \item Consider the set
+    \[\mathbb{Z}\left[\sqrt{2}\right]=\left\{a+b\sqrt{2}|a,b\in\mathbb{Z}\right\}\]
+    \begin{enumerate}[listparindent=0.7cm]
+      \item Is the regular addition of numbers an operation on
+        $\mathbb{Z}\left[\sqrt{2}\right]$? I.e.\ is it true that
+        \[x,y\in\mathbb{Z}\left[\sqrt{2}\right]\rightarrow
+        x+y\in\mathbb{Z}\left[\sqrt{2}\right]?\] If so, address the situation
+        with the identity and the inverses with respect to this operation on
+        $\mathbb{Z}\left[\sqrt{2}\right]$. Specifically, describe the units in
+        $\mathbb{Z}\left[\sqrt{2}\right]$.
+      \item Is $\mathbb{Z}\left[\sqrt{2}\right]$ a ring? A field? An integral
+        domain?
+      \item What if instead we were to consider
+        \[\mathbb{Q}\left[\sqrt{2}\right]=\left\{a+b\sqrt{2}|a,b\in\mathbb{Q}\right\}?\]
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
