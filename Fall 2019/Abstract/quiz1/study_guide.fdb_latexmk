@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1568254097 "study_guide.tex" "study_guide.pdf" "study_guide" 1568254097
+["pdflatex"] 1568334252 "study_guide.tex" "study_guide.pdf" "study_guide" 1568334252
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1557554374 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1557554374 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1557554374 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -49,9 +49,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1557554374 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1566937346 3106380 436fef8c2e0ca660ce1dd89198cfa583 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1566937310 7979416 a96b5fdbe155913608a4c786283b0c3d ""
-  "study_guide.aux" 1568254097 417 06ad50466f2f6d198798c8caf1e30b1e "pdflatex"
-  "study_guide.tex" 1568254096 6685 522206d670381196621fa7e6626ab4db ""
+  "study_guide.aux" 1568334252 417 06ad50466f2f6d198798c8caf1e30b1e "pdflatex"
+  "study_guide.tex" 1568334252 10018 11c1164d7c35e39f52e6e4e926949c92 ""
   (generated)
+  "study_guide.pdf"
   "study_guide.log"
   "study_guide.aux"
-  "study_guide.pdf"

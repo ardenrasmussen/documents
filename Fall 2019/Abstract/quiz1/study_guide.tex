@@ -52,17 +52,31 @@
         \end{itemize}
       \item $(R,\oplus,\otimes)$ constitutes a ring? A commutative ring? How
         about a field?
-        \begin{itemize}
-          \item $(R,\oplus)$ is a commutative group.
-          \item $\otimes$ is associative.
-          \item $\otimes$ distributes over $\oplus$.
-          \item $\otimes$ may or may not be commutative.
-          \item $\otimes$ may or may not have identity.
-          \item Elements of $R$ may or may not have an inverse.
-        \end{itemize}
+        \begin{description}
+          \item[Ring] 
+            \begin{itemize}
+              \item $(R,\oplus)$ is a commutative group.
+              \item $\otimes$ is associative.
+              \item $\otimes$ distributes over $\oplus$.
+              \item $\otimes$ may or may not be commutative.
+              \item $\otimes$ may or may not have identity.
+              \item Elements of $R$ may or may not have an inverse.
+            \end{itemize}
+          \item[Field]
+            \begin{itemize}
+              \item Every element of $R$ has a multiplicative inverse.
+            \end{itemize}
+        \end{description}
       \item an element is a ``unit'' in a ring?
+
+        Any element which is invertible in a ring.
       \item an element is a ``zero divisor'' in a ring?
+
+        $a\in R,a\neq 0$ is a zero divisor if there is $b\in R,b\neq 0$ such
+        that $ab=0$.
       \item something is an ``integral domain''?
+
+        An integral domain is a ring with no zero divisors.
     \end{enumerate}
 \end{enumerate}
 
@@ -87,6 +101,9 @@
         $\ln: \mathbb{R} > 0 \mapsto \mathbb{R}$, thus
         $f^{-1}(x)\notin\mathcal{F}$.
       \item Does $\mathcal{F}$ constitute a group? A ring? A field?
+
+        Only one operation is defined, so it is not a ring or a field, and
+        since not every element has an inverse, then it is not a group.
     \end{enumerate}
   \item Let $M_n(\mathbb{R})$ be the set of $n\times n$ matrices whose entries
     are real numbers.
@@ -113,24 +130,52 @@
         $M_2(\mathbb{R})$? What if I changed the framework of the problem and
         considered $M_2(\mathbb{Z})$, the set of $2\times 2$ matrices whose
         entries are integers, in in place of $M_2(\mathbb{R})$?
+
+        Yes this matrix is invertible in $M_2(\mathbb{R})$, so it is a unit. In
+        the framework of $M_2(\mathbb{Z})$, then it is not invertible, so it is
+        not a unit.
       \item Is $\begin{pmatrix}1&1\\2&0\end{pmatrix}$ a zero divisor in
         $M_2(\mathbb{R})$? How about in $M_2(\mathbb{Z})$? How about
         $\begin{pmatrix}0&1\\0&0\end{pmatrix}$ is it a zero division in
         $M_2(\mathbb{R})$? $M_2(\mathbb{Z})$?
+
+        No this is not a zero divisor, there is no matrix such that when
+        multiplied with this one equals the zero matrix. Yes
+        $\begin{pmatrix}0&1//0&0\end{pmatrix}$ is a zero divisor in
+        $M_2(\mathbb{R})$, and $M_2(\mathbb{Z})$.
       \item Does $M_n(\mathbb{R})$ constitute a group? A ring? A field? An
         integral domain?
+
+        It does not constitute a integral domain, as there are zero divisors,
+        and it does not constitute a field, as not all elements have a
+        multiplicative inverse, thus it is a field.
     \end{enumerate}
   \item Let $S\neq \emptyset$. Union $\cup$ and intersection $\cap$ are
     operation on the power set $\mathcal{P}(S)$.
     \begin{enumerate}[listparindent=0.7cm]
       \item Which rules do $\cup$ and $\cap$ satisfy?
+
+        $\cup$ satisfies commutative and associative. $\cap$ also satisfies
+        commutative and associative. And $\cap$ distributes over $\cup$, so the
+        distributive rule is satisfied.
       \item Does $\cup$ have an identity? If so, what is it? Does $\cap$ have
         an identity? If so, what is it?
+
+        The identity for $\cup=\emptyset$, and the identity for $\cap=S$.
       \item Does every $X\in\mathcal{P}(S)$ have an inverse with respect to
         $\cup$? If so, what is it? Does every $X\in\mathcal{P}(S)$ have an
         inverse with respect to $\cap$? If so, what is it?
+
+        No, there is no inverse with respect to $\cup$, there is no
+        $Y\in\mathcal{P}(S)$ such that $X\cup Y=\emptyset$, only $X=\emptyset$
+        has an inverse. Similarly the only element of $\mathcal{P}(S)$ with an
+        inverse with respect to $\cap$ is $S$.
       \item Does $\mathcal{P}(S)$ constitute a group? A ring? A field? An
         integral domain?
+
+        Since $(\mathcal{P}(S), \cup)$ is not a group, because not all elements
+        have an inverse. Since this is not a group, then
+        $(\mathcal{P}(S),\cup,\cap)$ is not a ring, field, or integral domain.
     \end{enumerate}
   \item Consider the set
     \[\mathbb{Z}\left[\sqrt{2}\right]=\left\{a+b\sqrt{2}|a,b\in\mathbb{Z}\right\}\]
@@ -140,12 +185,35 @@
         \[x,y\in\mathbb{Z}\left[\sqrt{2}\right]\rightarrow
         x+y\in\mathbb{Z}\left[\sqrt{2}\right]?\] If so, address the situation
         with the identity and the inverses with respect to this operation on
+        $\mathbb{Z}\left[\sqrt{2}\right]$.
+
+        Yes it is an operation. The identity is $a=b=0$, or $0+b\sqrt{2}$. Thus
+        inverses should exists for all elements. Inverses would be found as
+        $x=a+b\sqrt{2}$, then $x^{-1}=(-a)+(-b)\sqrt{2}$.
+      \item Is the regular multiplication of numbers an operation on
+        $\mathbb{Z}\left[\sqrt{2}\right]$? I.e.\ is it true that
+        \[x,y\in\mathbb{Z}\left[\sqrt{2}\right]\rightarrow x\cdot
+        y\in\mathbb{Z}\left[\sqrt{2}\right]?\] If so, address the situation
+        with the identity and the inverses with respect to this operation on
         $\mathbb{Z}\left[\sqrt{2}\right]$. Specifically, describe the units in
         $\mathbb{Z}\left[\sqrt{2}\right]$.
+
+        Yes it is also an operation. The identity is $a=1,b=0$, or
+        $1+0\sqrt{2}$. Inverses may not always exists though. For example
+        consider $2+0\sqrt{2}$, the inverse would have to be $\frac{1}{2}$, but
+        this is not in the set. Thus the units in
+        $\mathbb{Z}\left[\sqrt{2}\right]$ are $\pm1+0\sqrt{2}$.
       \item Is $\mathbb{Z}\left[\sqrt{2}\right]$ a ring? A field? An integral
         domain?
+
+        This is a ring, and an integral domain, but it is not a field.
       \item What if instead we were to consider
         \[\mathbb{Q}\left[\sqrt{2}\right]=\left\{a+b\sqrt{2}|a,b\in\mathbb{Q}\right\}?\]
+
+        Using this definition, then more elements would have inverses, but not
+        all of them. Consider $0+1\sqrt{2}$. The multiplicative inverse would
+        have to be $\frac{1}{\sqrt{2}}$, but this is not in the domain. So this
+        would still only be a ring, and an integral domain.
     \end{enumerate}
 \end{enumerate}
 
