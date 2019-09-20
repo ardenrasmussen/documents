@@ -1,0 +1,5 @@
+Yes, I think that Aelita falls into my definition of sf. Aelita utilizes many of the concepts that are a part of sf, and it exemplifies the role of sf in the post-revolutionary world.
+
+Each of these works presents interplanetary travel is in different ways. "Aelita" represents travel fairly realistically, with the use of a ship, but this ends up being a daydream, and not possible. "On the Moon" completely ignores the interplanetary travel, and they just appear on the moon. Voyage to the Moon" presents travel in a more of satirical way, although it is also the only instance where the travel was not some dream.
+
+In "On the Moon" the non-Earth society is represented by only the two men and neither of which is from the moon itself. Contrastingly in "Aelita", the mars society is complete, with a social hierarchy political structure. However, despite this great difference, there is still a similarity, in the emptiness of the surface. On "On the Moon" the vast emptiness of the surface of the moon in exemplified, and in "Aelita" all scenes that are on the surface of Mars, at most contain some of the monarchs, but for the most part, it is also largely empty.
