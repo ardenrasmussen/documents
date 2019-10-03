@@ -1,0 +1,42 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usetikzlibrary{calc,patterns,angles,quotes,positioning}
+
+\newcommand{\AxisRotator}[1][rotate=0]{\tikz[x=0.25cm,y=0.60cm,-stealth,#1] \draw (0,0) arc (-150:150:1 and 1);}
+\newcommand{\AxisRotatorUnder}[1][rotate=0]{\tikz[x=0.25cm,y=0.60cm,-stealth,#1]
+  \draw (0,0) arc (150:-150:1 and 1);}
+
+\begin{document}
+
+\begin{figure}[htpb]
+\begin{center}
+\begin{tikzpicture}[scale=1, transform shape]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-4,4);
+  \coordinate (B) at (4,4);
+  \node [below right=0.25cm and 0.6cm of A] {$A$};
+  \node [below left=0.25cm and 0.6cm of B] {$B$};
+  \fill[black] (O) circle (0.05);
+  \fill[black] (A) circle (0.05);
+  \fill[black] (B) circle (0.05);
+  \fill[black] (-4,2) circle (0.05);
+  \draw (A) -- node[midway] (AMID) {$\AxisRotatorUnder[x=.15cm,y=.36cm,rotate=-45]$} (0,0) -- node[midway] (BMID) {$\AxisRotatorUnder[x=.15cm,y=0.36cm,rotate=45]$} (B);
+  \draw[dashed] (-4, 2) node[right] (CA) {$\AxisRotator[x=.15cm,y=.36cm,solid]$} --
+    (4, 2) node [left] (CB) {$\AxisRotator[x=.15cm,y=.36cm,solid]$};
+  \draw[dashed] (0, 0) -- (0, 0.5);
+  \draw[dashed] (0, 1) -- (0, 4);
+  \draw[->] (O) -- (0.5,-0.5) node [right] {$\hat{a}$};
+  \draw[->] (B) -- (4.5,4.5) node [right] {$\hat{b}$};
+  \draw[->] (A) -- (-3.5,4.5) node [above]{$\vec{A}$};
+  \draw[->] (B) -- (3.5,4.5) node [above]{$\vec{B}$};
+  \draw[->] (-4,2) -- (-4.5,2) node[left] {$\hat{c}$};
+  \node [above=0.01cm of AMID] {$\omega$};
+  \node [above=0.01cm of BMID] {$\omega$};
+  \node [below=0.01cm of CA] {$\omega_c$};
+  \node [below=0.01cm of CB] {$\omega_c$};
+  \pic [draw, -, "$\theta$", angle eccentricity=1.5] {angle = B--O--A};
+\end{tikzpicture}
+\end{center}
+\caption{}%
+\label{fig:}
+\end{figure}
+\end{document}
