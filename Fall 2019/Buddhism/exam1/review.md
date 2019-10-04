@@ -15,7 +15,7 @@ vipassana
 : Meditation of insight
 
 dhyana
-: ???
+: Oldest texts of Buddhism, translates to meditation.
 
 Brahmins
 : Buddhist monks
@@ -33,7 +33,7 @@ parinirvana
 : Death with no remain, when the body dies.
 
 Vinaya
-: ???
+: Collection of rules that all monks/nuns were required to follow.
 
 Dharma
 : Ultimate truth, how things should be
@@ -74,7 +74,7 @@ jataka
 : Tales of former lives of the Buddha.
 
 bhikkhu
-: ???
+: Ordained Buddhist monk.
 
 trsna
 : Craving/ignorance, the cause for duhkha.
@@ -83,7 +83,7 @@ pratitya samutpada
 : Conditioned arising
 
 dana
-: ???
+: The virtue of generosity.
 
 pynya
 : Spiritual merit.
@@ -96,7 +96,7 @@ Shakamuni
 
 ## Complete the list
 Triple realm/Three realms
-: ???
+: Desire realm, Form realm, and the formless realm
 
 Six realms/paths of rebirth
 : God, Demi-god, Human, Animal, Hungry ghost, Hell
