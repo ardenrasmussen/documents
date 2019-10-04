@@ -18,7 +18,7 @@ dhyana
 : ???
 
 Brahmins
-: ???
+: Buddhist monks
 
 marga
 : The eight fold path to enlightenment
@@ -45,7 +45,7 @@ Upanisads
 : Later philosophical sacred texts
 
 Tathagatha
-: ???
+: Buddha
 
 Paul Carus
 : Man wanted to create religion of science, heavily inspired by Buddhism.
@@ -102,26 +102,28 @@ Six realms/paths of rebirth
 : God, Demi-god, Human, Animal, Hungry ghost, Hell
 
 Three Jewels/Three Refuges
-: ???
+: Buddha, Dharma, Sangha
 
 Three marks of existence in samsara
-: ???
+: suffering, impermanence, anatman
 
 Five aggregates
-: ???
+: Form, Feeling, Perception, Will, Consciousness
 
 Four Nobel Truths
-: ???
+: Suffering, Craving, Cessation, Nobel eightfold path
 
 Threefold division of the Nobel Eight-factored Path
-: ???
+: Wisdom, Moral irtue, Meditation
 
 Fourfold assembly
-: ???
+: Monks, Nuns, Laymen, Laywomen
 
 # Short Answers
 
 ## Paul Carus' "religion of science"
+
+Paul Carus wanted to create a religion of science based on Buddhism.
 
 ## Existential/philosophical "problem" facing the sramanas of the Buddha's time
 
@@ -132,17 +134,45 @@ between eternalism and nihilism, and between pleasure and self-mortification.
 
 ## How karma relates to wealth, beauty, and social position
 
+Karma of a previous life causes these attributes in the current life.
+
+* Not angry not envious -> beauty
+* Generous -> Wealthy
+* Not envious -> High social status
+* Easily angered -> Ugly
+* Greedy -> Poor
+* Envious of others -> Low social status
+
 ## The *sangha* as a "field of merit"
+
+For the layperson giving to a member of the sangha provided great spiritual
+merit, so the sangha can be considered a field of merit, where the layperson
+and plant seeds for greater merit.
 
 ## Brahmanical teaching of *atman* vs Buddha's teaching of *anatman*
 
+The Brahamanical teaching of self, taught that there was some eternal sole.
+Buddha's teaching of no self, says that there is nothing that can be considered
+eternal, and everything ends.
+
 ## Kondanna's enlightenment
+
+Kondanna was the first monk (after the Buddha) to achieve enlightenment. It is
+described as dust falling from his eyes. He then comments that everything that
+begins is subject to cessation.
 
 ## Four objects of mindfulness and the promised results of mindfulness meditation in the *Discourse on the Establishment of Mindfulness*
 
 ## The 4 expellable offenses and the concerns of the vinaya authors
 
+Sexual intercourse (of any kind), Theft, Murder, Lying about ones spiritual
+achievements.
+
 ## Mahaprajapati and the story of the founding of the nuns' order
+
+The Buddha was very reluctant to allow women to be ordained, as it would cause
+his teachings to only last half the time. But in the end he does allow nuns to
+be ordained.
 
 # Passage Analysis
 
