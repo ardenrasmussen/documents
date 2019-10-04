@@ -1,0 +1,149 @@
+\documentclass[10pt]{armath}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage{enumitem}
+% \usepackage[margin=1in]{geometry}
+
+
+\title{Abstract Algebra - First Midterm Exam}
+\author{Arden Rasmussen}
+\date{\today}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\zw}{\mathbb{Z}\left[\omega\right]}
+\newcommand{\zi}{\mathbb{Z}\left[2i\right]}
+\newcommand{\rad}[1]{\text{rad}\left(#1\right)}
+
+
+\begin{document}
+\maketitle
+
+\section*{Problem 1}%
+\label{sec:problem_1}
+
+Let $\omega\in\C$ be a solution of the equation
+\begin{align*}
+   \omega^2+\omega+1=0.
+\end{align*}
+Consider the set $\zw=\left\{a+b\omega\vert a,b\in\Z \right\}$. Show that the
+set $\zw$ is closed under the ordinary addition and under the ordinary
+multiplication. Conclude that $\zw$ is a ring which is a subring of the field of
+complex numbers.
+
+\begin{proof}
+  Consider the set $\zw=\left\{a+b\omega\vert a,b\in\Z \right\}$. Let
+  $a_1+b_1\omega,a_2+b_2\omega\in\zw$, then we compute
+  \begin{align*}
+    \left(a_1+b_1\omega\right)+\left(a_2+b_2\omega\right)=(a_1+a_2)+(b_1+b_2)\omega.
+  \end{align*}
+  It is clear that $a_1+a_2\in\Z$ and $b_1+b_2\in\Z$, so we can conclude that
+  $\zw$ is closed under ordinary addition. Now we compute
+  \begin{align*}
+    \left(a_1+b_1\omega\right)\cdot\left(a_2+b_2\omega\right)=a_1a_2+a_1b_2\omega+a_2b_1\omega+b_1b_2\omega^2.
+  \end{align*}
+  Since $\omega^2+\omega+1=0$, then we know that $\omega^2=-\omega-1$, so we
+  can rewrite this to be
+  \begin{align*}
+    a_1a_2+a_1b_2\omega&+a_2b_1\omega-b_1b_2(\omega+1)\\
+                       &=
+                       \left(a_1a_2-b_1b_2\right)+\left(a_1b_2+a_2b_1-b_1b_2\right)\omega.
+  \end{align*}
+  Again, we can see that $a_1a_2-b_1b_2\in\Z$ and $a_1b_2+a_2b_1-b_1b_2\in\Z$,
+  thus we conclude that $\zw$ is closed under ordinary addition.
+
+  TODO
+
+  We are able to conclude that $\left(\zw,+,\cdot\right)$ is a ring, and is a
+  subring of $\C$.
+\end{proof}
+
+\section*{Problem 2}%
+\label{sec:problem_2}
+
+Consider the set $\zi = \left\{a+2bi\vert a,b\in\Z\right\}$. Standard number
+addition and multiplication turn $\zi$ into a commutative integral domain with
+identity.
+
+\subsection*{(a)}%
+\label{sub:_a_}
+
+Prove that $2$ is irreducible in this ring.
+
+\subsection*{(b)}%
+\label{sub:_b_}
+
+Prove that $2i$ is irreducible in this ring.
+
+
+\subsection*{(c)}%
+\label{sub:_c_}
+
+Is it true that $2|2i$ in this ring?
+
+\subsection*{(d)}%
+\label{sub:_d_}
+
+Are $2$ and $2i$ associates in this ring?
+
+\subsection*{(e)}%
+\label{sub:_e_}
+
+Can you provide two factorizations of $4$ into irreducible?
+
+\subsection*{(f)}%
+\label{sub:_f_}
+
+Is $2$ prime in this ring? Justify your claim.
+
+\subsection*{(g)}%
+\label{sub:_g_}
+
+Is $2i$ prime in this ring?
+
+\subsection*{(g)}%
+\label{sub:_g_}
+
+Is $\zi$ a Euclidean domain? Is it a PID?
+
+\section*{Problem 3}%
+\label{sec:problem_3}
+
+Let $I$ be an ideal of a commutative ring $R$ with identity. Define the
+following set:
+\begin{align*}
+  \rad{I}=\left\{r\in R|r^n\in I\ \text{for some}\ n\in\N\right\}.
+\end{align*}
+Note: $\N$ is the set of positive integers only. In particular, $0 \notin \N$.
+
+\subsection*{(a)}%
+\label{sub:_a3_}
+
+Suppose temporarily that $R=\Z$. Find $\rad{I}$ for the following choices of
+$I$:
+
+\subsubsection*{(i)}%
+\label{ssub:_i_}
+
+$I=(9)$
+
+\subsubsection*{(i)}%
+\label{ssub:_i_}
+
+$I=(43)$
+
+\subsubsection*{(iii)}%
+\label{ssub:_i_}
+
+$I=(72)$
+
+\subsection*{(b)}%
+\label{sub:_b3_}
+
+Going back to the general situation, show $\rad{I}$ is an ideal. Hint: Look at
+your very first homework assignment.
+\end{document}
