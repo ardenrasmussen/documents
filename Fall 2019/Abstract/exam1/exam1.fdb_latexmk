@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1570151499 "exam1.tex" "exam1.pdf" "exam1" 1570151499
+["pdflatex"] 1570501896 "exam1.tex" "exam1.pdf" "exam1" 1570501897
   "/home/arden/texmf/tex/latex/local/armath.cls" 1570036716 61360 7e50d27347c9de934896dbcd5766426b ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1557554374 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1557554374 1004 54797486969f23fa377b128694d548df ""
@@ -48,9 +48,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1557554374 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1566937346 3106380 436fef8c2e0ca660ce1dd89198cfa583 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1566937310 7979416 a96b5fdbe155913608a4c786283b0c3d ""
-  "exam1.aux" 1570151499 2185 20233fd90ddbe9fc5e707432452bfb29 "pdflatex"
-  "exam1.tex" 1570151498 3641 2347ed2d4a20e197aaeffc462c553a52 ""
+  "exam1.aux" 1570501897 2185 aa6ff0784f99a830d9039fc953292d42 "pdflatex"
+  "exam1.tex" 1570501895 6125 029dc912d9bb3d0d34277a2d0d89a610 ""
   (generated)
+  "exam1.log"
   "exam1.aux"
   "exam1.pdf"
-  "exam1.log"

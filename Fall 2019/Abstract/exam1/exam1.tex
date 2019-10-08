@@ -7,7 +7,7 @@
 % \usepackage[margin=1in]{geometry}
 
 
-\title{Abstract Algebra - First Midterm Exam}
+\title{Abstract Algebra --- First Midterm Exam}
 \author{Arden Rasmussen}
 \date{\today}
 
@@ -56,10 +56,9 @@ complex numbers.
   Again, we can see that $a_1a_2-b_1b_2\in\Z$ and $a_1b_2+a_2b_1-b_1b_2\in\Z$,
   thus we conclude that $\zw$ is closed under ordinary addition.
 
-  TODO
-
-  We are able to conclude that $\left(\zw,+,\cdot\right)$ is a ring, and is a
-  subring of $\C$.
+  Since $\zw\subset \C$ and it is closed under addition and multiplication,
+  then we are able to conclude that $\left(\zw,+,\cdot\right)$ is a ring, and
+  is a subring of $\C$.
 \end{proof}
 
 \section*{Problem 2}%
@@ -74,26 +73,77 @@ identity.
 
 Prove that $2$ is irreducible in this ring.
 
+\begin{proof}
+   Assmume that $2$ is reducible, that is that there exists some $a,b\in\zi$
+   such that $2=ab$, where $a,b$ are non-unit and non-zero. Then we compute
+   \begin{align*}
+     2&=ab\\
+     N(2)&=N(a)N(b)\\
+     4&=N(a)N(b).
+   \end{align*}
+   Since $a,b$ are not unit, then $N(a),N(b)\neq 1$, so that means
+   \begin{align*}
+     N(a)=N(b)=2.
+   \end{align*}
+   If $a=\alpha+2\beta$, with $\alpha,\beta\in\Z$, then
+   $N(a)=\alpha^2+4\beta^2=2$. There can be no $\alpha,\beta$ that satisfy this
+   equation. Thus we conclude that $a$ must be unit. However, this is a
+   contradiction of our assumption, thus $2$ must be irreducible in $\zi$.
+\end{proof}
+
 \subsection*{(b)}%
 \label{sub:_b_}
 
 Prove that $2i$ is irreducible in this ring.
 
+\begin{proof}
+   Assmume that $2i$ is reducible, that is that there exists some $a,b\in\zi$
+   such that $2i=ab$, where $a,b$ are non-unit and non-zero. Then we compute
+   \begin{align*}
+     2i&=ab\\
+     N(2i)&=N(a)N(b)\\
+     4&=N(a)N(b).
+   \end{align*}
+   Since $a,b$ are not unit, then $N(a),N(b)\neq 1$, so that means
+   \begin{align*}
+     N(a)=N(b)=2.
+   \end{align*}
+   If $a=\alpha+2\beta$, with $\alpha,\beta\in\Z$, then
+   $N(a)=\alpha^2+4\beta^2=2$. There can be no $\alpha,\beta$ that satisfy this
+   equation. Thus we conclude that $a$ must be unit. However, this is a
+   contradiction of our assumption, thus $2i$ must be irreducible in $\zi$.
+\end{proof}
 
 \subsection*{(c)}%
 \label{sub:_c_}
 
 Is it true that $2|2i$ in this ring?
 
+\begin{proof}
+   Assume $2|2i$, this implies that there exists some $q\in\zi$ such that
+   $2i=2\cdot q$. However, the only $q$ that would satisfy this statement would
+   be $i$, and $i\notin\zi$. Thus $2\nmid2i$
+\end{proof}
+
 \subsection*{(d)}%
 \label{sub:_d_}
 
 Are $2$ and $2i$ associates in this ring?
 
+\begin{proof}
+   Units in this ring are $\pm 1$. Thus $2$ and $2i$ are not associates, as
+   they are not off by a unit of one another.
+\end{proof}
+
 \subsection*{(e)}%
 \label{sub:_e_}
 
 Can you provide two factorizations of $4$ into irreducible?
+
+\begin{align*}
+  4&=2\cdot 2\\
+  4&=2i\cdot(-2i)
+\end{align*}
 
 \subsection*{(f)}%
 \label{sub:_f_}
@@ -108,7 +158,7 @@ Is $2i$ prime in this ring?
 \subsection*{(g)}%
 \label{sub:_g_}
 
-Is $\zi$ a Euclidean domain? Is it a PID?
+Is $\zi$ a Euclidean domain? Is it a PID\@?
 
 \section*{Problem 3}%
 \label{sec:problem_3}
@@ -131,19 +181,46 @@ $I$:
 
 $I=(9)$
 
+\begin{align*}
+  \rad{I}&=\left\{\pm 3, \pm6, \pm 9, \ldots\right\}\\
+  &=\left\{k\cdot 3|k\in\Z\right\}\\
+  &=(3)
+\end{align*}
+
 \subsubsection*{(i)}%
 \label{ssub:_i_}
 
 $I=(43)$
+
+\begin{align*}
+  \rad{I}&=\left\{\pm43, \pm86, \pm129, \ldots\right\}\\
+  &=\left\{k\cdot 43|k\in\Z\right\}\\
+  &=(43)
+\end{align*}
 
 \subsubsection*{(iii)}%
 \label{ssub:_i_}
 
 $I=(72)$
 
+\begin{align*}
+  \rad{I}&=\left\{\pm6, \pm12, \pm18, \ldots\right\}\\
+  &=\left\{k\cdot 6|k\in\Z\right\}\\
+  &=(6)\\
+  &=(2\cdot 3)\\
+  &=(2)\cap(3)
+\end{align*}
+
 \subsection*{(b)}%
 \label{sub:_b3_}
 
 Going back to the general situation, show $\rad{I}$ is an ideal. Hint: Look at
 your very first homework assignment.
+
+\begin{proof}
+  Assume $I=(i)$, then by the fundamental theorem of arithmetic,
+  $i=p_1p_2\cdots p_n$, then
+  $\rad{I}=(p_1)\cap(p_2)\cap\cdots\cap(p_n)=(\text{LCM}(p_1,p_2,\ldots,p_n))$.
+\end{proof}
+
 \end{document}
