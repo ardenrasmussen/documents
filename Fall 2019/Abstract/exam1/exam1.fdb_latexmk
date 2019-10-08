@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1570501896 "exam1.tex" "exam1.pdf" "exam1" 1570501897
-  "/home/arden/texmf/tex/latex/local/armath.cls" 1570036716 61360 7e50d27347c9de934896dbcd5766426b ""
+["pdflatex"] 1570514699 "exam1.tex" "exam1.pdf" "exam1" 1570514699
+  "/home/arden/texmf/tex/latex/local/armath.cls" 1570511755 61360 7e50d27347c9de934896dbcd5766426b ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1557554374 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1557554374 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1557554374 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -46,11 +46,11 @@
   "/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1557554374 43865 f83cc2fa3767abdb988c7d2cd17c02bf ""
   "/usr/share/texmf-dist/tex/latex/graphics/keyval.sty" 1557554374 2591 6404d0c7d28505fb38ce0d86c2e28ae7 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1557554374 33301 a3134070eacafb10b1f371612ce2650d ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1566937346 3106380 436fef8c2e0ca660ce1dd89198cfa583 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1566937310 7979416 a96b5fdbe155913608a4c786283b0c3d ""
-  "exam1.aux" 1570501897 2185 aa6ff0784f99a830d9039fc953292d42 "pdflatex"
-  "exam1.tex" 1570501895 6125 029dc912d9bb3d0d34277a2d0d89a610 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1569473051 3106380 436fef8c2e0ca660ce1dd89198cfa583 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1569473043 7979416 8b76cfaac9d4a855950b4739dd7e6dc1 ""
+  "exam1.aux" 1570514699 2178 c907e9168b774006f2d189bb2630e3cb "pdflatex"
+  "exam1.tex" 1570514699 6219 97ced8ca4ef15b7129118d90f1ef3952 ""
   (generated)
   "exam1.log"
-  "exam1.aux"
   "exam1.pdf"
+  "exam1.aux"

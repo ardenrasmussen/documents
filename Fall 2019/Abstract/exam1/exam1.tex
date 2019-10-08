@@ -15,6 +15,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
 \newcommand{\zw}{\mathbb{Z}\left[\omega\right]}
 \newcommand{\zi}{\mathbb{Z}\left[2i\right]}
 \newcommand{\rad}[1]{\text{rad}\left(#1\right)}
@@ -28,7 +29,7 @@
 
 Let $\omega\in\C$ be a solution of the equation
 \begin{align*}
-   \omega^2+\omega+1=0.
+  \omega^2+\omega+1=0.
 \end{align*}
 Consider the set $\zw=\left\{a+b\omega\vert a,b\in\Z \right\}$. Show that the
 set $\zw$ is closed under the ordinary addition and under the ordinary
@@ -50,8 +51,8 @@ complex numbers.
   can rewrite this to be
   \begin{align*}
     a_1a_2+a_1b_2\omega&+a_2b_1\omega-b_1b_2(\omega+1)\\
-                       &=
-                       \left(a_1a_2-b_1b_2\right)+\left(a_1b_2+a_2b_1-b_1b_2\right)\omega.
+    &=
+    \left(a_1a_2-b_1b_2\right)+\left(a_1b_2+a_2b_1-b_1b_2\right)\omega.
   \end{align*}
   Again, we can see that $a_1a_2-b_1b_2\in\Z$ and $a_1b_2+a_2b_1-b_1b_2\in\Z$,
   thus we conclude that $\zw$ is closed under ordinary addition.
@@ -74,21 +75,21 @@ identity.
 Prove that $2$ is irreducible in this ring.
 
 \begin{proof}
-   Assmume that $2$ is reducible, that is that there exists some $a,b\in\zi$
-   such that $2=ab$, where $a,b$ are non-unit and non-zero. Then we compute
-   \begin{align*}
-     2&=ab\\
-     N(2)&=N(a)N(b)\\
-     4&=N(a)N(b).
-   \end{align*}
-   Since $a,b$ are not unit, then $N(a),N(b)\neq 1$, so that means
-   \begin{align*}
-     N(a)=N(b)=2.
-   \end{align*}
-   If $a=\alpha+2\beta$, with $\alpha,\beta\in\Z$, then
-   $N(a)=\alpha^2+4\beta^2=2$. There can be no $\alpha,\beta$ that satisfy this
-   equation. Thus we conclude that $a$ must be unit. However, this is a
-   contradiction of our assumption, thus $2$ must be irreducible in $\zi$.
+  Assmume that $2$ is reducible, that is that there exists some $a,b\in\zi$
+  such that $2=ab$, where $a,b$ are non-unit and non-zero. Then we compute
+  \begin{align*}
+    2&=ab\\
+    N(2)&=N(a)N(b)\\
+    4&=N(a)N(b).
+  \end{align*}
+  Since $a,b$ are not unit, then $N(a),N(b)\neq 1$, so that means
+  \begin{align*}
+    N(a)=N(b)=2.
+  \end{align*}
+  If $a=\alpha+2\beta$, with $\alpha,\beta\in\Z$, then
+  $N(a)=\alpha^2+4\beta^2=2$. There can be no $\alpha,\beta$ that satisfy this
+  equation. Thus we conclude that $a$ must be unit. However, this is a
+  contradiction of our assumption, thus $2$ must be irreducible in $\zi$.
 \end{proof}
 
 \subsection*{(b)}%
@@ -97,21 +98,21 @@ Prove that $2$ is irreducible in this ring.
 Prove that $2i$ is irreducible in this ring.
 
 \begin{proof}
-   Assmume that $2i$ is reducible, that is that there exists some $a,b\in\zi$
-   such that $2i=ab$, where $a,b$ are non-unit and non-zero. Then we compute
-   \begin{align*}
-     2i&=ab\\
-     N(2i)&=N(a)N(b)\\
-     4&=N(a)N(b).
-   \end{align*}
-   Since $a,b$ are not unit, then $N(a),N(b)\neq 1$, so that means
-   \begin{align*}
-     N(a)=N(b)=2.
-   \end{align*}
-   If $a=\alpha+2\beta$, with $\alpha,\beta\in\Z$, then
-   $N(a)=\alpha^2+4\beta^2=2$. There can be no $\alpha,\beta$ that satisfy this
-   equation. Thus we conclude that $a$ must be unit. However, this is a
-   contradiction of our assumption, thus $2i$ must be irreducible in $\zi$.
+  Assmume that $2i$ is reducible, that is that there exists some $a,b\in\zi$
+  such that $2i=ab$, where $a,b$ are non-unit and non-zero. Then we compute
+  \begin{align*}
+    2i&=ab\\
+    N(2i)&=N(a)N(b)\\
+    4&=N(a)N(b).
+  \end{align*}
+  Since $a,b$ are not unit, then $N(a),N(b)\neq 1$, so that means
+  \begin{align*}
+    N(a)=N(b)=2.
+  \end{align*}
+  If $a=\alpha+2\beta$, with $\alpha,\beta\in\Z$, then
+  $N(a)=\alpha^2+4\beta^2=2$. There can be no $\alpha,\beta$ that satisfy this
+  equation. Thus we conclude that $a$ must be unit. However, this is a
+  contradiction of our assumption, thus $2i$ must be irreducible in $\zi$.
 \end{proof}
 
 \subsection*{(c)}%
@@ -120,9 +121,9 @@ Prove that $2i$ is irreducible in this ring.
 Is it true that $2|2i$ in this ring?
 
 \begin{proof}
-   Assume $2|2i$, this implies that there exists some $q\in\zi$ such that
-   $2i=2\cdot q$. However, the only $q$ that would satisfy this statement would
-   be $i$, and $i\notin\zi$. Thus $2\nmid2i$
+  Assume $2|2i$, this implies that there exists some $q\in\zi$ such that
+  $2i=2\cdot q$. However, the only $q$ that would satisfy this statement would
+  be $i$, and $i\notin\zi$. Thus $2\nmid2i$
 \end{proof}
 
 \subsection*{(d)}%
@@ -131,8 +132,8 @@ Is it true that $2|2i$ in this ring?
 Are $2$ and $2i$ associates in this ring?
 
 \begin{proof}
-   Units in this ring are $\pm 1$. Thus $2$ and $2i$ are not associates, as
-   they are not off by a unit of one another.
+  Units in this ring are $\pm 1$. Thus $2$ and $2i$ are not associates, as
+  they are not off by a unit of one another.
 \end{proof}
 
 \subsection*{(e)}%
@@ -150,15 +151,23 @@ Can you provide two factorizations of $4$ into irreducible?
 
 Is $2$ prime in this ring? Justify your claim.
 
+No $2$ is not prime. Consider $2|4\rightarrow2|2i\cdot-2i$, but $2\nmid2i$ and
+$2\nmid -2i$.
+
 \subsection*{(g)}%
 \label{sub:_g_}
 
 Is $2i$ prime in this ring?
 
+No $2i$ is not prime. Consider $2i|4\rightarrow2|2\cdot2$, but $2i\nmid 2$.
+
 \subsection*{(g)}%
 \label{sub:_g_}
 
 Is $\zi$ a Euclidean domain? Is it a PID\@?
+
+It is neither. It is not a Euclidean domain, because primes $\neq$
+irreducibles, and it is not a PID, with a counter example of $(2,2i)$.
 
 \section*{Problem 3}%
 \label{sec:problem_3}
@@ -218,9 +227,7 @@ Going back to the general situation, show $\rad{I}$ is an ideal. Hint: Look at
 your very first homework assignment.
 
 \begin{proof}
-  Assume $I=(i)$, then by the fundamental theorem of arithmetic,
-  $i=p_1p_2\cdots p_n$, then
-  $\rad{I}=(p_1)\cap(p_2)\cap\cdots\cap(p_n)=(\text{LCM}(p_1,p_2,\ldots,p_n))$.
+   
 \end{proof}
 
 \end{document}
