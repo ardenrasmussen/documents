@@ -227,7 +227,53 @@ Going back to the general situation, show $\rad{I}$ is an ideal. Hint: Look at
 your very first homework assignment.
 
 \begin{proof}
-   
+  To prove that $\rad{I}$ is an ideal, we show that $\rad{I}$ is closed under
+  addition and multiplication, by some other element in $R$. Consider
+  $a,b\in\rad{I}$, thus there exists some $n,m\in\N$ such that
+  \begin{align*}
+     a^m,b^n\in I.
+  \end{align*}
+  Consider the expression
+  \begin{align*}
+    \sum_{k=0}^{k=m+n}{m+n\choose k}a^kb^{m+n-k}.
+  \end{align*}
+  We consider the general element of this sumation, for some $k$. If $k<m$ then
+  we can express this as
+  \begin{align*}
+    &{m+n\choose k}a^kb^{n+\delta}\qquad\delta=m-k>0\\
+    &=\left({m+n\choose k}a^kb^\delta\right) b^n\\
+    &=rb^n.
+  \end{align*}
+  Then by the definition of an ideal, and $b^n\in I$, then $rb^n\in I$. Thus
+  any element with $k<m$ is an element of $I$. If $k\geq m$ then we can express
+  this as
+  \begin{align*}
+     &{m+n\choose k}a^{m+\delta}b^{\gamma}\qquad\delta=k-m>0, \gamma=m+n-k>0\\
+     &=\left({m+n\choose k}a^\delta b^\gamma\right)a^m\\
+     &=ra^m.
+  \end{align*}
+  Thus again by the definition of an ideal, and $a^m\in I$, then this $ra^m\in
+  I$. Thus any element with $k\geq m$ is an element of $I$.
+
+  So we conclude that all elements of this sum is an element of the ideal $I$,
+  and since ideals are closed under addition, then
+  \begin{align*}
+    \sum_{k=0}^{k=m+n}{m+n\choose k}a^kb^{m+n-k}\in I.
+  \end{align*}
+  By the Binomial theorem, we know that
+  \begin{align*}
+    \sum_{k=0}^{k=m+n}{m+n\choose k}a^kb^{m+n-k}={\left(a+b\right)}^{m+n}\in I.
+  \end{align*}
+  and thus we can conclude that $a+b\in\rad{I}$.
+
+  Now we show that $\rad{I}$ is closed under multiplication. Consider
+  $a\in\rad{I}$, and $r\in R$. We know that there exists some $n\in\N$ such
+  that $a^n\in I$. Then there is some $b\in R$ such that $b=r^n$, and by
+  definiton of an ideal, $ba^n\in I$ which implies that $r^na^n\in I$. So we
+  conclude that ${\left(ra\right)}^n\in I$, and thus $ra\in\rad{I}$.
+
+  Since $\rad{I}$ is closed under addition and multiplication, we can conclude
+  that it is indeed a ring.
 \end{proof}
 
 \end{document}
