@@ -18,7 +18,7 @@ technology throughout the novel to advance this idea, and reinforce the
 argument for the global unification of society as a prerequisite for a
 successful communist utopia.
 
-One point when the selflessness of the Martians is exemplified, and is used to
+One point when the unity of the Martians is exemplified, and is used to
 demonstrate it necessity for the development of an idealized communist society
 is on the space ship during the trip to mars. At the begging of the trip, Menni
 explains to Leonid how the crew of the space ship work together. When Leonid
@@ -31,53 +31,93 @@ asks if Menni is the captain he responds by saying
 > retain our health and strength.
 
 Here Menni explains that there is no hierarchy on the space ship, and that
-everyone simply trusts the knowledge and experience of the others. If any one
-person was selfish and did not trust the knowledge of the others, then this
-social structure laking a hierarchy would not function. This social structure
-can only function if everyone considers themselves equals to everyone else, and
-only defers based upon experience. This structure of society, which has been
-condensed to be represented by the society of the crew of the ship, is directly
-what Bagdanov considers an ideal social structure for communism. There are no
-leaders, and no slaves, everyone is on equal ground, and work only to serve the
-greater good for the community. This depiction of the techonology of the space
-craft, and the social structure that is used to run it demonstrates the
-neccesity for the martians of the spaceship to be selfless and work as a single
-union.
+everyone works together and trusts the knowledge and experience of the others.
+If the crew of the space ship was not compleatly unified and aggreed on the
+common goals, then this structure would not function properly. If there was any
+disagreement between crewmembers, then a hiarchay would be neccesary to make
+decisions as to what actions should be taken. It is only when every member of
+the crew considers the experience of the others, and agrees to accept the
+knowledge of the most experience among them that this hiarchacaless social
+structure can function. This mirrors the social structure of the entierty of
+mars, there is no clearly defined social hiararchy, and that is only possible
+though the unity of the population, and their desire to work for the greater
+good of the planet. In this case, the space ship would only function if all
+members of the crew works together as a single team, the same reasoning extends
+twards the entire society of mars. It can only function in this idealized
+socialist society if everyone works together as a single nation.
 
 A second majro point when the use of technology is used to advance Bogdanov's
-is in the depiction of the workforce on mars. The organization of industry and
-production on mars is handled by the Institute of Statistics. The Intitute of
-Statistics keeps statistics on the surplus and shortage of products from all of
-the industries on the planet. The Institute of Statistics and the social
-structure that it represents is only possible if everyone in society is
-extreamly selfless. Menni explains this process to Leonid "The tables are meant
-to affect the distribution of labor", he then goes on to explain "The Institute
-then computes the difference between the existing and the desired situation for
-each vocational area and communicates the result to all places of employment.
-Equilibrium is stoon established by a stream of volunteers". This entire
-process which is demonstrates the technological advancements for the
-distribution of labor, is entirly relient on the martians willingness to work
-for the greater good, and to act selflessly when the need arrises. Bogdanovs
-depiction of the Intitution of Statistics, and the underlying distributed
-workforce of mars, is entirly relient on the population of mars volenteering to
-where the work is needed. The only case where the martians would volenteer for
-new jobs, is if they are selfless enough, and believe in the global unity of
-their society, such that they acknowledge and act on the fact that they must
-work for the greater good of martians, not for their individual goals.
+socialogical ideas is in the depiction of the workforce on mars. The
+organization of industry and production on mars is handled by the Institute of
+Statistics. The Intitute of Statistics keeps statistics on the surplus and
+shortage of products from all of the industries on the planet. The Institute of
+Statistics and the social structure that it represents is only possible if
+everyone in society has been unified globaly. Menni explains this process to
+Leonid "The tables are meant to affect the distribution of labor", he then goes
+on to explain "The Institute then computes the difference between the existing
+and the desired situation for each vocational area and communicates the result
+to all places of employment.  Equilibrium is stoon established by a stream of
+volunteers". This entire process which is demonstrates the technological
+advancements for the distribution of labor, is entirly relient on the martians
+large population such that any errornis statistics will become normalized.
+Bogdanovs depiction of the Intitution of Statistics, and the underlying
+distributed workforce of mars, is entirly relient on the population of mars
+volenteering to where the work is needed. The only case where the martians will
+openly volenteer for the required jobs is when they are working for the greater
+good of the planet, and where there are enough people such that the labor can
+be in excess. If only a single contentnt on earth were to adopt this system of
+labor distribution, it would not function, because a lack of population, and
+the different production of different regions. This system only works on marse,
+because everyone across the planet is part of the system and is willing to work
+for the greater good of society.
+
+A third point where the importance of global unity is emphasized by technology
+is in the construction of the Grand Canals on mars. These gradn cannals
+required many generations of labor and planing, and large numbers of workers to
+deicate themselves to the construction project. Prior to the grand canals only
+the large corporations were able to utilize the land for farming "Thus all
+cultivated land was transferred to a few thousand powerful agricultural
+capitalists". With the construction of the grand canals it became possibl for
+any farmar to make use of the land. This clearly demonstrates a comunification
+of the society, converting it from having a few large corporations to many
+small farmers. As Bogdanov describes "The epoch of the digging of the canals
+was a time of great prosperity in all areas of industry and a period fo
+profound calm in the class struggle". When the martians became united to work
+on a global project that would benifit the entirety of society there was a
+social peace, and once the project was compleated a revolution occured to
+socialize the society so that the global unity that occured during the
+construction would continue indefinently. It the society on marse had been
+primaryly focused on monitary gains, as society on Earth frequently is, then a
+project such as this would never be able to take place. However, since the
+martians are globaly unified and work for the benifit of the entire society and
+not for individual gains, then the construction of the grand canals was able to
+take place. The martians relized that the construction of the canals would
+benifit the society as a whole, although at the detriment of the corperations
+that currently posessed a monopoly on the land. The existance of the
+thechnology of the grand canals exemplifies the societal importance on the
+global unity and primary focuse on working ofr the greater good of the
+community.
 
 These three depictions of technology in Bogdanovs *Red Star* demonstrate the
-importance of the selflessness of the society, and the global unity. None of
-these pieces of technology would be function properly if the martians were not
-inherently selfless or if there were any conflicting parties. That is to say
-the only way that these technological advancements can function is if the
-entierty of mars is unified, and is naturally selfless.
+importance of the global unity of the society. None of these pieces of
+technology would be function properly if the martians were not totaly unified
+into a single culture. If martian society had not been unified globaly, then
+the construction of the grand canals would not have been possible, and the
+management of the space ship and the workforce would not function properly.
 
 The fact that these technological advancements are primarily dependent on the
 struture of the society in which they exist, then it could be argued that those
 are the primary limitations for the development of this type of technology.
 Dispite the fact that much of the society on mars has developed into a perfict
 society, but many of these advancements in the martian technology is primarly
-based upon the societal unity and selflesness. This would indicate that if this
-form of societal unity and selflesness can be developed on the Earth, then it
+based upon the societal unity. This would indicate that if this
+form of societal unity can be developed on the Earth, then it
 could indicate that this form of technology and society could be possible on
 the earth.
+
+Bogdanovs argument is that for his visioin of a perfict society as it has been
+depicted on mars, to have the potential to exist on Earth humanity must first
+become more unified inorder to proceed.  He has demonstrated this through the
+construction of a great technological advancement of the Grand Canals, and the
+through the management of the societal struction both on the spaceship and in
+the Institute of Statistics.
