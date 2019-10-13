@@ -1,0 +1,115 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{eb}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=66dd565cba444e115a08c809d489e5c1}{%
+           family={Ariazorov},
+           familyi={A\bibinitperiod},
+           given={Mikhil},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{66dd565cba444e115a08c809d489e5c1}
+      \strng{fullhash}{66dd565cba444e115a08c809d489e5c1}
+      \strng{bibnamehash}{66dd565cba444e115a08c809d489e5c1}
+      \strng{authorbibnamehash}{66dd565cba444e115a08c809d489e5c1}
+      \strng{authornamehash}{66dd565cba444e115a08c809d489e5c1}
+      \strng{authorfullhash}{66dd565cba444e115a08c809d489e5c1}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Encyclopædia Britannica}
+      \field{month}{9}
+      \field{title}{Encyclopædia Britannica}
+      \field{year}{2019}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.britannica.com/biography/Konstantin-Eduardovich-Tsiolkovsky
+      \endverb
+      \verb{url}
+      \verb https://www.britannica.com/biography/Konstantin-Eduardovich-Tsiolkovsky
+      \endverb
+    \endentry
+    \entry{cv}{book}{}
+      \list{publisher}{1}{%
+        {Mosfilm}%
+      }
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{title}{Cosmic Voyage}
+      \field{year}{1936}
+      \true{nocite}
+    \endentry
+    \entry{fssb}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=53cdda765b04f67319fbc905cced33c3}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Michael\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{53cdda765b04f67319fbc905cced33c3}
+      \strng{fullhash}{53cdda765b04f67319fbc905cced33c3}
+      \strng{bibnamehash}{53cdda765b04f67319fbc905cced33c3}
+      \strng{authorbibnamehash}{53cdda765b04f67319fbc905cced33c3}
+      \strng{authornamehash}{53cdda765b04f67319fbc905cced33c3}
+      \strng{authorfullhash}{53cdda765b04f67319fbc905cced33c3}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{From Stalin to Sputnik and Beyond}
+      \field{year}{2014}
+      \true{nocite}
+    \endentry
+    \entry{tcp}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{title}{The Cosmic Philosophy}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://tsiolkovsky.org/en/
+      \endverb
+      \verb{url}
+      \verb https://tsiolkovsky.org/en/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

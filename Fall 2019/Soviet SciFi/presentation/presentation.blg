@@ -1,0 +1,17 @@
+[0] Config.pm:304> INFO - This is Biber 2.12
+[0] Config.pm:307> INFO - Logfile is 'presentation.blg'
+[24] biber:315> INFO - === Sun Oct 13, 2019, 12:20:09
+[42] Biber.pm:371> INFO - Reading 'presentation.bcf'
+[107] Biber.pm:886> INFO - Using all citekeys in bib section 0
+[119] Biber.pm:4093> INFO - Processing section 0
+[129] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
+[129] bibtex.pm:1523> INFO - LaTeX decoding ...
+[133] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
+[140] Utils.pm:193> WARN - month field 'Sep' in entry 'eb' is not an integer - this will probably not sort properly.
+[153] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[153] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[153] Biber.pm:3921> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[153] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[162] bbl.pm:636> INFO - Writing 'presentation.bbl' with encoding 'UTF-8'
+[164] bbl.pm:739> INFO - Output to presentation.bbl
+[164] Biber.pm:110> INFO - WARNINGS: 1
