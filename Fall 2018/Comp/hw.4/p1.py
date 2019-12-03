@@ -150,8 +150,8 @@ def main():
         # pylab.show()
     # ani = animation.FuncAnimation(
     #     fig, animate, init_func=initialize, interval=60, blit=True, frames=T)
-    # ani.save("anim.mp4")
-    # pylab.show()
+    ani.save("anim.mp4")
+    pylab.show()
 
 
 if __name__ == "__main__":
