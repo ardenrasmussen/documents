@@ -94,7 +94,7 @@ def load_sources(directory):
     sources = {}
     for file in files:
         print("Loading {}...".format(file))
-        with open(file, 'r') as src_file:
+        with open(file, 'r', errors='ignore') as src_file:
             sources[file.split('/')[-1]] = tokenize_source(
                 preprocess(src_file.read()))
     return sources
@@ -143,7 +143,7 @@ def generate_fdg(sources, tf_idf):
         for idy, dest in enumerate(sources):
             if idx == idy:
                 continue
-            if dest in weights and weights[dest] > 1e-3:
+            if dest in weights and weights[dest] > 1e-4:
                 links.append({
                     "source": idx,
                     "target": idy,
@@ -169,8 +169,12 @@ def main():
         word_count = len(sources[key])
         for token in np.unique(sources[key]):
             tf = counter[token] / word_count
-            df = DF[token]
-            idf = np.log((len(sources) + 1) / (df + 1))
+            if token in DF:
+                df = DF[token]
+            else:
+                df = 0
+            # idf = np.log((len(sources) + 1) / (df + 1))
+            idf = (len(sources) + 1) / (df + 1)
             tf_idf[key, token] = tf * idf
     generate_fdg(sources, tf_idf)
 
