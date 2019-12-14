@@ -389,20 +389,75 @@ Alternativly, argue that
 \end{align*}
 is a permutation of $[1],[2],[3],\ldots,[(p-1)]$.
 
-\todo[inline]{First we say $k<p$ and $x<p$, then $kx$ by udf will be some
-  $p_1p_2\cdots p_n q_1q_2\cdots q_m$, but with $q_i,p_i<p$ and thus $p$ is not
-  in the ufd?}
+\begin{claim}
+  $[k],[2k],\ldots,[(p-1)k]$ is a permutation of $[1],[2],\ldots,[(p-1)]$.
+\end{claim}
+\begin{proof}
+  Without loss of generality we can assume that $k<p$. Because of the unique
+  factorization of $\Z$, we know that for any $\alpha$ in $1,2,\ldots,(p-1)$,
+  then we know that the factorizations of $\alpha k=q_1q_2\cdots
+  q_n r_1r_2\cdots r_m$, and since both $k$ and $\alpha$ are less than $p$ and
+  so $p\notin{q_1,q_2,\ldots,q_n,r_1,r_2,\ldots,r_m}$, thus we know that
+  $[\alpha k]\neq [0]$, so that means that for each $[\alpha k]$ is equal to
+  some $[1],\ldots[(p-1)]$.
+
+  Each $\alpha k$ must be unique. We show this by contradiction. Consider some
+  $\alpha,\beta\in{1,2,\ldots,(p-1)}$ with $[\alpha k]=[\beta k]$, then since
+  $\Z$ is an euclidean domain, we know that we can cancel, so we rewrite this
+  expression and cancel $[k]$ from both sides, to find
+  \begin{align*}
+    [\alpha k]&=[\beta k]\\
+    [\alpha][k]&=[\beta][k]\\
+    [\alpha]&=[\beta].
+  \end{align*}
+  Thus each of the $[\alpha k]$ must be unique and can must also be one of
+  $[1],[2],\ldots,[(p-1)]$. Since there are $p$ terms in
+  $[k],[2k],\ldots,[(p-1)k]$, and each is unique and can be expressed as equal
+  to some $[1],[2],\ldots,[(p-1)]$ of wich there are only $p$ to chose from,
+  then each $[1],[2],\ldots,[(p-1)]$ must be mapped to.  Thus
+  $[k],[2k],\ldots,[(p-1)k]$ is a permutation of $[1],[2],\ldots,[(p-1)]$.
+\end{proof}
 
 \subsection{}%
 \label{sub:3b}
 
 Argue that for all $[k]\neq [0]$ we have ${[k]}^{p-1}=[1]$.
-\todo[inline]{we consider this to be $k\cdot k\cdots k$ $p-1$ times...}
+
+\begin{claim}
+  For any $[k]\neq[0]$ we know ${[k]}^{p-1}=[1]$.
+\end{claim}
+\begin{proof}
+  Consider from the previous problem, the product of the sequence of elements.
+  That is we consider $[k][2k]\cdots[(p-1)k]$. From the previous problem, we
+  know that this is equal to
+  \begin{align*}
+    [k][2k]\cdots[(p-1)k]&=[1][2]\cdots[(p-1)]\\
+    {[k]}^{p-1}[1][2]\cdots[(p-1)]&=[1][2]\cdots[(p-1)]\\
+  \end{align*}
+  Then we use the ability to cancle values in fields, to find
+  \begin{align*}
+    {[k]}^{p-1}&=[1]
+  \end{align*}
+\end{proof}
 
 \subsection{}%
 \label{sub:3c}
 
 Factorize the polynomial $X^{p-1}-1$ over $\Z/(p)$.
+
+\todo[inline]{Let us consider $p=3$, then $X^2-1$ over $\Z/(3)$, then we get
+  $(X-1)(X+1)=(X+1)(X+2)$, if we try $X^4-1$ over $\Z/(5)$ we get
+  $(X-1)(X+1)(X^2+1) = (X-1)(X+1)(X^2-4) = (X-1)(X+1)(X-2)(X+2) =
+  (X+1)(X+2)(X+3)(X+4)$. My guess is that it will be something like
+  $(X+1)(X+2)\cdots(X+(p-1))$.}
+
+\begin{claim}
+  The factorization of the polynomal $X^{p-1}-1$ over $\Z/(p)$ is given by
+  $(X+1)(X+2)\cdots(X+(p-1))$.
+\end{claim}
+\begin{proof}
+  Consider some polynomial $X^{p-1}-1$, we prove this somehow?
+\end{proof}
 
 \subsection{}%
 \label{sub:3d}
@@ -448,7 +503,7 @@ product of all non-zero elements of $F$?
         I,P(\alpha)=0\right\}.
     \end{align*}
 
-  \item Subsets $\mathbf{X}\subset \C^n$ of the form $\mathscr{Z}(I)$ are called
+  \item Subsets $\mathbf{X}\subseteq \C^n$ of the form $\mathscr{Z}(I)$ are called
     \textit{algebraic sets}.
 
   \item For an algebraic set $\mathbf{X}$ we define
@@ -475,17 +530,93 @@ $\mathscr{J}(\mathbf{X})$ is
   \item A radical ideal of $\C[X_1,X_2,\ldots,X_n]$.
 \end{itemize}
 
+\begin{claim}
+  All algebraic sets $\mathbf{X}$, the set $\mathscr{J}(\mathbf{X})$ are
+  radical ideals of $\C[X_1,X_2,\ldots,X_n]$.
+\end{claim}
+\begin{proof}
+  Consider some algebraic set $\mathbf{X}$. By the definition of algebraic set,
+  then there must exist some ideal $I$, such that $\mathscr{Z}(I)=\mathbf{X}$.
+  Then we consider
+  \begin{align*}
+    \mathscr{J}(\mathbf{X})&=\mathscr{J}(\mathscr{Z}(I))
+  \end{align*}
+  Then by Strong nullstellensatz we know that
+  $\mathscr{J}(\mathscr{Z}(I))=\rad{I}$, and thus
+  $\mathscr{J}(\mathbf{X})=\rad{I}$. We conclude that for all algebraic sets
+  $\mathbf{X}$, the set $\mathscr{J}(\mathbf{X})$ is an ideal of
+  $\C[X_1,X_2,\ldots,X_n]$, since we know that $\rad{I}$ is an ideal.
+
+  To show that $\rad{I}$ is a radical ideal, we compute
+  \begin{align*}
+    \rad{\rad{I}}&=\left\{P\in\C[X_1,X_2,\ldots,X_n]\vert\exists
+      k\in\N,P^k\in\rad{I}\right\}\\
+    &=\left\{P\in\C[X_1,X_2,\ldots,X_n]\vert\exists
+      k,l\in\N,{\left(P^l\right)}^k\in I\right\}\\
+    &=\left\{P\in\C[X_1,X_2,\ldots,X_n]\vert\exists
+      k\in\N,P^k\in I\right\}\\
+    &=\rad{I}.
+  \end{align*}
+  Thus $\rad{\rad{I}}=\rad{I}$ and so we conclude that $\rad{I}$ is indeed a
+  radical ideal.
+\end{proof}
+
 \subsection{}%
 \label{sub:4b}
 
-Prove, through element chasing, that $\mathscr{Z}(I)=\mathscr{Z}(\rad{i})$ for
+Prove, through element chasing, that $\mathscr{Z}(I)=\mathscr{Z}(\rad{I})$ for
 all ideals $I$ of $\C[X_1,X_2,\ldots,X_n]$.
+
+\begin{claim}
+  $\mathscr{Z}(I)=\mathscr{Z}(\rad{I})$ for all ideals $I$ of
+  $\C[X_1,X_2,\ldots,X_n]$.
+\end{claim}
+\begin{proof}
+  Consider some ideal $I$ of $\C[X_1,X_2,\ldots,X_n]$. Then we compute
+  \begin{align*}
+    \mathscr{Z}(\rad{I})&=\left\{\alpha\in\C^n\vert\forall
+      P\in\rad{I},P(\alpha)=0\right\}\\
+    &=\left\{\alpha\in\C^n\vert\exists n\in\N,\forall
+      P\in\C[X_1,X_2,\ldots,X_n],P^n\in I, P(\alpha)=P^n(\alpha)=0\right\}\\
+    &=\left\{\alpha\in\C^n\vert\forall P\in I,P(\alpha)=0\right\}\\
+    &=\mathscr{Z}(I).
+  \end{align*}
+  Thus $\mathscr{Z}(I)=\mathscr{Z}(\rad{I})$ for allideals $I$ of
+  $\C[X_1,X_2,\ldots,X_n]$.
+\end{proof}
 
 \subsection{}%
 \label{sub:4c}
 
-Prove, through element chasing, that $\mathscr{Z}(\mathscr{J}(\mathbf{X}))$ for
-all algebraic sets $\mathbf{X}\subset\C^n$.
+Prove, through element chasing, that
+$\mathscr{Z}(\mathscr{J}(\mathbf{X}))=\mathbf{X}$ for all algebraic sets
+$\mathbf{X}\subseteq\C^n$.
+
+\begin{claim}
+  For all algebraic sets $\mathbf{X}\subseteq\C^n$,
+  $\mathscr{Z}(\mathscr{J}(\mathbf{X}))=\mathbf{X}$.
+\end{claim}
+\begin{proof}
+  Consider some algebraic set $\mathbf{X}$, by the definition of algebraic set,
+  there must exists some ideal $I$ such that $\mathscr{Z}(I)\mathbf{X}$. Now we
+  consider
+  \begin{align*}
+    \mathscr{Z}(\mathscr{J}(\mathbf{X}))=\mathscr{Z}(\mathscr{J}(\mathscr{Z}(I))).
+  \end{align*}
+  Then by Strong Nullstellensatz, we know that
+  $\mathscr{J}(\mathscr{Z}(I))=\rad{I}$, so we can rewrite this expression to
+  be
+  \begin{align*}
+    \mathscr{Z}(\rad{I}).
+  \end{align*}
+  Then by the previous problem, we can notice that this can be expressed as
+  \begin{align*}
+    \mathscr{Z}(\rad{I})=\mathscr{Z}(I).
+  \end{align*}
+  And by our assumption, we find that this must be equal to $\mathbf{X}$. Thus
+  for any algebraic set $\mathbf{X}$,
+  $\mathscr{Z}(\mathscr{J}(\mathbf{X}))=\mathbf{X}$.
+\end{proof}
 
 \subsection{}%
 \label{sub:4d}
@@ -493,6 +624,38 @@ all algebraic sets $\mathbf{X}\subset\C^n$.
 Prove that $\mathscr{Z}$ is a bijection between the set of radical ideals of
 $\C[X_1,X_2,\ldots,X_n]$ and the set of algebraic sets in $\C^n$.
 
+\begin{claim}
+  $\mathscr{Z}$ is a bijection between radical ideals of
+  $\C[X_1,X_2,\ldots,X_n]$ and algebraic sets in $\C^n$.
+\end{claim}
+\begin{proof}
+  To show that $\mathscr{Z}$ is a bijection, we must show that it is onto, and
+  one-to-one. We will first show onto.
 
+  Consider some algebraic set $\mathbf{X}$, let us consider the ideal $I$ given
+  by $\mathscr{J}(\mathbf{X})$. Then we compute
+  \begin{align*}
+    \mathscr{Z}(I)=\mathscr{Z}(\mathscr{J}(\mathbf{X})).
+  \end{align*}
+  Using the preivous problem, we see that this is equal to $\mathbf{X}$. Thus
+  for any algebraic set $\mathbf{X}$, we can construct some radical ideal given
+  by $\mathscr{J}(\mathbf{X})$ such that $\mathscr{Z}(I)=\mathbf{X}$. We
+  conclude that $\mathscr{Z}$ is onto.
+
+  To prove one-to-one, consider some radical ideal
+  $I,J\in\C[X_1,X_2,\ldots,X_n]$, with $\mathscr{Z}(I)=\mathbf{X} =
+  \mathscr{Z}(J)$. Next we consider $\mathscr{J}(\mathbf{X})$, then we apply
+  Strong Nullstellensatz
+  \begin{align*}
+    \mathscr{J}(\mathscr{Z}(I))&=\mathscr{J}(\mathscr{Z}(J))\\
+    \rad{I}&=\rad{J}.
+  \end{align*}
+  Then since $I,J$ are radical ideals, we know that $\rad{I}=I$, and
+  $\rad{J}=J$, so we can see that $I=J$. Thus $\mathscr{Z}$ must be one to one.
+
+  Since $\mathscr{Z}$ is both onto and one-to-one, we can conclude that it is a
+  bijection between radical ideals of $\C[X_1,X_2,\ldots,X_n]$ and algebraic
+  sets in $\C^n$.
+\end{proof}
 
 \end{document}

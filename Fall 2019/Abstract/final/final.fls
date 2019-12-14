@@ -1,8 +1,8 @@
 PWD /home/arden/documents/Fall 2019/Abstract/final
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT exam2.tex
-OUTPUT exam2.log
+INPUT final.tex
+OUTPUT final.log
 INPUT /usr/share/texmf-dist/tex/latex/amscls/amsart.cls
 INPUT /usr/share/texmf-dist/tex/latex/amscls/amsart.cls
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
@@ -145,16 +145,16 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlib
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
-OUTPUT exam2.pdf
+OUTPUT final.pdf
 INPUT /usr/share/texmf-dist/tex/latex/tools/calc.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/calc.sty
 INPUT /usr/share/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 INPUT /usr/share/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 INPUT /usr/share/texmf-dist/tex/latex/cancel/cancel.sty
 INPUT /usr/share/texmf-dist/tex/latex/cancel/cancel.sty
-INPUT exam2.aux
-INPUT exam2.aux
-OUTPUT exam2.aux
+INPUT final.aux
+INPUT final.aux
+OUTPUT final.aux
 INPUT /usr/share/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
@@ -219,7 +219,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
-INPUT exam2.aux
+INPUT final.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
