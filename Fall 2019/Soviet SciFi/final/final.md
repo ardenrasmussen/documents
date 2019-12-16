@@ -40,7 +40,7 @@ developed by his earlier films, and in his film *My Friend Ivan Lapshin*(1984),
 which is a contemporary of *Per Aspera Ad Astra*, also clearly demonstrates this
 cinematographic style.
 
-# PARTS???
+# Outline
 
 *Per Aspera Ad Astra* was clearly a critique of capitalist society, it is clear
 that the planet Dessa represents a capitalist society, which needed to be saved
@@ -67,11 +67,63 @@ must allows for a more nuanced critique of soviet society.
 
 ## Framing
 All camera motion in PAAA is intended to keep the focus in frame at all times.
-In HG the camera appears to have a mind of its own, frequently loosing attention
-and drifting off of the main focus.
+In HG the camera appears to have a mind of its own, frequently loosing
+attention and drifting off of the main focus. The cameras tendency to leave the
+focus, and to wanders about the scene, or the number of times that the camera
+was obstructed by a different object, or other characters, removed the ability
+for passive viewing of the film. Without the ability to view the film passively
+forces the audience to more closely consider the social critiques of that are
+presented in the film. The audience is no longer able to passively view the
+movie and enjoyed as a mindless spectator, but they are required to think about
+the meaning and commentary that is presented in the film. 
+
+* PAAA In their house the camera moves very slowly and deliberately. A clear
+example of this is (16:25-16:50) the camera moves across a small room very
+slowly and smoothly, primarily to keep the mothers face in frame.
+* I need to find a specific instance where HG has the camera wander off in to
+    some random direction.
+
 
 ## Use of 4th wall break?
 In both films the characters often look directly at the camera, but only in HG
-do the characters actively interact with the camera, there are many instances of
-characters tapping on or waving at the camera. This makes the viewer feel more
-like a part of the action, and that the are another character in the film.
+do the characters actively interact with the camera, there are many instances
+of characters tapping on or waving at the camera. This makes the viewer feel
+more like a part of the action, and that the are another character in the film.
+The placement of the view as another character of the film, encourages the
+viewer to consider how they would feel if they live in that kind of society,
+and how they would react to the connections to communism and the soviet union.
+The placement of the view in the film, provides a better connection to with
+their current lives and they are better able to relate the critiques that the
+film presents to their modern lives, and consider how it effects them
+personally.
+
+* Opening shots from HG with people in street making motions to camera
+* Right after he wakes up on the street, I'm pretty sure that someone tapped on
+the camera.
+* PAAA Will very occasionally place the camera in the point of view of a
+character, this is most clearly one with the octopus thing, that they are
+transporting (58:35).
+
+# Conclusion
+
+The soviet films that were critical of communist society, employ a number of
+cinematographic techniques that are intended to cause estrangement in the user,
+and providing a better relation between the viewer and the world that is
+depicted in the film. This estrangement and the confusion caused by the cameras
+motion force the viewer to consider the social critique that has been presented
+in the film. Contrastingly films that were government approved, and were
+primarily critical of capitalist society, allowed the user to more passively
+view the film, and did not require any additional consideration on the viewers
+part.
+
+The cinematographic style of the films that were critical of soviet society,
+were commonly the same, this style is clearly represented in German's films.
+This style of film forces the viewer to more actively engage in the film, and
+removed the ability for passive viewing leading to a more critical consideration
+of the social commentary that is presented in the film. It has been noticed
+that this style of cinematography is similar to American films of the time
+that were critical of American society. This is reasonable as all the of the
+techniques are not directly commenting on any specific society, but are instead
+forcing the audience to more critically think about the film that they are
+watching So it would make sense that the same techniques could be used to
+encourage critique of any society.

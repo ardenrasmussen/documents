@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1576306100 "final.tex" "final.pdf" "final" 1576306100
+["pdflatex"] 1576534371 "final.tex" "final.pdf" "final" 1576534371
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1572595918 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1572595918 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1572595918 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -150,9 +150,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1572595918 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1576185570 4572998 f9631eebba48c3ee98e5d310044b0a09 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1576185566 8044940 bd96f58d9df75f71954ad749cb791597 ""
-  "final.aux" 1576305953 5049 4b34217aa71d09b3798c391f310a285e "pdflatex"
-  "final.tex" 1576306099 21562 b68a116b58f23be517439faa742211ba ""
+  "final.aux" 1576522418 4775 31407c726feb0f7cb9f4f2192f3a74f1 "pdflatex"
+  "final.tex" 1576534370 24675 c7773597c36b99a38ebc3bb2ab59b239 ""
   (generated)
-  "final.aux"
   "final.log"
+  "final.aux"
   "final.pdf"

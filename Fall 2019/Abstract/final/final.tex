@@ -225,7 +225,7 @@ scalars.
 
 Field extensions are given two fields $A\subseteq B$, $B$ is an extension of
 $A$ if they share the same operations?
-\todo[inline]{CHECK THIS}
+% \todo[inline]{CHECK THIS}
 
 $\Q(\sqrt{2})$ is an extension of $\Q$.
 
@@ -445,18 +445,31 @@ Argue that for all $[k]\neq [0]$ we have ${[k]}^{p-1}=[1]$.
 
 Factorize the polynomial $X^{p-1}-1$ over $\Z/(p)$.
 
-\todo[inline]{Let us consider $p=3$, then $X^2-1$ over $\Z/(3)$, then we get
-  $(X-1)(X+1)=(X+1)(X+2)$, if we try $X^4-1$ over $\Z/(5)$ we get
-  $(X-1)(X+1)(X^2+1) = (X-1)(X+1)(X^2-4) = (X-1)(X+1)(X-2)(X+2) =
-  (X+1)(X+2)(X+3)(X+4)$. My guess is that it will be something like
-  $(X+1)(X+2)\cdots(X+(p-1))$.}
-
 \begin{claim}
   The factorization of the polynomal $X^{p-1}-1$ over $\Z/(p)$ is given by
   $(X+1)(X+2)\cdots(X+(p-1))$.
 \end{claim}
 \begin{proof}
-  Consider some polynomial $X^{p-1}-1$, we prove this somehow?
+  Consider some polynomial $X^{p-1}-1$, We are able to verify that our proposed
+  factorization is indeed the factorization of this polynomial, by verify that
+  every factor in the factorization is irreducible, and the roots of the
+  factorization and the roots of $X^{p-1}-1$ are the same.
+
+  First we verify that all the components of the factorization are indeed
+  irreducible, this is clear as every factor has a degree of $1$, and thus we
+  know that they are irreducible.
+
+  Now we verify that the roots of the factorization are equivalent to the roots
+  of the polynomial. It is clear from the construction that the roots of the
+  factorization are $[1],[2],\ldots,[(p-1)]$, and if we plug any of those into
+  the polynomial $X^{p-1}-1$, from the previous step, we know that the
+  $X^{p-1}$ for any of these potential roots will be $[1]$, so we find that the
+  polynomial evaluates to $[1]-[1]=[0]$. Thus the roots of the polynomial and
+  the factorization match.
+
+  Since the roots are the same, and the elements of the factorization are
+  irreducible, then we knwo that this must be the unique prime factorization of
+  the polynomial $X^{p-1}-1$.
 \end{proof}
 
 \subsection{}%
@@ -464,9 +477,36 @@ Factorize the polynomial $X^{p-1}-1$ over $\Z/(p)$.
 
 Based on the above prove the following two classic theorems of number theory:
 \begin{align*}
-  \gcd{k}{p}=q\ra k^{p-1}\equiv \mod{q}{p}\ \text{and}\ (p-1)!\equiv
+  \gcd{k}{p}=1\ra k^{p-1}\equiv \mod{1}{p}\ \text{and}\ (p-1)!\equiv
   \mod{-1}{p}.
 \end{align*}
+
+\begin{claim}
+  If $\gcd{k}{p}=1$ then $k^{p-1}\equiv\mod{1}{p}$.
+\end{claim}
+\begin{proof}
+  % \todo[inline]{Is $p$ still prime? If it is easy}
+  Since $p$ is prime and $k<p$, then the $\gcd{k}{p}=1$ as the prime
+  factorization of $k$ does not include $p$. Then as we have already shown,
+  $k^{p-1}\equiv\mod{1}{p}$ if $p$ is prime.
+\end{proof}
+
+\begin{claim}
+  $(p-1)1\equiv\mod{-1}{p}$.
+\end{claim}
+\begin{proof}
+  First we consider the polynomial presented in problem~\ref{sub:3c}, and the
+  factorization demonstrated. We will call the factorization $Q(X)$, and the
+  polynomial $F(X)$. By the previous problem, we know that $F(X)=Q(X)$. Let us
+  consider pluging in $[0]$ for $X$, then we find
+  \begin{align*}
+    F([0])&=Q([0])\\
+    {[0]}^{p-1}-1&=([0]+1)([0]+2)\cdots([0]+(p-1))\\
+    [0]+[-1]&=(1)(2)\cdots(p-1)\\
+    [-1]&=(p-1)!
+  \end{align*}
+  Thus we can see that $(p-1)!\equiv\mod{-1}{p}$.
+\end{proof}
 
 \subsection{}%
 \label{sub:3e}
@@ -479,6 +519,43 @@ of $F$ generalize the above to prove
 for all non-zero $\alpha\in F$. What, if anything, can you say about the
 product of all non-zero elements of $F$?
 
+\begin{claim}
+  For any finite field $F$, let $|F|$ denote the number of elements of the
+  filed, then $\alpha^{|F|-1}=1$ for all $\alpha\in F$.
+\end{claim}
+\begin{proof}
+  We know that for any finite field it is possible to construct a polynomial
+  such that $P(X)\neq 0$, but $P(\alpha)=0\forall\alpha\in F$. This polynomial
+  is given by the form
+  \begin{align*}
+    X^{|F|}-X&=0\\
+    X^{|F|}&=X\\
+    X^{|F|-1}&=1.
+  \end{align*}
+  By simple rearrangement, and use of cancellation, which we have available as
+  $F[X]$ is itself a field, we find that $X^{|F|-1}=1$ for all $X\in F$.
+\end{proof}
+
+\begin{claim}
+  The product of all nonzero elements of the field is equal to the additive
+  inverse of the multiplicative identity $-1$.
+\end{claim}
+\begin{proof}
+  Considering the same polynomial $P(X)=X^{|F|}-X$, we know that the
+  factorization of this polynomial is given by
+  \begin{align*}
+    X^{|F|}-X&=X(X-\alpha_1)\cdots(X_\alpha_{|F|-1})\\
+    X^{|F|-1}-1&=(X-\alpha_1)\cdots(X_\alpha_{|F|-1}).
+  \end{align*}
+  Then is we plug in $0$ into this expression we find
+  \begin{align*}
+    0^{|F|-1}-1&=(0-\alpha_1)\cdots(0-\alpha_{|F|-1})\\
+    -1&=\alpha_1\cdots\alpha_{|F|-1}.
+  \end{align*}
+  Thus we can conclude that the product of all nonzero elements of the field is
+  equal to the additive inverse of the multiplicative identity of that field,
+  which we have expressed as $-1$.
+\end{proof}
 
 \section{Problem}%
 \label{sec:problem_4}
@@ -508,13 +585,13 @@ product of all non-zero elements of $F$?
 
   \item For an algebraic set $\mathbf{X}$ we define
     \begin{align*}
-      \mathscr{J}(\mathbf{X})=\left\{P\in\C[X_1,X_2,\ldots,X_n]\vert\forall
+      \mathscr{I}(\mathbf{X})=\left\{P\in\C[X_1,X_2,\ldots,X_n]\vert\forall
         \alpha\in\mathbf{X},P(\alpha)=0\right\}.
     \end{align*}
 
   \item The Strong Nullstellensatz (due to David Hilbert) states that
     \begin{align*}
-      \mathscr{J}(\mathscr{Z}(I))=\rad{I}
+      \mathscr{I}(\mathscr{Z}(I))=\rad{I}
     \end{align*}
     for all ideals $I$ of $\C[X_1,X_2,\ldots,X_n]$.
 \end{itemize}
@@ -524,14 +601,14 @@ In this problem I ask you to prove the following.
 \label{sub:4a}
 
 Prove that for all algebraic sets $\mathbf{X}$ the set
-$\mathscr{J}(\mathbf{X})$ is
+$\mathscr{I}(\mathbf{X})$ is
 \begin{itemize}
   \item An ideal of $\C[X_1,X_2,\ldots,X_n]$.
   \item A radical ideal of $\C[X_1,X_2,\ldots,X_n]$.
 \end{itemize}
 
 \begin{claim}
-  All algebraic sets $\mathbf{X}$, the set $\mathscr{J}(\mathbf{X})$ are
+  All algebraic sets $\mathbf{X}$, the set $\mathscr{I}(\mathbf{X})$ are
   radical ideals of $\C[X_1,X_2,\ldots,X_n]$.
 \end{claim}
 \begin{proof}
@@ -539,12 +616,12 @@ $\mathscr{J}(\mathbf{X})$ is
   then there must exist some ideal $I$, such that $\mathscr{Z}(I)=\mathbf{X}$.
   Then we consider
   \begin{align*}
-    \mathscr{J}(\mathbf{X})&=\mathscr{J}(\mathscr{Z}(I))
+    \mathscr{I}(\mathbf{X})&=\mathscr{I}(\mathscr{Z}(I))
   \end{align*}
   Then by Strong nullstellensatz we know that
-  $\mathscr{J}(\mathscr{Z}(I))=\rad{I}$, and thus
-  $\mathscr{J}(\mathbf{X})=\rad{I}$. We conclude that for all algebraic sets
-  $\mathbf{X}$, the set $\mathscr{J}(\mathbf{X})$ is an ideal of
+  $\mathscr{I}(\mathscr{Z}(I))=\rad{I}$, and thus
+  $\mathscr{I}(\mathbf{X})=\rad{I}$. We conclude that for all algebraic sets
+  $\mathbf{X}$, the set $\mathscr{I}(\mathbf{X})$ is an ideal of
   $\C[X_1,X_2,\ldots,X_n]$, since we know that $\rad{I}$ is an ideal.
 
   To show that $\rad{I}$ is a radical ideal, we compute
@@ -589,22 +666,22 @@ all ideals $I$ of $\C[X_1,X_2,\ldots,X_n]$.
 \label{sub:4c}
 
 Prove, through element chasing, that
-$\mathscr{Z}(\mathscr{J}(\mathbf{X}))=\mathbf{X}$ for all algebraic sets
+$\mathscr{Z}(\mathscr{I}(\mathbf{X}))=\mathbf{X}$ for all algebraic sets
 $\mathbf{X}\subseteq\C^n$.
 
 \begin{claim}
   For all algebraic sets $\mathbf{X}\subseteq\C^n$,
-  $\mathscr{Z}(\mathscr{J}(\mathbf{X}))=\mathbf{X}$.
+  $\mathscr{Z}(\mathscr{I}(\mathbf{X}))=\mathbf{X}$.
 \end{claim}
 \begin{proof}
   Consider some algebraic set $\mathbf{X}$, by the definition of algebraic set,
   there must exists some ideal $I$ such that $\mathscr{Z}(I)\mathbf{X}$. Now we
   consider
   \begin{align*}
-    \mathscr{Z}(\mathscr{J}(\mathbf{X}))=\mathscr{Z}(\mathscr{J}(\mathscr{Z}(I))).
+    \mathscr{Z}(\mathscr{I}(\mathbf{X}))=\mathscr{Z}(\mathscr{I}(\mathscr{Z}(I))).
   \end{align*}
   Then by Strong Nullstellensatz, we know that
-  $\mathscr{J}(\mathscr{Z}(I))=\rad{I}$, so we can rewrite this expression to
+  $\mathscr{I}(\mathscr{Z}(I))=\rad{I}$, so we can rewrite this expression to
   be
   \begin{align*}
     \mathscr{Z}(\rad{I}).
@@ -615,7 +692,7 @@ $\mathbf{X}\subseteq\C^n$.
   \end{align*}
   And by our assumption, we find that this must be equal to $\mathbf{X}$. Thus
   for any algebraic set $\mathbf{X}$,
-  $\mathscr{Z}(\mathscr{J}(\mathbf{X}))=\mathbf{X}$.
+  $\mathscr{Z}(\mathscr{I}(\mathbf{X}))=\mathbf{X}$.
 \end{proof}
 
 \subsection{}%
@@ -633,21 +710,21 @@ $\C[X_1,X_2,\ldots,X_n]$ and the set of algebraic sets in $\C^n$.
   one-to-one. We will first show onto.
 
   Consider some algebraic set $\mathbf{X}$, let us consider the ideal $I$ given
-  by $\mathscr{J}(\mathbf{X})$. Then we compute
+  by $\mathscr{I}(\mathbf{X})$. Then we compute
   \begin{align*}
-    \mathscr{Z}(I)=\mathscr{Z}(\mathscr{J}(\mathbf{X})).
+    \mathscr{Z}(I)=\mathscr{Z}(\mathscr{I}(\mathbf{X})).
   \end{align*}
   Using the preivous problem, we see that this is equal to $\mathbf{X}$. Thus
   for any algebraic set $\mathbf{X}$, we can construct some radical ideal given
-  by $\mathscr{J}(\mathbf{X})$ such that $\mathscr{Z}(I)=\mathbf{X}$. We
+  by $\mathscr{I}(\mathbf{X})$ such that $\mathscr{Z}(I)=\mathbf{X}$. We
   conclude that $\mathscr{Z}$ is onto.
 
   To prove one-to-one, consider some radical ideal
   $I,J\in\C[X_1,X_2,\ldots,X_n]$, with $\mathscr{Z}(I)=\mathbf{X} =
-  \mathscr{Z}(J)$. Next we consider $\mathscr{J}(\mathbf{X})$, then we apply
+  \mathscr{Z}(J)$. Next we consider $\mathscr{I}(\mathbf{X})$, then we apply
   Strong Nullstellensatz
   \begin{align*}
-    \mathscr{J}(\mathscr{Z}(I))&=\mathscr{J}(\mathscr{Z}(J))\\
+    \mathscr{I}(\mathscr{Z}(I))&=\mathscr{I}(\mathscr{Z}(J))\\
     \rad{I}&=\rad{J}.
   \end{align*}
   Then since $I,J$ are radical ideals, we know that $\rad{I}=I$, and
