@@ -1,0 +1,738 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{todonotes}
+\usepackage{mathrsfs}
+\usepackage[makeroom]{cancel}
+
+\title{Abstract Algebra --- Final Exam}
+\author{Arden Rasmussen}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\lra}{\longleftrightarrow}
+\newcommand{\E}{\exists}
+\newcommand{\zw}{\mathbb{Z}\left[\omega\right]}
+\newcommand{\zi}{\mathbb{Z}\left[2i\right]}
+\newcommand{\rad}[1]{\text{rad}\left(#1\right)}
+\renewcommand{\ker}[1]{\text{Ker}\left(#1\right)}
+\newcommand{\im}[1]{\text{Im}\left(#1\right)}
+\renewcommand{\gcd}[2]{\text{GCD}\left(#1,#2\right)}
+\renewcommand{\mod}[2]{#1\left(\text{mod}\ #2\right)}
+
+\renewcommand{\thesubsection}{(\alph{subsection})}
+
+\newenvironment{claim}[1]{\par\noindent\textit{Claim:}\space#1}{}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+\maketitle
+
+\section{Problem}%
+\label{sec:problem_1}
+
+\underline{\textit{Basic Concepts:}} For each of the following concepts of
+abstract algebra provide a definition \underline{and} and example. When
+instructed provide a counterexample.
+
+\subsection{Group}%
+\label{sub:group}
+
+A group is a set of elements $G$ and an operation $\star$, expressed as
+$(G,\star)$, where
+\begin{itemize}
+  \item  $\star$ is associative.
+  \item $\star$ has an identity in $G$, that is to say there is some $1\in G$
+    such that $1\star a=a\star 1=a\forall a\in G$.
+  \item Every element in $G$ has an inverse with respect to $\star$, we can
+    write this as $\forall a\in G\exists a^{-1}\in G$ such that $a\star
+    a^{-1}=a^{-1}\star a=1$.
+  \item Optionally $\star$ may be commutative.
+\end{itemize}
+
+$(\{0\},+)$ is a group.
+
+\subsection{Ring}%
+\label{sub:ring}
+
+A ring is a set of elements $R$, and a $+$ and $\cdot$ operators, expressed as
+$(R,+,\cdot)$, and
+\begin{itemize}
+  \item $(R,+)$ is a commutative group.
+  \item $\cdot$ is associative.
+  \item $\cdot$ distributes over $+$.
+  \item $\cdot$ may or may not be commutative.
+  \item $\cdot$ may or may not have an identity.
+  \item Elements of $R$ may or may not have an inverse with respect to
+    $\cdot$.
+\end{itemize}
+
+$\C$ is a ring.
+
+\subsection{Integral domain}%
+\label{sub:integral_domain}
+
+An integral domain, is a ring $(R,+,\cdot)$ where there are no zero divisors,
+where $a\neq0\in R$ is called a zero divisor if there is some $b\neq0\in R$
+such that $a\cdot b=0$.
+
+$\Q$ is an integral domain, $\C'$ is not an integral domain
+
+\subsection{Euclidean domain}%
+\label{sub:euclidean_domain}
+
+A commutative ring with identity $(R,+,\cdot)$ that is an Integral domain, is
+called an Euclidean Domain if there exists a function
+\begin{align*}
+  N:R\ra\N\cup\{0\}
+\end{align*}
+with respect to which $R$ has division algorithm.
+
+$\R[X]$ is a euclidean domain, $\R[X,Y]$ is not a euclidean domain.
+
+\subsection{PID}%
+\label{sub:pid}
+
+Integral Domains in which every ideal is principal are called principal ideal
+domains (PID)
+
+$\Z$ is a PID, $\R[X,Y]$ is not a PID\@.
+
+\subsection{UFD}%
+\label{sub:ufd}
+
+If $(R,+,\cdot)$ is a commutative integral domain with identity, in which every
+non-zero, non-unit
+\begin{itemize}
+  \item has a factorization in terms of irreducible
+  \item that factorization is unique up to permutations and associates
+\end{itemize}
+then $(R,+,\cdot)$ is a Unique Factorization Domain (UFD)
+
+$\R[X]$ is a UFD, $\Z[i\sqrt{5}]$ is not a UFD\@.
+
+\subsection{Homomorphism}%
+\label{sub:homomorphism}
+
+A function $F:R\ra S$ between two rings with identity is said to be a
+homomorphism if
+\begin{itemize}
+  \item $F(r_1+r_2)=F(r_1)+F(r_2)$.
+  \item $F(r_1\cdot r_2)=F(r_1)\cdot F(r_2)$.
+  \item $F(1)=1$.
+\end{itemize}
+
+$F:\R[X]\ra\R$ given by $F:P(X)\ra P(1)$ is a homomorphism. The function
+$F:\Z[i]\ra\Z[2i]$ given by $F(a+bi)=a+2bi$ is not a homomorphism.
+
+\subsection{Kernel and Image}%
+\label{sub:kernel_and_image}
+
+Given a homomorphism $F:R\ra S$ then kernel and image are defined as the below.
+\begin{align*}
+  \ker{F}&=\left\{r\in R\vert F(r)=0\right\}\subseteq R\\
+  \im{F}&=\left\{s\in S\vert \exists r\in R, F(r)=s\right\}\subseteq S
+\end{align*}
+
+The kernel an image of the homomorphism $F:\R[X]\ra\R$ given by $F:P(X)\ra
+P(1)$ are
+\begin{align*}
+  \ker{F}=(1-X)\quad\im{F}=\R.
+\end{align*}
+
+\subsection{Isomorphism}%
+\label{sub:isomorphism}
+
+A homomorphism $F:R\ra S$ is called an isomorphism if $F$ is a bijection.
+
+$F:\Z[\sqrt{2}]\ra\Z[\sqrt{2}]$ given by $F(a+b\sqrt{2})=a-b\sqrt{2}$ is an
+isomorphism.
+
+\subsection{Ideal}%
+\label{sub:ideal}
+
+In $(R,+,\cdot)$ commutative integral domain with identity, $I\subseteq R$ is an
+ideal if
+\begin{itemize}
+  \item $i_1,i_2\in I\ra i_1+i_2\in I$
+  \item $r\in R,i\in I\ra ri\in I$
+\end{itemize}
+
+$(5)$ over $\Z$ is an ideal.
+
+\subsection{Prime ideal}%
+\label{sub:prime_ideal}
+
+$P$ ideal is called prime if $ab\inP\ra a\in P\ \text{or}\ b\in P$.
+
+$(3)$ over $\Z$, is a prime ideal. $(6)$ over $\Z$, is not a prime ideal, as
+$3\cdot 2\in(6)$ but $3\notin(6)$ and $2\notin(6)$.
+
+\subsection{Maximal ideal}%
+\label{sub:maximal_ideal}
+
+An ideal is called maximal if it is not contained in any proper ideal.
+\begin{align}
+  I\subseteq \xcancel{J}\subseteq R
+\end{align}
+
+$(X,Y)$ is maximal over $\R[X,Y]$.
+$(X)$ is not maximal over $\R[X,Y]$ as $(X)\subseteq(X,Y)$.
+
+\subsection{Quotient ring}%
+\label{sub:quotient_ring}
+
+Let $R$ be a commutative ring with identity and an integral domain. Let $I$ be
+an ideal of $R$. We define
+\begin{itemize}
+  \item the relation $\mod{\equiv}{I}$ by $\mod{a\equiv b}{I}$ if and only if
+    $a-b\in I$.
+  \item the set $R/I=\left\{[a]\vert a\in R\right\}$.
+  \item the operations $+,\cdot$ on $R/I$
+    \begin{align*}
+      [a]+[b]=[a+b]\ \text{and}\ [a]\cdot[b]=[a\cdot b].
+    \end{align*}
+\end{itemize}
+Then $R/I$ is a quotient ring.
+
+$\Z/(3)$ is a quotient ring.
+
+\subsection{Field}%
+\label{sub:field}
+
+A field, is a ring $(R,+,\cdot)$ where every element of $R$ has a
+multiplicative inverse.
+
+$\Q$ is a field, but $\Z$ is not.
+
+\subsection{Algebra over a field}%
+\label{sub:algebra_over_a_field}
+
+An algebra is a ring which also happens to be a vector space over some field of
+scalars.
+
+$\R_{m\times n}$ is an algebra, over the field of $\R$ which act as the
+scalars.
+
+\subsection{Field extension}%
+\label{sub:field_extension}
+
+Field extensions are given two fields $A\subseteq B$, $B$ is an extension of
+$A$ if they share the same operations?
+% \todo[inline]{CHECK THIS}
+
+$\Q(\sqrt{2})$ is an extension of $\Q$.
+
+\section{Problem}%
+\label{sec:problem_2}
+
+\underline{\textit{Classic constructions of Abstract Algebra --- Universal
+    Properties:}} Recall the construction of the field of quotients of a
+commutative integral domain $R$, Let $\equiv$ denote the equivalence relation
+on $R\times(R\setminus\{0\})$ given by
+\begin{align*}
+  (a,b)\equiv(c,d)\lra\exists x,y\in R\setminus\{0\},(ax,bx)=(cy,dy).
+\end{align*}
+By the field of quotients of $R$ we mean the set $\mathcal{Q}(R)$a of
+equivalence classes
+\begin{align*}
+  \mathcal{Q}(X)=\{[(a,b)]\vert a,b\in R,b\neq 0\}
+\end{align*}
+of $\equiv$ together with operations
+\begin{align*}
+  [(a,b)]+[(c,d)]=[(ad+bc,bd)]\ \text{and}\ [(a,b)]\cdot[(c,d)]=[(ac,bd)].
+\end{align*}
+On homework you proved that $\mathcal{Q}(R)$ indeed is a field. In this problem
+I as you to prove the following theorem about the field of quotients.
+
+\subsection{}%
+\label{sub:2a}
+
+Show that there is an injective homomorphism $i:R\ra\mathcal{Q}(R)$.
+
+\begin{claim}
+  $i:R\ra\mathcal{Q}(R)$ defined by $i(r)=[(r,1)]$ is an injective
+  homomorphism.
+\end{claim}
+\begin{proof}
+  To show that $i$ is a homomorphism, we first show that it presevers addition,
+  and multiplication. Consider some $a,b\in R$, then
+  \begin{align*}
+    i(a+b)=[(a+b,1)]=[(a,1)]+[(b,1)]=i(a)+i(b).
+  \end{align*}
+  Thus $i$ preserves addition. Now we consider
+  \begin{align*}
+    i(a\cdot b)=[(a\cdot b,1)]=[(a,1)]\cdot[(b,1)]=i(a)\cdot i(b)
+  \end{align*}
+  Thus $i$ preserves multiplication. Now we verify that $i(1)=1$.
+  \begin{align*}
+    i(1)=[(1,1)]=1_{\mathcal{Q}(R)}.
+  \end{align*}
+  Thus $i$ also preserves identity, and so we can conclude that it is indeed a
+  homomorphism.
+
+  Now we will show that it is injective. Assume that it is not injective, that
+  is to say there exists some $a,b\in R$ with $i(a)=i(b)$. We express this as
+  \begin{align*}
+    [(a,1)]=[(b,1)].
+  \end{align*}
+  From the definition of $\equiv$ this means that there exists some $x,y\in
+  R\setminus\{0\}$ such that
+  \begin{align*}
+    (ax,x)=(by,y).
+  \end{align*}
+  From this it is clear that $x=y$, and so subsequently we find $a=b$, but this
+  is a contradiction of our assumption. Thus we can conclude that $i$ is
+  injective.
+\end{proof}
+
+\subsection{}%
+\label{sub:2b}
+
+Suppose $\Gamma:R\ra F$ is another injective homomorphism of $R$ into a field
+$F$. Show that
+\begin{align*}
+  \gamma:\mathcal{Q}(R)\ra F\ \text{defined by}\
+  \gamma([a,b])=\Gamma(a)\cdot {\Gamma(b)}^{-1}
+\end{align*}
+is a (well-defined) homomorphism.
+
+\begin{claim}
+  $\gamma:\mathcal{Q}(R)\ra F$ defined by
+  $\gamma([(a,b)])=\Gamma(a)\cdot{\Gamma(b)}^{-1}$ is a well-defined
+  homomorphism.
+\end{claim}
+\begin{proof}
+  First we show that $\gamma$ is a homomorphism. To show this, we demonstrate
+  the preservation of addition, multiplication, and unit. Consider some
+  $[(a,b)],[(c,d)]\in\mathcal{Q}(R)$.
+  \begin{align*}
+    \gamma([(a,b)]+[(c,d)])=\gamma([(ad+bc,bd)])=\Gamma(ad+bc)\cdot{\Gamma(bd)}^{-1}
+  \end{align*}
+  Then since $\Gamma$ is a homomorphism, we can rewrite this to be
+  \begin{align*}
+    \Gamma(ad){\Gamma(bd)}^{-1}+\Gamma(bc){\Gamma(bd)}^{-1}&=
+    \Gamma(a){\Gamma(b)}^{-1}\Gamma(d){\Gamma(d)}^{-1} +
+    \Gamma(b){\Gamma(b)}^{-1}\Gamma(c){\Gamma(d)}^{-1}\\
+    &=\Gamma(a){\Gamma(b)}^{-1}+\Gamma(c){\Gamma(d)}^{-1}\\
+    &=\gamma([a,b])+\gamma([c,d])
+  \end{align*}
+  Then to demonstrate the preservation of multiplication, consider
+  \begin{align*}
+    \gamma([(a,b)]\cdot[(c,d)])=\gamma([(ac,bd)])=\Gamma(ac){\Gamma(bd)}^{-1}
+  \end{align*}
+  Again by the homomorphic nature of $\Gamma$ we can rewrite this to be
+  \begin{align*}
+    \Gamma(a){\Gamma(b)}^{-1}\Gamma(c){\Gamma(d)}^{-1}=\gamma([(a,b)])\cdot\gamma([(c,d)]).
+  \end{align*}
+  Finally we show that $1$ is preserved.
+  \begin{align*}
+    \gamma([(1,1)])=\Gamma(1){\Gamma(1)}^{-1}=1
+  \end{align*}
+  Thus it is clear that $\gamma$ is a homomorphism.
+
+  Now we prove that $\gamma$ is well defined. Consider $[(a,b)]=[(c,d)]$, with
+  some $x,y\in R\setminus\{0\}$ such that $(ax,bx)=(cy,dy)$. We notice that
+  \begin{align*}
+    \gamma([(a,b)])=\gamma([(ax,bx)])\ \text{and}\
+    \gamma([(c,d)])=\gamma([(cy,dy)]).
+  \end{align*}
+  Now we compute
+  \begin{align*}
+    \gamma([(a,b)])=\gamma([(ax,bx)])&=\Gamma(ax){\Gamma(bx)}^{-1}\\
+    &=\Gamma(cy){\Gamma(dy)}^{-1}=\gamma([(cy,dy)])=\gamma([(c,d)])
+  \end{align*}
+  And thus $\gamma$ is well defined.
+\end{proof}
+
+\subsection{}%
+\label{sub:2c}
+
+Show that $\gamma\circ i=\Gamma$.
+
+\begin{proof}
+  Consider our definition of $\gamma$ and $i$, then we consider
+  \begin{align*}
+    \gamma\circ i = \gamma(i(r))=\gamma([(r,1)])=\Gamma(r){\Gamma(1)}^{-1}
+  \end{align*}
+  Since $\Gamma$ is a homomorphism, then $\Gamma(1)=1$ and
+  ${\Gamma(1)}^{-1}=1^{-1}=1$. So we find
+  \begin{align*}
+    \Gamma(r){\Gamma(1)}^{-1}=\Gamma(r).
+  \end{align*}
+  Thus it becomes clear that $\gamma\circ i=\Gamma$.
+\end{proof}
+
+\section{Problem}%
+\label{sec:problem_3}
+
+\underline{\textit{Application ot Number Theory:}} Let $p$ be a prime number
+and consider the field $\Z/(p)$ of integers modulo $p$.
+
+\subsection{}%
+\label{sub:3a}
+
+Show that for all $[k]\neq[0]$ the mapping
+\begin{align*}
+  x\mapsto[k]\cdot x
+\end{align*}
+is a bijection from the set of nonzero element of $\Z/(p)$ to itself.
+Alternativly, argue that
+\begin{align*}
+  [k],[2k],[3k],\ldots,[(p-1)k]
+\end{align*}
+is a permutation of $[1],[2],[3],\ldots,[(p-1)]$.
+
+\begin{claim}
+  $[k],[2k],\ldots,[(p-1)k]$ is a permutation of $[1],[2],\ldots,[(p-1)]$.
+\end{claim}
+\begin{proof}
+  Without loss of generality we can assume that $k<p$. Because of the unique
+  factorization of $\Z$, we know that for any $\alpha$ in $1,2,\ldots,(p-1)$,
+  then we know that the factorizations of $\alpha k=q_1q_2\cdots
+  q_n r_1r_2\cdots r_m$, and since both $k$ and $\alpha$ are less than $p$ and
+  so $p\notin{q_1,q_2,\ldots,q_n,r_1,r_2,\ldots,r_m}$, thus we know that
+  $[\alpha k]\neq [0]$, so that means that for each $[\alpha k]$ is equal to
+  some $[1],\ldots[(p-1)]$.
+
+  Each $\alpha k$ must be unique. We show this by contradiction. Consider some
+  $\alpha,\beta\in{1,2,\ldots,(p-1)}$ with $[\alpha k]=[\beta k]$, then since
+  $\Z$ is an euclidean domain, we know that we can cancel, so we rewrite this
+  expression and cancel $[k]$ from both sides, to find
+  \begin{align*}
+    [\alpha k]&=[\beta k]\\
+    [\alpha][k]&=[\beta][k]\\
+    [\alpha]&=[\beta].
+  \end{align*}
+  Thus each of the $[\alpha k]$ must be unique and can must also be one of
+  $[1],[2],\ldots,[(p-1)]$. Since there are $p$ terms in
+  $[k],[2k],\ldots,[(p-1)k]$, and each is unique and can be expressed as equal
+  to some $[1],[2],\ldots,[(p-1)]$ of wich there are only $p$ to chose from,
+  then each $[1],[2],\ldots,[(p-1)]$ must be mapped to.  Thus
+  $[k],[2k],\ldots,[(p-1)k]$ is a permutation of $[1],[2],\ldots,[(p-1)]$.
+\end{proof}
+
+\subsection{}%
+\label{sub:3b}
+
+Argue that for all $[k]\neq [0]$ we have ${[k]}^{p-1}=[1]$.
+
+\begin{claim}
+  For any $[k]\neq[0]$ we know ${[k]}^{p-1}=[1]$.
+\end{claim}
+\begin{proof}
+  Consider from the previous problem, the product of the sequence of elements.
+  That is we consider $[k][2k]\cdots[(p-1)k]$. From the previous problem, we
+  know that this is equal to
+  \begin{align*}
+    [k][2k]\cdots[(p-1)k]&=[1][2]\cdots[(p-1)]\\
+    {[k]}^{p-1}[1][2]\cdots[(p-1)]&=[1][2]\cdots[(p-1)]\\
+  \end{align*}
+  Then we use the ability to cancle values in fields, to find
+  \begin{align*}
+    {[k]}^{p-1}&=[1]
+  \end{align*}
+\end{proof}
+
+\subsection{}%
+\label{sub:3c}
+
+Factorize the polynomial $X^{p-1}-1$ over $\Z/(p)$.
+
+\begin{claim}
+  The factorization of the polynomal $X^{p-1}-1$ over $\Z/(p)$ is given by
+  $(X+1)(X+2)\cdots(X+(p-1))$.
+\end{claim}
+\begin{proof}
+  Consider some polynomial $X^{p-1}-1$, We are able to verify that our proposed
+  factorization is indeed the factorization of this polynomial, by verify that
+  every factor in the factorization is irreducible, and the roots of the
+  factorization and the roots of $X^{p-1}-1$ are the same.
+
+  First we verify that all the components of the factorization are indeed
+  irreducible, this is clear as every factor has a degree of $1$, and thus we
+  know that they are irreducible.
+
+  Now we verify that the roots of the factorization are equivalent to the roots
+  of the polynomial. It is clear from the construction that the roots of the
+  factorization are $[1],[2],\ldots,[(p-1)]$, and if we plug any of those into
+  the polynomial $X^{p-1}-1$, from the previous step, we know that the
+  $X^{p-1}$ for any of these potential roots will be $[1]$, so we find that the
+  polynomial evaluates to $[1]-[1]=[0]$. Thus the roots of the polynomial and
+  the factorization match.
+
+  Since the roots are the same, and the elements of the factorization are
+  irreducible, then we knwo that this must be the unique prime factorization of
+  the polynomial $X^{p-1}-1$.
+\end{proof}
+
+\subsection{}%
+\label{sub:3d}
+
+Based on the above prove the following two classic theorems of number theory:
+\begin{align*}
+  \gcd{k}{p}=1\ra k^{p-1}\equiv \mod{1}{p}\ \text{and}\ (p-1)!\equiv
+  \mod{-1}{p}.
+\end{align*}
+
+\begin{claim}
+  If $\gcd{k}{p}=1$ then $k^{p-1}\equiv\mod{1}{p}$.
+\end{claim}
+\begin{proof}
+  % \todo[inline]{Is $p$ still prime? If it is easy}
+  Since $p$ is prime and $k<p$, then the $\gcd{k}{p}=1$ as the prime
+  factorization of $k$ does not include $p$. Then as we have already shown,
+  $k^{p-1}\equiv\mod{1}{p}$ if $p$ is prime.
+\end{proof}
+
+\begin{claim}
+  $(p-1)1\equiv\mod{-1}{p}$.
+\end{claim}
+\begin{proof}
+  First we consider the polynomial presented in problem~\ref{sub:3c}, and the
+  factorization demonstrated. We will call the factorization $Q(X)$, and the
+  polynomial $F(X)$. By the previous problem, we know that $F(X)=Q(X)$. Let us
+  consider pluging in $[0]$ for $X$, then we find
+  \begin{align*}
+    F([0])&=Q([0])\\
+    {[0]}^{p-1}-1&=([0]+1)([0]+2)\cdots([0]+(p-1))\\
+    [0]+[-1]&=(1)(2)\cdots(p-1)\\
+    [-1]&=(p-1)!
+  \end{align*}
+  Thus we can see that $(p-1)!\equiv\mod{-1}{p}$.
+\end{proof}
+
+\subsection{}%
+\label{sub:3e}
+
+Now let $F$ denote any finite field and let $|F|$ denote the number of elements
+of $F$ generalize the above to prove
+\begin{align*}
+  \alpha^{|F|-1}=1
+\end{align*}
+for all non-zero $\alpha\in F$. What, if anything, can you say about the
+product of all non-zero elements of $F$?
+
+\begin{claim}
+  For any finite field $F$, let $|F|$ denote the number of elements of the
+  filed, then $\alpha^{|F|-1}=1$ for all $\alpha\in F$.
+\end{claim}
+\begin{proof}
+  We know that for any finite field it is possible to construct a polynomial
+  such that $P(X)\neq 0$, but $P(\alpha)=0\forall\alpha\in F$. This polynomial
+  is given by the form
+  \begin{align*}
+    X^{|F|}-X&=0\\
+    X^{|F|}&=X\\
+    X^{|F|-1}&=1.
+  \end{align*}
+  By simple rearrangement, and use of cancellation, which we have available as
+  $F[X]$ is itself a field, we find that $X^{|F|-1}=1$ for all $X\in F$.
+\end{proof}
+
+\begin{claim}
+  The product of all nonzero elements of the field is equal to the additive
+  inverse of the multiplicative identity $-1$.
+\end{claim}
+\begin{proof}
+  Considering the same polynomial $P(X)=X^{|F|}-X$, we know that the
+  factorization of this polynomial is given by
+  \begin{align*}
+    X^{|F|}-X&=X(X-\alpha_1)\cdots(X_\alpha_{|F|-1})\\
+    X^{|F|-1}-1&=(X-\alpha_1)\cdots(X_\alpha_{|F|-1}).
+  \end{align*}
+  Then is we plug in $0$ into this expression we find
+  \begin{align*}
+    0^{|F|-1}-1&=(0-\alpha_1)\cdots(0-\alpha_{|F|-1})\\
+    -1&=\alpha_1\cdots\alpha_{|F|-1}.
+  \end{align*}
+  Thus we can conclude that the product of all nonzero elements of the field is
+  equal to the additive inverse of the multiplicative identity of that field,
+  which we have expressed as $-1$.
+\end{proof}
+
+\section{Problem}%
+\label{sec:problem_4}
+
+\underline{\textit{Advanced Topic:}} Recall the following
+\begin{itemize}
+  \item For an ideal $I$ of the polynomail ring $\C[X_1,X_2,\ldots,X_n]$ we
+    define
+    \begin{align*}
+      \rad{I}=\left\{P\in\C[X_1,X_2,\ldots,X_n]|\exists k\in\N,p^k\in I\right\}
+    \end{align*}
+    Here $\N$ denotes the set of positive integers. Recall that $\rad{I}$ was
+    on the first midterm exam.
+
+  \item An ideal $I$ of $\C[X_1,X_2,\ldots,X_n]$ is said to be
+    \underline{radical} if $\rad{I}=I$.
+
+  \item For an ideal $I$ in the polynomial ring $\C[X_1,X_2,\ldots,X_n]$ we
+    define
+    \begin{align*}
+      \mathscr{Z}(I)=\left\{\alpha\in\C^n\vert\forall P\in
+        I,P(\alpha)=0\right\}.
+    \end{align*}
+
+  \item Subsets $\mathbf{X}\subseteq \C^n$ of the form $\mathscr{Z}(I)$ are called
+    \textit{algebraic sets}.
+
+  \item For an algebraic set $\mathbf{X}$ we define
+    \begin{align*}
+      \mathscr{I}(\mathbf{X})=\left\{P\in\C[X_1,X_2,\ldots,X_n]\vert\forall
+        \alpha\in\mathbf{X},P(\alpha)=0\right\}.
+    \end{align*}
+
+  \item The Strong Nullstellensatz (due to David Hilbert) states that
+    \begin{align*}
+      \mathscr{I}(\mathscr{Z}(I))=\rad{I}
+    \end{align*}
+    for all ideals $I$ of $\C[X_1,X_2,\ldots,X_n]$.
+\end{itemize}
+In this problem I ask you to prove the following.
+
+\subsection{}%
+\label{sub:4a}
+
+Prove that for all algebraic sets $\mathbf{X}$ the set
+$\mathscr{I}(\mathbf{X})$ is
+\begin{itemize}
+  \item An ideal of $\C[X_1,X_2,\ldots,X_n]$.
+  \item A radical ideal of $\C[X_1,X_2,\ldots,X_n]$.
+\end{itemize}
+
+\begin{claim}
+  All algebraic sets $\mathbf{X}$, the set $\mathscr{I}(\mathbf{X})$ are
+  radical ideals of $\C[X_1,X_2,\ldots,X_n]$.
+\end{claim}
+\begin{proof}
+  Consider some algebraic set $\mathbf{X}$. By the definition of algebraic set,
+  then there must exist some ideal $I$, such that $\mathscr{Z}(I)=\mathbf{X}$.
+  Then we consider
+  \begin{align*}
+    \mathscr{I}(\mathbf{X})&=\mathscr{I}(\mathscr{Z}(I))
+  \end{align*}
+  Then by Strong nullstellensatz we know that
+  $\mathscr{I}(\mathscr{Z}(I))=\rad{I}$, and thus
+  $\mathscr{I}(\mathbf{X})=\rad{I}$. We conclude that for all algebraic sets
+  $\mathbf{X}$, the set $\mathscr{I}(\mathbf{X})$ is an ideal of
+  $\C[X_1,X_2,\ldots,X_n]$, since we know that $\rad{I}$ is an ideal.
+
+  To show that $\rad{I}$ is a radical ideal, we compute
+  \begin{align*}
+    \rad{\rad{I}}&=\left\{P\in\C[X_1,X_2,\ldots,X_n]\vert\exists
+      k\in\N,P^k\in\rad{I}\right\}\\
+    &=\left\{P\in\C[X_1,X_2,\ldots,X_n]\vert\exists
+      k,l\in\N,{\left(P^l\right)}^k\in I\right\}\\
+    &=\left\{P\in\C[X_1,X_2,\ldots,X_n]\vert\exists
+      k\in\N,P^k\in I\right\}\\
+    &=\rad{I}.
+  \end{align*}
+  Thus $\rad{\rad{I}}=\rad{I}$ and so we conclude that $\rad{I}$ is indeed a
+  radical ideal.
+\end{proof}
+
+\subsection{}%
+\label{sub:4b}
+
+Prove, through element chasing, that $\mathscr{Z}(I)=\mathscr{Z}(\rad{I})$ for
+all ideals $I$ of $\C[X_1,X_2,\ldots,X_n]$.
+
+\begin{claim}
+  $\mathscr{Z}(I)=\mathscr{Z}(\rad{I})$ for all ideals $I$ of
+  $\C[X_1,X_2,\ldots,X_n]$.
+\end{claim}
+\begin{proof}
+  Consider some ideal $I$ of $\C[X_1,X_2,\ldots,X_n]$. Then we compute
+  \begin{align*}
+    \mathscr{Z}(\rad{I})&=\left\{\alpha\in\C^n\vert\forall
+      P\in\rad{I},P(\alpha)=0\right\}\\
+    &=\left\{\alpha\in\C^n\vert\exists n\in\N,\forall
+      P\in\C[X_1,X_2,\ldots,X_n],P^n\in I, P(\alpha)=P^n(\alpha)=0\right\}\\
+    &=\left\{\alpha\in\C^n\vert\forall P\in I,P(\alpha)=0\right\}\\
+    &=\mathscr{Z}(I).
+  \end{align*}
+  Thus $\mathscr{Z}(I)=\mathscr{Z}(\rad{I})$ for allideals $I$ of
+  $\C[X_1,X_2,\ldots,X_n]$.
+\end{proof}
+
+\subsection{}%
+\label{sub:4c}
+
+Prove, through element chasing, that
+$\mathscr{Z}(\mathscr{I}(\mathbf{X}))=\mathbf{X}$ for all algebraic sets
+$\mathbf{X}\subseteq\C^n$.
+
+\begin{claim}
+  For all algebraic sets $\mathbf{X}\subseteq\C^n$,
+  $\mathscr{Z}(\mathscr{I}(\mathbf{X}))=\mathbf{X}$.
+\end{claim}
+\begin{proof}
+  Consider some algebraic set $\mathbf{X}$, by the definition of algebraic set,
+  there must exists some ideal $I$ such that $\mathscr{Z}(I)\mathbf{X}$. Now we
+  consider
+  \begin{align*}
+    \mathscr{Z}(\mathscr{I}(\mathbf{X}))=\mathscr{Z}(\mathscr{I}(\mathscr{Z}(I))).
+  \end{align*}
+  Then by Strong Nullstellensatz, we know that
+  $\mathscr{I}(\mathscr{Z}(I))=\rad{I}$, so we can rewrite this expression to
+  be
+  \begin{align*}
+    \mathscr{Z}(\rad{I}).
+  \end{align*}
+  Then by the previous problem, we can notice that this can be expressed as
+  \begin{align*}
+    \mathscr{Z}(\rad{I})=\mathscr{Z}(I).
+  \end{align*}
+  And by our assumption, we find that this must be equal to $\mathbf{X}$. Thus
+  for any algebraic set $\mathbf{X}$,
+  $\mathscr{Z}(\mathscr{I}(\mathbf{X}))=\mathbf{X}$.
+\end{proof}
+
+\subsection{}%
+\label{sub:4d}
+
+Prove that $\mathscr{Z}$ is a bijection between the set of radical ideals of
+$\C[X_1,X_2,\ldots,X_n]$ and the set of algebraic sets in $\C^n$.
+
+\begin{claim}
+  $\mathscr{Z}$ is a bijection between radical ideals of
+  $\C[X_1,X_2,\ldots,X_n]$ and algebraic sets in $\C^n$.
+\end{claim}
+\begin{proof}
+  To show that $\mathscr{Z}$ is a bijection, we must show that it is onto, and
+  one-to-one. We will first show onto.
+
+  Consider some algebraic set $\mathbf{X}$, let us consider the ideal $I$ given
+  by $\mathscr{I}(\mathbf{X})$. Then we compute
+  \begin{align*}
+    \mathscr{Z}(I)=\mathscr{Z}(\mathscr{I}(\mathbf{X})).
+  \end{align*}
+  Using the preivous problem, we see that this is equal to $\mathbf{X}$. Thus
+  for any algebraic set $\mathbf{X}$, we can construct some radical ideal given
+  by $\mathscr{I}(\mathbf{X})$ such that $\mathscr{Z}(I)=\mathbf{X}$. We
+  conclude that $\mathscr{Z}$ is onto.
+
+  To prove one-to-one, consider some radical ideal
+  $I,J\in\C[X_1,X_2,\ldots,X_n]$, with $\mathscr{Z}(I)=\mathbf{X} =
+  \mathscr{Z}(J)$. Next we consider $\mathscr{I}(\mathbf{X})$, then we apply
+  Strong Nullstellensatz
+  \begin{align*}
+    \mathscr{I}(\mathscr{Z}(I))&=\mathscr{I}(\mathscr{Z}(J))\\
+    \rad{I}&=\rad{J}.
+  \end{align*}
+  Then since $I,J$ are radical ideals, we know that $\rad{I}=I$, and
+  $\rad{J}=J$, so we can see that $I=J$. Thus $\mathscr{Z}$ must be one to one.
+
+  Since $\mathscr{Z}$ is both onto and one-to-one, we can conclude that it is a
+  bijection between radical ideals of $\C[X_1,X_2,\ldots,X_n]$ and algebraic
+  sets in $\C^n$.
+\end{proof}
+
+\end{document}
