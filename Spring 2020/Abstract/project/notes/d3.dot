@@ -1,0 +1,29 @@
+digraph ag {
+  rankdir=LR;
+  node[shape=point]; qi;
+  node[shape=circle];
+
+  qi -> abc;
+  abc -> bca[label="r"];
+  bca -> cab[label="r"];
+  cab -> abc[label="r"];
+  bca -> abc[label="-r"];
+  cab -> bca[label="-r"];
+  abc -> cab[label="-r"];
+
+  acb -> cba[label="r"];
+  cba -> bac[label="r"];
+  bac -> acb[label="r"];
+  cba -> acb[label="-r"];
+  bac -> cba[label="-r"];
+  acb -> bac[label="-r"];
+
+  abc -> acb[label="s,-s"];
+  bca -> bac[label="s,-s"];
+  cab -> cba[label="s,-s"];
+
+  acb -> abc[label="s,-s"];
+  bac -> bca[label="s,-s"];
+  cba -> cab[label="s,-s"];
+
+}
