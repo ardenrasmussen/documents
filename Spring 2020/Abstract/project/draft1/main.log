@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.18)  18 FEB 2020 16:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.18)  20 FEB 2020 14:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -392,7 +392,56 @@ File: pgfmodulematrix.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 topaths.code.tex
 File: tikzlibrarytopaths.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-)))
+))) (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2019/03/01 v1.8w multicolumn formatting (FMi)
+\c@tracingmulticols=\count121
+\mult@box=\box41
+\multicol@leftmargin=\dimen166
+\c@unbalance=\count122
+\c@collectmore=\count123
+\doublecol@number=\count124
+\multicoltolerance=\count125
+\multicolpretolerance=\count126
+\full@width=\dimen167
+\page@free=\dimen168
+\premulticols=\dimen169
+\postmulticols=\dimen170
+\multicolsep=\skip51
+\multicolbaselineskip=\skip52
+\partial@page=\box42
+\last@line=\box43
+\maxbalancingoverflow=\dimen171
+\mult@rightbox=\box44
+\mult@grightbox=\box45
+\mult@gfirstbox=\box46
+\mult@firstbox=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\c@minrows=\count127
+\c@columnbadness=\count128
+\c@finalcolumnbadness=\count129
+\last@try=\dimen172
+\multicolovershoot=\dimen173
+\multicolundershoot=\dimen174
+\mult@nat@firstbox=\box65
+\colbreak@box=\box66
+\mc@col@check@num=\count130
+)
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 automata.code.tex
 File: tikzlibraryautomata.code.tex 2019/08/03 v3.1.4b (3.1.4b)
@@ -404,26 +453,26 @@ File: tikzlibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multip
 art.code.tex
 File: pgflibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfnodepartlowerbox=\box41
-\pgfnodeparttwobox=\box42
-\pgfnodepartthreebox=\box43
-\pgfnodepartfourbox=\box44
-\pgfnodeparttwentybox=\box45
-\pgfnodepartnineteenbox=\box46
-\pgfnodeparteighteenbox=\box47
-\pgfnodepartseventeenbox=\box48
-\pgfnodepartsixteenbox=\box49
-\pgfnodepartfifteenbox=\box50
-\pgfnodepartfourteenbox=\box51
-\pgfnodepartthirteenbox=\box52
-\pgfnodeparttwelvebox=\box53
-\pgfnodepartelevenbox=\box54
-\pgfnodeparttenbox=\box55
-\pgfnodepartninebox=\box56
-\pgfnodeparteightbox=\box57
-\pgfnodepartsevenbox=\box58
-\pgfnodepartsixbox=\box59
-\pgfnodepartfivebox=\box60
+\pgfnodepartlowerbox=\box67
+\pgfnodeparttwobox=\box68
+\pgfnodepartthreebox=\box69
+\pgfnodepartfourbox=\box70
+\pgfnodeparttwentybox=\box71
+\pgfnodepartnineteenbox=\box72
+\pgfnodeparteighteenbox=\box73
+\pgfnodepartseventeenbox=\box74
+\pgfnodepartsixteenbox=\box75
+\pgfnodepartfifteenbox=\box76
+\pgfnodepartfourteenbox=\box77
+\pgfnodepartthirteenbox=\box78
+\pgfnodeparttwelvebox=\box79
+\pgfnodepartelevenbox=\box80
+\pgfnodeparttenbox=\box81
+\pgfnodepartninebox=\box82
+\pgfnodeparteightbox=\box83
+\pgfnodepartsevenbox=\box84
+\pgfnodepartsixbox=\box85
+\pgfnodepartfivebox=\box86
 )))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 positioning.code.tex
@@ -435,31 +484,32 @@ File: tikzlibraryarrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\arrowsize=\dimen166
+\arrowsize=\dimen175
 ))
-\c@definition=\count121
+\c@definition=\count131
+\c@theorem=\count132
 
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
 
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -468,16 +518,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ABD: EveryShipout initializing macros
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count122
-\scratchdimen=\dimen167
-\scratchbox=\box61
-\nofMPsegments=\count123
-\nofMParguments=\count124
+\scratchcounter=\count133
+\scratchdimen=\dimen176
+\scratchbox=\box87
+\nofMPsegments=\count134
+\nofMParguments=\count135
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count125
-\MPscratchDim=\dimen168
-\MPnumerator=\count126
-\makeMPintoPDFobject=\count127
+\MPscratchCnt=\count136
+\MPscratchDim=\dimen177
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
 \everyMPtoPDFconversion=\toks39
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -529,31 +579,98 @@ G,.JBIG2,.JB2,.eps]
 (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
-)) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./main.aux) ) 
+))
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 28.
+
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 68.
+
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 69.
+
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 85.
+
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 85.
+
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 105
+.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 105
+.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 109
+.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 109
+.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 110
+.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 110
+.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 111
+.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 111
+.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 112
+.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 112
+.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 113
+.
+
+[2] [3] [4] [5] (./main.bbl) [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 14183 strings out of 492167
- 289461 string characters out of 6131558
- 345444 words of memory out of 5000000
- 18125 multiletter control sequences out of 15000+600000
- 9914 words of font info for 39 fonts, out of 8000000 for 9000
+ 14337 strings out of 492167
+ 291522 string characters out of 6131558
+ 362234 words of memory out of 5000000
+ 18273 multiletter control sequences out of 15000+600000
+ 9746 words of font info for 38 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,10n,68p,431b,968s stack positions out of 5000i,500n,10000p,200000b,80000s
-</u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
-.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (2 pages, 137030 bytes).
+ 60i,16n,68p,406b,1004s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on main.pdf (6 pages, 182166 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 82 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
