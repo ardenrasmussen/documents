@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{tukbmswpag}
+D.~B.~A. Epstein, D.~F. Holt, and S.~E. Rees.
+\newblock The use of knuth-bendix methods to solve the word problem in
+  automatic groups.
+\newblock {\em Symbolic Computation}, 12:397--414, 1991.
+
+\bibitem{swpua}
+Donald~E. Knuth and Peter~B. Bendix.
+\newblock Simple word problems in universal algebras'.
+\newblock {\em Proceeding of a Conference Held at Oxford Under the Auspices of
+  the Science Research Councile Atlas Computer Labratory}, pages 263--297,
+  1970.
+
+\end{thebibliography}
