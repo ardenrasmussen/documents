@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1584388950 "main.aux" "main.bbl" "main" 1584390076
+["bibtex main"] 1584595357 "main.aux" "main.bbl" "main" 1584595607
   "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1572595918 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1584389618 2261 5ac83f51fef18e78d12bce0d94244d30 "pdflatex"
-  "ref.bib" 1584374900 613 448e0839644e8bafa33208ec9bf6ba28 ""
+  "main.aux" 1584595607 2669 cf5ca49a0af45027b4a8b051f61b123a "pdflatex"
+  "ref.bib" 1584590673 613 448e0839644e8bafa33208ec9bf6ba28 ""
   (generated)
-  "main.bbl"
   "main.blg"
-["pdflatex"] 1584389617 "main.tex" "main.pdf" "main" 1584390076
+  "main.bbl"
+["pdflatex"] 1584595607 "main.tex" "main.pdf" "main" 1584595607
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1572595918 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1572595918 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1572595918 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -142,11 +142,11 @@
   "/usr/share/texmf-dist/tex/latex/tools/multicol.sty" 1572595918 31158 cae2ad811c8e8846a5be16c9984d4859 ""
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1572595918 55589 34128738f682d033422ca125f82e5d62 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1572595918 33301 a3134070eacafb10b1f371612ce2650d ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1582056255 4572998 f9631eebba48c3ee98e5d310044b0a09 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1582056225 8044939 acdfb497290f7594b36f0327c590eb6b ""
-  "main.aux" 1584389618 2261 5ac83f51fef18e78d12bce0d94244d30 "pdflatex"
-  "main.bbl" 1584388950 537 17914c98b2fe5df255ab2285c1138897 "bibtex main"
-  "main.tex" 1584390075 21303 9c42669dc7490b797966bffde4189891 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1584232986 4572998 f9631eebba48c3ee98e5d310044b0a09 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1584232981 8044939 46eea00bf048f7e64a7c6c65f114d323 ""
+  "main.aux" 1584595607 2669 cf5ca49a0af45027b4a8b051f61b123a "pdflatex"
+  "main.bbl" 1584595357 537 17914c98b2fe5df255ab2285c1138897 "bibtex main"
+  "main.tex" 1584595604 21421 1a779fb276b12d08a293b70b473b91cb ""
   (generated)
   "main.log"
   "main.aux"
