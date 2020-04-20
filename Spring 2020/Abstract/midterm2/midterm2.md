@@ -85,10 +85,10 @@ $$
 $$
 Since, $G_s\leq G$, then $|G_s|\big\vert |G|$, by lagranges theorem, since
 $|G|$ is prime, then we must have $|G_s|=1$ or $|G_s|=p$. Thus we conclude that
-$$
+\begin{align*}
 |\mathcal{O}(s)|=\frac{|G|}{1}=|G|=p\\
 |\mathcal{O}(s)|=\frac{|G|}{p}=1.
-$$
+\end{align*}
 so the orbits of this action must be of order $1$ or $p$.
 
 
@@ -124,13 +124,13 @@ To prove that this is a group action, we will first show that for some element
 $a_1,a_2\in C_p$, and $(x_1,\ldots,x_p)\in S$, then
 $a_1.(a_2.(x_1\ldots,x_p))=(a_1a_2).(x_1,\ldots,x_p)$. First we note, that
 $a_1=a^\alpha$, and $a_2=a^\beta$. Now let us compute
-$$
+\begin{align*}
 a^\alpha.(a^\beta.(x_1,\ldots,x_p))=a^\alpha.(x_{1+\beta},\ldots,x_{p-\beta})\\
 =(x_{1+\beta+\alpha},\ldots,x_{p-\beta-\alpha})\\
 =(x_{1+(\beta+\alpha)},\ldots,x_{p-(\beta+\alpha)})\\
 =(a^(\alpha+\beta))(x_1,\ldots,x_p)\\
 =(a^\alpha a^\beta)(x_1,\ldots,x_p).
-$$
+\end{align*}
 
 Now it remains to show that $a^0.(x_1,\ldots,x_p)=(x_1,\ldots,x_p)\quad\forall
 (x_1,\ldots,x_p)\in S$. So let us compute
