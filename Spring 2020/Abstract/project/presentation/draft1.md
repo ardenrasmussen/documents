@@ -59,8 +59,6 @@ then the question becomes:
 > Are $rrsrsr^{-1}ssrssrrs^{-1}r^{-1}s$ and $rsr^{-1}r^{-1}srrrs^{-1}r^{-1}s$
 > the same? And can we always tell if two sequences of generators are the same.
 
-<!-- Can I render $\frac{\pi}{2}$ in the comments?-->
-
 ---
 
 ### Cyclic Group Of Order 3

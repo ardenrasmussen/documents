@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{n}{pragma} \PYG{n}{omp} \PYG{n}{parallel} \PYG{k}{for} \PYG{n}{schedule}\PYG{p}{(}\PYG{n}{dynamic}\PYG{p}{,} \PYG{l+m+mi}{256}\PYG{p}{)} \PYG{n}{shared}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{)}
+\end{Verbatim}
