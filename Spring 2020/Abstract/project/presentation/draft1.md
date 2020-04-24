@@ -21,8 +21,6 @@ section.smallFont p {
 
 _Arden Rasmussen_
 
-<!-- Hello World Does this work -->
-
 ---
 
 ## Outline
@@ -210,10 +208,33 @@ Shortlex ordering implements a notion of order for our representations.
 Shortlex ordering is simply alphabetical ordering, where shorter words are
 considered smaller.
 
-Given the alphabet $\Sigma=\left\{x,y\right\}$, then the ordering is represented by
+Given the alphabet $\Sigma=\left\{x,y\right\}$, then the ordering is
+represented by
 
 $$
-\varepsilon <x<y<xx<xy<yx<yy<\ldots
+<!-- \varepsilon <x<y<xx<xy<yx<yy<\ldots -->
 $$
 
 where $\varepsilon$ is the empty string.
+
+---
+
+<!--_class: invert-->
+
+## Knuth-Bendix Method
+
+---
+
+### Confluence
+
+Multiple methods that provide the same result. In this case applying the
+different relations in different orders ($\mathbb{Z}_3$).
+
+---
+
+The Knuth-Bendix method resolves the lack of confluence, by rewriting the
+relations such that there is no conflict of confluence.
+
+---
+
+### The Algorithm

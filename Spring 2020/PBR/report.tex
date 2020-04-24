@@ -31,7 +31,7 @@ bidirectional shading functions:
 
 \subsection{Specular Reflection}%
 \label{sub:Specular Reflection}
-Specular reflection is the shading for objects that are perfictly reflective,
+Specular reflection is the shading for objects that are perfectly reflective,
 such as mirrors.
 
 \subsection{Specular Transmission}%
@@ -68,7 +68,7 @@ easily be added, by simply defining their signed distance functions.
 \label{sub:Operations}
 
 There are also a number of operations that can be done to each SDF, which in
-turn defined a new SDF. This means that operations can easily be concatonated.
+turn defined a new SDF. This means that operations can easily be concatenated.
 
 \begin{enumerate}
   \item Elongate
@@ -92,7 +92,7 @@ OpenMP\footnote{\url{https://www.openmp.org/}}
   #pragma omp parallel for schedule(dynamic, 256) shared(buffer)
 \end{minted}
 
-This line is placed directly priore to the main render loop. It splits the loop
+This line is placed directly prior to the main render loop. It splits the loop
 into chunks of 256 steps, and dynamically allocates the chunks to each of the
 available threads. The final part of the line declares that the image buffer is
 shared by each thread.
@@ -102,7 +102,21 @@ For more information on how OpenMP is used, visit the OpenMP documentation.
 \section{Results}%
 \label{sec:Results}
 
-Here are some results of the renderer.
+Here are some results of the renderer. A serious next step would be to
+implement multiple importance sampling. Currently each reflection/transmission
+is sampled based on the probability density of the material. In contrast to
+that there is light sampling, where the direction of the reflection could be
+sampled based upon the direction to light sources.
+
+Each sampling method provides better results based on different materials. For
+example material sampling is far superior for very glossy surfaces, such as the
+perfect mirror, and light sampling is much better suited for diffuse materials.
+
+Currently TRM does not support light base sampling, which means that scenes
+with a large number of diffuse materials take very long to converge to
+acceptable results. The best method is to use multiple importance sampling,
+which samples the outgoing reflected direction based both on the material and
+the light sources.
 
 \begin{figure}[!htb]
   \minipage{0.45\textwidth}

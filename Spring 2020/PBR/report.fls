@@ -1,4 +1,4 @@
-PWD /home/arden/Documents/Spring 2020/PBR
+PWD /home/arden/documents/Spring 2020/PBR
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT report.tex
