@@ -221,7 +221,7 @@ where $\varepsilon$ is the empty string.
 
 <!--_class: invert-->
 
-## Knuth-Bendix Method
+## **Knuth-Bendix Method**
 
 ---
 
@@ -237,4 +237,165 @@ relations such that there is no conflict of confluence.
 
 ---
 
+### Goal
+
+Constructs a set of relations that preserve confluence, and all reducible
+elements can be easily reduced by the relations. For $D_4$, $r^2$ cannot be
+reduced, but $r^6$ would be reduced to $r^2$.
+
+---
+
 ### The Algorithm
+
+Consider the group presented by $\left\langle X\vert R\right\rangle$,
+where $X$ is the set of generators, and $R$ is the set of relations given by
+$P_i=Q_i$, where $P_i,Q_i\in\Sigma^*$ as defined previously, and $i$ is the
+number of relations in $R$.
+
+---
+
+First we construct the initial relations. For this algorithm these relations are
+defined in a single direction, so let us assume that by shortlex ordering
+$Q_i \lt P_i$, then our first set of relations is given by
+$$
+P_i\rightarrow Q_i
+$$
+
+---
+
+Take $P_i$, $P_j$, with $i\neq j$, where $P_i$ and $P_j$ have some overlap.
+
+1. The prefix of $P_i$ is equal to the suffix of $P_j$. Consider $P_i=BC$ and
+   $P_j=AB$.
+2. $P_i$ is contained within $P_j$. Let $P_i=B$ and $P_j=ABC$.
+
+---
+
+Consider the word $ABC$, and apply $P_i$ and $P_j$ to get the words $r_i$ and
+$r_j$ respectively. If $r_i\neq r_j$, then define the new relations
+$$
+\max\{r_i,r_j\}\rightarrow\{r_i,r_j\}
+$$
+
+---
+
+Remove all relations that this relation can reduce the left side. Repeated this
+process until no relations can be reduced.
+
+---
+
+### Example
+
+$$
+G=\left\langle x,y\vert x^3=y^3=(xy)^3=1\right\rangle
+$$
+$$
+\begin{aligned}
+x^3 &\rightarrow 1\\
+y^3 &\rightarrow 1\\
+xyxyxy &\rightarrow 1
+\end{aligned}
+$$
+
+---
+
+$P_1$ and $P_3$ overlap, so confider $x^3yxyxy$, and we reduce that
+$$
+\begin{aligned}
+x^3yxyxy\rightarrow yxyxy\quad x^3yxyxy\rightarrow x^2
+\end{aligned}
+$$
+
+---
+
+$P_1$ and $P_3$ overlap, so confider $x^3yxyxy$, and we reduce that
+$$
+\begin{aligned}
+x^3yxyxy\rightarrow yxyxy\quad x^3yxyxy\rightarrow x^2
+\end{aligned}
+$$
+Define $yxyxy\rightarrow x^2$.
+
+---
+
+$P_1$ and $P_3$ overlap, so confider $x^3yxyxy$, and we reduce that
+$$
+\begin{aligned}
+x^3yxyxy\rightarrow yxyxy\quad x^3yxyxy\rightarrow x^2
+\end{aligned}
+$$
+Define $yxyxy\rightarrow x^2$.
+Remove $xyxyxy\rightarrow 1$.
+
+---
+
+Repeating this process the set of relations become
+
+$$
+\begin{aligned}
+x^3 &\rightarrow 1\\
+y^3 &\rightarrow 1\\
+yxyx &\rightarrow x^2y^2\\
+y^2x^2 &\rightarrow xyxy
+\end{aligned}
+$$
+
+---
+
+<!--_class: invert-->
+
+## **Automata Groups**
+
+---
+
+> A finite state automaton is defined as the quintuple $(\Sigma, S, s_0,
+> \delta)$, where $\Sigma$ is the alphabet, $S$ is the non-empty set of
+> states, $s_0\in S$ is the initial state, $\delta$ is the state transition
+> function $\delta :S\times\Sigma\rightarrow S$.
+
+---
+
+For $D_4$, $\Sigma=\left\{r,r^{-1},s,s^{-1}\right\}$.,
+$S=\left\{e,r,r^2,r^3,s,rs,r^2s,r^3s\right\}$, and $s_0=e$.
+
+---
+
+| $\delta$ | $r^4$  | $s^2$  | $rsrs$ |
+| -------- | ------ | ------ | ------ |
+| $e$      | $e$    | $e$    | $e$    |
+| $r$      | $r$    | $r$    | $r$    |
+| $r^2$    | $r^2$  | $r^2$  | $r^2$  |
+| $r^3$    | $r^3$  | $r^3$  | $r^3$  |
+| $s$      | $s$    | $s$    | $s$    |
+| $rs$     | $rs$   | $rs$   | $rs$   |
+| $r^2s$   | $r^2s$ | $r^2s$ | $r^2s$ |
+| $r^3s$   | $r^3s$ | $r^3s$ | $r^3s$ |
+
+---
+
+To apply an automaton, consider some word $w\in\Sigma^*$, then apply the
+relations until none of them can be applied.
+
+Confluence ensures that the order of applying the relations does not matter.
+
+---
+
+After applying all possible relations, then the current state is the result of
+the automaton. With this process, we can define the mapping for this automaton
+$$
+A:\Sigma^*\rightarrow S
+$$
+
+---
+
+<!--_class: invert-->
+
+## **The Word Problem For Automata Groups**
+
+---
+
+By the Knuth-Bendix method, we construct a set of relations that preserve
+confluence. This ser of relations are then used for the transition function for
+a finite state automaton $\delta$. Thus by $A$, we have a mapping
+$\Sigma^*\rightarrow S$. Applying $A$ to two words $w,u\in\Sigma^*$ to get
+$s_w$, s_u$, which can trivially be checked for equality.
