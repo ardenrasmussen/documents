@@ -17,6 +17,10 @@ solvability of the word problem for automatic groups.-->
 
 ## Outline
 
+* The Word Problem
+* Knuth-Bendix Algorithm
+* Finite State Automata
+
 <!--First a brief outline. First I am going to explain what the word problem
 is, and why it is important. Then I will go though the Knuth-Bendix method,
 following that I will explain finite state automata. Then
@@ -25,20 +29,18 @@ Knuth-Bendix method to show the solvability of the word problem for automatic
 groups. I do want to note that I will not actually be going through the proof,
 but just the key points and details of what the proof does.-->
 
+
 ---
 
 <!--_class: invert-->
 
-## **The Word Problem**
-
-<!--First lets start with the word problem.-->
-
----
-
-### Some definitions
+## **Some definitions**
 
 <!--Unfortunately before I can get into the meat of the word problem, it is
 important to setup some definitions and notations that will commonly be used.-->
+
+<!--[1:00]-->
+
 
 ---
 
@@ -154,6 +156,17 @@ $$
 
 #### Questions?
 
+
+---
+
+<!--_class: invert-->
+
+## **The Word Problem**
+
+<!--Now that we have those definitions we can dig into the word problem.-->
+
+<!--[9:38]-->
+
 ---
 
 ### Motivation
@@ -181,6 +194,8 @@ $$
 ## **Knuth-Bendix**
 
 <!--Now that we have an understanding of what the word problem is, we can begin with the knuth-bendix method.-->
+
+<!--[12:32]-->
 
 ---
 
@@ -257,7 +272,7 @@ Consider $P_i$, $P_j$ with $i\neq j$, where $P_i$ and $P_j$ have some overlap.
 Consider the word $ABC$, and apply $P_i$ and $P_j$ to get the words $r_i$ and $r_j$ respectively. If $r_i\neq r_j$, then define the new rule
 
 $$
-\max\{r_i,r_j\}\rightarrow\{r_i,r_j\}
+\max\{r_i,r_j\}\rightarrow\min\{r_i,r_j\}
 $$
 
 <!--Now to we consider the word ABC, ane apply P_i and P_j to get the words r_i and r_j respectively. If r_i and r_j are not equal, then this is a lack of confluence, and to resolve it we define the new rule given by the maximum of the two results mapping to the minimum of the two results. And the maximum and minimum is defined by shortlex ordering. Now that this new rule exists, remove any existing rule, which can be reduced by this new rule.-->
@@ -268,7 +283,7 @@ $$
 #### Example
 
 $$
-G=\left\langle a,b\vert a^3=b^3={(ab)}^2=1\right\rangle=D(2,3,3)
+G=\left\langle x,y\vert x^3=y^3={(xy)}^3=1\right\rangle=D(3,3,3)
 $$
 
 <!--Lets do an example of the knuth bendix method, to construct a rewriting system that preserves confluence. This is the generators and relations for our group, which is also known as the von Dyck group D(2,3,3).-->
@@ -278,7 +293,7 @@ $$
 #### Example
 
 $$
-G=\left\langle a,b\vert a^3=b^3={(ab)}^3=1\right\rangle=D(3,3,3)
+G=\left\langle x,y\vert x^3=y^3={(xy)}^3=1\right\rangle=D(3,3,3)
 $$
 
 $$
@@ -301,6 +316,8 @@ x^3yxyxy\xrightarrow{1} yxyxy\quad x^3yxyxy\xrightarrow{3} x^2
 \end{aligned}
 $$
 
+<!--Now we notice that P_1 and P_3 have an overlap, so we will consider the word xxxyxyxy, then we apply the first rule and the third rule separately to get yxyxy and x squared respectively.-->
+
 ---
 
 $P_1$ and $P_3$ overlap, so consider $x^3yxyxy$, and we reduce it
@@ -312,6 +329,8 @@ x^3yxyxy\xrightarrow{1} yxyxy\quad x^3yxyxy\xrightarrow{3} x^2
 $$
 
 Define $(4)\quad yxyxy\rightarrow x^2$.
+
+<!--Now since x squared is less than yxyxy under shortlex ordering, then we construct the new rule which will be rule number four.-->
 
 ---
 
@@ -326,6 +345,8 @@ $$
 Define $(4)\quad yxyxy\rightarrow x^2$.
 Remove $(3)\quad xyxyxy\rightarrow 1$.
 
+<!--Finally we remove all rules that this new rule can reduce the left hand side, so in this case we remove rule number 3. This leaves us with three total rules in our writing system.-->
+
 ---
 
 Repeating this process the set of relations become
@@ -338,3 +359,135 @@ $$
 &(7)\quad y^2x^2 &\rightarrow xyxy
 \end{aligned}
 $$
+
+<!--After repeating this process a number of times, we are left with these four rules. Using these rules we are able to rewrite any word in sigma star, to be in its normal form. Then by our previous work, we know that if the normal form of two words are the same then the words must represent the same element. Thus we can now use these rules to solve the word problem for this group.-->
+
+---
+
+#### Questions?
+
+---
+
+<!--_class: invert--->
+
+## **Finite State Automata**
+
+<!--Now that we have the rules that can be used to rewrite words in order to solve the word problem, we have not yet solved the word problem, we have just shown that it is solvable. Now we need finite state automata to complete the work.-->
+
+<!--[24:28]-->
+
+---
+
+### Definition
+
+$$
+A=(\Sigma,S,s_0,\delta,F)
+$$
+
+<!--A finite state automaton is a program or algorithm which is extremely simplistic. An automaton consists of five elements, first an alphabet, which is exactly as we have been using the alphabet, second is a set of states, that the automaton can be in. The third thing is the initial state. The fourth component is is the transition function, then finally is a set of states the the automaton accepts, although this term can also often be omitted. These components, are commonly denoted in the quintuplet, and I will be going through each part in more detail in a moment.-->
+
+---
+
+#### Example $\mathbb{Z}_3$
+
+Applying the Knuth Bendix to $\mathbb{Z}_3$, we derive the rules
+$$
+\begin{aligned}
+(1)&\quad x^3 &\rightarrow  1\\
+(2)&\quad x^{-1} &\rightarrow  x^2\\
+\end{aligned}
+$$
+
+<!--Before I explain things in more detail, lets consider a trivial example for a finite state automaton, lets consider Z3. After applying the knuth bendix method, we are left with these two rules for the rewriting system. Now we want our automaton to be a machine that given an arbitrary word, will return to us the normal form of that word, according to this rewriting system.-->
+
+---
+
+#### Example $\mathbb{Z}_3$
+
+Constructing our quadruplet, we find
+$$
+A=\left(\left\{x,x^{-1}\right\}, \left\{1,x,x^2\right\},1,\delta\right)
+$$
+
+<!--We go about the process of constructing the alphabet, and in this trivial case, our states are exactly our set of normal forms for the writing system. We set the initial state to be the identity.-->
+
+---
+
+#### Example $\mathbb{Z}_3$
+
+$$
+A=\left(\left\{x,x^{-1}\right\}, \left\{1,x,x^2\right\},1,\delta\right)
+$$
+$$
+\delta:S\times\Sigma\rightarrow S
+$$
+
+| $\delta$ | $x$   | $x^{-1}$ |
+| -------- | ----- | -------- |
+| $1$      | $x$   | $x^2$    |
+| $x$      | $x^2$ | $1$      |
+| $x^2$    | $1$   | $x$      |
+
+<!--The transition function is a mapping from pairs of states, and letters to states. So given the current state of the automaton, and a letter in our alphabet the transition function defines what state the automaton will move to.-->
+
+---
+
+#### Example $\mathbb{Z}_3$
+
+$$
+A=\left(\left\{x,x^{-1}\right\}, \left\{1,x,x^2\right\},1,\delta\right)
+$$
+
+$$
+\begin{aligned}
+A_1(xxx^{-1}xx)&\xrightarrow{\delta(1,x)}A_x(xx^{-1}xx)\\
+&\xrightarrow{\delta(x,x)}A_{x^2}(x^{-1}xx)\\
+&\xrightarrow{\delta(x^2,x^{-1})}A_{x}(xx)\\
+&\xrightarrow{\delta(x,x)}A_{x^2}(x)\\
+&\xrightarrow{\delta(x^2,x)}A_{1}()=1\\
+\end{aligned}
+$$
+
+<!--The automaton is applied to words in the language, so let us take some word xxx^{-1}xx, and apply the automaton to that. The subscript on the automaton is just used to denote the current state, and when we start that is given by the initial state s_0. Then the automaton looks at the first letter in the word, and using the transition function with the current state and the first letter to determine the next state to be at. After the automaton has read the first letter, that letter is then removed from the word. This is repeated until the word has been completely read, then the current state of the automaton is the output.-->
+
+---
+
+### Construction
+
+The construction is of little interest, as it is relatively straight forward, but requires a large amount of work. So it is not included.
+
+<!--The actual construction of an automaton from the rules of the rewriting system is relatively straight forward, with one note that in most cases the states will not be the same as the normal states, but instead a subset of the states will all be equal to a normal form. And all states are equal to a normal form, just multiple states map to the same normal form.-->
+
+---
+
+#### A slightly more complex example is $D_3$
+
+$$
+\begin{aligned}
+(2)&\quad yy&\rightarrow &1\\
+(3)&\quad xx^{-1}&\rightarrow &1\\
+(4)&\quad x^{-1}x&\rightarrow &1\\
+(8)&\quad x^2&\rightarrow &x^{-1}\\
+(9)&\quad x^{-1}x^{-1}&\rightarrow &x\\
+(10)&\quad y^{-1}&\rightarrow &y\\
+(15)&\quad yx&\rightarrow &x^{-1}y\\
+(16)&\quad yx^{-1}&\rightarrow &xy\\
+\end{aligned}
+$$
+
+<!--Even for such a simple group as this one, things get complicated quickly. I apologize if there is an error in this set of relations, but it can get very tedious to do the Knuth-Bendix method by hand. And for this group, the transition function for the automaton would be a function with 32 cases, and this group is still relatively simple. This is a motivating reason as to why most of this process has been constructed to work programmatically, so it can be automated by a computer, and there is no need to do it by hand. I can attest that doing it by hand is not pleasant.-->
+
+---
+
+<!--_class: invert-->
+
+## **Wrapping Up**
+
+<!--Now we have a method to take an arbitrary group, and construct a rewriting system that preserve confluence, such that we cna construct an automaton that will map any word to its corresponding normal form. Then once an element is in its normal form, it is trivially possible to determine equality.-->
+<!--A lot of more computer science terminology is used in the formal proof, but this should give you a comprehensive outline of what the proof is doing, and what strategies are used to prove the solvability of the word problem for automatic groups.-->
+
+<!--[34:19]-->
+
+---
+
+#### Questions?
