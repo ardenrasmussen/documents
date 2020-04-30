@@ -1,0 +1,31 @@
+digraph {
+    e->x[label="x"]
+    e->"x'"[label="x'"]
+    e->y[label="y"]
+    e->y[label="y'"];
+
+    y->e[label="y"]
+    y->e[label="y'"]
+    y->"x'y"[label="x"];
+    y->xy[label="x'"]
+
+    x->"x'"[label="x"]
+    x->e[label="x'"]
+    x->xy[label="y"]
+    x->xy[label="y'"]
+
+    "x'"->e[label="x"];
+    "x'"->x[label="x'"];
+    "x'"->"x'y"[label="y"];
+    "x'"->"x'y"[label="y'"]
+
+    xy->y[label="x"]
+    xy->"x'y"[label="x'"]
+    xy->x[label=y]
+    xy->x[label="y'"]
+
+    "x'y"->xy[label="x"]
+    "x'y"->y[label="x'"]
+    "x'y"->"x'"[label="y"]
+    "x'y"->"x'"[label="y'"]
+}

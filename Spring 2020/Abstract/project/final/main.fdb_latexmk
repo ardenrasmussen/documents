@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1587828647 "main.aux" "main.bbl" "main" 1587828648
+["bibtex main"] 1588215323 "main.aux" "main.bbl" "main" 1588215323
   "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1572595918 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1587828648 3619 18a359110e9eec29699610e6f12e5de6 "pdflatex"
+  "main.aux" 1588215316 2406 58249f558e5735dff320e9fc68cd4573 "pdflatex"
   "ref.bib" 1587685941 613 448e0839644e8bafa33208ec9bf6ba28 ""
   (generated)
-  "main.blg"
   "main.bbl"
-["pdflatex"] 1587828647 "main.tex" "main.pdf" "main" 1587828648
+  "main.blg"
+["pdflatex"] 1588215323 "main.tex" "main.pdf" "main" 1588215323
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1572595918 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1572595918 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1572595918 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -36,6 +36,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1572595918 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1572595918 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1572595918 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1572595918 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1572595918 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1572595918 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb" 1572595918 35660 fb24af7afbadb71801619f1415838111 ""
@@ -144,9 +145,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1572595918 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1586713418 4572998 f9631eebba48c3ee98e5d310044b0a09 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1586713402 8044939 72bad6146edf95c1c34a31fd2bf35d93 ""
-  "main.aux" 1587828648 3619 18a359110e9eec29699610e6f12e5de6 "pdflatex"
-  "main.bbl" 1587828647 537 17914c98b2fe5df255ab2285c1138897 "bibtex main"
-  "main.tex" 1587828647 30374 0848cd9245085f01d813f2eaf456bea0 ""
+  "main.aux" 1588215316 2406 58249f558e5735dff320e9fc68cd4573 "pdflatex"
+  "main.bbl" 1588215323 537 17914c98b2fe5df255ab2285c1138897 "bibtex main"
+  "main.tex" 1588215323 28056 a7364c96511b04cb0b962805416bf988 ""
   (generated)
   "main.log"
   "main.pdf"
